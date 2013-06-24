@@ -70,6 +70,11 @@ namespace HNHUWO2.Classes
             return q;
         }
 
+        public static string GetUsername()
+        {
+            return QueryAD("displayname", _GetUserName());
+        }
+
         public static string GetUsername(string username)
         {
             return QueryAD("displayname", username);
@@ -77,7 +82,6 @@ namespace HNHUWO2.Classes
 
         private static string _GetUserName()
         {
-            Function fn = new Function();
             return Function.GetUserName();
         }
 
