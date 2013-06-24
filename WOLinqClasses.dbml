@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="hnhuwo2" Class="WOLinqClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=hnhuwo2;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="hnhuwo2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.lookupNewsDistroOutlets" Member="NewsDistroOutlets">
+    <Type Name="NewsDistroOutlet">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="NewsDistroOutlet_WorkOrdersNews" Member="WorkOrdersNews" ThisKey="ID" OtherKey="DistributionOutlets" Type="WorkOrdersNews" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintColourInfo" Member="PrintColourInfos">
+    <Type Name="PrintColourInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintColourInfo_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="ColourInfo" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintCreditType" Member="PrintCreditTypes">
+    <Type Name="PrintCreditType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintCreditType_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="Credit" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintDaysNotice" Member="PrintDaysNotices">
+    <Type Name="PrintDaysNotice">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Days" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalNotes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintMethod" Member="PrintMethods">
+    <Type Name="PrintMethod">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintMethod_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="PrintingMethod" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintPaperSize" Member="PrintPaperSizes">
+    <Type Name="PrintPaperSize">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintPaperSize_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="PaperSize" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintPaperType" Member="PrintPaperTypes">
+    <Type Name="PrintPaperType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintPaperType_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="PaperType" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintTypeOfDisplay" Member="PrintTypeOfDisplays">
+    <Type Name="PrintTypeOfDisplay">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintTypeOfDisplay_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="TypeOfDisplay" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintTypeOfProject" Member="PrintTypeOfProjects">
+    <Type Name="PrintTypeOfProject">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PrintTypeOfProject_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="ProjectType" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupRadioAdType" Member="RadioAdTypes">
+    <Type Name="RadioAdType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RadioAdType_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="AdType" Type="WorkOrdersRadio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupRadioLength" Member="RadioLengths">
+    <Type Name="RadioLength">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RadioLength_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="LengthOfAd" Type="WorkOrdersRadio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupRadioRecordingOptions" Member="RadioRecordingOptions">
+    <Type Name="RadioRecordingOption">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RadioRecordingOption_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="RecordingOptions" Type="WorkOrdersRadio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupRadioStations" Member="RadioStations">
+    <Type Name="RadioStations">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="RadioStations_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="RadioStation" Type="WorkOrdersRadio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupStatus" Member="Status">
+    <Type Name="Status">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Status_Workorder" Member="Workorders" ThisKey="ID" OtherKey="status" Type="Workorder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupVideoDestinations" Member="VideoDestinations">
+    <Type Name="VideoDestination">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupVideoNarration" Member="VideoNarrations">
+    <Type Name="VideoNarration">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="VideoNarration_WorkOrdersVideo" Member="WorkOrdersVideos" ThisKey="ID" OtherKey="Narrator" Type="WorkOrdersVideo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupVideoSources" Member="VideoSources">
+    <Type Name="VideoSources">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(75) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="VideoSources_WorkOrdersVideo" Member="WorkOrdersVideos" ThisKey="ID" OtherKey="VideoSource" Type="WorkOrdersVideo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupWebLocation" Member="WebLocations">
+    <Type Name="WebLocation">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupWebSites" Member="WebSites">
+    <Type Name="WebSites">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="WebSites_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="Website" Type="WorkOrdersWeb" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupWebType" Member="WebTypes">
+    <Type Name="WebType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="WebType_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="TypeWebWork" Type="WorkOrdersWeb" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupWebUpdateType" Member="WebUpdateTypes">
+    <Type Name="WebUpdateType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="WebUpdateType_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="TypeOfUpdate" Type="WorkOrdersWeb" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupWOType" Member="WOTypes">
+    <Type Name="WOType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="WOType_Workorder" Member="Workorders" ThisKey="ID" OtherKey="wotype" Type="Workorder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.options" Member="options">
+    <Type Name="option">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OptionGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OptionText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lookup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersNews" Member="WorkOrdersNews">
+    <Type Name="WorkOrdersNews">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DistributionOutlets" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DistributionDetails" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="AdditionalNotes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="NewsDistroOutlet_WorkOrdersNews" Member="NewsDistroOutlet" ThisKey="DistributionOutlets" OtherKey="ID" Type="NewsDistroOutlet" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersNews" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersRadio" Member="WorkOrdersRadios">
+    <Type Name="WorkOrdersRadio">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AdType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AiringMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RadioStation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LengthOfAd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartAiringDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndAiringDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Budget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GLCode" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="RecordingOptions" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="RadioAdType_WorkOrdersRadio" Member="RadioAdType" ThisKey="AdType" OtherKey="ID" Type="RadioAdType" IsForeignKey="true" />
+      <Association Name="RadioLength_WorkOrdersRadio" Member="RadioLength" ThisKey="LengthOfAd" OtherKey="ID" Type="RadioLength" IsForeignKey="true" />
+      <Association Name="RadioRecordingOption_WorkOrdersRadio" Member="RadioRecordingOption" ThisKey="RecordingOptions" OtherKey="ID" Type="RadioRecordingOption" IsForeignKey="true" />
+      <Association Name="RadioStations_WorkOrdersRadio" Member="RadioStations" Storage="_RadioStation1" ThisKey="RadioStation" OtherKey="ID" Type="RadioStations" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersRadio" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersVideo" Member="WorkOrdersVideos">
+    <Type Name="WorkOrdersVideo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VideoSource" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VideoDestination" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DestinationURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NumberDVDs" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VideoLength" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BackgroundMusic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SongChoices" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NarrationReqd" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Narrator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VideoDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreditsRequired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="VideoNarration_WorkOrdersVideo" Member="VideoNarration" ThisKey="Narrator" OtherKey="ID" Type="VideoNarration" IsForeignKey="true" />
+      <Association Name="VideoSources_WorkOrdersVideo" Member="VideoSources" Storage="_VideoSource1" ThisKey="VideoSource" OtherKey="ID" Type="VideoSources" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersVideo" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="User_Workorder" Member="Workorders" ThisKey="ID" OtherKey="coordinator" Type="Workorder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogError" Member="LogErrors">
+    <Type Name="LogError">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersPrint" Member="WorkOrdersPrints">
+    <Type Name="WorkOrdersPrint">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectTypeOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TypeOfDisplay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeOfDisplayOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PromoItem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PrintingMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Budget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PaperSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomPaperSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaperType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberCopies" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ColourInfo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FullBleed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreditName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="pID" Type="WorkOrdersWeb" />
+      <Association Name="PrintColourInfo_WorkOrdersPrint" Member="PrintColourInfo" ThisKey="ColourInfo" OtherKey="ID" Type="PrintColourInfo" IsForeignKey="true" />
+      <Association Name="PrintCreditType_WorkOrdersPrint" Member="PrintCreditType" ThisKey="Credit" OtherKey="ID" Type="PrintCreditType" IsForeignKey="true" />
+      <Association Name="PrintMethod_WorkOrdersPrint" Member="PrintMethod" ThisKey="PrintingMethod" OtherKey="ID" Type="PrintMethod" IsForeignKey="true" />
+      <Association Name="PrintPaperSize_WorkOrdersPrint" Member="PrintPaperSize" ThisKey="PaperSize" OtherKey="ID" Type="PrintPaperSize" IsForeignKey="true" />
+      <Association Name="PrintPaperType_WorkOrdersPrint" Member="PrintPaperType" ThisKey="PaperType" OtherKey="ID" Type="PrintPaperType" IsForeignKey="true" />
+      <Association Name="PrintTypeOfDisplay_WorkOrdersPrint" Member="PrintTypeOfDisplay" ThisKey="TypeOfDisplay" OtherKey="ID" Type="PrintTypeOfDisplay" IsForeignKey="true" />
+      <Association Name="PrintTypeOfProject_WorkOrdersPrint" Member="PrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="PrintTypeOfProject" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersPrint" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogActivity" Member="LogActivities">
+    <Type Name="LogActivity">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupVideoDaysNotice" Member="lookupVideoDaysNotices">
+    <Type Name="lookupVideoDaysNotice">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DaysNotice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersWeb" Member="WorkOrdersWebs">
+    <Type Name="WorkOrdersWeb">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeWebWork" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Website" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WebsiteOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AtoZLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AtoZPostingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AtoZRemovalDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AtoZHeading" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AtoZContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CalEventName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CalEventLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CalEventStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CalEventStartTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CalEventEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CalEventEndTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactEmail" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EventDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateToBePosted" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TypeOfUpdate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateToBeChanged" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UpdateLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UpdateDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RequestedURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestedDomain" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="WebAdPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WebAdEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WebAdURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WebAdContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FacebookPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FacebookContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="WebSites_WorkOrdersWeb" Member="WebSites" ThisKey="Website" OtherKey="ID" Type="WebSites" IsForeignKey="true" />
+      <Association Name="WebType_WorkOrdersWeb" Member="WebType" ThisKey="TypeWebWork" OtherKey="ID" Type="WebType" IsForeignKey="true" />
+      <Association Name="WebUpdateType_WorkOrdersWeb" Member="WebUpdateType" ThisKey="TypeOfUpdate" OtherKey="ID" Type="WebUpdateType" IsForeignKey="true" />
+      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersPrint" ThisKey="pID" OtherKey="ID" Type="WorkOrdersPrint" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersWeb" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Workorders" Member="Workorders">
+    <Type Name="Workorder">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="submitted_by" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="submitted_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="wotype" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="coordinator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="duedate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="coordinatorNotes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Workorder_WorkOrdersNews" Member="WorkOrdersNews" ThisKey="ID" OtherKey="wID" Type="WorkOrdersNews" />
+      <Association Name="Workorder_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="wID" Type="WorkOrdersRadio" />
+      <Association Name="Workorder_WorkOrdersVideo" Member="WorkOrdersVideos" ThisKey="ID" OtherKey="wID" Type="WorkOrdersVideo" />
+      <Association Name="Workorder_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="wID" Type="WorkOrdersPrint" />
+      <Association Name="Workorder_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="wID" Type="WorkOrdersWeb" />
+      <Association Name="Workorder_File" Member="Files" ThisKey="ID" OtherKey="wID" Type="File" />
+      <Association Name="Status_Workorder" Member="Status1" ThisKey="status" OtherKey="ID" Type="Status" IsForeignKey="true" />
+      <Association Name="WOType_Workorder" Member="WOType1" ThisKey="wotype" OtherKey="ID" Type="WOType" IsForeignKey="true" />
+      <Association Name="User_Workorder" Member="User" ThisKey="coordinator" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Files" Member="Files">
+    <Type Name="File">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Revision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Workorder_File" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

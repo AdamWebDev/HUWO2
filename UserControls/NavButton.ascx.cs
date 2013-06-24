@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace HNHUWO2
+{
+    public partial class NavButton : System.Web.UI.UserControl
+    {
+
+        public String NavURL
+        {
+            set { lnkLink.NavigateUrl = value; }
+        }
+
+        public String Text
+        {
+            set { ltText.Text = value; }
+        }
+
+        public String Icon
+        {
+            set
+            {
+                icon.Attributes.Add("class", value + " icon-2x" );
+            }
+        }
+
+        
+        public event EventHandler Click;
+
+        protected virtual void OnClick(EventArgs e)
+        {
+            if (Click != null)
+                Click(this, e);
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string arg = "@@@@" + lnkLink.ClientID;
+            lnkLink.Attributes.Add("OnClick", Page.ClientScript.GetPostBackEventReference(lnkLink, arg));
+            if (IsPostBack)
+            {
+                string eventArg = Request["__EVENTARGUMENT"];
+                if (!string.IsNullOrEmpty(eventArg) && eventArg.StartsWith("@@@@"))
+                {
+                    if (eventArg == arg)
+                        OnClick(EventArgs.Empty);
+                }
+            }
+        }
+    }
+
+   
+}

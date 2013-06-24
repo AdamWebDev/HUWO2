@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17, 31.75" name="WOLinqClasses">
+  <DataContextMoniker Name="/WOLinqClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a159c420-af08-4ea9-872f-5096c1f3c236" absoluteBounds="3.5, 23, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/NewsDistroOutlet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c5ab89e-ef1b-4147-9114-7326009d7ae9" absoluteBounds="3.5150000000000006, 23.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f4bfc3d-c90b-4945-b363-19dec7bb44b6" absoluteBounds="3.5, 6.875, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintColourInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c6ff524-668c-4f1e-9af8-56c33ade4c59" absoluteBounds="3.5150000000000006, 7.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1b078b8-2a09-4e1b-8a11-cc03b3841237" absoluteBounds="3.5, 2.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintCreditType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="653cb774-34fa-4cd9-9028-c5a276e3749f" absoluteBounds="3.5150000000000006, 3.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f58cadf-1f6e-4921-a543-03571740a137" absoluteBounds="11.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintDaysNotice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9ae88bd-d237-4a8a-9b50-e3f084fc7cd2" absoluteBounds="11.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de548c41-473b-45e9-8adb-6f305a614ca8" absoluteBounds="3.5, 4.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintMethod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dc5ccb0-9430-4e09-8134-cd98655b03c2" absoluteBounds="3.5150000000000006, 5.2100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9be7871-0c88-4906-a466-dc87b14d009b" absoluteBounds="3.5, 9, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintPaperSize" />
+      <nestedChildShapes>
+        <elementListCompartment Id="921c601b-5228-4d9e-a7d1-9a78813e1fb4" absoluteBounds="3.5150000000000006, 9.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="78f69c4e-d2bd-420e-abc0-48948d4db484" absoluteBounds="3.5, 16.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintPaperType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62ef5b44-f5e5-4aff-9dd6-c39405bc8a1a" absoluteBounds="3.5150000000000006, 16.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24b12b7d-2371-43c3-acf9-686323861adb" absoluteBounds="3.5, 18.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintTypeOfDisplay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b75b1e04-cf93-4d2f-a610-af573a53e8ee" absoluteBounds="3.5150000000000006, 18.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76f04d0a-3754-4695-a1ee-2fee2946c37c" absoluteBounds="3.5, 20.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/PrintTypeOfProject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cd7160f-1ba1-4b74-ae2f-e6efb7afe92c" absoluteBounds="3.5150000000000006, 20.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2733af6-747e-4463-8cc0-4d78d2395ed2" absoluteBounds="6.5, 3.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/RadioAdType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6caf3361-f3e0-4799-9de5-f97ff0af6e49" absoluteBounds="6.515, 4.2100000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3ec5fed-45cb-48da-874d-01d16b9f71bf" absoluteBounds="6.5, 0.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/RadioLength" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61c0c58e-dc4a-4927-afc6-2e87474131a8" absoluteBounds="6.515, 1.3350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2239991c-5901-4d2c-9d41-ebd43b1db19f" absoluteBounds="6.5, 21.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/RadioRecordingOption" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff08dbe7-b6d4-4da6-826f-6567ae723401" absoluteBounds="6.515, 21.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e0f6df5-11b4-42a1-9d0a-028f292d92b1" absoluteBounds="6.5, 23.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/RadioStations" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46cb4a40-6913-4110-b63f-504fe685053d" absoluteBounds="6.515, 23.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d81a6e3a-8878-448f-a9d4-d6b53d2f21a8" absoluteBounds="0.75, 13.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/Status" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c85231a3-e61e-43f6-85d1-92ccf65608ca" absoluteBounds="0.765, 13.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a08b7189-3c86-4c19-b5fd-5e883dd5d2b0" absoluteBounds="12.75, 6.375, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/VideoDestination" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d81a239a-883d-47ae-8b1b-ac109d524a45" absoluteBounds="12.765, 6.8350000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="abd094ed-9588-46fa-99de-385ac695278c" absoluteBounds="3.5, 25.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/VideoNarration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9ba4653-1ad5-4253-bfd2-6d68bb2018ae" absoluteBounds="3.5150000000000006, 26.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ace7115f-7794-4216-9f87-3529f125de83" absoluteBounds="3.5, 28.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/VideoSources" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2325b9ce-52c3-47a7-b11e-b5def7d7f39c" absoluteBounds="3.5150000000000006, 28.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b3f3f0d-8655-4deb-b7de-a3cc5c3d9e6f" absoluteBounds="11.75, 9.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WebLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57d40bfe-fbe6-4bd9-9046-c5500db5f166" absoluteBounds="11.765, 10.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96ef5301-5449-4188-9844-15e06ad8931e" absoluteBounds="6.5, 28, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WebSites" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f03cba8-5756-41f1-a349-b3a9a9a1208c" absoluteBounds="6.515, 28.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61095fd2-abd5-4cd8-8e9b-944ee86abdc3" absoluteBounds="6.5, 25.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WebType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93317174-ef46-426c-a2a7-ba84e9284d4f" absoluteBounds="6.515, 26.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ae850387-ee45-45b5-885e-40e915800fce" absoluteBounds="6.5, 30.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WebUpdateType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4e30bab-caee-4a86-b996-17be91e75c05" absoluteBounds="6.515, 30.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10278870-400e-428e-808e-173a798064b4" absoluteBounds="0.75, 10.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WOType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2aae12a-52ac-4883-835b-e738d89d04d4" absoluteBounds="0.765, 11.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11dd838a-cfdf-4260-ac3f-d19622da2874" absoluteBounds="11.75, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/option" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff86ed6d-4669-4c42-8275-eb435f0feb9e" absoluteBounds="11.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94b80047-b0ea-4f29-bc39-98d284bdd457" absoluteBounds="6.25, 12.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WorkOrdersNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b7c4085-df2e-4551-9484-c534319f7514" absoluteBounds="6.2650000000000006, 13.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" absoluteBounds="9.75, 5.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WorkOrdersRadio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de602a93-0ecb-4b66-93aa-404a403b77c6" absoluteBounds="9.765, 6.2100000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95cdee9d-a112-451c-8809-01816bb594d3" absoluteBounds="6.25, 16, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WorkOrdersVideo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50c9bb9e-6dbc-4b81-9152-aaf74097dc2f" absoluteBounds="6.2650000000000006, 16.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 23); (5.875 : 22.625); (5.875 : 13.7315991210937); (5.97916666666667 : 13.7315991210937 : JumpStart); (6.23958333333333 : 13.7315991210937 : JumpEnd); (6.25 : 13.7315991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/NewsDistroOutlet/NewsDistroOutlet_WorkOrdersNews" />
+      <nodes>
+        <classShapeMoniker Id="a159c420-af08-4ea9-872f-5096c1f3c236" />
+        <classShapeMoniker Id="94b80047-b0ea-4f29-bc39-98d284bdd457" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 5.07139322916667); (11.5625 : 5.07139322916667); (11.5625 : 5.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/RadioAdType/RadioAdType_WorkOrdersRadio" />
+      <nodes>
+        <classShapeMoniker Id="a2733af6-747e-4463-8cc0-4d78d2395ed2" />
+        <classShapeMoniker Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 2.2612939453125); (8.875 : 2.6362939453125); (8.875 : 7.30850341796875); (9.75 : 7.30850341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/RadioLength/RadioLength_WorkOrdersRadio" />
+      <nodes>
+        <classShapeMoniker Id="f3ec5fed-45cb-48da-874d-01d16b9f71bf" />
+        <classShapeMoniker Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.40625 : 21.125); (8.40625 : 6.28125); (9.75 : 6.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/RadioRecordingOption/RadioRecordingOption_WorkOrdersRadio" />
+      <nodes>
+        <classShapeMoniker Id="2239991c-5901-4d2c-9d41-ebd43b1db19f" />
+        <classShapeMoniker Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 25.8899283194111); (6.015625 : 25.3743033194111); (6.015625 : 17.7508048502604); (6.07291666666667 : 17.7508048502604 : JumpStart); (6.23958333333333 : 17.7508048502604 : JumpEnd); (6.25 : 17.7508048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/VideoNarration/VideoNarration_WorkOrdersVideo" />
+      <nodes>
+        <classShapeMoniker Id="abd094ed-9588-46fa-99de-385ac695278c" />
+        <classShapeMoniker Id="95cdee9d-a112-451c-8809-01816bb594d3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="30924d54-03d4-42de-a73a-30456aa2e74e" absoluteBounds="0.75, 15.625, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5c83102-6f85-4400-81ad-8f043bb4c08c" absoluteBounds="0.76500000000000012, 16.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10e820ea-b05d-49dd-a101-278d4d2fbbd7" absoluteBounds="14.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/LogError" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4d4a20a-9e78-4273-90eb-25ca45ea9441" absoluteBounds="14.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" absoluteBounds="6.125, 6.875, 2, 4.2708154296875">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WorkOrdersPrint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcf74518-3b97-4ba4-989a-e6e6401a8d08" absoluteBounds="6.14, 7.335, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 7.56814697265625); (5.72916666666667 : 7.56814697265625 : JumpStart); (5.89583333333333 : 7.56814697265625 : JumpEnd); (6.125 : 7.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintColourInfo/PrintColourInfo_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="1f4bfc3d-c90b-4945-b363-19dec7bb44b6" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.15625); (5.72916666666667 : 3.15625 : JumpStart); (5.89583333333333 : 3.15625 : JumpEnd); (6.33593875 : 3.15625); (6.33593875 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintCreditType/PrintCreditType_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="d1b078b8-2a09-4e1b-8a11-cc03b3841237" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.6675439453125); (5.72916666666667 : 5.6675439453125 : JumpStart); (5.89583333333333 : 5.6675439453125 : JumpEnd); (6.1718725 : 5.6675439453125); (6.1718725 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintMethod/PrintMethod_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="de548c41-473b-45e9-8adb-6f305a614ca8" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.69314697265625); (5.72916666666667 : 9.69314697265625 : JumpStart); (5.89583333333333 : 9.69314697265625 : JumpEnd); (6.125 : 9.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintPaperSize/PrintPaperSize_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="b9be7871-0c88-4906-a466-dc87b14d009b" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 16.1868490375601); (5.81607443490112 : 15.870774602659 : JumpStart); (5.93392556509888 : 15.7529234724612 : JumpEnd); (6.0625 : 15.6243490375601); (6.0625 : 11.5208154296875); (5.75 : 11.5208154296875); (5.75357443490112 : 11.5172409947864 : JumpStart); (5.87142556509888 : 11.3993898645886 : JumpEnd); (6.125 : 11.1458154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintPaperType/PrintPaperType_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="78f69c4e-d2bd-420e-abc0-48948d4db484" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 19.6002018229167); (6.15625 : 19.6002018229167); (6.15625 : 11.1458154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintTypeOfDisplay/PrintTypeOfDisplay_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="24b12b7d-2371-43c3-acf9-686323861adb" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 20.375); (4.5 : 20); (5.79166666666667 : 20 : JumpStart); (6.09895833333333 : 20 : JumpEnd); (6.26041666666667 : 20 : JumpStart); (6.42708333333333 : 20 : JumpEnd); (8.32291666666667 : 20 : JumpStart); (8.48958333333333 : 20 : JumpEnd); (8.75 : 20); (8.75 : 9.01040771484375); (8.48958333333333 : 9.01040771484375 : JumpStart); (8.32291666666667 : 9.01040771484375 : JumpEnd); (8.125 : 9.01040771484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/PrintTypeOfProject/PrintTypeOfProject_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="76f04d0a-3754-4695-a1ee-2fee2946c37c" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4b3ee703-c1dc-4873-aefc-94dbe7899e1e" absoluteBounds="9.75, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/LogActivity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="792ba05d-8555-468f-834a-aa5e6626b9da" absoluteBounds="9.765, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a864c4ed-a588-48be-b13f-0f34a4793d51" absoluteBounds="9.375, 3.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/lookupVideoDaysNotice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42e77ccb-4235-476f-a3fe-43a3fe2801cc" absoluteBounds="9.39, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" absoluteBounds="9.125, 10, 2, 7.5399397786458326">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/WorkOrdersWeb" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f503db87-41e5-41d0-bf89-f75c91f94f33" absoluteBounds="9.14, 10.46, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 28.6931469726563); (10.125 : 28.6931469726563); (10.125 : 17.5399397786458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/WebSites/WebSites_WorkOrdersWeb" />
+      <nodes>
+        <classShapeMoniker Id="96ef5301-5449-4188-9844-15e06ad8931e" />
+        <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 26.5681469726563); (9.5937475 : 26.5681469726563); (9.5937475 : 17.5399397786458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/WebType/WebType_WorkOrdersWeb" />
+      <nodes>
+        <classShapeMoniker Id="61095fd2-abd5-4cd8-8e9b-944ee86abdc3" />
+        <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 30.8181469726563); (10.6562525 : 30.8181469726563); (10.6562525 : 17.5399397786458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/WebUpdateType/WebUpdateType_WorkOrdersWeb" />
+      <nodes>
+        <classShapeMoniker Id="ae850387-ee45-45b5-885e-40e915800fce" />
+        <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 10.5729077148437); (8.32291666666667 : 10.5729077148437 : JumpStart); (8.48958333333333 : 10.5729077148437 : JumpEnd); (8.79166666666667 : 10.5729077148437 : JumpStart); (8.95833333333333 : 10.5729077148437 : JumpEnd); (9.125 : 10.5729077148437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/WorkOrdersPrint/WorkOrdersPrint_WorkOrdersWeb" />
+      <nodes>
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+        <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 23.9431469726563); (10.0416666666667 : 23.9431469726563 : JumpStart); (10.2083333333333 : 23.9431469726563 : JumpEnd); (10.5729191666667 : 23.9431469726563 : JumpStart); (10.7395858333333 : 23.9431469726563 : JumpEnd); (11.4687495 : 23.9431469726563); (11.4687495 : 8.8670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/RadioStations/RadioStations_WorkOrdersRadio" />
+      <nodes>
+        <classShapeMoniker Id="5e0f6df5-11b4-42a1-9d0a-028f292d92b1" />
+        <classShapeMoniker Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 29.4800439453125); (6.34375 : 29.4800439453125); (6.34375 : 19.5016097005208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/VideoSources/VideoSources_WorkOrdersVideo" />
+      <nodes>
+        <classShapeMoniker Id="ace7115f-7794-4216-9f87-3529f125de83" />
+        <classShapeMoniker Id="95cdee9d-a112-451c-8809-01816bb594d3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" absoluteBounds="3.5, 12.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/Workorder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8e256a7-f6c4-43cb-b288-0eeedd2eaa3f" absoluteBounds="3.5149999999999997, 13.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 13.1782995605469); (5.66666666666667 : 13.1782995605469 : JumpStart); (5.89583333333333 : 13.1782995605469 : JumpEnd); (5.97916666666667 : 13.1782995605469 : JumpStart); (6.23958333333333 : 13.1782995605469 : JumpEnd); (6.25 : 13.1782995605469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersNews" />
+      <nodes>
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+        <classShapeMoniker Id="94b80047-b0ea-4f29-bc39-98d284bdd457" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.5108503300781); (5.75 : 14.5108503300781); (5.75 : 12.5); (5.97916666666667 : 12.5 : JumpStart); (6.23958333333333 : 12.5 : JumpEnd); (8.32291666666667 : 12.5 : JumpStart); (8.48958333333333 : 12.5 : JumpEnd); (8.875 : 12.5); (8.875 : 9.75); (10.7499995 : 9.75); (10.7499995 : 8.8670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersRadio" />
+      <nodes>
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+        <classShapeMoniker Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 15.228563077524); (5.81607443490112 : 15.5446375124251 : JumpStart); (5.93392556509888 : 15.6624886426229 : JumpEnd); (5.9375 : 15.666063077524); (5.9375 : 17.7508048502604); (6.07291666666667 : 17.7508048502604 : JumpStart); (6.23958333333333 : 17.7508048502604 : JumpEnd); (6.25 : 17.7508048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersVideo" />
+      <nodes>
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+        <classShapeMoniker Id="95cdee9d-a112-451c-8809-01816bb594d3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 14.9708781598558); (5.79166666666667 : 14.9708781598558 : JumpStart); (5.95833333333333 : 14.9708781598558 : JumpEnd); (6.140625 : 14.9708781598558); (6.140625 : 11.1458154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 15.2280803082933); (5.79166666666667 : 15.2280803082933 : JumpStart); (5.95833333333333 : 15.2280803082933 : JumpEnd); (5.97916666666667 : 15.2280803082933 : JumpStart); (6.23958333333333 : 15.2280803082933 : JumpEnd); (8.32291666666667 : 15.2280803082933 : JumpStart); (8.48958333333333 : 15.2280803082933 : JumpEnd); (9.125 : 15.2280803082933)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersWeb" />
+      <nodes>
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+        <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 13.7219962565104); (3.5 : 13.7219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Status/Status_Workorder" />
+      <nodes>
+        <classShapeMoniker Id="d81a6e3a-8878-448f-a9d4-d6b53d2f21a8" />
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.3469962565104); (4.5 : 11.3469962565104); (4.5 : 12.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/WOType/WOType_Workorder" />
+      <nodes>
+        <classShapeMoniker Id="10278870-400e-428e-808e-173a798064b4" />
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 15.625); (3.125 : 15.25); (3.125 : 15.666640000601); (3.50153746153846 : 15.2901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/User/User_Workorder" />
+      <nodes>
+        <classShapeMoniker Id="30924d54-03d4-42de-a73a-30456aa2e74e" />
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="35cb7171-9911-44b2-9800-152e17e0952f" absoluteBounds="3.875, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/File" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64fc9c0a-607b-4583-9ad8-9afe31bdd763" absoluteBounds="3.89, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 13.8445749453125); (5.8125 : 13.8445749453125); (5.8125 : 2.32859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_File" />
+      <nodes>
+        <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
+        <classShapeMoniker Id="35cb7171-9911-44b2-9800-152e17e0952f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

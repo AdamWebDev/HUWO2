@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DE0C12A-84E6-46A1-9EBC-F3798031F8E8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HNHUWO2</RootNamespace>
+    <AssemblyName>HNHUWO2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="hnhuwo2ConnectionString-Deployment" Order="1">
+          <Destination Path="Data Source=vm1t%3bInitial Catalog=hnhuwo2%3bIntegrated Security=True" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bInitial Catalog=hnhuwo2%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" />
+            <Source Path="obj\Debug\AutoScripts\hnhuwo2ConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="hnhuwo2ConnectionString-Deployment" Order="1">
+          <Destination Path="Data Source=.%3bInitial Catalog=hnhuwo2%3bUser ID=hnhuwodb%3bPassword=yr58c98R4fS7183" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=.\SQLEXPRESS%3bInitial Catalog=hnhuwo2%3bIntegrated Security=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" />
+            <Source Path="obj\Release\AutoScripts\hnhuwo2ConnectionString-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.123, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2010.3.1317.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Coordinators\MyWorkOrders.aspx" />
+    <Content Include="CreateWorkOrder.aspx" />
+    <Content Include="Create\News.aspx" />
+    <Content Include="Create\Print.aspx" />
+    <Content Include="Create\Radio.aspx" />
+    <Content Include="Create\Video.aspx" />
+    <Content Include="Create\Web.aspx" />
+    <Content Include="Designers\OpenWorkOrders.aspx" />
+    <Content Include="FileUpload.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="MyWorkOrders.aspx" />
+    <Content Include="Reports\ByCoordinator.aspx" />
+    <Content Include="resources\css\jquery-ui.css">
+      <DependentUpon>_jqueryui.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\css\style.min.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\font\fontawesome-webfont.svg" />
+    <Content Include="resources\images\icons\add.png" />
+    <Content Include="resources\images\icons\delete.png" />
+    <Content Include="resources\images\ui-icons_3399ff_0.png" />
+    <Content Include="resources\images\ui-icons_525252_0.png" />
+    <Content Include="resources\images\ui-icons_66B3FF_0.png" />
+    <Content Include="resources\images\ui-icons_d4d4d4_0.png" />
+    <Content Include="resources\images\ui-icons_ffffff_0.png" />
+    <Content Include="resources\scripts\jquery-ui.min.js" />
+    <Content Include="Success.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="resources\css\blue.css">
+      <DependentUpon>_blue.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\css\ie.css" />
+    <Content Include="resources\css\invalid.css" />
+    <Content Include="resources\css\red.css" />
+    <Content Include="resources\css\reset.css">
+      <DependentUpon>_reset.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\css\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\images\b.png" />
+    <Content Include="resources\images\bg-body.gif" />
+    <Content Include="resources\images\bg-button-blue.gif" />
+    <Content Include="resources\images\bg-button-green.gif" />
+    <Content Include="resources\images\bg-button-red.gif" />
+    <Content Include="resources\images\bg-content-box.gif" />
+    <Content Include="resources\images\bg-field.gif" />
+    <Content Include="resources\images\bg-form-field.gif" />
+    <Content Include="resources\images\bg-login-top.png" />
+    <Content Include="resources\images\bg-login.gif" />
+    <Content Include="resources\images\bg-menu-item-blue.gif" />
+    <Content Include="resources\images\bg-menu-item-current.gif" />
+    <Content Include="resources\images\bg-menu-item-green.gif" />
+    <Content Include="resources\images\bg-menu-item-red.gif" />
+    <Content Include="resources\images\bg-radial-gradient.gif" />
+    <Content Include="resources\images\bg-sidebar.gif" />
+    <Content Include="resources\images\bg.png" />
+    <Content Include="resources\images\bl.png" />
+    <Content Include="resources\images\br.png" />
+    <Content Include="resources\images\button_create.png" />
+    <Content Include="resources\images\button_view.png" />
+    <Content Include="resources\images\closelabel.gif" />
+    <Content Include="resources\images\icons\bullet_black.png" />
+    <Content Include="resources\images\icons\cross.png" />
+    <Content Include="resources\images\icons\cross_circle.png" />
+    <Content Include="resources\images\icons\cross_grey_small.png" />
+    <Content Include="resources\images\icons\cross_small.png" />
+    <Content Include="resources\images\icons\exclamation.png" />
+    <Content Include="resources\images\icons\hammer_screwdriver.png" />
+    <Content Include="resources\images\icons\information.png" />
+    <Content Include="resources\images\icons\jquery.wysiwyg.gif" />
+    <Content Include="resources\images\icons\pencil.png" />
+    <Content Include="resources\images\icons\tick_circle.png" />
+    <Content Include="resources\images\icons\user.png" />
+    <Content Include="resources\images\loading.gif" />
+    <Content Include="resources\images\logo.png" />
+    <Content Include="resources\images\menu-current-arrow.gif" />
+    <Content Include="resources\images\shortcut-button-bg.gif" />
+    <Content Include="resources\images\tl.png" />
+    <Content Include="resources\images\tr.png" />
+    <Content Include="resources\scripts\DD_belatedPNG_0.0.7a.js" />
+    <Content Include="resources\scripts\jquery.min.js" />
+    <Content Include="resources\scripts\simpla.jquery.configuration.js" />
+    <Content Include="UserControls\ActivityLog.ascx" />
+    <Content Include="UserControls\CoordinatorRevisions.ascx" />
+    <Content Include="UserControls\FileList.ascx" />
+    <Content Include="UserControls\NavButton.ascx" />
+    <Content Include="UserControls\Notification.ascx" />
+    <Content Include="UserControls\Pagination.ascx" />
+    <Content Include="UserControls\StatusButtons.ascx" />
+    <Content Include="UserControls\StatusMessages.ascx" />
+    <Content Include="UserControls\TrueFalseDropDown.ascx" />
+    <Content Include="View\Default.aspx" />
+    <Content Include="View\News.aspx" />
+    <Content Include="View\Print.aspx" />
+    <Content Include="View\Radio.aspx" />
+    <Content Include="View\Video.aspx" />
+    <Content Include="View\Web.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\NewsWO.cs" />
+    <Compile Include="Classes\PrintWO.cs" />
+    <Compile Include="Classes\RadioWO.cs" />
+    <Compile Include="Classes\Users.cs" />
+    <Compile Include="Classes\VideoWO.cs" />
+    <Compile Include="Classes\WebWO.cs" />
+    <Compile Include="Coordinators\MyWorkOrders.aspx.cs">
+      <DependentUpon>MyWorkOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coordinators\MyWorkOrders.aspx.designer.cs">
+      <DependentUpon>MyWorkOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateWorkOrder.aspx.cs">
+      <DependentUpon>CreateWorkOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateWorkOrder.aspx.designer.cs">
+      <DependentUpon>CreateWorkOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Create\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\Radio.aspx.cs">
+      <DependentUpon>Radio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\Radio.aspx.designer.cs">
+      <DependentUpon>Radio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\Video.aspx.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\Video.aspx.designer.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create\Web.aspx.cs">
+      <DependentUpon>Web.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create\Web.aspx.designer.cs">
+      <DependentUpon>Web.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Designers\OpenWorkOrders.aspx.cs">
+      <DependentUpon>OpenWorkOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Designers\OpenWorkOrders.aspx.designer.cs">
+      <DependentUpon>OpenWorkOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkOrders.aspx.cs">
+      <DependentUpon>MyWorkOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyWorkOrders.aspx.designer.cs">
+      <DependentUpon>MyWorkOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ByCoordinator.aspx.cs">
+      <DependentUpon>ByCoordinator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ByCoordinator.aspx.designer.cs">
+      <DependentUpon>ByCoordinator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ActivityLog.ascx.cs">
+      <DependentUpon>ActivityLog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ActivityLog.ascx.designer.cs">
+      <DependentUpon>ActivityLog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CoordinatorRevisions.ascx.cs">
+      <DependentUpon>CoordinatorRevisions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CoordinatorRevisions.ascx.designer.cs">
+      <DependentUpon>CoordinatorRevisions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FileList.ascx.cs">
+      <DependentUpon>FileList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FileList.ascx.designer.cs">
+      <DependentUpon>FileList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavButton.ascx.cs">
+      <DependentUpon>NavButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavButton.ascx.designer.cs">
+      <DependentUpon>NavButton.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Notification.ascx.cs">
+      <DependentUpon>Notification.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Notification.ascx.designer.cs">
+      <DependentUpon>Notification.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Pagination.ascx.cs">
+      <DependentUpon>Pagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Pagination.ascx.designer.cs">
+      <DependentUpon>Pagination.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StatusButtons.ascx.cs">
+      <DependentUpon>StatusButtons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\StatusButtons.ascx.designer.cs">
+      <DependentUpon>StatusButtons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StatusMessages.ascx.cs">
+      <DependentUpon>StatusMessages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\StatusMessages.ascx.designer.cs">
+      <DependentUpon>StatusMessages.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TrueFalseDropDown.ascx.cs">
+      <DependentUpon>TrueFalseDropDown.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TrueFalseDropDown.ascx.designer.cs">
+      <DependentUpon>TrueFalseDropDown.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Radio.aspx.cs">
+      <DependentUpon>Radio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Radio.aspx.designer.cs">
+      <DependentUpon>Radio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Video.aspx.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Video.aspx.designer.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Web.aspx.cs">
+      <DependentUpon>Web.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Web.aspx.designer.cs">
+      <DependentUpon>Web.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\WO.cs" />
+    <Compile Include="WOLinqClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WOLinqClasses.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+    <Content Include="Web.sitemap" />
+    <Content Include="packages.config" />
+    <None Include="resources\css\_font-awesome.scss" />
+    <None Include="resources\css\_blue.scss" />
+    <None Include="resources\css\_jqueryui.scss" />
+    <None Include="resources\css\_reset.scss" />
+    <None Include="resources\css\style.scss" />
+    <None Include="resources\font\fontawesome-webfont.eot" />
+    <None Include="resources\font\fontawesome-webfont.ttf" />
+    <None Include="resources\font\fontawesome-webfont.woff" />
+    <None Include="resources\font\FontAwesome.otf" />
+    <None Include="WOLinqClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>WOLinqClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WOLinqClasses.dbml.layout">
+      <DependentUpon>WOLinqClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50741</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
