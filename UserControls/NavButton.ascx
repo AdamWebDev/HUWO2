@@ -3,6 +3,6 @@
 <asp:HyperLink ID="lnkLink" runat="server" CssClass="shortcut-button">
     <span><i id="icon" runat="server" class=""></i>
 		<br />
-		<asp:Literal ID="ltText" runat="server"></asp:Literal>
+		<span><asp:Literal ID="ltText" runat="server"></asp:Literal></span>
 </span></asp:HyperLink>
 </li>

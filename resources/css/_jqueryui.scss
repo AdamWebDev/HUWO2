@@ -1345,33 +1345,23 @@ button.ui-button::-moz-focus-inner {
     border-right-width: 0;
     border-left-width: 1px; } }
 
+
 .ui-timepicker-div {
-  .ui-widget-header {
-    margin-bottom: 8px;
-    background: #39F;
-    color: white; }
-  dl {
-    text-align: left;
-    dt {
-      height: 25px;
-      margin-bottom: -25px; }
-    dd {
-      margin: 0 10px 10px 65px; } }
-  td {
-    font-size: 90%; } }
+	.ui-widget-header { margin-bottom: 8px; }
+	dl { text-align: left;
+		dt { height: 25px; margin-bottom: -25px; } 
+		dd { margin: 0 10px 10px 65px; }
+	}
+	td { font-size: 90%; }
+}
 
-.ui-tpicker-grid-label {
-  background: none;
-  border: none;
-  margin: 0;
-  padding: 0; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 
-.ui-timepicker-rtl {
-  direction: rtl;
-  dl {
-    text-align: right;
-    dd {
-      margin: 0 65px 10px 10px; } } }
+.ui-timepicker-rtl{ direction: rtl; 
+	dl { text-align: right; 
+		dd { margin: 0 65px 10px 10px; }
+	}
+}
 
 /* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
 

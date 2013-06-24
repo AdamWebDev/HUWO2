@@ -15,6 +15,10 @@ namespace HNHUWO2.UserControls
 
             switch (msgID)
             {
+                case "1":
+                    notMsg.Type = Notification.Types.Success;
+                    notMsg.Message = "You have unapproved this work order!";
+                    break;
                 case "2":
                 case "3":
                     notMsg.Type = Notification.Types.Success;

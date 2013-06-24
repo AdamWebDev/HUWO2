@@ -6,6 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">View News Release Work Order</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server" />
     <uc:StatusMessages ID="statusMessages" runat="server" />
     <ul class="view-wo">
         <li>
@@ -44,5 +45,6 @@
             <label>Activity Log</label>
             <uc:ActivityLog ID="activityLog" runat="server" />
         </li>
+        <uc:coordinatorrevisions ID="CoordinatorRevisions" runat="server" />
     </ul>
 </asp:Content>

@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Coordinators\AllPendingWorkOrders.aspx" />
     <Content Include="Coordinators\MyWorkOrders.aspx" />
     <Content Include="CreateWorkOrder.aspx" />
     <Content Include="Create\News.aspx" />
@@ -205,6 +206,13 @@
     <Compile Include="Classes\Users.cs" />
     <Compile Include="Classes\VideoWO.cs" />
     <Compile Include="Classes\WebWO.cs" />
+    <Compile Include="Coordinators\AllPendingWorkOrders.aspx.cs">
+      <DependentUpon>AllPendingWorkOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coordinators\AllPendingWorkOrders.aspx.designer.cs">
+      <DependentUpon>AllPendingWorkOrders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Coordinators\MyWorkOrders.aspx.cs">
       <DependentUpon>MyWorkOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,7 +432,15 @@
     <Content Include="Site.Master" />
     <Content Include="Web.sitemap" />
     <Content Include="packages.config" />
-    <None Include="resources\css\_font-awesome.scss" />
+    <None Include="resources\css\font-awesome\font-awesome-ie7.scss" />
+    <None Include="resources\css\font-awesome\_font-awesome.scss" />
+    <None Include="resources\css\font-awesome\_bootstrap.scss" />
+    <None Include="resources\css\font-awesome\_core.scss" />
+    <None Include="resources\css\font-awesome\_extras.scss" />
+    <None Include="resources\css\font-awesome\_icons.scss" />
+    <None Include="resources\css\font-awesome\_mixins.scss" />
+    <None Include="resources\css\font-awesome\_path.scss" />
+    <None Include="resources\css\font-awesome\_variables.scss" />
     <None Include="resources\css\_blue.scss" />
     <None Include="resources\css\_jqueryui.scss" />
     <None Include="resources\css\_reset.scss" />

@@ -337,7 +337,7 @@ ul.content-box-tabs {
   width: 100px;
   margin: 0 0 20px 0;
   cursor: pointer;
-  span {
+  > span {
     border: 1px solid #fff;
     display: block;
     padding: 15px 10px 15px 10px;
@@ -345,9 +345,17 @@ ul.content-box-tabs {
     color: #555;
     line-height: 1.3em;
     img {
-      margin-bottom: 10px; } }
+      margin-bottom: 10px; }
+	span {
+		display: none;
+	}  
+	   }
   &:hover {
-    background: #fff; }
+    background: #fff;
+	span span {
+		display: block;
+	}
+	}
   span:hover {
     color: #57a000; } }
 
@@ -597,4 +605,4 @@ body#login {
 
   @import "blue";
   @import "jqueryui";
-  @import "font-awesome";
+  @import "font-awesome/font-awesome";

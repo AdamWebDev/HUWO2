@@ -5,8 +5,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">My Work Orders</asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Filters" runat="server">
     <label for="ddItemsPerPage">Show:</label>
-    <asp:DropDownList ID="ddItemsPerPage" runat="server" 
-        onselectedindexchanged="ddItemsPerPage_SelectedIndexChanged" AutoPostBack="true">
+    <asp:DropDownList ID="ddItemsPerPage" runat="server" onselectedindexchanged="ddItemsPerPage_SelectedIndexChanged" AutoPostBack="true">
         <asp:ListItem Value="10" Text="10 Items"></asp:ListItem>
         <asp:ListItem Value="25" Text="25 Items"></asp:ListItem>
         <asp:ListItem Value="50" Text="50 Items"></asp:ListItem>
@@ -22,7 +21,8 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
     <uc:Notification ID="notSuccess" runat="server" Type="Success" Message="Your work order has been successfully submitted!" Visible="false" />
     <asp:HiddenField ID="hdnCurrentPage" runat="server" Value="0" />
-    <asp:LinkButton ID="lnkNextPage" runat="server" onclick="lnkNextPage_Click">Next Page</asp:LinkButton>
+
+    
     <asp:Repeater ID="rptWorkOrders" runat="server">
         <HeaderTemplate>
             <table>
@@ -51,4 +51,8 @@
             </table>
         </FooterTemplate>
     </asp:Repeater>
+    <div class="pagination">
+        <asp:LinkButton ID="lnkPrevPage" runat="server" onclick="lnkPrevPage_Click" Visible="false">Previous Page</asp:LinkButton>
+    <asp:LinkButton ID="lnkNextPage" runat="server" onclick="lnkNextPage_Click" Visible="false">Next Page</asp:LinkButton>
+    </div>
 </asp:Content>

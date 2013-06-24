@@ -30,6 +30,7 @@ namespace HNHUWO2.Classes
             public string submitted_by { get; set; }
             public DateTime submitted_date { get; set; }
             public int? coordinator { get; set; }
+            public string coordinatorName { get; set; }
             public DateTime? duedate { get; set; }
             public int wotype { get; set; }
             public string wotypeText { get; set; }
@@ -49,6 +50,7 @@ namespace HNHUWO2.Classes
                         submitted_by = w.submitted_by,
                         submitted_date = w.submitted_date,
                         coordinator = w.coordinator,
+                        coordinatorName = w.User.FullName,
                         duedate = w.duedate,
                         wotype = w.wotype,
                         wotypeText = w.WOType1.type,
@@ -270,6 +272,7 @@ namespace HNHUWO2.Classes
             message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Word Order System";
             MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
+            mail.IsBodyHtml = true;
             SendMail(mail);
         }
 
@@ -283,11 +286,12 @@ namespace HNHUWO2.Classes
 
             // create the email
             string subject = "Workorder Approved";
-            string message = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + wo.User.FullName +  ". Please proceed to the following link to approve the work order.<br /><br />";
+            string message = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + Users.GetUsername() +". Please proceed to the following link to approve the work order.<br /><br />";
             string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?ID=" + ID;
             message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Word Order System";
             MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
+            mail.IsBodyHtml = true;
             SendMail(mail);
         }
 
@@ -355,7 +359,6 @@ namespace HNHUWO2.Classes
             using  (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 Workorder wo = db.Workorders.Single(w => w.ID == ID);
-                Classes.Function fn = new Classes.Function();
                 wo.status = newStatus;
                 wo.coordinatorNotes = notes;
                 LogActivity log = new LogActivity();
