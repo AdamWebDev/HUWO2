@@ -4,5 +4,5 @@ obj/
 Web.Config
 Web.Debug.config
 Web.Release.config
-bin/HNHUWO2.dll
-bin/HNHUWO2.pdb
+HNHUWO2.dll
+HNHUWO2.pdb
