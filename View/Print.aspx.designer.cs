@@ -49,15 +49,6 @@ namespace HNHUWO2.View {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// notQuote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::HNHUWO2.Notification notQuote;
-        
-        /// <summary>
         /// statusMessages control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace HNHUWO2.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::HNHUWO2.Notification notMessage;
+        
+        /// <summary>
+        /// notQuote control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HNHUWO2.Notification notQuote;
         
         /// <summary>
         /// lblStatus control.

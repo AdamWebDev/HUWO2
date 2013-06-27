@@ -23,7 +23,7 @@ namespace HNHUWO2.UserControls
         protected void btnUnapprove_OnClick(object sender, EventArgs e)
         {
             int ID = int.Parse(Request.QueryString["ID"]);
-            WO.Unapprove(ID);
+            WO.Unapprove(ID);           
         }
 
         // approve the current work order

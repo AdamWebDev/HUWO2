@@ -6,6 +6,9 @@
 <label>Revised Files</label>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
     <ContentTemplate>
-        <telerik:radasyncupload ID="uploadFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads" Localization-Select="Add Files..."></telerik:radasyncupload>
+        <telerik:radasyncupload ID="uploadFiles" runat="server" 
+            MultipleFileSelection="Automatic" 
+            Localization-Select="Add Files..." 
+            onfileuploaded="uploadFiles_FileUploaded"></telerik:radasyncupload>
     </ContentTemplate>
 </asp:UpdatePanel>

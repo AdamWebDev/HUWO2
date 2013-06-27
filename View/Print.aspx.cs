@@ -18,6 +18,8 @@ namespace HNHUWO2.View
                 PopulatePage(ID);
             else
                 Response.Redirect("~/Default.aspx");
+
+            
         }
 
         protected void PopulatePage(int ID)
@@ -60,7 +62,7 @@ namespace HNHUWO2.View
             {
                 CoordinatorRevisions.Visible = false;
             }
-           
+            
         }
     }
 }

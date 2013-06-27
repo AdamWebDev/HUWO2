@@ -192,18 +192,22 @@ namespace HNHUWO2.Classes
         }
 
         public static void UploadFiles(int ID, UploadedFileCollection Files,bool IsRevision)
-        {
+        { /*
             if (Files.Count > 0)
             {
-                System.IO.Directory.CreateDirectory("~/uploads/" + ID);
-            }
-            foreach (UploadedFile file in Files)
-            {
-                string src = "~/uploads/" + file.FileName;
-                string dest = "~/uploads/" + ID + "/" + file.FileName;
-                System.IO.File.Move(src, dest);
-                WO.AddFile(ID, file.FileName,IsRevision);
-            }
+                var origin = HttpContext.Current.Server.MapPath("~/uploads/");
+                var destination = origin + "insurance/" + ID.ToString()  + "/";
+                if (!System.IO.Directory.Exists(destination))
+                  System.IO.Directory.CreateDirectory(destination);
+                foreach (UploadedFile file in Files)
+                {
+                    file.SaveAs(destination);
+                    //string src = origin + file.FileName;
+                    //string dest = destination + file.FileName;
+                    //System.IO.File.Move(src, dest);
+                    WO.AddFile(ID, file.FileName, IsRevision);
+                }
+            }*/
         }
 
         private static void AddFile(int wID, string filename, bool IsRevision)
@@ -369,7 +373,7 @@ namespace HNHUWO2.Classes
                 db.LogActivities.InsertOnSubmit(log);
                 db.SubmitChanges();
                 string url = "~/View/Default.aspx?type=" + wo.wotype + "&ID=" + wo.ID + "&status=" + newStatus;
-                HttpContext.Current.Response.Redirect(url);
+                //HttpContext.Current.Response.Redirect(url);
             }
         }
 

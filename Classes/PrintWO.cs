@@ -65,6 +65,7 @@ namespace HNHUWO2.Classes
                      where w.wID == ID
                      select w).FirstOrDefault();
             return q;
+            
         }
 
         public static PrintDaysNotice GetDaysNoticeAndMessage(int ID)

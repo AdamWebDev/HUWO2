@@ -12,7 +12,7 @@ namespace HNHUWO2.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Refresh();
+            //Refresh();
             if (rptFiles.Items.Count < 0)
             {
                 rptFiles.Visible = false;

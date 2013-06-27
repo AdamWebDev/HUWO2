@@ -8,9 +8,9 @@
 </asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="Main" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
-    <uc:Notification ID="notQuote" runat="server" Type="Attention" Message="Please note that this a Quote for Commercial Print" Visible="false" />
     <uc:StatusMessages ID="statusMessages" runat="server" />
     <uc:Notification ID="notMessage" runat="server" Visible="false" />
+    <uc:Notification ID="notQuote" runat="server" Type="Attention" Message="Please note that this a Quote for Commercial Print" Visible="false" />
     <ul class="view-wo">
         <li>
             <label>Status</label>
