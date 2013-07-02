@@ -166,6 +166,15 @@ namespace HNHUWO2.View {
         protected global::System.Web.UI.WebControls.Label lblCreditsRequired;
         
         /// <summary>
+        /// lblNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotes;
+        
+        /// <summary>
         /// attachedFiles control.
         /// </summary>
         /// <remarks>
@@ -175,13 +184,13 @@ namespace HNHUWO2.View {
         protected global::HNHUWO2.UserControls.FileList attachedFiles;
         
         /// <summary>
-        /// lblNotes control.
+        /// lblCoordinatorNotes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNotes;
+        protected global::System.Web.UI.WebControls.Label lblCoordinatorNotes;
         
         /// <summary>
         /// activityLog control.

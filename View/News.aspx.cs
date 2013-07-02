@@ -14,12 +14,12 @@ namespace HNHUWO2.View
         {
             int ID;
             if (Int32.TryParse(Request.QueryString["ID"], out ID)) 
-                PopulateForm(ID);
+                PopulatePage(ID);
             else
                 Response.Redirect("~/Default.aspx");
         }
 
-        protected void PopulateForm(int ID)
+        protected void PopulatePage(int ID)
         {
             WorkOrdersNews wo = NewsWO.GetNewsWorkOrder(ID);
             lblCoordinator.Text = wo.Workorder.User.FullName;
@@ -29,6 +29,17 @@ namespace HNHUWO2.View
             lblDistributionOutletsOther.Text = wo.DistributionDetails;
             lblContact.Text = wo.Contact;
             lblNotes.Text = wo.AdditionalNotes;
+
+            if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
+            {
+                CoordinatorRevisions.Visible = true;
+            }
+            else
+            {
+                CoordinatorRevisions.Visible = false;
+            }
+
+            attachedFiles.Refresh();
         }
     }
 }

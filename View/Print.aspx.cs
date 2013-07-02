@@ -12,17 +12,18 @@ namespace HNHUWO2.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int ID;
-            // ensure that there's an ID set in the query string
-            if (Int32.TryParse(Request.QueryString["ID"], out ID))
-                PopulatePage(ID);
-            else
-                Response.Redirect("~/Default.aspx");
-
-            
+            if (!Page.IsPostBack)
+            {
+                int ID;
+                // ensure that there's an ID set in the query string
+                if (Int32.TryParse(Request.QueryString["ID"], out ID))
+                    PopulatePage(ID);
+                else
+                    Response.Redirect("~/Default.aspx");
+            }
         }
 
-        protected void PopulatePage(int ID)
+        public void PopulatePage(int ID)
         {
             // populate the work order request
             WorkOrdersPrint wo = PrintWO.GetPrintWorkOrder(ID);
@@ -62,7 +63,8 @@ namespace HNHUWO2.View
             {
                 CoordinatorRevisions.Visible = false;
             }
-            
+
+            attachedFiles.Refresh();
         }
     }
 }

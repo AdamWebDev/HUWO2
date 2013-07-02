@@ -57,6 +57,18 @@ namespace HNHUWO2.View
                 lblFacebookPostDate.Text = wo.FacebookPostDate.DisplayDate();
                 lblFacebookContent.Text = wo.FacebookContent;
                 lblNotes.Text = wo.Notes;
+                lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+
+                if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
+                {
+                    CoordinatorRevisions.Visible = true;
+                }
+                else
+                {
+                    CoordinatorRevisions.Visible = false;
+                }
+
+                attachedFiles.Refresh();
             }
             else
             {

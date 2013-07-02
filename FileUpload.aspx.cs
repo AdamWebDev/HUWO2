@@ -14,11 +14,5 @@ namespace HNHUWO2
         {
 
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            int ID = 3;
-            Classes.WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
-        }
     }
 }

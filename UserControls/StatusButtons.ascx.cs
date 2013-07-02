@@ -23,7 +23,8 @@ namespace HNHUWO2.UserControls
         protected void btnUnapprove_OnClick(object sender, EventArgs e)
         {
             int ID = int.Parse(Request.QueryString["ID"]);
-            WO.Unapprove(ID);           
+            WO.Unapprove(ID);
+            UpdatePage();
         }
 
         // approve the current work order
@@ -31,6 +32,7 @@ namespace HNHUWO2.UserControls
         {
             int ID = int.Parse(Request.QueryString["ID"]);
             WO.Approve(ID);
+            UpdatePage();
         }
 
         // approve (with changes) - gets some input from the program coordinator
@@ -45,9 +47,9 @@ namespace HNHUWO2.UserControls
             if (revisions != null)
             {
                 notes = revisions.Notes;
-                WO.UploadFiles(ID, revisions.Files,true);
             }
             WO.ApproveWithChanges(ID, notes);
+            UpdatePage();
         }
 
         // mark the work order as "in progress"
@@ -55,6 +57,7 @@ namespace HNHUWO2.UserControls
         {
             int ID = int.Parse(Request.QueryString["ID"]);
             WO.MarkInProgress(ID);
+            UpdatePage();
         }
 
         // mark the work order as "proof sent"
@@ -62,6 +65,7 @@ namespace HNHUWO2.UserControls
         {
             int ID = int.Parse(Request.QueryString["ID"]);
             WO.MarkProofSent(ID);
+            UpdatePage();
         }
 
         // mark the work order as "complete"
@@ -69,6 +73,7 @@ namespace HNHUWO2.UserControls
         {
             int ID = int.Parse(Request.QueryString["ID"]);
             WO.MarkComplete(ID);
+            UpdatePage();
         }
 
         // deletes the work order (in the case of duplication or other odd circumstances)
@@ -76,6 +81,7 @@ namespace HNHUWO2.UserControls
         {
             int ID = int.Parse(Request.QueryString["ID"]);
             WO.Delete(ID);
+            UpdatePage();
         }
 
         // shows and hides the action buttons depending on the permissions of the logged in user and the status of the current work order
@@ -114,6 +120,16 @@ namespace HNHUWO2.UserControls
                     btnDelete.Visible = false;
                 }
             }
+        }
+
+        /// <summary>
+        /// In order to have the buttons updated the content in the parent page, we use this fancy workaround to fire a method from this user control
+        /// From: http://www.aspsnippets.com/Articles/Calling-Parent-Page-method-from-Child-Usercontrol-using-Reflection-in-ASP.Net.aspx
+        /// </summary>
+        private void UpdatePage()
+        {
+            int ID = int.Parse(Request.QueryString["ID"]);
+            this.Page.GetType().InvokeMember("PopulatePage", System.Reflection.BindingFlags.InvokeMethod, null, this.Page, new object[] { ID });
         }
     }
 }

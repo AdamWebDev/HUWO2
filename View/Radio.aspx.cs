@@ -33,6 +33,18 @@ namespace HNHUWO2.View
             lblGLCode.Text = wo.GLCode;
             lblRecordingOptions.Text = wo.RecordingOptions.HasValue ? wo.RadioRecordingOption.Value : String.Empty;
             lblNotes.Text = wo.Notes;
+            lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+
+            if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
+            {
+                CoordinatorRevisions.Visible = true;
+            }
+            else
+            {
+                CoordinatorRevisions.Visible = false;
+            }
+
+            attachedFiles.Refresh();
         }
     }
 }

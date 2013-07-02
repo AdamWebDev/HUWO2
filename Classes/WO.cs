@@ -186,31 +186,8 @@ namespace HNHUWO2.Classes
             return q.ToList();
         }
 
-        public static void UploadFiles(int ID, UploadedFileCollection Files)
-        {
-            UploadFiles(ID, Files, false);
-        }
 
-        public static void UploadFiles(int ID, UploadedFileCollection Files,bool IsRevision)
-        { /*
-            if (Files.Count > 0)
-            {
-                var origin = HttpContext.Current.Server.MapPath("~/uploads/");
-                var destination = origin + "insurance/" + ID.ToString()  + "/";
-                if (!System.IO.Directory.Exists(destination))
-                  System.IO.Directory.CreateDirectory(destination);
-                foreach (UploadedFile file in Files)
-                {
-                    file.SaveAs(destination);
-                    //string src = origin + file.FileName;
-                    //string dest = destination + file.FileName;
-                    //System.IO.File.Move(src, dest);
-                    WO.AddFile(ID, file.FileName, IsRevision);
-                }
-            }*/
-        }
-
-        private static void AddFile(int wID, string filename, bool IsRevision)
+        public static void AddFile(int wID, string filename, bool IsRevision)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             File f = new File();
@@ -229,7 +206,7 @@ namespace HNHUWO2.Classes
             string filepath = RemoveFile(ID);
 
             // if file exists...
-            if (filepath.Equals(String.Empty))
+            if (!filepath.Equals(String.Empty))
             {
                 // delete the physical file
                 System.IO.File.Delete(filepath);
@@ -244,7 +221,7 @@ namespace HNHUWO2.Classes
                 return String.Empty;
             else
             {
-                String filepath = f.Filename;
+                String filepath = HttpContext.Current.Server.MapPath("~/uploads/" + f.wID + "/" + f.Filename);
                 db.Files.DeleteOnSubmit(f);
                 db.SubmitChanges();
                 return filepath;
@@ -372,8 +349,7 @@ namespace HNHUWO2.Classes
                 log.wID = wo.ID;
                 db.LogActivities.InsertOnSubmit(log);
                 db.SubmitChanges();
-                string url = "~/View/Default.aspx?type=" + wo.wotype + "&ID=" + wo.ID + "&status=" + newStatus;
-                //HttpContext.Current.Response.Redirect(url);
+                
             }
         }
 

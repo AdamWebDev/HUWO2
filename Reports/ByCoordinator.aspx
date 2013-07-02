@@ -6,8 +6,12 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="Filters" runat="server"></asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Main" runat="server">
 
-    <label class="inline">Start Date</label><asp:TextBox ID="txtStartDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
-    <label class="inline">End Date</label><asp:TextBox ID="txtEndDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+    <div class="inline">
+    <label class="inline">Start Date:</label><asp:TextBox ID="txtStartDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+    </div>
+    <div class="inline">
+    <label class="inline">End Date: </label><asp:TextBox ID="txtEndDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+    </div>
     <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
     
     <asp:Repeater ID="rptReport" runat="server">

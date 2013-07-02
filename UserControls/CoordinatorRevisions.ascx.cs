@@ -27,17 +27,17 @@ namespace HNHUWO2.UserControls
         }
 
         protected void uploadFiles_FileUploaded(object sender, FileUploadedEventArgs e)
-        {
-            txtCoordintorNotes.Text = "THIS FIRED!";
-            
+        {           
             if (uploadFiles.UploadedFiles.Count > 0)
             {
-                var destination = HttpContext.Current.Server.MapPath("~/uploads/" + Request.QueryString["ID"]  + "/");
+                int ID = int.Parse(Request.QueryString["ID"]);
+                var destination = HttpContext.Current.Server.MapPath("~/uploads/" + ID.ToString()  + "/");
                 if (!System.IO.Directory.Exists(destination))
                   System.IO.Directory.CreateDirectory(destination);
                 foreach (UploadedFile file in Files)
                 {
                     file.SaveAs(destination + file.FileName);
+                    Classes.WO.AddFile(ID, file.FileName, true);
                 }
             }
         }

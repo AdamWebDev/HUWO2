@@ -81,7 +81,6 @@ $(document).ready(function () {
     });
 
     var path = window.location['pathname'];
-    console.log(path);
     $('#main-nav a[href="' + path + '"]').addClass("current");
 
     // hides any rows that don't have a value in them.

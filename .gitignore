@@ -1,8 +1,7 @@
-bin/
+bin
 App_Data/
 obj/
+uploads
 Web.Config
 Web.Debug.config
 Web.Release.config
-HNHUWO2.dll
-HNHUWO2.pdb

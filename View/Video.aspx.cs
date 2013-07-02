@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HNHUWO2.Classes;
 
 namespace HNHUWO2.View
 {
@@ -20,7 +21,7 @@ namespace HNHUWO2.View
 
         protected void PopulatePage(int ID)
         {
-            WorkOrdersVideo wo = HNHUWO2.Classes.VideoWO.GetVideoWorkOrder(ID);
+            WorkOrdersVideo wo = VideoWO.GetVideoWorkOrder(ID);
             lblTitleVideo.Text = wo.Workorder.title;
             lblCoordinator.Text = wo.Workorder.User.FullName;
             lblVideoSource.Text = wo.VideoSource.HasValue ? wo.VideoSources.Value : String.Empty;
@@ -36,6 +37,18 @@ namespace HNHUWO2.View
             lblVideoDescription.Text = wo.VideoDescription;
             lblCreditsRequired.Text = wo.CreditsRequired.ToYesNoString();
             lblNotes.Text = wo.Notes;
+            lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+
+            if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
+            {
+                CoordinatorRevisions.Visible = true;
+            }
+            else
+            {
+                CoordinatorRevisions.Visible = false;
+            }
+
+            attachedFiles.Refresh();
         }
     }
 }

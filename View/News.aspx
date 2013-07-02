@@ -34,12 +34,16 @@
             <asp:Label ID="lblContact" runat="server"></asp:Label>
         </li>
         <li>
+            <label>Additional Notes</label>
+            <asp:Label ID="lblNotes" runat="server"></asp:Label>
+        </li>
+        <li>
             <label>Attached Files</label>
             <uc:FileList ID="attachedFiles" runat="server" />
         </li>
         <li>
-            <label>Additional Notes</label>
-            <asp:Label ID="lblNotes" runat="server"></asp:Label>
+            <label>Coordinator Notes</label>
+            <asp:Label ID="lblCoordinatorNotes" runat="server" ></asp:Label>
         </li>
         <li>
             <label>Activity Log</label>

@@ -24,7 +24,7 @@ namespace HNHUWO2
         {
             set
             {
-                icon.Attributes.Add("class", value + " icon-2x" );
+                icon.Attributes.Add("class", value + " icon-4x" );
             }
         }
 

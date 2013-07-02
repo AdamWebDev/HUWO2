@@ -246,9 +246,6 @@ namespace HNHUWO2.Create
                 db.WorkOrdersPrints.InsertOnSubmit(p);
                 db.SubmitChanges();
                 ID = p.ID;
-
-                WO.UploadFiles(ID,AttachedFiles.UploadedFiles);
-
             }
                 WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created");
