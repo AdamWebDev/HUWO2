@@ -14,14 +14,33 @@ namespace HNHUWO2.Reports
         {
             if (Users.IsUserDesigner() || Users.IsUserCoordinator())
             {
-                //rptReport.DataSource = HNHUWO2.Classes.Reports.ByCoordinator();
-                //rptReport.DataBind();
+
+            }
+            else
+            {
+                Response.Redirect("~/Default.aspx");
             }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            //rptReport.DataSource = HNHUWO2.Classes.Reports.ByCoordinator(txtStartDate.Text.ConvertToDate(),txtEndDate.Text.ConvertToDate());
+            rptReport.DataSource = HNHUWO2.Classes.Reports.ByCoordinator(txtStartDate.Text.ConvertToDate(),txtEndDate.Text.ConvertToDate());
+            rptReport.DataBind();
+        }
+
+        public int sum = 0;
+
+        protected void rptReport_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                sum += Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Count"));
+            }
+            else if (e.Item.ItemType == ListItemType.Footer)
+            {
+                Literal ltTotal = e.Item.FindControl("ltTotal") as Literal;
+                ltTotal.Text = sum.ToString();
+            }
         }
     }
 }

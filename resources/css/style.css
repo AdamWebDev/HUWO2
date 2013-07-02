@@ -364,23 +364,25 @@ ul.content-box-tabs {
 #main-content table {
   width: 100%;
   border-collapse: collapse; }
-  #main-content table thead th {
-    font-weight: bold;
-    border-bottom: 1px solid #ddd; }
+  #main-content table td, #main-content table th {
+    padding: 10px;
+    line-height: 1.3em; }
+#main-content thead th {
+  font-weight: bold;
+  border-bottom: 1px solid #ddd; }
 #main-content tbody {
   border-bottom: 1px solid #ddd; }
   #main-content tbody tr {
     background: #fff; }
     #main-content tbody tr.alt-row {
       background: #f3f3f3; }
-#main-content table td, #main-content table th {
-  padding: 10px;
-  line-height: 1.3em; }
-#main-content table tfoot .bulk-actions {
-  padding: 15px 0 5px 0; }
-  #main-content table tfoot .bulk-actions select {
-    padding: 4px;
-    border: 1px solid #ccc; }
+#main-content tfoot {
+  border-top: thin solid #BBB; }
+  #main-content tfoot .bulk-actions {
+    padding: 15px 0 5px 0; }
+    #main-content tfoot .bulk-actions select {
+      padding: 4px;
+      border: 1px solid #ccc; }
 
 .ajax__calendar_container td {
   padding: 0 !important;

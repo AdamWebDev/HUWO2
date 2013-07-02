@@ -204,6 +204,7 @@
     <Compile Include="Classes\NewsWO.cs" />
     <Compile Include="Classes\PrintWO.cs" />
     <Compile Include="Classes\RadioWO.cs" />
+    <Compile Include="Classes\Reports.cs" />
     <Compile Include="Classes\Users.cs" />
     <Compile Include="Classes\VideoWO.cs" />
     <Compile Include="Classes\WebWO.cs" />

@@ -14,7 +14,8 @@
     </div>
     <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
     
-    <asp:Repeater ID="rptReport" runat="server">
+    <asp:Repeater ID="rptReport" runat="server" 
+        onitemdatabound="rptReport_ItemDataBound">
         <HeaderTemplate>
             <table>
                 <thead>
@@ -32,7 +33,15 @@
             </tr>
         </ItemTemplate>
         <FooterTemplate>
-                </tbody>
+        </tbody>
+            <tfoot>
+            <tr>
+                <td>Total</td>
+                <td><asp:Literal ID="ltTotal" runat="server"></asp:Literal></td>
+                
+            </tr>
+            </tfoot>
+                
             </table>
         </FooterTemplate>
     </asp:Repeater>
