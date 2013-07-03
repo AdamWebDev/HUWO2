@@ -4,31 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using HNHUWO2.Classes;
 
 namespace HNHUWO2.Reports
 {
-    public partial class ByCoordinator : System.Web.UI.Page
+    public partial class ByProjectType : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Users.IsUserDesigner() || Users.IsUserCoordinator())
-            {
 
-            }
-            else
-            {
-                Response.Redirect("~/Default.aspx");
-            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            rptReport.DataSource = HNHUWO2.Classes.Reports.ByCoordinator(txtStartDate.Text.ConvertToDate(),txtEndDate.Text.ConvertToDate());
+            rptReport.DataSource = HNHUWO2.Classes.Reports.ByCoordinator(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
             rptReport.DataBind();
-            var items = rptReport.Items.Count;
-            rptReport.Visible = items > 0;
-            ltEmpty.Visible = items == 0;
         }
 
         public int sum = 0;

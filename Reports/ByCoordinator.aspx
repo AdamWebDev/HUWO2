@@ -6,16 +6,17 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="Filters" runat="server"></asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Main" runat="server">
 
-    <div class="inline">
-    <label class="inline">Start Date:</label><asp:TextBox ID="txtStartDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+    <div class="report-form">
+        <div class="inline">
+        <label class="inline">Start Date:</label> <asp:TextBox ID="txtStartDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+        </div>
+        <div class="inline">
+        <label class="inline">End Date:</label> <asp:TextBox ID="txtEndDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+        </div>
+        <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
     </div>
-    <div class="inline">
-    <label class="inline">End Date: </label><asp:TextBox ID="txtEndDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
-    </div>
-    <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
-    
-    <asp:Repeater ID="rptReport" runat="server" 
-        onitemdatabound="rptReport_ItemDataBound">
+
+    <asp:Repeater ID="rptReport" runat="server" onitemdatabound="rptReport_ItemDataBound">
         <HeaderTemplate>
             <table>
                 <thead>
@@ -45,6 +46,8 @@
             </table>
         </FooterTemplate>
     </asp:Repeater>
-
+    <div>
+        <asp:Literal ID="ltEmpty" runat="server" Text="Oh no! It looks like there were no work orders submitted during this time span." Visible="false"></asp:Literal>
+    </div>
     
 </asp:Content>

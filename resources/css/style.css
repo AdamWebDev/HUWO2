@@ -502,6 +502,9 @@ form select.disabled {
   border: none;
   border-bottom: thin solid #ddd; }
 
+.report-form {
+  margin-bottom: 1em; }
+
 /*************** View Work Orders ***************/
 ul.view-wo > li {
   padding: 5px;

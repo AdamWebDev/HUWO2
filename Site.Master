@@ -18,9 +18,9 @@
             <div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
 		        <div id="sidebar">
                     <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
-			            <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
+			            <h1 id="sidebar-title"><a href="#">Health Unit Work Orders</a></h1>
 			            <!-- Logo (221px wide) -->
-			            <a href="#"><img id="logo" src="/resources/images/logo.png" alt="Simpla Admin logo" /></a>
+			            <a href="#"><img id="logo" src="/resources/images/logo.png" alt="Health Unit Work Orders" /></a>
 			            <ul id="main-nav">  <!-- Accordion Menu -->
 				            <li>
                                 <asp:HyperLink ID="lnkHome" runat="server" CssClass="nav-top-item no-submenu" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
