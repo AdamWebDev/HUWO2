@@ -433,9 +433,9 @@
     </Compile>
     <Compile Include="Classes\WO.cs" />
     <Compile Include="WOLinqClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>WOLinqClasses.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
   <ItemGroup>
