@@ -5,3 +5,4 @@ uploads
 Web.Config
 Web.Debug.config
 Web.Release.config
+Web.config
