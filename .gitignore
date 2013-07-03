@@ -1,7 +1,10 @@
-bin
+bin/
 App_Data/
 obj/
-uploads
-Web.Config
+uploads/
+Properties/
 Web.Debug.config
 Web.Release.config
+*.bin
+*.dll
+*.pdb

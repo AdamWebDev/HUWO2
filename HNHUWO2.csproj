@@ -102,6 +102,7 @@
     <Content Include="Global.asax" />
     <Content Include="MyWorkOrders.aspx" />
     <Content Include="Reports\ByCoordinator.aspx" />
+    <Content Include="Reports\ByProjectType.aspx" />
     <Content Include="resources\css\jquery-ui.css">
       <DependentUpon>_jqueryui.scss</DependentUpon>
     </Content>
@@ -296,6 +297,13 @@
     <Compile Include="Reports\ByCoordinator.aspx.designer.cs">
       <DependentUpon>ByCoordinator.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ByProjectType.aspx.cs">
+      <DependentUpon>ByProjectType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ByProjectType.aspx.designer.cs">
+      <DependentUpon>ByProjectType.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Success.aspx.cs">
       <DependentUpon>Success.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,6 +442,7 @@
     <Content Include="Site.Master" />
     <Content Include="Web.sitemap" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\VM1T.pubxml" />
     <None Include="resources\css\font-awesome\font-awesome-ie7.scss" />
     <None Include="resources\css\font-awesome\_font-awesome.scss" />
     <None Include="resources\css\font-awesome\_bootstrap.scss" />
