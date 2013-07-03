@@ -98,7 +98,6 @@
     <Content Include="Create\Video.aspx" />
     <Content Include="Create\Web.aspx" />
     <Content Include="Designers\OpenWorkOrders.aspx" />
-    <Content Include="FileUpload.aspx" />
     <Content Include="Global.asax" />
     <Content Include="MyWorkOrders.aspx" />
     <Content Include="Reports\ByCoordinator.aspx" />
@@ -272,13 +271,6 @@
     </Compile>
     <Compile Include="Designers\OpenWorkOrders.aspx.designer.cs">
       <DependentUpon>OpenWorkOrders.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FileUpload.aspx.cs">
-      <DependentUpon>FileUpload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FileUpload.aspx.designer.cs">
-      <DependentUpon>FileUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

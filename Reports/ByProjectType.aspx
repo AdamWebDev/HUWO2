@@ -3,29 +3,30 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">Reports - By Project Type</asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Main" runat="server">
 
-    <div class="inline">
-    <label class="inline">Start Date:</label><asp:TextBox ID="txtStartDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+    <div class="report-form">
+        <div class="inline">
+            <label class="inline">Start Date:</label><asp:TextBox ID="txtStartDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+        </div>
+        <div class="inline">
+            <label class="inline">End Date: </label><asp:TextBox ID="txtEndDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
+        </div>
+        <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
     </div>
-    <div class="inline">
-    <label class="inline">End Date: </label><asp:TextBox ID="txtEndDate" runat="server" CssClass="datepicker text-input"></asp:TextBox>
-    </div>
-    <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
-    
     <asp:Repeater ID="rptReport" runat="server" 
         onitemdatabound="rptReport_ItemDataBound">
         <HeaderTemplate>
             <table>
                 <thead>
                     <tr>
-                        <th>Coordinator</th>
-                        <th>Number of Work Orders</th>
+                        <th scope="col">Coordinator</th>
+                        <th scope="col">Number of Work Orders</th>
                     </tr>
                 </thead>
                 <tbody>
         </HeaderTemplate>
         <ItemTemplate>
             <tr>
-                <td><asp:Literal ID="ltProjectType" runat="server" Text='<%# Eval("ProjectType") %>' /></td>
+                <th scope="row"><asp:Literal ID="ltProjectType" runat="server" Text='<%# Eval("ProjectType") %>' /></th>
                 <td><asp:Literal ID="ltCount" runat="server" Text='<%# Eval("Count") %>' /></td>
             </tr>
         </ItemTemplate>
@@ -33,7 +34,7 @@
         </tbody>
             <tfoot>
             <tr>
-                <td>Total</td>
+                <th scope="row">Total</th>
                 <td><asp:Literal ID="ltTotal" runat="server"></asp:Literal></td>
                 
             </tr>

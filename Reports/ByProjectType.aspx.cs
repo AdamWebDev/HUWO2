@@ -16,7 +16,7 @@ namespace HNHUWO2.Reports
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            rptReport.DataSource = HNHUWO2.Classes.Reports.ByCoordinator(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
+            rptReport.DataSource = HNHUWO2.Classes.Reports.ByProjectType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
             rptReport.DataBind();
         }
 

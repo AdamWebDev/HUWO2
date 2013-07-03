@@ -8,3 +8,5 @@ Web.Release.config
 *.bin
 *.dll
 *.pdb
+bin/HNHUWO2.dll
+bin/HNHUWO2.pdb
