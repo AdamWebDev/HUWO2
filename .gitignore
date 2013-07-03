@@ -1,8 +1,8 @@
-bin/
-App_Data/
-obj/
-uploads/
-Properties/
+bin
+App_Data
+obj
+uploads
+Properties
 Web.Debug.config
 Web.Release.config
 *.bin
