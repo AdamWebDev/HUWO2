@@ -284,6 +284,7 @@
       <Association Name="PrintTypeOfDisplay_WorkOrdersPrint" Member="PrintTypeOfDisplay" ThisKey="TypeOfDisplay" OtherKey="ID" Type="PrintTypeOfDisplay" IsForeignKey="true" />
       <Association Name="PrintTypeOfProject_WorkOrdersPrint" Member="PrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="PrintTypeOfProject" IsForeignKey="true" />
       <Association Name="Workorder_WorkOrdersPrint" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+      <Association Name="lookupPrintTypeOfProject_WorkOrdersPrint" Member="lookupPrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="lookupPrintTypeOfProject" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LogActivity" Member="LogActivities">
@@ -374,6 +375,14 @@
       <Column Name="Filename" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="Revision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Workorder_File" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintTypeOfProject" Member="lookupPrintTypeOfProjects">
+    <Type Name="lookupPrintTypeOfProject">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="lookupPrintTypeOfProject_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="ProjectType" Type="WorkOrdersPrint" />
     </Type>
   </Table>
 </Database>

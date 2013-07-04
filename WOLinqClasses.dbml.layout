@@ -8,10 +8,10 @@
         <elementListCompartment Id="6c5ab89e-ef1b-4147-9114-7326009d7ae9" absoluteBounds="3.5150000000000006, 23.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1f4bfc3d-c90b-4945-b363-19dec7bb44b6" absoluteBounds="3.5, 6.875, 2, 1.3862939453124996">
+    <classShape Id="1f4bfc3d-c90b-4945-b363-19dec7bb44b6" absoluteBounds="3.5, 6.375, 2, 1.3862939453124996">
       <DataClassMoniker Name="/WOLinqClassesDataContext/PrintColourInfo" />
       <nestedChildShapes>
-        <elementListCompartment Id="3c6ff524-668c-4f1e-9af8-56c33ade4c59" absoluteBounds="3.5150000000000006, 7.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3c6ff524-668c-4f1e-9af8-56c33ade4c59" absoluteBounds="3.5150000000000006, 6.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="d1b078b8-2a09-4e1b-8a11-cc03b3841237" absoluteBounds="3.5, 2.625, 2, 1.3862939453125023">
@@ -211,7 +211,7 @@
         <elementListCompartment Id="bcf74518-3b97-4ba4-989a-e6e6401a8d08" absoluteBounds="6.14, 7.335, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 7.56814697265625); (5.72916666666667 : 7.56814697265625 : JumpStart); (5.89583333333333 : 7.56814697265625 : JumpEnd); (6.125 : 7.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 7.31814697265625); (5.72916666666667 : 7.31814697265625 : JumpStart); (5.89583333333333 : 7.31814697265625 : JumpEnd); (6.125 : 7.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/WOLinqClassesDataContext/PrintColourInfo/PrintColourInfo_WorkOrdersPrint" />
       <nodes>
         <classShapeMoniker Id="1f4bfc3d-c90b-4945-b363-19dec7bb44b6" />
@@ -225,7 +225,7 @@
         <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.6675439453125); (5.72916666666667 : 5.6675439453125 : JumpStart); (5.89583333333333 : 5.6675439453125 : JumpEnd); (6.1718725 : 5.6675439453125); (6.1718725 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 5.6675439453125); (5.72916666666667 : 5.6675439453125 : JumpStart); (5.89583333333333 : 5.6675439453125 : JumpEnd); (6.199216875 : 5.6675439453125); (6.199216875 : 6.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/WOLinqClassesDataContext/PrintMethod/PrintMethod_WorkOrdersPrint" />
       <nodes>
         <classShapeMoniker Id="de548c41-473b-45e9-8adb-6f305a614ca8" />
@@ -253,7 +253,7 @@
         <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 20.375); (4.5 : 20); (5.79166666666667 : 20 : JumpStart); (6.09895833333333 : 20 : JumpEnd); (6.26041666666667 : 20 : JumpStart); (6.42708333333333 : 20 : JumpEnd); (8.32291666666667 : 20 : JumpStart); (8.48958333333333 : 20 : JumpEnd); (8.75 : 20); (8.75 : 9.01040771484375); (8.48958333333333 : 9.01040771484375 : JumpStart); (8.32291666666667 : 9.01040771484375 : JumpEnd); (8.125 : 9.01040771484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5 : 20.375); (4.5 : 20); (6.26041666666667 : 20 : JumpStart); (6.42708333333333 : 20 : JumpEnd); (8.32291666666667 : 20 : JumpStart); (8.48958333333333 : 20 : JumpEnd); (8.75 : 20); (8.75 : 9.01040771484375); (8.48958333333333 : 9.01040771484375 : JumpStart); (8.32291666666667 : 9.01040771484375 : JumpEnd); (8.125 : 9.01040771484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/PrintTypeOfProject/PrintTypeOfProject_WorkOrdersPrint" />
       <nodes>
         <classShapeMoniker Id="76f04d0a-3754-4695-a1ee-2fee2946c37c" />
@@ -299,14 +299,14 @@
         <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.125 : 10.5729077148437); (8.32291666666667 : 10.5729077148437 : JumpStart); (8.48958333333333 : 10.5729077148437 : JumpEnd); (8.79166666666667 : 10.5729077148437 : JumpStart); (8.95833333333333 : 10.5729077148437 : JumpEnd); (9.125 : 10.5729077148437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.125 : 10.5729077148437); (8.32291666666667 : 10.5729077148437 : JumpStart); (8.48958333333333 : 10.5729077148437 : JumpEnd); (9.125 : 10.5729077148437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/WorkOrdersPrint/WorkOrdersPrint_WorkOrdersWeb" />
       <nodes>
         <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
         <classShapeMoniker Id="89253401-a8e7-478c-bb14-ec92b1f2d4a4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.5 : 23.9431469726563); (10.0416666666667 : 23.9431469726563 : JumpStart); (10.2083333333333 : 23.9431469726563 : JumpEnd); (10.5729191666667 : 23.9431469726563 : JumpStart); (10.7395858333333 : 23.9431469726563 : JumpEnd); (11.4687495 : 23.9431469726563); (11.4687495 : 8.8670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.5 : 23.9431469726563); (9.51041416666667 : 23.9431469726563 : JumpStart); (9.67708083333333 : 23.9431469726563 : JumpEnd); (10.5729191666667 : 23.9431469726563 : JumpStart); (10.7395858333333 : 23.9431469726563 : JumpEnd); (11.4687495 : 23.9431469726563); (11.4687495 : 8.8670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/RadioStations/RadioStations_WorkOrdersRadio" />
       <nodes>
         <classShapeMoniker Id="5e0f6df5-11b4-42a1-9d0a-028f292d92b1" />
@@ -333,28 +333,28 @@
         <classShapeMoniker Id="94b80047-b0ea-4f29-bc39-98d284bdd457" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.5108503300781); (5.75 : 14.5108503300781); (5.75 : 12.5); (5.97916666666667 : 12.5 : JumpStart); (6.23958333333333 : 12.5 : JumpEnd); (8.32291666666667 : 12.5 : JumpStart); (8.48958333333333 : 12.5 : JumpEnd); (8.875 : 12.5); (8.875 : 9.75); (10.7499995 : 9.75); (10.7499995 : 8.8670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 14.5108503300781); (5.75 : 14.5108503300781); (5.75 : 12.5); (5.97916666666667 : 12.5 : JumpStart); (6.23958333333333 : 12.5 : JumpEnd); (8.32291666666667 : 12.5 : JumpStart); (8.48958333333333 : 12.5 : JumpEnd); (8.66666666666667 : 12.5 : JumpStart); (8.83333333333333 : 12.5 : JumpEnd); (8.875 : 12.5); (8.875 : 9.75); (10.7499995 : 9.75); (10.7499995 : 8.8670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersRadio" />
       <nodes>
         <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
         <classShapeMoniker Id="986c51dc-6c30-49ed-adbd-462b3b30b1d5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 15.228563077524); (5.81607443490112 : 15.5446375124251 : JumpStart); (5.93392556509888 : 15.6624886426229 : JumpEnd); (5.9375 : 15.666063077524); (5.9375 : 17.7508048502604); (6.07291666666667 : 17.7508048502604 : JumpStart); (6.23958333333333 : 17.7508048502604 : JumpEnd); (6.25 : 17.7508048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 15.228563077524); (5.9375 : 15.666063077524); (5.9375 : 17.7508048502604); (6.25 : 17.7508048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersVideo" />
       <nodes>
         <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
         <classShapeMoniker Id="95cdee9d-a112-451c-8809-01816bb594d3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.9708781598558); (5.79166666666667 : 14.9708781598558 : JumpStart); (5.95833333333333 : 14.9708781598558 : JumpEnd); (6.140625 : 14.9708781598558); (6.140625 : 11.1458154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 14.9708781598558); (6.140625 : 14.9708781598558); (6.140625 : 11.1458154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersPrint" />
       <nodes>
         <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
         <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 15.2280803082933); (5.79166666666667 : 15.2280803082933 : JumpStart); (5.95833333333333 : 15.2280803082933 : JumpEnd); (5.97916666666667 : 15.2280803082933 : JumpStart); (6.23958333333333 : 15.2280803082933 : JumpEnd); (8.32291666666667 : 15.2280803082933 : JumpStart); (8.48958333333333 : 15.2280803082933 : JumpEnd); (9.125 : 15.2280803082933)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 15.2280803082933); (5.97916666666667 : 15.2280803082933 : JumpStart); (6.23958333333333 : 15.2280803082933 : JumpEnd); (8.32291666666667 : 15.2280803082933 : JumpStart); (8.48958333333333 : 15.2280803082933 : JumpEnd); (9.125 : 15.2280803082933)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WOLinqClassesDataContext/Workorder/Workorder_WorkOrdersWeb" />
       <nodes>
         <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
@@ -393,6 +393,19 @@
       <nodes>
         <classShapeMoniker Id="531f6fc5-977c-4ecd-9d2c-72512f2f4ceb" />
         <classShapeMoniker Id="35cb7171-9911-44b2-9800-152e17e0952f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4a6c010a-3da2-440a-bc67-32f9968a210b" absoluteBounds="2, 4.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WOLinqClassesDataContext/lookupPrintTypeOfProject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b49bc9d5-c883-4544-a08f-221d729de2be" absoluteBounds="2.015, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 5.5112939453125); (3.125 : 8.38064697265625); (5.72916666666667 : 8.38064697265625 : JumpStart); (5.89583333333333 : 8.38064697265625 : JumpEnd); (6.125 : 8.38064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WOLinqClassesDataContext/lookupPrintTypeOfProject/lookupPrintTypeOfProject_WorkOrdersPrint" />
+      <nodes>
+        <classShapeMoniker Id="4a6c010a-3da2-440a-bc67-32f9968a210b" />
+        <classShapeMoniker Id="ed1cdd7c-0526-4e4a-b187-8713f9e27384" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

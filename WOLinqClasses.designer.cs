@@ -129,6 +129,9 @@ namespace HNHUWO2
     partial void InsertFile(File instance);
     partial void UpdateFile(File instance);
     partial void DeleteFile(File instance);
+    partial void InsertlookupPrintTypeOfProject(lookupPrintTypeOfProject instance);
+    partial void UpdatelookupPrintTypeOfProject(lookupPrintTypeOfProject instance);
+    partial void DeletelookupPrintTypeOfProject(lookupPrintTypeOfProject instance);
     #endregion
 		
 		public WOLinqClassesDataContext() : 
@@ -430,6 +433,14 @@ namespace HNHUWO2
 			get
 			{
 				return this.GetTable<File>();
+			}
+		}
+		
+		public System.Data.Linq.Table<lookupPrintTypeOfProject> lookupPrintTypeOfProjects
+		{
+			get
+			{
+				return this.GetTable<lookupPrintTypeOfProject>();
 			}
 		}
 	}
@@ -5240,6 +5251,8 @@ namespace HNHUWO2
 		
 		private EntityRef<Workorder> _Workorder;
 		
+		private EntityRef<lookupPrintTypeOfProject> _lookupPrintTypeOfProject;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5293,6 +5306,7 @@ namespace HNHUWO2
 			this._PrintTypeOfDisplay = default(EntityRef<PrintTypeOfDisplay>);
 			this._PrintTypeOfProject = default(EntityRef<PrintTypeOfProject>);
 			this._Workorder = default(EntityRef<Workorder>);
+			this._lookupPrintTypeOfProject = default(EntityRef<lookupPrintTypeOfProject>);
 			OnCreated();
 		}
 		
@@ -5351,7 +5365,7 @@ namespace HNHUWO2
 			{
 				if ((this._ProjectType != value))
 				{
-					if (this._PrintTypeOfProject.HasLoadedOrAssignedValue)
+					if ((this._PrintTypeOfProject.HasLoadedOrAssignedValue || this._lookupPrintTypeOfProject.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -5969,6 +5983,40 @@ namespace HNHUWO2
 						this._wID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Workorder");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="lookupPrintTypeOfProject_WorkOrdersPrint", Storage="_lookupPrintTypeOfProject", ThisKey="ProjectType", OtherKey="ID", IsForeignKey=true)]
+		public lookupPrintTypeOfProject lookupPrintTypeOfProject
+		{
+			get
+			{
+				return this._lookupPrintTypeOfProject.Entity;
+			}
+			set
+			{
+				lookupPrintTypeOfProject previousValue = this._lookupPrintTypeOfProject.Entity;
+				if (((previousValue != value) 
+							|| (this._lookupPrintTypeOfProject.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._lookupPrintTypeOfProject.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._lookupPrintTypeOfProject.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._ProjectType = value.ID;
+					}
+					else
+					{
+						this._ProjectType = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("lookupPrintTypeOfProject");
 				}
 			}
 		}
@@ -8009,6 +8057,144 @@ namespace HNHUWO2
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.lookupPrintTypeOfProject")]
+	public partial class lookupPrintTypeOfProject : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Value;
+		
+		private bool _Active;
+		
+		private EntitySet<WorkOrdersPrint> _WorkOrdersPrints;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
+    #endregion
+		
+		public lookupPrintTypeOfProject()
+		{
+			this._WorkOrdersPrints = new EntitySet<WorkOrdersPrint>(new Action<WorkOrdersPrint>(this.attach_WorkOrdersPrints), new Action<WorkOrdersPrint>(this.detach_WorkOrdersPrints));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="lookupPrintTypeOfProject_WorkOrdersPrint", Storage="_WorkOrdersPrints", ThisKey="ID", OtherKey="ProjectType")]
+		public EntitySet<WorkOrdersPrint> WorkOrdersPrints
+		{
+			get
+			{
+				return this._WorkOrdersPrints;
+			}
+			set
+			{
+				this._WorkOrdersPrints.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_WorkOrdersPrints(WorkOrdersPrint entity)
+		{
+			this.SendPropertyChanging();
+			entity.lookupPrintTypeOfProject = this;
+		}
+		
+		private void detach_WorkOrdersPrints(WorkOrdersPrint entity)
+		{
+			this.SendPropertyChanging();
+			entity.lookupPrintTypeOfProject = null;
 		}
 	}
 }
