@@ -20,7 +20,7 @@ namespace HNHUWO2.Create
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
                 ddCoordinators.DataBind();
-                                
+
                 ddTypeProject.DataSource = PrintWO.GetTypeOfProjects();
                 ddTypeProject.DataTextField = "Value";
                 ddTypeProject.DataValueField = "ID";
@@ -71,6 +71,15 @@ namespace HNHUWO2.Create
                 else // not a quote
                 {
                     ltPageTitle.Text = ltContentTitle.Text = "Create a Print Work Order";
+                }
+            } 
+            else // if it was a postback, the work order has been created!
+            {
+                if(hdnIsWOCreated.Value.Equals("1")) {
+                    if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
+                        Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
+                    else // if not, success!!
+                        Response.Redirect("~/MyWorkOrders.aspx?success=true");
                 }
             }
         }
@@ -245,14 +254,12 @@ namespace HNHUWO2.Create
                 p.Notes = txtNotes.Text;
                 db.WorkOrdersPrints.InsertOnSubmit(p);
                 db.SubmitChanges();
-                ID = p.ID;
+                ID = (int)p.wID;
             }
                 WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created");
-                if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
-                    Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
-                else // if not, success!!
-                    Response.Redirect("~/MyWorkOrders.aspx?success=true");
+                hdnIsWOCreated.Value = "1";
+                
         }
     }
 }
