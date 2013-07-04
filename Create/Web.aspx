@@ -22,8 +22,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
 <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Your work order has not been saved. Please note the following fields that are missing information:" runat="server" CssClass="error-summary"   />
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
+            
             <uc:Notification ID="notMain" runat="server" Visible="false"/>
     
             <label>Type of Web Work</label>
@@ -33,6 +32,9 @@
             <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
             <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator is Required" CssClass="input-notification error png_bg" />
 
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+            
             <asp:PlaceHolder ID="phWebsite" runat="server" Visible="false">
                 <label>Website</label>
                 <asp:DropDownList ID="ddWebsite" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true" OnSelectedIndexChanged="ddWebsite_SelectedIndexChanged"></asp:DropDownList>
@@ -178,15 +180,19 @@
             <asp:RequiredFieldValidator ID="reqFacebookContent" runat="server" ControlToValidate="txtFacebookContent" ErrorMessage="Content is Required" CssClass="input-notification error png_bg" Enabled="false" />
         </asp:PlaceHolder>
 
-        <asp:PlaceHolder ID="phAdditionalInfo" runat="server" Visible="false">
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="ddTypeWebWork" />
+        </Triggers>
+    </asp:UpdatePanel>
+            
+
             <label>Attach files:</label>
             <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads"></telerik:radasyncupload>
 
             <label>Additional Notes:</label>
             <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
-        </asp:PlaceHolder>
 
-        <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button" Visible="false" onclick="btnSubmit_Click" /></p>
-    </ContentTemplate>
-    </asp:UpdatePanel>
+        <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button" onclick="btnSubmit_Click" /></p>
+
 </asp:Content>

@@ -19,6 +19,7 @@ namespace HNHUWO2.Create
 
             if (!Page.IsPostBack)
             {
+                Function.AddInitialItem(ddCoordinators);
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
@@ -29,16 +30,19 @@ namespace HNHUWO2.Create
                 chkLocation.DataValueField = "ID";
                 chkLocation.DataBind();
 
+                Function.AddInitialItem(ddTypeWebWork);
                 ddTypeWebWork.DataSource = WebWO.GetTypes();
                 ddTypeWebWork.DataValueField = "ID";
                 ddTypeWebWork.DataTextField = "Value";
                 ddTypeWebWork.DataBind();
 
+                Function.AddInitialItem(ddTypeOfUpdate);
                 ddTypeOfUpdate.DataSource = WebWO.GetUpdateTypes();
                 ddTypeOfUpdate.DataValueField = "ID";
                 ddTypeOfUpdate.DataTextField = "Value";
                 ddTypeOfUpdate.DataBind();
 
+                Function.AddInitialItem(ddWebsite);
                 ddWebsite.DataSource = WebWO.GetWebSites();
                 ddWebsite.DataValueField = "ID";
                 ddWebsite.DataTextField = "Value";
@@ -56,11 +60,9 @@ namespace HNHUWO2.Create
 
         protected void ddTypeWebWork_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnSubmit.Visible = true;
             if (ddTypeWebWork.SelectedValue.Equals("1")) // new content
             {
                 Function.ShowControls(phNewContent);
-                Function.ShowControls(phAdditionalInfo);
                 Function.ClearControls(phWebsite, false);
                 Function.ClearControls(phUpdateContent, false);
                 Function.ClearControls(phNewWebsite, false);
@@ -71,7 +73,6 @@ namespace HNHUWO2.Create
             {
                 Function.ShowControls(phWebsite);
                 Function.ShowControls(phUpdateContent);
-                Function.ShowControls(phAdditionalInfo);
                 Function.ClearControls(phNewContent, false);
                 Function.ClearControls(phNewWebsite, false);
                 Function.ClearControls(phCD989WebAd, false);
@@ -80,7 +81,6 @@ namespace HNHUWO2.Create
             else if (ddTypeWebWork.SelectedValue.Equals("3")) // new website
             {
                 Function.ShowControls(phNewWebsite);
-                Function.ShowControls(phAdditionalInfo);
                 Function.ClearControls(phWebsite, false);
                 Function.ClearControls(phNewContent, false);
                 Function.ClearControls(phUpdateContent, false);
@@ -90,7 +90,6 @@ namespace HNHUWO2.Create
             else if (ddTypeWebWork.SelectedValue.Equals("4")) // cd989
             {
                 Function.ShowControls(phCD989WebAd);
-                Function.ShowControls(phAdditionalInfo);
                 Function.ClearControls(phWebsite, false);
                 Function.ClearControls(phNewContent, false);
                 Function.ClearControls(phUpdateContent, false);
@@ -100,7 +99,6 @@ namespace HNHUWO2.Create
             else if (ddTypeWebWork.SelectedValue.Equals("5")) // facebook status update
             {
                 Function.ShowControls(phFacebookStatus);
-                Function.ShowControls(phAdditionalInfo);
                 Function.ClearControls(phWebsite, false);
                 Function.ClearControls(phNewContent, false);
                 Function.ClearControls(phUpdateContent, false);
@@ -115,7 +113,6 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phNewWebsite, false);
                 Function.ClearControls(phCD989WebAd, false);
                 Function.ClearControls(phFacebookStatus, false);
-                Function.ClearControls(phAdditionalInfo, false);
             }
         }
 
@@ -272,6 +269,8 @@ namespace HNHUWO2.Create
                 db.WorkOrdersWebs.InsertOnSubmit(wow);
                 db.SubmitChanges();
                 ID = w.ID;
+
+                WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
             }
             
             Function.LogAction(ID, "Work order created.");

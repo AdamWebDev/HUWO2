@@ -58,6 +58,8 @@ namespace HNHUWO2.View
                 lblFacebookContent.Text = wo.FacebookContent;
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+                pnNotification.Visible = wo.pID.HasValue;
+                lnkRelatedWO.NavigateUrl = "~/View/Default.aspx?type=1&ID=" + wo.pID.ToString();
 
                 if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
                 {
