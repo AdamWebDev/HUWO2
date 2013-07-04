@@ -114,9 +114,6 @@ namespace HNHUWO2
     partial void InsertLogError(LogError instance);
     partial void UpdateLogError(LogError instance);
     partial void DeleteLogError(LogError instance);
-    partial void InsertWorkOrdersPrint(WorkOrdersPrint instance);
-    partial void UpdateWorkOrdersPrint(WorkOrdersPrint instance);
-    partial void DeleteWorkOrdersPrint(WorkOrdersPrint instance);
     partial void InsertLogActivity(LogActivity instance);
     partial void UpdateLogActivity(LogActivity instance);
     partial void DeleteLogActivity(LogActivity instance);
@@ -132,6 +129,9 @@ namespace HNHUWO2
     partial void InsertlookupPrintTypeOfProject(lookupPrintTypeOfProject instance);
     partial void UpdatelookupPrintTypeOfProject(lookupPrintTypeOfProject instance);
     partial void DeletelookupPrintTypeOfProject(lookupPrintTypeOfProject instance);
+    partial void InsertWorkOrdersPrint(WorkOrdersPrint instance);
+    partial void UpdateWorkOrdersPrint(WorkOrdersPrint instance);
+    partial void DeleteWorkOrdersPrint(WorkOrdersPrint instance);
     #endregion
 		
 		public WOLinqClassesDataContext() : 
@@ -388,14 +388,6 @@ namespace HNHUWO2
 			}
 		}
 		
-		public System.Data.Linq.Table<WorkOrdersPrint> WorkOrdersPrints
-		{
-			get
-			{
-				return this.GetTable<WorkOrdersPrint>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LogActivity> LogActivities
 		{
 			get
@@ -441,6 +433,14 @@ namespace HNHUWO2
 			get
 			{
 				return this.GetTable<lookupPrintTypeOfProject>();
+			}
+		}
+		
+		public System.Data.Linq.Table<WorkOrdersPrint> WorkOrdersPrints
+		{
+			get
+			{
+				return this.GetTable<WorkOrdersPrint>();
 			}
 		}
 	}
@@ -5191,869 +5191,6 @@ namespace HNHUWO2
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WorkOrdersPrint")]
-	public partial class WorkOrdersPrint : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _wID;
-		
-		private System.Nullable<int> _ProjectType;
-		
-		private string _ProjectTypeOther;
-		
-		private System.Nullable<int> _TypeOfDisplay;
-		
-		private string _TypeOfDisplayOther;
-		
-		private string _PromoItem;
-		
-		private System.Nullable<int> _PrintingMethod;
-		
-		private string _Budget;
-		
-		private System.Nullable<int> _PaperSize;
-		
-		private string _CustomPaperSize;
-		
-		private System.Nullable<int> _PaperType;
-		
-		private string _NumberCopies;
-		
-		private System.Nullable<int> _ColourInfo;
-		
-		private System.Nullable<bool> _FullBleed;
-		
-		private System.Nullable<int> _Credit;
-		
-		private string _CreditName;
-		
-		private string _Notes;
-		
-		private EntitySet<WorkOrdersWeb> _WorkOrdersWebs;
-		
-		private EntityRef<PrintColourInfo> _PrintColourInfo;
-		
-		private EntityRef<PrintCreditType> _PrintCreditType;
-		
-		private EntityRef<PrintMethod> _PrintMethod;
-		
-		private EntityRef<PrintPaperSize> _PrintPaperSize;
-		
-		private EntityRef<PrintPaperType> _PrintPaperType;
-		
-		private EntityRef<PrintTypeOfDisplay> _PrintTypeOfDisplay;
-		
-		private EntityRef<PrintTypeOfProject> _PrintTypeOfProject;
-		
-		private EntityRef<Workorder> _Workorder;
-		
-		private EntityRef<lookupPrintTypeOfProject> _lookupPrintTypeOfProject;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnwIDChanging(System.Nullable<int> value);
-    partial void OnwIDChanged();
-    partial void OnProjectTypeChanging(System.Nullable<int> value);
-    partial void OnProjectTypeChanged();
-    partial void OnProjectTypeOtherChanging(string value);
-    partial void OnProjectTypeOtherChanged();
-    partial void OnTypeOfDisplayChanging(System.Nullable<int> value);
-    partial void OnTypeOfDisplayChanged();
-    partial void OnTypeOfDisplayOtherChanging(string value);
-    partial void OnTypeOfDisplayOtherChanged();
-    partial void OnPromoItemChanging(string value);
-    partial void OnPromoItemChanged();
-    partial void OnPrintingMethodChanging(System.Nullable<int> value);
-    partial void OnPrintingMethodChanged();
-    partial void OnBudgetChanging(string value);
-    partial void OnBudgetChanged();
-    partial void OnPaperSizeChanging(System.Nullable<int> value);
-    partial void OnPaperSizeChanged();
-    partial void OnCustomPaperSizeChanging(string value);
-    partial void OnCustomPaperSizeChanged();
-    partial void OnPaperTypeChanging(System.Nullable<int> value);
-    partial void OnPaperTypeChanged();
-    partial void OnNumberCopiesChanging(string value);
-    partial void OnNumberCopiesChanged();
-    partial void OnColourInfoChanging(System.Nullable<int> value);
-    partial void OnColourInfoChanged();
-    partial void OnFullBleedChanging(System.Nullable<bool> value);
-    partial void OnFullBleedChanged();
-    partial void OnCreditChanging(System.Nullable<int> value);
-    partial void OnCreditChanged();
-    partial void OnCreditNameChanging(string value);
-    partial void OnCreditNameChanged();
-    partial void OnNotesChanging(string value);
-    partial void OnNotesChanged();
-    #endregion
-		
-		public WorkOrdersPrint()
-		{
-			this._WorkOrdersWebs = new EntitySet<WorkOrdersWeb>(new Action<WorkOrdersWeb>(this.attach_WorkOrdersWebs), new Action<WorkOrdersWeb>(this.detach_WorkOrdersWebs));
-			this._PrintColourInfo = default(EntityRef<PrintColourInfo>);
-			this._PrintCreditType = default(EntityRef<PrintCreditType>);
-			this._PrintMethod = default(EntityRef<PrintMethod>);
-			this._PrintPaperSize = default(EntityRef<PrintPaperSize>);
-			this._PrintPaperType = default(EntityRef<PrintPaperType>);
-			this._PrintTypeOfDisplay = default(EntityRef<PrintTypeOfDisplay>);
-			this._PrintTypeOfProject = default(EntityRef<PrintTypeOfProject>);
-			this._Workorder = default(EntityRef<Workorder>);
-			this._lookupPrintTypeOfProject = default(EntityRef<lookupPrintTypeOfProject>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_wID", DbType="Int")]
-		public System.Nullable<int> wID
-		{
-			get
-			{
-				return this._wID;
-			}
-			set
-			{
-				if ((this._wID != value))
-				{
-					if (this._Workorder.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnwIDChanging(value);
-					this.SendPropertyChanging();
-					this._wID = value;
-					this.SendPropertyChanged("wID");
-					this.OnwIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectType", DbType="Int")]
-		public System.Nullable<int> ProjectType
-		{
-			get
-			{
-				return this._ProjectType;
-			}
-			set
-			{
-				if ((this._ProjectType != value))
-				{
-					if ((this._PrintTypeOfProject.HasLoadedOrAssignedValue || this._lookupPrintTypeOfProject.HasLoadedOrAssignedValue))
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProjectTypeChanging(value);
-					this.SendPropertyChanging();
-					this._ProjectType = value;
-					this.SendPropertyChanged("ProjectType");
-					this.OnProjectTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectTypeOther", DbType="NVarChar(255)")]
-		public string ProjectTypeOther
-		{
-			get
-			{
-				return this._ProjectTypeOther;
-			}
-			set
-			{
-				if ((this._ProjectTypeOther != value))
-				{
-					this.OnProjectTypeOtherChanging(value);
-					this.SendPropertyChanging();
-					this._ProjectTypeOther = value;
-					this.SendPropertyChanged("ProjectTypeOther");
-					this.OnProjectTypeOtherChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeOfDisplay", DbType="Int")]
-		public System.Nullable<int> TypeOfDisplay
-		{
-			get
-			{
-				return this._TypeOfDisplay;
-			}
-			set
-			{
-				if ((this._TypeOfDisplay != value))
-				{
-					if (this._PrintTypeOfDisplay.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTypeOfDisplayChanging(value);
-					this.SendPropertyChanging();
-					this._TypeOfDisplay = value;
-					this.SendPropertyChanged("TypeOfDisplay");
-					this.OnTypeOfDisplayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeOfDisplayOther", DbType="NVarChar(255)")]
-		public string TypeOfDisplayOther
-		{
-			get
-			{
-				return this._TypeOfDisplayOther;
-			}
-			set
-			{
-				if ((this._TypeOfDisplayOther != value))
-				{
-					this.OnTypeOfDisplayOtherChanging(value);
-					this.SendPropertyChanging();
-					this._TypeOfDisplayOther = value;
-					this.SendPropertyChanged("TypeOfDisplayOther");
-					this.OnTypeOfDisplayOtherChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PromoItem", DbType="NVarChar(255)")]
-		public string PromoItem
-		{
-			get
-			{
-				return this._PromoItem;
-			}
-			set
-			{
-				if ((this._PromoItem != value))
-				{
-					this.OnPromoItemChanging(value);
-					this.SendPropertyChanging();
-					this._PromoItem = value;
-					this.SendPropertyChanged("PromoItem");
-					this.OnPromoItemChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintingMethod", DbType="Int")]
-		public System.Nullable<int> PrintingMethod
-		{
-			get
-			{
-				return this._PrintingMethod;
-			}
-			set
-			{
-				if ((this._PrintingMethod != value))
-				{
-					if (this._PrintMethod.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPrintingMethodChanging(value);
-					this.SendPropertyChanging();
-					this._PrintingMethod = value;
-					this.SendPropertyChanged("PrintingMethod");
-					this.OnPrintingMethodChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Budget", DbType="NVarChar(10)")]
-		public string Budget
-		{
-			get
-			{
-				return this._Budget;
-			}
-			set
-			{
-				if ((this._Budget != value))
-				{
-					this.OnBudgetChanging(value);
-					this.SendPropertyChanging();
-					this._Budget = value;
-					this.SendPropertyChanged("Budget");
-					this.OnBudgetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaperSize", DbType="Int")]
-		public System.Nullable<int> PaperSize
-		{
-			get
-			{
-				return this._PaperSize;
-			}
-			set
-			{
-				if ((this._PaperSize != value))
-				{
-					if (this._PrintPaperSize.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPaperSizeChanging(value);
-					this.SendPropertyChanging();
-					this._PaperSize = value;
-					this.SendPropertyChanged("PaperSize");
-					this.OnPaperSizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomPaperSize", DbType="NVarChar(50)")]
-		public string CustomPaperSize
-		{
-			get
-			{
-				return this._CustomPaperSize;
-			}
-			set
-			{
-				if ((this._CustomPaperSize != value))
-				{
-					this.OnCustomPaperSizeChanging(value);
-					this.SendPropertyChanging();
-					this._CustomPaperSize = value;
-					this.SendPropertyChanged("CustomPaperSize");
-					this.OnCustomPaperSizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaperType", DbType="Int")]
-		public System.Nullable<int> PaperType
-		{
-			get
-			{
-				return this._PaperType;
-			}
-			set
-			{
-				if ((this._PaperType != value))
-				{
-					if (this._PrintPaperType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPaperTypeChanging(value);
-					this.SendPropertyChanging();
-					this._PaperType = value;
-					this.SendPropertyChanged("PaperType");
-					this.OnPaperTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberCopies", DbType="NVarChar(50)")]
-		public string NumberCopies
-		{
-			get
-			{
-				return this._NumberCopies;
-			}
-			set
-			{
-				if ((this._NumberCopies != value))
-				{
-					this.OnNumberCopiesChanging(value);
-					this.SendPropertyChanging();
-					this._NumberCopies = value;
-					this.SendPropertyChanged("NumberCopies");
-					this.OnNumberCopiesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColourInfo", DbType="Int")]
-		public System.Nullable<int> ColourInfo
-		{
-			get
-			{
-				return this._ColourInfo;
-			}
-			set
-			{
-				if ((this._ColourInfo != value))
-				{
-					if (this._PrintColourInfo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnColourInfoChanging(value);
-					this.SendPropertyChanging();
-					this._ColourInfo = value;
-					this.SendPropertyChanged("ColourInfo");
-					this.OnColourInfoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullBleed", DbType="Bit")]
-		public System.Nullable<bool> FullBleed
-		{
-			get
-			{
-				return this._FullBleed;
-			}
-			set
-			{
-				if ((this._FullBleed != value))
-				{
-					this.OnFullBleedChanging(value);
-					this.SendPropertyChanging();
-					this._FullBleed = value;
-					this.SendPropertyChanged("FullBleed");
-					this.OnFullBleedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Credit", DbType="Int")]
-		public System.Nullable<int> Credit
-		{
-			get
-			{
-				return this._Credit;
-			}
-			set
-			{
-				if ((this._Credit != value))
-				{
-					if (this._PrintCreditType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCreditChanging(value);
-					this.SendPropertyChanging();
-					this._Credit = value;
-					this.SendPropertyChanged("Credit");
-					this.OnCreditChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreditName", DbType="NVarChar(100)")]
-		public string CreditName
-		{
-			get
-			{
-				return this._CreditName;
-			}
-			set
-			{
-				if ((this._CreditName != value))
-				{
-					this.OnCreditNameChanging(value);
-					this.SendPropertyChanging();
-					this._CreditName = value;
-					this.SendPropertyChanged("CreditName");
-					this.OnCreditNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string Notes
-		{
-			get
-			{
-				return this._Notes;
-			}
-			set
-			{
-				if ((this._Notes != value))
-				{
-					this.OnNotesChanging(value);
-					this.SendPropertyChanging();
-					this._Notes = value;
-					this.SendPropertyChanged("Notes");
-					this.OnNotesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkOrdersPrint_WorkOrdersWeb", Storage="_WorkOrdersWebs", ThisKey="ID", OtherKey="pID")]
-		public EntitySet<WorkOrdersWeb> WorkOrdersWebs
-		{
-			get
-			{
-				return this._WorkOrdersWebs;
-			}
-			set
-			{
-				this._WorkOrdersWebs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintColourInfo_WorkOrdersPrint", Storage="_PrintColourInfo", ThisKey="ColourInfo", OtherKey="ID", IsForeignKey=true)]
-		public PrintColourInfo PrintColourInfo
-		{
-			get
-			{
-				return this._PrintColourInfo.Entity;
-			}
-			set
-			{
-				PrintColourInfo previousValue = this._PrintColourInfo.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintColourInfo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintColourInfo.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintColourInfo.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._ColourInfo = value.ID;
-					}
-					else
-					{
-						this._ColourInfo = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintColourInfo");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintCreditType_WorkOrdersPrint", Storage="_PrintCreditType", ThisKey="Credit", OtherKey="ID", IsForeignKey=true)]
-		public PrintCreditType PrintCreditType
-		{
-			get
-			{
-				return this._PrintCreditType.Entity;
-			}
-			set
-			{
-				PrintCreditType previousValue = this._PrintCreditType.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintCreditType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintCreditType.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintCreditType.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._Credit = value.ID;
-					}
-					else
-					{
-						this._Credit = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintCreditType");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintMethod_WorkOrdersPrint", Storage="_PrintMethod", ThisKey="PrintingMethod", OtherKey="ID", IsForeignKey=true)]
-		public PrintMethod PrintMethod
-		{
-			get
-			{
-				return this._PrintMethod.Entity;
-			}
-			set
-			{
-				PrintMethod previousValue = this._PrintMethod.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintMethod.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintMethod.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintMethod.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._PrintingMethod = value.ID;
-					}
-					else
-					{
-						this._PrintingMethod = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintMethod");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintPaperSize_WorkOrdersPrint", Storage="_PrintPaperSize", ThisKey="PaperSize", OtherKey="ID", IsForeignKey=true)]
-		public PrintPaperSize PrintPaperSize
-		{
-			get
-			{
-				return this._PrintPaperSize.Entity;
-			}
-			set
-			{
-				PrintPaperSize previousValue = this._PrintPaperSize.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintPaperSize.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintPaperSize.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintPaperSize.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._PaperSize = value.ID;
-					}
-					else
-					{
-						this._PaperSize = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintPaperSize");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintPaperType_WorkOrdersPrint", Storage="_PrintPaperType", ThisKey="PaperType", OtherKey="ID", IsForeignKey=true)]
-		public PrintPaperType PrintPaperType
-		{
-			get
-			{
-				return this._PrintPaperType.Entity;
-			}
-			set
-			{
-				PrintPaperType previousValue = this._PrintPaperType.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintPaperType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintPaperType.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintPaperType.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._PaperType = value.ID;
-					}
-					else
-					{
-						this._PaperType = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintPaperType");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintTypeOfDisplay_WorkOrdersPrint", Storage="_PrintTypeOfDisplay", ThisKey="TypeOfDisplay", OtherKey="ID", IsForeignKey=true)]
-		public PrintTypeOfDisplay PrintTypeOfDisplay
-		{
-			get
-			{
-				return this._PrintTypeOfDisplay.Entity;
-			}
-			set
-			{
-				PrintTypeOfDisplay previousValue = this._PrintTypeOfDisplay.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintTypeOfDisplay.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintTypeOfDisplay.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintTypeOfDisplay.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._TypeOfDisplay = value.ID;
-					}
-					else
-					{
-						this._TypeOfDisplay = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintTypeOfDisplay");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintTypeOfProject_WorkOrdersPrint", Storage="_PrintTypeOfProject", ThisKey="ProjectType", OtherKey="ID", IsForeignKey=true)]
-		public PrintTypeOfProject PrintTypeOfProject
-		{
-			get
-			{
-				return this._PrintTypeOfProject.Entity;
-			}
-			set
-			{
-				PrintTypeOfProject previousValue = this._PrintTypeOfProject.Entity;
-				if (((previousValue != value) 
-							|| (this._PrintTypeOfProject.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PrintTypeOfProject.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._PrintTypeOfProject.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._ProjectType = value.ID;
-					}
-					else
-					{
-						this._ProjectType = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PrintTypeOfProject");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Workorder_WorkOrdersPrint", Storage="_Workorder", ThisKey="wID", OtherKey="ID", IsForeignKey=true)]
-		public Workorder Workorder
-		{
-			get
-			{
-				return this._Workorder.Entity;
-			}
-			set
-			{
-				Workorder previousValue = this._Workorder.Entity;
-				if (((previousValue != value) 
-							|| (this._Workorder.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Workorder.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._Workorder.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._wID = value.ID;
-					}
-					else
-					{
-						this._wID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Workorder");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="lookupPrintTypeOfProject_WorkOrdersPrint", Storage="_lookupPrintTypeOfProject", ThisKey="ProjectType", OtherKey="ID", IsForeignKey=true)]
-		public lookupPrintTypeOfProject lookupPrintTypeOfProject
-		{
-			get
-			{
-				return this._lookupPrintTypeOfProject.Entity;
-			}
-			set
-			{
-				lookupPrintTypeOfProject previousValue = this._lookupPrintTypeOfProject.Entity;
-				if (((previousValue != value) 
-							|| (this._lookupPrintTypeOfProject.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._lookupPrintTypeOfProject.Entity = null;
-						previousValue.WorkOrdersPrints.Remove(this);
-					}
-					this._lookupPrintTypeOfProject.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersPrints.Add(this);
-						this._ProjectType = value.ID;
-					}
-					else
-					{
-						this._ProjectType = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("lookupPrintTypeOfProject");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_WorkOrdersWebs(WorkOrdersWeb entity)
-		{
-			this.SendPropertyChanging();
-			entity.WorkOrdersPrint = this;
-		}
-		
-		private void detach_WorkOrdersWebs(WorkOrdersWeb entity)
-		{
-			this.SendPropertyChanging();
-			entity.WorkOrdersPrint = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LogActivity")]
 	public partial class LogActivity : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6339,9 +5476,9 @@ namespace HNHUWO2
 		
 		private EntityRef<WebUpdateType> _WebUpdateType;
 		
-		private EntityRef<WorkOrdersPrint> _WorkOrdersPrint;
-		
 		private EntityRef<Workorder> _Workorder;
+		
+		private EntityRef<WorkOrdersPrint> _WorkOrdersPrint;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6424,8 +5561,8 @@ namespace HNHUWO2
 			this._WebSites = default(EntityRef<WebSites>);
 			this._WebType = default(EntityRef<WebType>);
 			this._WebUpdateType = default(EntityRef<WebUpdateType>);
-			this._WorkOrdersPrint = default(EntityRef<WorkOrdersPrint>);
 			this._Workorder = default(EntityRef<Workorder>);
+			this._WorkOrdersPrint = default(EntityRef<WorkOrdersPrint>);
 			OnCreated();
 		}
 		
@@ -7251,40 +6388,6 @@ namespace HNHUWO2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkOrdersPrint_WorkOrdersWeb", Storage="_WorkOrdersPrint", ThisKey="pID", OtherKey="ID", IsForeignKey=true)]
-		public WorkOrdersPrint WorkOrdersPrint
-		{
-			get
-			{
-				return this._WorkOrdersPrint.Entity;
-			}
-			set
-			{
-				WorkOrdersPrint previousValue = this._WorkOrdersPrint.Entity;
-				if (((previousValue != value) 
-							|| (this._WorkOrdersPrint.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._WorkOrdersPrint.Entity = null;
-						previousValue.WorkOrdersWebs.Remove(this);
-					}
-					this._WorkOrdersPrint.Entity = value;
-					if ((value != null))
-					{
-						value.WorkOrdersWebs.Add(this);
-						this._pID = value.ID;
-					}
-					else
-					{
-						this._pID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("WorkOrdersPrint");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Workorder_WorkOrdersWeb", Storage="_Workorder", ThisKey="wID", OtherKey="ID", IsForeignKey=true)]
 		public Workorder Workorder
 		{
@@ -7315,6 +6418,40 @@ namespace HNHUWO2
 						this._wID = default(int);
 					}
 					this.SendPropertyChanged("Workorder");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkOrdersPrint_WorkOrdersWeb", Storage="_WorkOrdersPrint", ThisKey="pID", OtherKey="ID", IsForeignKey=true)]
+		public WorkOrdersPrint WorkOrdersPrint
+		{
+			get
+			{
+				return this._WorkOrdersPrint.Entity;
+			}
+			set
+			{
+				WorkOrdersPrint previousValue = this._WorkOrdersPrint.Entity;
+				if (((previousValue != value) 
+							|| (this._WorkOrdersPrint.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._WorkOrdersPrint.Entity = null;
+						previousValue.WorkOrdersWebs.Remove(this);
+					}
+					this._WorkOrdersPrint.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersWebs.Add(this);
+						this._pID = value.ID;
+					}
+					else
+					{
+						this._pID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("WorkOrdersPrint");
 				}
 			}
 		}
@@ -7370,11 +6507,11 @@ namespace HNHUWO2
 		
 		private EntitySet<WorkOrdersVideo> _WorkOrdersVideos;
 		
-		private EntitySet<WorkOrdersPrint> _WorkOrdersPrints;
-		
 		private EntitySet<WorkOrdersWeb> _WorkOrdersWebs;
 		
 		private EntitySet<File> _Files;
+		
+		private EntitySet<WorkOrdersPrint> _WorkOrdersPrints;
 		
 		private EntityRef<Status> _Status1;
 		
@@ -7411,9 +6548,9 @@ namespace HNHUWO2
 			this._WorkOrdersNews = new EntitySet<WorkOrdersNews>(new Action<WorkOrdersNews>(this.attach_WorkOrdersNews), new Action<WorkOrdersNews>(this.detach_WorkOrdersNews));
 			this._WorkOrdersRadios = new EntitySet<WorkOrdersRadio>(new Action<WorkOrdersRadio>(this.attach_WorkOrdersRadios), new Action<WorkOrdersRadio>(this.detach_WorkOrdersRadios));
 			this._WorkOrdersVideos = new EntitySet<WorkOrdersVideo>(new Action<WorkOrdersVideo>(this.attach_WorkOrdersVideos), new Action<WorkOrdersVideo>(this.detach_WorkOrdersVideos));
-			this._WorkOrdersPrints = new EntitySet<WorkOrdersPrint>(new Action<WorkOrdersPrint>(this.attach_WorkOrdersPrints), new Action<WorkOrdersPrint>(this.detach_WorkOrdersPrints));
 			this._WorkOrdersWebs = new EntitySet<WorkOrdersWeb>(new Action<WorkOrdersWeb>(this.attach_WorkOrdersWebs), new Action<WorkOrdersWeb>(this.detach_WorkOrdersWebs));
 			this._Files = new EntitySet<File>(new Action<File>(this.attach_Files), new Action<File>(this.detach_Files));
+			this._WorkOrdersPrints = new EntitySet<WorkOrdersPrint>(new Action<WorkOrdersPrint>(this.attach_WorkOrdersPrints), new Action<WorkOrdersPrint>(this.detach_WorkOrdersPrints));
 			this._Status1 = default(EntityRef<Status>);
 			this._WOType1 = default(EntityRef<WOType>);
 			this._User = default(EntityRef<User>);
@@ -7651,19 +6788,6 @@ namespace HNHUWO2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Workorder_WorkOrdersPrint", Storage="_WorkOrdersPrints", ThisKey="ID", OtherKey="wID")]
-		public EntitySet<WorkOrdersPrint> WorkOrdersPrints
-		{
-			get
-			{
-				return this._WorkOrdersPrints;
-			}
-			set
-			{
-				this._WorkOrdersPrints.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Workorder_WorkOrdersWeb", Storage="_WorkOrdersWebs", ThisKey="ID", OtherKey="wID")]
 		public EntitySet<WorkOrdersWeb> WorkOrdersWebs
 		{
@@ -7687,6 +6811,19 @@ namespace HNHUWO2
 			set
 			{
 				this._Files.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Workorder_WorkOrdersPrint", Storage="_WorkOrdersPrints", ThisKey="ID", OtherKey="wID")]
+		public EntitySet<WorkOrdersPrint> WorkOrdersPrints
+		{
+			get
+			{
+				return this._WorkOrdersPrints;
+			}
+			set
+			{
+				this._WorkOrdersPrints.Assign(value);
 			}
 		}
 		
@@ -7848,18 +6985,6 @@ namespace HNHUWO2
 			entity.Workorder = null;
 		}
 		
-		private void attach_WorkOrdersPrints(WorkOrdersPrint entity)
-		{
-			this.SendPropertyChanging();
-			entity.Workorder = this;
-		}
-		
-		private void detach_WorkOrdersPrints(WorkOrdersPrint entity)
-		{
-			this.SendPropertyChanging();
-			entity.Workorder = null;
-		}
-		
 		private void attach_WorkOrdersWebs(WorkOrdersWeb entity)
 		{
 			this.SendPropertyChanging();
@@ -7879,6 +7004,18 @@ namespace HNHUWO2
 		}
 		
 		private void detach_Files(File entity)
+		{
+			this.SendPropertyChanging();
+			entity.Workorder = null;
+		}
+		
+		private void attach_WorkOrdersPrints(WorkOrdersPrint entity)
+		{
+			this.SendPropertyChanging();
+			entity.Workorder = this;
+		}
+		
+		private void detach_WorkOrdersPrints(WorkOrdersPrint entity)
 		{
 			this.SendPropertyChanging();
 			entity.Workorder = null;
@@ -8195,6 +7332,893 @@ namespace HNHUWO2
 		{
 			this.SendPropertyChanging();
 			entity.lookupPrintTypeOfProject = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WorkOrdersPrint")]
+	public partial class WorkOrdersPrint : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _wID;
+		
+		private System.Nullable<int> _ProjectType;
+		
+		private string _ProjectTypeOther;
+		
+		private System.Nullable<int> _TypeOfDisplay;
+		
+		private string _TypeOfDisplayOther;
+		
+		private string _PromoItem;
+		
+		private System.Nullable<int> _PrintingMethod;
+		
+		private string _Budget;
+		
+		private System.Nullable<int> _PaperSize;
+		
+		private string _CustomPaperSize;
+		
+		private System.Nullable<int> _PaperType;
+		
+		private string _NumberCopies;
+		
+		private System.Nullable<int> _ColourInfo;
+		
+		private System.Nullable<bool> _FullBleed;
+		
+		private System.Nullable<int> _Credit;
+		
+		private string _CreditName;
+		
+		private string _Notes;
+		
+		private System.Nullable<int> _webID;
+		
+		private EntitySet<WorkOrdersWeb> _WorkOrdersWebs;
+		
+		private EntityRef<PrintColourInfo> _PrintColourInfo;
+		
+		private EntityRef<PrintCreditType> _PrintCreditType;
+		
+		private EntityRef<PrintMethod> _PrintMethod;
+		
+		private EntityRef<PrintPaperSize> _PrintPaperSize;
+		
+		private EntityRef<PrintPaperType> _PrintPaperType;
+		
+		private EntityRef<PrintTypeOfDisplay> _PrintTypeOfDisplay;
+		
+		private EntityRef<PrintTypeOfProject> _PrintTypeOfProject;
+		
+		private EntityRef<lookupPrintTypeOfProject> _lookupPrintTypeOfProject;
+		
+		private EntityRef<Workorder> _Workorder;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnwIDChanging(System.Nullable<int> value);
+    partial void OnwIDChanged();
+    partial void OnProjectTypeChanging(System.Nullable<int> value);
+    partial void OnProjectTypeChanged();
+    partial void OnProjectTypeOtherChanging(string value);
+    partial void OnProjectTypeOtherChanged();
+    partial void OnTypeOfDisplayChanging(System.Nullable<int> value);
+    partial void OnTypeOfDisplayChanged();
+    partial void OnTypeOfDisplayOtherChanging(string value);
+    partial void OnTypeOfDisplayOtherChanged();
+    partial void OnPromoItemChanging(string value);
+    partial void OnPromoItemChanged();
+    partial void OnPrintingMethodChanging(System.Nullable<int> value);
+    partial void OnPrintingMethodChanged();
+    partial void OnBudgetChanging(string value);
+    partial void OnBudgetChanged();
+    partial void OnPaperSizeChanging(System.Nullable<int> value);
+    partial void OnPaperSizeChanged();
+    partial void OnCustomPaperSizeChanging(string value);
+    partial void OnCustomPaperSizeChanged();
+    partial void OnPaperTypeChanging(System.Nullable<int> value);
+    partial void OnPaperTypeChanged();
+    partial void OnNumberCopiesChanging(string value);
+    partial void OnNumberCopiesChanged();
+    partial void OnColourInfoChanging(System.Nullable<int> value);
+    partial void OnColourInfoChanged();
+    partial void OnFullBleedChanging(System.Nullable<bool> value);
+    partial void OnFullBleedChanged();
+    partial void OnCreditChanging(System.Nullable<int> value);
+    partial void OnCreditChanged();
+    partial void OnCreditNameChanging(string value);
+    partial void OnCreditNameChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    partial void OnwebIDChanging(System.Nullable<int> value);
+    partial void OnwebIDChanged();
+    #endregion
+		
+		public WorkOrdersPrint()
+		{
+			this._WorkOrdersWebs = new EntitySet<WorkOrdersWeb>(new Action<WorkOrdersWeb>(this.attach_WorkOrdersWebs), new Action<WorkOrdersWeb>(this.detach_WorkOrdersWebs));
+			this._PrintColourInfo = default(EntityRef<PrintColourInfo>);
+			this._PrintCreditType = default(EntityRef<PrintCreditType>);
+			this._PrintMethod = default(EntityRef<PrintMethod>);
+			this._PrintPaperSize = default(EntityRef<PrintPaperSize>);
+			this._PrintPaperType = default(EntityRef<PrintPaperType>);
+			this._PrintTypeOfDisplay = default(EntityRef<PrintTypeOfDisplay>);
+			this._PrintTypeOfProject = default(EntityRef<PrintTypeOfProject>);
+			this._lookupPrintTypeOfProject = default(EntityRef<lookupPrintTypeOfProject>);
+			this._Workorder = default(EntityRef<Workorder>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_wID", DbType="Int")]
+		public System.Nullable<int> wID
+		{
+			get
+			{
+				return this._wID;
+			}
+			set
+			{
+				if ((this._wID != value))
+				{
+					if (this._Workorder.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnwIDChanging(value);
+					this.SendPropertyChanging();
+					this._wID = value;
+					this.SendPropertyChanged("wID");
+					this.OnwIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectType", DbType="Int")]
+		public System.Nullable<int> ProjectType
+		{
+			get
+			{
+				return this._ProjectType;
+			}
+			set
+			{
+				if ((this._ProjectType != value))
+				{
+					if ((this._PrintTypeOfProject.HasLoadedOrAssignedValue || this._lookupPrintTypeOfProject.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProjectTypeChanging(value);
+					this.SendPropertyChanging();
+					this._ProjectType = value;
+					this.SendPropertyChanged("ProjectType");
+					this.OnProjectTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectTypeOther", DbType="NVarChar(255)")]
+		public string ProjectTypeOther
+		{
+			get
+			{
+				return this._ProjectTypeOther;
+			}
+			set
+			{
+				if ((this._ProjectTypeOther != value))
+				{
+					this.OnProjectTypeOtherChanging(value);
+					this.SendPropertyChanging();
+					this._ProjectTypeOther = value;
+					this.SendPropertyChanged("ProjectTypeOther");
+					this.OnProjectTypeOtherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeOfDisplay", DbType="Int")]
+		public System.Nullable<int> TypeOfDisplay
+		{
+			get
+			{
+				return this._TypeOfDisplay;
+			}
+			set
+			{
+				if ((this._TypeOfDisplay != value))
+				{
+					if (this._PrintTypeOfDisplay.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTypeOfDisplayChanging(value);
+					this.SendPropertyChanging();
+					this._TypeOfDisplay = value;
+					this.SendPropertyChanged("TypeOfDisplay");
+					this.OnTypeOfDisplayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeOfDisplayOther", DbType="NVarChar(255)")]
+		public string TypeOfDisplayOther
+		{
+			get
+			{
+				return this._TypeOfDisplayOther;
+			}
+			set
+			{
+				if ((this._TypeOfDisplayOther != value))
+				{
+					this.OnTypeOfDisplayOtherChanging(value);
+					this.SendPropertyChanging();
+					this._TypeOfDisplayOther = value;
+					this.SendPropertyChanged("TypeOfDisplayOther");
+					this.OnTypeOfDisplayOtherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PromoItem", DbType="NVarChar(255)")]
+		public string PromoItem
+		{
+			get
+			{
+				return this._PromoItem;
+			}
+			set
+			{
+				if ((this._PromoItem != value))
+				{
+					this.OnPromoItemChanging(value);
+					this.SendPropertyChanging();
+					this._PromoItem = value;
+					this.SendPropertyChanged("PromoItem");
+					this.OnPromoItemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintingMethod", DbType="Int")]
+		public System.Nullable<int> PrintingMethod
+		{
+			get
+			{
+				return this._PrintingMethod;
+			}
+			set
+			{
+				if ((this._PrintingMethod != value))
+				{
+					if (this._PrintMethod.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPrintingMethodChanging(value);
+					this.SendPropertyChanging();
+					this._PrintingMethod = value;
+					this.SendPropertyChanged("PrintingMethod");
+					this.OnPrintingMethodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Budget", DbType="NVarChar(10)")]
+		public string Budget
+		{
+			get
+			{
+				return this._Budget;
+			}
+			set
+			{
+				if ((this._Budget != value))
+				{
+					this.OnBudgetChanging(value);
+					this.SendPropertyChanging();
+					this._Budget = value;
+					this.SendPropertyChanged("Budget");
+					this.OnBudgetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaperSize", DbType="Int")]
+		public System.Nullable<int> PaperSize
+		{
+			get
+			{
+				return this._PaperSize;
+			}
+			set
+			{
+				if ((this._PaperSize != value))
+				{
+					if (this._PrintPaperSize.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPaperSizeChanging(value);
+					this.SendPropertyChanging();
+					this._PaperSize = value;
+					this.SendPropertyChanged("PaperSize");
+					this.OnPaperSizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomPaperSize", DbType="NVarChar(50)")]
+		public string CustomPaperSize
+		{
+			get
+			{
+				return this._CustomPaperSize;
+			}
+			set
+			{
+				if ((this._CustomPaperSize != value))
+				{
+					this.OnCustomPaperSizeChanging(value);
+					this.SendPropertyChanging();
+					this._CustomPaperSize = value;
+					this.SendPropertyChanged("CustomPaperSize");
+					this.OnCustomPaperSizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaperType", DbType="Int")]
+		public System.Nullable<int> PaperType
+		{
+			get
+			{
+				return this._PaperType;
+			}
+			set
+			{
+				if ((this._PaperType != value))
+				{
+					if (this._PrintPaperType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPaperTypeChanging(value);
+					this.SendPropertyChanging();
+					this._PaperType = value;
+					this.SendPropertyChanged("PaperType");
+					this.OnPaperTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberCopies", DbType="NVarChar(50)")]
+		public string NumberCopies
+		{
+			get
+			{
+				return this._NumberCopies;
+			}
+			set
+			{
+				if ((this._NumberCopies != value))
+				{
+					this.OnNumberCopiesChanging(value);
+					this.SendPropertyChanging();
+					this._NumberCopies = value;
+					this.SendPropertyChanged("NumberCopies");
+					this.OnNumberCopiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ColourInfo", DbType="Int")]
+		public System.Nullable<int> ColourInfo
+		{
+			get
+			{
+				return this._ColourInfo;
+			}
+			set
+			{
+				if ((this._ColourInfo != value))
+				{
+					if (this._PrintColourInfo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnColourInfoChanging(value);
+					this.SendPropertyChanging();
+					this._ColourInfo = value;
+					this.SendPropertyChanged("ColourInfo");
+					this.OnColourInfoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullBleed", DbType="Bit")]
+		public System.Nullable<bool> FullBleed
+		{
+			get
+			{
+				return this._FullBleed;
+			}
+			set
+			{
+				if ((this._FullBleed != value))
+				{
+					this.OnFullBleedChanging(value);
+					this.SendPropertyChanging();
+					this._FullBleed = value;
+					this.SendPropertyChanged("FullBleed");
+					this.OnFullBleedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Credit", DbType="Int")]
+		public System.Nullable<int> Credit
+		{
+			get
+			{
+				return this._Credit;
+			}
+			set
+			{
+				if ((this._Credit != value))
+				{
+					if (this._PrintCreditType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCreditChanging(value);
+					this.SendPropertyChanging();
+					this._Credit = value;
+					this.SendPropertyChanged("Credit");
+					this.OnCreditChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreditName", DbType="NVarChar(100)")]
+		public string CreditName
+		{
+			get
+			{
+				return this._CreditName;
+			}
+			set
+			{
+				if ((this._CreditName != value))
+				{
+					this.OnCreditNameChanging(value);
+					this.SendPropertyChanging();
+					this._CreditName = value;
+					this.SendPropertyChanged("CreditName");
+					this.OnCreditNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_webID", DbType="Int")]
+		public System.Nullable<int> webID
+		{
+			get
+			{
+				return this._webID;
+			}
+			set
+			{
+				if ((this._webID != value))
+				{
+					this.OnwebIDChanging(value);
+					this.SendPropertyChanging();
+					this._webID = value;
+					this.SendPropertyChanged("webID");
+					this.OnwebIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkOrdersPrint_WorkOrdersWeb", Storage="_WorkOrdersWebs", ThisKey="ID", OtherKey="pID")]
+		public EntitySet<WorkOrdersWeb> WorkOrdersWebs
+		{
+			get
+			{
+				return this._WorkOrdersWebs;
+			}
+			set
+			{
+				this._WorkOrdersWebs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintColourInfo_WorkOrdersPrint", Storage="_PrintColourInfo", ThisKey="ColourInfo", OtherKey="ID", IsForeignKey=true)]
+		public PrintColourInfo PrintColourInfo
+		{
+			get
+			{
+				return this._PrintColourInfo.Entity;
+			}
+			set
+			{
+				PrintColourInfo previousValue = this._PrintColourInfo.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintColourInfo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintColourInfo.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintColourInfo.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._ColourInfo = value.ID;
+					}
+					else
+					{
+						this._ColourInfo = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintColourInfo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintCreditType_WorkOrdersPrint", Storage="_PrintCreditType", ThisKey="Credit", OtherKey="ID", IsForeignKey=true)]
+		public PrintCreditType PrintCreditType
+		{
+			get
+			{
+				return this._PrintCreditType.Entity;
+			}
+			set
+			{
+				PrintCreditType previousValue = this._PrintCreditType.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintCreditType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintCreditType.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintCreditType.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._Credit = value.ID;
+					}
+					else
+					{
+						this._Credit = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintCreditType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintMethod_WorkOrdersPrint", Storage="_PrintMethod", ThisKey="PrintingMethod", OtherKey="ID", IsForeignKey=true)]
+		public PrintMethod PrintMethod
+		{
+			get
+			{
+				return this._PrintMethod.Entity;
+			}
+			set
+			{
+				PrintMethod previousValue = this._PrintMethod.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintMethod.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintMethod.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintMethod.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._PrintingMethod = value.ID;
+					}
+					else
+					{
+						this._PrintingMethod = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintMethod");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintPaperSize_WorkOrdersPrint", Storage="_PrintPaperSize", ThisKey="PaperSize", OtherKey="ID", IsForeignKey=true)]
+		public PrintPaperSize PrintPaperSize
+		{
+			get
+			{
+				return this._PrintPaperSize.Entity;
+			}
+			set
+			{
+				PrintPaperSize previousValue = this._PrintPaperSize.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintPaperSize.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintPaperSize.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintPaperSize.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._PaperSize = value.ID;
+					}
+					else
+					{
+						this._PaperSize = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintPaperSize");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintPaperType_WorkOrdersPrint", Storage="_PrintPaperType", ThisKey="PaperType", OtherKey="ID", IsForeignKey=true)]
+		public PrintPaperType PrintPaperType
+		{
+			get
+			{
+				return this._PrintPaperType.Entity;
+			}
+			set
+			{
+				PrintPaperType previousValue = this._PrintPaperType.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintPaperType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintPaperType.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintPaperType.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._PaperType = value.ID;
+					}
+					else
+					{
+						this._PaperType = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintPaperType");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintTypeOfDisplay_WorkOrdersPrint", Storage="_PrintTypeOfDisplay", ThisKey="TypeOfDisplay", OtherKey="ID", IsForeignKey=true)]
+		public PrintTypeOfDisplay PrintTypeOfDisplay
+		{
+			get
+			{
+				return this._PrintTypeOfDisplay.Entity;
+			}
+			set
+			{
+				PrintTypeOfDisplay previousValue = this._PrintTypeOfDisplay.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintTypeOfDisplay.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintTypeOfDisplay.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintTypeOfDisplay.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._TypeOfDisplay = value.ID;
+					}
+					else
+					{
+						this._TypeOfDisplay = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintTypeOfDisplay");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PrintTypeOfProject_WorkOrdersPrint", Storage="_PrintTypeOfProject", ThisKey="ProjectType", OtherKey="ID", IsForeignKey=true)]
+		public PrintTypeOfProject PrintTypeOfProject
+		{
+			get
+			{
+				return this._PrintTypeOfProject.Entity;
+			}
+			set
+			{
+				PrintTypeOfProject previousValue = this._PrintTypeOfProject.Entity;
+				if (((previousValue != value) 
+							|| (this._PrintTypeOfProject.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PrintTypeOfProject.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._PrintTypeOfProject.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._ProjectType = value.ID;
+					}
+					else
+					{
+						this._ProjectType = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("PrintTypeOfProject");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="lookupPrintTypeOfProject_WorkOrdersPrint", Storage="_lookupPrintTypeOfProject", ThisKey="ProjectType", OtherKey="ID", IsForeignKey=true)]
+		public lookupPrintTypeOfProject lookupPrintTypeOfProject
+		{
+			get
+			{
+				return this._lookupPrintTypeOfProject.Entity;
+			}
+			set
+			{
+				lookupPrintTypeOfProject previousValue = this._lookupPrintTypeOfProject.Entity;
+				if (((previousValue != value) 
+							|| (this._lookupPrintTypeOfProject.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._lookupPrintTypeOfProject.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._lookupPrintTypeOfProject.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._ProjectType = value.ID;
+					}
+					else
+					{
+						this._ProjectType = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("lookupPrintTypeOfProject");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Workorder_WorkOrdersPrint", Storage="_Workorder", ThisKey="wID", OtherKey="ID", IsForeignKey=true)]
+		public Workorder Workorder
+		{
+			get
+			{
+				return this._Workorder.Entity;
+			}
+			set
+			{
+				Workorder previousValue = this._Workorder.Entity;
+				if (((previousValue != value) 
+							|| (this._Workorder.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Workorder.Entity = null;
+						previousValue.WorkOrdersPrints.Remove(this);
+					}
+					this._Workorder.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersPrints.Add(this);
+						this._wID = value.ID;
+					}
+					else
+					{
+						this._wID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Workorder");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_WorkOrdersWebs(WorkOrdersWeb entity)
+		{
+			this.SendPropertyChanging();
+			entity.WorkOrdersPrint = this;
+		}
+		
+		private void detach_WorkOrdersWebs(WorkOrdersWeb entity)
+		{
+			this.SendPropertyChanging();
+			entity.WorkOrdersPrint = null;
 		}
 	}
 }
