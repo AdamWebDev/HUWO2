@@ -73,15 +73,6 @@ namespace HNHUWO2.Create
                     ltPageTitle.Text = ltContentTitle.Text = "Create a Print Work Order";
                 }
             } 
-            else // if it was a postback, the work order has been created!
-            {
-                if(hdnIsWOCreated.Value.Equals("1")) {
-                    if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
-                        Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
-                    else // if not, success!!
-                        Response.Redirect("~/MyWorkOrders.aspx?success=true");
-                }
-            }
         }
 
         protected void ddTypeProject_SelectedIndexChanged(object sender, EventArgs e)
@@ -255,11 +246,24 @@ namespace HNHUWO2.Create
                 db.WorkOrdersPrints.InsertOnSubmit(p);
                 db.SubmitChanges();
                 ID = (int)p.wID;
-            }
+
                 WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created");
-                hdnIsWOCreated.Value = "1";
-                
+
+                var destination = HttpContext.Current.Server.MapPath("~/uploads/" + w.ID + "/");
+                if (!System.IO.Directory.Exists(destination))
+                    System.IO.Directory.CreateDirectory(destination);
+                foreach (UploadedFile file in AttachedFiles.UploadedFiles)
+                {
+                    file.SaveAs(destination + file.FileName,true);
+                    WO.AddFile(ID, file.FileName, false);
+                }
+
+                if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
+                    Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
+                else // if not, success!!
+                    Response.Redirect("~/MyWorkOrders.aspx?success=true");
+            }
         }
     }
 }

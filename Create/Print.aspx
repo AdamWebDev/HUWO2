@@ -146,12 +146,11 @@
         <uc:TrueFalseDropDown ID="ddAddToWebsite" runat="server" />
         
         <label>Attach files</label>
-        <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads" Localization-Select="Select Files to Attach" InputSize="30"></telerik:radasyncupload>
+        <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" Localization-Select="Select Files to Attach" InputSize="30"></telerik:radasyncupload>
         
         <label>Additional Notes</label>
         <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
 
         <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button"  onclick="btnSubmit_Click" /></p>
 
-        <asp:HiddenField ID="hdnIsWOCreated" runat="server" Value="0" />
 </asp:Content>
