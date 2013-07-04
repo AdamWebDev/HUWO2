@@ -18,6 +18,8 @@ namespace HNHUWO2.Reports
         {
             rptReport.DataSource = HNHUWO2.Classes.Reports.ByProjectType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
             rptReport.DataBind();
+            rptPrintReport.DataSource = HNHUWO2.Classes.Reports.ByPrintType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
+            rptPrintReport.DataBind();
         }
 
         public int sum = 0;
@@ -32,6 +34,20 @@ namespace HNHUWO2.Reports
             {
                 Literal ltTotal = e.Item.FindControl("ltTotal") as Literal;
                 ltTotal.Text = sum.ToString();
+            }
+        }
+
+        public int print_sum = 0;
+        protected void rptPrintReport_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                print_sum += Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Count"));
+            }
+            else if (e.Item.ItemType == ListItemType.Footer)
+            {
+                Literal ltTotal = e.Item.FindControl("ltTotal") as Literal;
+                ltTotal.Text = print_sum.ToString();
             }
         }
     }

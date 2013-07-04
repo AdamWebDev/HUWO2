@@ -12,13 +12,12 @@
         </div>
         <asp:Button ID="btnSubmit" runat="server" Text="Update" CssClass="button" onclick="btnSubmit_Click" />
     </div>
-    <asp:Repeater ID="rptReport" runat="server" 
-        onitemdatabound="rptReport_ItemDataBound">
+    <asp:Repeater ID="rptReport" runat="server" onitemdatabound="rptReport_ItemDataBound">
         <HeaderTemplate>
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">Coordinator</th>
+                        <th scope="col">Type of Work Order</th>
                         <th scope="col">Number of Work Orders</th>
                     </tr>
                 </thead>
@@ -27,6 +26,37 @@
         <ItemTemplate>
             <tr>
                 <th scope="row"><asp:Literal ID="ltProjectType" runat="server" Text='<%# Eval("ProjectType") %>' /></th>
+                <td><asp:Literal ID="ltCount" runat="server" Text='<%# Eval("Count") %>' /></td>
+            </tr>
+        </ItemTemplate>
+        <FooterTemplate>
+        </tbody>
+            <tfoot>
+            <tr>
+                <th scope="row">Total</th>
+                <td><asp:Literal ID="ltTotal" runat="server"></asp:Literal></td>
+                
+            </tr>
+            </tfoot>
+                
+            </table>
+        </FooterTemplate>
+    </asp:Repeater>
+
+    <asp:Repeater ID="rptPrintReport" runat="server" onitemdatabound="rptPrintReport_ItemDataBound">
+        <HeaderTemplate>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Type of Print Work Order</th>
+                        <th scope="col">Number of Work Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <tr>
+                <th scope="row"><asp:Literal ID="ltProjectType" runat="server" Text='<%# Eval("PrintType") %>' /></th>
                 <td><asp:Literal ID="ltCount" runat="server" Text='<%# Eval("Count") %>' /></td>
             </tr>
         </ItemTemplate>
