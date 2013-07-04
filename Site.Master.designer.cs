@@ -67,6 +67,15 @@ namespace HNHUWO2 {
         protected global::System.Web.UI.WebControls.HyperLink lnkMyWorkOrders;
         
         /// <summary>
+        /// coordMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl coordMenu;
+        
+        /// <summary>
         /// lnkMyStaffWO control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,33 @@ namespace HNHUWO2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkAllPending;
+        
+        /// <summary>
+        /// designersMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl designersMenu;
+        
+        /// <summary>
+        /// lnkDesigners1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkDesigners1;
+        
+        /// <summary>
+        /// reportsMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl reportsMenu;
         
         /// <summary>
         /// lnkReports control.
