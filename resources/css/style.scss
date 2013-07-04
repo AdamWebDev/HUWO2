@@ -481,6 +481,8 @@ margin-bottom:1em;
 
 /*************** View Work Orders ***************/
 
+
+
 ul.view-wo {
 	> li {
 		padding: 5px;
@@ -500,7 +502,7 @@ ul.view-wo {
 		> span {
 			border-bottom: thin solid #2D89EF;
 			border-left: thin solid #2D89EF;
-			padding: 5px 5px 5px 10px;
+			padding: 5px 5px 6px 10px;
 			margin-left: -9px;
 			width: 70%;
 			display: inline-block;
@@ -511,6 +513,9 @@ ul.view-wo {
 ul.activity-log li {
 	font-size: 0.5em;
 }
+
+#FileList { margin: 0 0 0 -9px; padding: 0; }
+ul.filelist { padding: 2px 0 1px 10px; margin: 0; }
 
 
 /*************** Notifications ***************/
