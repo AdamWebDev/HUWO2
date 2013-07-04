@@ -14,7 +14,7 @@
 </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server">
-    <uc:NavButton ID="navCancel" runat="server" Icon="~/resources/images/icons/delete.png" AltText="Cancel Icon" Text="Cancel" NavURL="~/Default.aspx" />
+    <uc:NavButton ID="navCancel" runat="server" Icon="icon-arrow-left" AltText="Cancel Icon" Text="Cancel" NavURL="~/Default.aspx" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">
     Create a Web Work Order
