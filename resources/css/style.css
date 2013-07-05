@@ -460,10 +460,13 @@ table.checkboxtable td {
 ul.checkboxtable li {
   background: none !important; }
 
-form fieldset legend {
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding-top: 10px; }
+form fieldset {
+  border: thin solid #ccc;
+  padding: 0 1.5em 1.5em; }
+  form fieldset legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: 10px; }
 form p small {
   color: #777; }
 form input.text-input, form select, form textarea, form .wysiwyg {

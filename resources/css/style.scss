@@ -431,52 +431,73 @@ ul.checkboxtable li {
   background: none !important; }
 
 form {
-  fieldset legend {
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding-top: 10px; }
-  p small {
-    color: #777; }
-  input.text-input, select, textarea, .wysiwyg {
-    padding: 6px;
-    background: white url('../images/bg-form-field.gif') top left repeat-x;
-    border: 1px solid #d5d5d5;
-    color: #333; }
-  .small-input {
-    width: 25% !important; }
-  .medium-input {
-    width: 50% !important; }
-  .large-input {
-    width: 97.5% !important;
-    font-size: 16px !important;
-    padding: 8px !important; }
-  textarea {
-    width: 97.5% !important; }
-  select {
-    padding: 4px;
-    background: #fff; }
-  input {
-    &[type="checkbox"], &[type="radio"] {
-      padding: 0;
-      background: none;
-      border: 0; }
-    &[type="text"].disabled {
-      color: #000;
-      background: #fff;
-      border: none;
-      border-bottom: thin solid #ddd; } 
-	  &[type="checkbox"] + label {
-	display: inline;
-	margin-left: 0.5em;
-	}}
-  select.disabled {
-    color: #000;
-    background: #fff;
-    border: none;
-    border-bottom: thin solid #ddd; }
+	
+	fieldset {
+		border: thin solid #ccc;
+		padding: 0 1.5em 1.5em;
+	
+		legend {
+			font-weight: bold;
+			margin-bottom: 10px;
+			padding-top: 10px; 
+		}
 	}
+  
+	p small {
+		color: #777; 
+	}
+	input.text-input, select, textarea, .wysiwyg {
+		padding: 6px;
+		background: white url('../images/bg-form-field.gif') top left repeat-x;
+		border: 1px solid #d5d5d5;
+		color: #333; 
+	}
+	.small-input {
+		width: 25% !important; 
+	}
+	.medium-input {
+		width: 50% !important; 
+	}
+	.large-input {
+		width: 97.5% !important;
+		font-size: 16px !important;
+		padding: 8px !important; 
+	}
+	textarea {
+		width: 97.5% !important; }
+	select {
+		padding: 4px;
+		background: #fff; 
+	}
+
+	input {
+		&[type="checkbox"], &[type="radio"] {
+			padding: 0;
+			background: none;
+			border: 0; 
+		}
+		&[type="text"].disabled {
+			color: #000;
+			background: #fff;
+			border: none;
+			border-bottom: thin solid #ddd; 
+		}
+			 
+		&[type="checkbox"] + label {
+			display: inline;
+			margin-left: 0.5em;
+		}
+	}
+	select.disabled {
+		color: #000;
+		background: #fff;
+		border: none;
+		border-bottom: thin solid #ddd; 
+	}
+}
+
 .report-form {
-margin-bottom:1em;
+	margin-bottom:1em;
 }
 
 /*************** View Work Orders ***************/
