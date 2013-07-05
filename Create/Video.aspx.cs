@@ -148,7 +148,7 @@ namespace HNHUWO2.Create
                 w.submitted_date = DateTime.Now;
                 w.submitted_by = Function.GetUserName();
                 w.wotype = 6;
-                w.duedate = Function.FormatDate(txtDueDate.Text);
+                w.duedate = txtDueDate.Text.ConvertToDate();
                 w.coordinator = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtTitleVideo.Text;
                 w.status = 1;

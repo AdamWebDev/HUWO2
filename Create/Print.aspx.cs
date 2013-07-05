@@ -227,7 +227,7 @@ namespace HNHUWO2.Create
                     w.wotype = 5;
                 else
                     w.wotype = 1;
-                w.duedate = Function.FormatDate(txtDueDate.Text);
+                w.duedate = txtDueDate.Text.ConvertToDate();
                 w.coordinator = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtPubTitle.Text;
                 w.status = 1;
