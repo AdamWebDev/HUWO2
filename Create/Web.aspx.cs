@@ -67,7 +67,8 @@ namespace HNHUWO2.Create
         {
             if (ddTypeWebWork.SelectedValue.Equals("1")) // new content
             {
-                Function.ShowControls(phNewContent);
+                Function.ShowControls(phNewContent,false);
+                Function.ClearControls(phOtherLocation, false);
                 Function.ClearControls(phWebsite, false);
                 Function.ClearControls(phUpdateContent, false);
                 Function.ClearControls(phNewWebsite, false);
@@ -288,7 +289,7 @@ namespace HNHUWO2.Create
                 wow.FacebookContent = txtFacebookContent.Text;
                 wow.Notes = txtNotes.Text;
 
-                int pID;
+                int pID = 0;
                 if (int.TryParse(Request.QueryString["AddTo"], out pID))
                 {
                     wow.pID = pID;
@@ -298,9 +299,12 @@ namespace HNHUWO2.Create
                 db.WorkOrdersWebs.InsertOnSubmit(wow);
                 db.SubmitChanges();
                 ID = w.ID;
-                WorkOrdersPrint p = db.WorkOrdersPrints.Single(u => u.wID == pID);
-                p.webID = wow.ID;
-                db.SubmitChanges();
+                if (pID != 0)
+                {
+                    WorkOrdersPrint p = db.WorkOrdersPrints.Single(u => u.wID == pID);
+                    p.webID = ID;
+                    db.SubmitChanges();
+                }
 
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
             }

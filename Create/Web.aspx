@@ -27,6 +27,7 @@
     
             <label>Type of Web Work</label>
             <asp:DropDownList ID="ddTypeWebWork" runat="server" CssClass="small-input" AppendDataBoundItems="true" AutoPostBack="True" onselectedindexchanged="ddTypeWebWork_SelectedIndexChanged"></asp:DropDownList>
+            <asp:RequiredFieldValidator ID="reqTypeWebWork" runat="server" ControlToValidate="ddTypeWebWork" ErrorMessage="Type of Web Work is Required" CssClass="input-notification error png_bg" />
 
             <label>Program Coordinator</label>
             <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
@@ -53,73 +54,79 @@
                 <asp:CustomValidator ID="reqchkLocation" runat="server" ErrorMessage="Location is Required" ClientValidationFunction="ValidateCheckBoxList"  CssClass="input-notification error png_bg" Enabled="false" />
 
                 <asp:PlaceHolder ID="phOtherLocation" runat="server" Visible="false">
-                <label>Specify Location (URL)</label>
-                <asp:TextBox ID="txtAtoZLocation" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqAtoZLocation" runat="server" ControlToValidate="txtAtoZLocation" ErrorMessage="Location (URL) is Required" CssClass="input-notification error png_bg" Enabled="false" />
-            </asp:PlaceHolder>
+                    <label>Specify Location (URL)</label>
+                    <asp:TextBox ID="txtAtoZLocation" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqAtoZLocation" runat="server" ControlToValidate="txtAtoZLocation" ErrorMessage="Location (URL) is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                </asp:PlaceHolder>
 
-            <asp:PlaceHolder ID="phAtoZ" runat="server">
-                <label>Posting Date</label>
-                <asp:TextBox ID="txtAtoZPostingDate" runat="server" CssClass="text-input small-input datepicker" />
-                <asp:RequiredFieldValidator ID="reqAtoZPostingDate" runat="server" ControlToValidate="txtAtoZPostingDate" ErrorMessage="Posting Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                <asp:PlaceHolder ID="phAtoZ" runat="server" Visible="false">
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        <label>Posting Date</label>
+                        <asp:TextBox ID="txtAtoZPostingDate" runat="server" CssClass="text-input small-input datepicker" />
+                        <asp:RequiredFieldValidator ID="reqAtoZPostingDate" runat="server" ControlToValidate="txtAtoZPostingDate" ErrorMessage="Posting Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Removal Date (if needed)</label>
-                <asp:TextBox ID="txtAtoZRemovalDate" runat="server" CssClass="text-input small-input datepicker" />
-                <asp:RequiredFieldValidator ID="reqAtoZRemovalDate" runat="server" ControlToValidate="txtAtoZRemovalDate" ErrorMessage="Removal Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Removal Date (if needed)</label>
+                        <asp:TextBox ID="txtAtoZRemovalDate" runat="server" CssClass="text-input small-input datepicker" />
+                        <asp:CompareValidator ID="cmpAtoZDates" runat="server" ErrorMessage="Removal date must be AFTER posting date" ControlToValidate="txtAtoZRemovalDate" ControlToCompare="txtAtoZPostingDate" CssClass="input-notification error png_bg" Enabled="False" Type="Date" Operator="GreaterThan"></asp:CompareValidator>
 
-                <label>Heading for New Page</label>
-                <asp:TextBox ID="txtAtoZHeading" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqAtoZHeading" runat="server" ControlToValidate="txtAtoZHeading" ErrorMessage="Heading for New Page is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Heading for New Page</label>
+                        <asp:TextBox ID="txtAtoZHeading" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqAtoZHeading" runat="server" ControlToValidate="txtAtoZHeading" ErrorMessage="Heading for New Page is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Content</label>
-                <asp:TextBox ID="txtAtoZContent" runat="server" TextMode="MultiLine" CssClass="text-input medium-input" Rows="10"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqAtoZContent" runat="server" ControlToValidate="txtAtoZContent" ErrorMessage="Content is Required" CssClass="input-notification error png_bg" Enabled="false" />
-            </asp:PlaceHolder>
+                        <label>Content</label>
+                        <asp:TextBox ID="txtAtoZContent" runat="server" TextMode="MultiLine" CssClass="text-input medium-input" Rows="10"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqAtoZContent" runat="server" ControlToValidate="txtAtoZContent" ErrorMessage="Content is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                    </fieldset>
+                </asp:PlaceHolder>
 
-            <asp:PlaceHolder ID="phCalendar" runat="server" Visible="false">
-                <h4>Calendar Details</h4>
+                <asp:PlaceHolder ID="phCalendar" runat="server" Visible="false">
+                    <fieldset>
+                        <legend>Calendar Details</legend>
+                    
 
-                <label>Event Name</label>
-                <asp:TextBox ID="txtCalEventName" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqCalEventName" runat="server" ControlToValidate="txtCalEventName" ErrorMessage="Event Name is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event Name</label>
+                        <asp:TextBox ID="txtCalEventName" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqCalEventName" runat="server" ControlToValidate="txtCalEventName" ErrorMessage="Event Name is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Event Location</label>
-                <asp:TextBox ID="txtCalEventLocation" runat="server" CssClass=  "text-input small-input" MaxLength="255"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqCalEventLocation" runat="server" ControlToValidate="txtCalEventLocation" ErrorMessage="Event Location is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event Location</label>
+                        <asp:TextBox ID="txtCalEventLocation" runat="server" CssClass=  "text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqCalEventLocation" runat="server" ControlToValidate="txtCalEventLocation" ErrorMessage="Event Location is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Event Start Date</label>
-                <asp:TextBox ID="txtCalStartDate" runat="server" CssClass="text-input small-input datepicker" />
-                <asp:RequiredFieldValidator ID="reqCalStartDate" runat="server" ControlToValidate="txtCalStartDate" ErrorMessage="Event Start Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event Start Date</label>
+                        <asp:TextBox ID="txtCalStartDate" runat="server" CssClass="text-input small-input datepicker" />
+                        <asp:RequiredFieldValidator ID="reqCalStartDate" runat="server" ControlToValidate="txtCalStartDate" ErrorMessage="Event Start Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Event Start Time</label>
-                <asp:TextBox ID="txtCalStartTime" runat="server" CssClass="text-input small-input timepicker" />
-                <asp:RequiredFieldValidator ID="reqCalStartTime" runat="server" ControlToValidate="txtCalStartTime" ErrorMessage="Event Start Time is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event Start Time</label>
+                        <asp:TextBox ID="txtCalStartTime" runat="server" CssClass="text-input small-input timepicker" />
+                        <asp:RequiredFieldValidator ID="reqCalStartTime" runat="server" ControlToValidate="txtCalStartTime" ErrorMessage="Event Start Time is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Event End Date</label>
-                <asp:TextBox ID="txtCalEndDate" runat="server" CssClass="text-input small-input datepicker" />
-                <asp:RequiredFieldValidator ID="reqCalEndDate" runat="server" ControlToValidate="txtCalEndDate" ErrorMessage="Event End Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event End Date</label>
+                        <asp:TextBox ID="txtCalEndDate" runat="server" CssClass="text-input small-input datepicker" />
+                        <asp:RequiredFieldValidator ID="reqCalEndDate" runat="server" ControlToValidate="txtCalEndDate" ErrorMessage="Event End Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Event End Time</label>
-                <asp:TextBox ID="txtCalEndTime" runat="server" CssClass="text-input small-input timepicker" />
-                <asp:RequiredFieldValidator ID="reqCalEndTime" runat="server" ControlToValidate="txtCalEndTime" ErrorMessage="Event End Time is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event End Time</label>
+                        <asp:TextBox ID="txtCalEndTime" runat="server" CssClass="text-input small-input timepicker" />
+                        <asp:RequiredFieldValidator ID="reqCalEndTime" runat="server" ControlToValidate="txtCalEndTime" ErrorMessage="Event End Time is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Contact Name</label>
-                <asp:TextBox ID="txtContactName" runat="server" CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqContactName" runat="server" ControlToValidate="txtContactName" ErrorMessage="Contact Name is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Contact Name</label>
+                        <asp:TextBox ID="txtContactName" runat="server" CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqContactName" runat="server" ControlToValidate="txtContactName" ErrorMessage="Contact Name is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Contact Email</label>
-                <asp:TextBox ID="txtContactEmail" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqContactEmail" runat="server" ControlToValidate="txtContactEmail" ErrorMessage="Contact Email is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Contact Email</label>
+                        <asp:TextBox ID="txtContactEmail" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqContactEmail" runat="server" ControlToValidate="txtContactEmail" ErrorMessage="Contact Email is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Event Description</label>
-                <asp:TextBox ID="txtEventDesc" runat="server" CssClass="text-input small-input" TextMode="MultiLine"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqEventDesc" runat="server" ControlToValidate="txtEventDesc" ErrorMessage="Event Description is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <label>Event Description</label>
+                        <asp:TextBox ID="txtEventDesc" runat="server" CssClass="text-input small-input" TextMode="MultiLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqEventDesc" runat="server" ControlToValidate="txtEventDesc" ErrorMessage="Event Description is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-                <label>Date to be Posted</label>
-                <asp:TextBox ID="txtDatePosted" runat="server" CssClass="text-input small-input datepicker" />
-                <asp:RequiredFieldValidator ID="reqDatePosted" runat="server" ControlToValidate="txtDatePosted" ErrorMessage="Date to be Posted is Required" CssClass="input-notification error png_bg" Enabled="false" />
-            </asp:PlaceHolder>
-        </asp:PlaceHolder>
+                        <label>Date to be Posted</label>
+                        <asp:TextBox ID="txtDatePosted" runat="server" CssClass="text-input small-input datepicker" />
+                        <asp:RequiredFieldValidator ID="reqDatePosted" runat="server" ControlToValidate="txtDatePosted" ErrorMessage="Date to be Posted is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                    </fieldset>
+                </asp:PlaceHolder>
+            </asp:PlaceHolder> <!-- End of NewContent -->
     
         <asp:PlaceHolder ID="phUpdateContent" runat="server" Visible="false">
             <label>Type of Update</label>

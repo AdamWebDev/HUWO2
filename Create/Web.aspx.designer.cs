@@ -58,6 +58,15 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.DropDownList ddTypeWebWork;
         
         /// <summary>
+        /// reqTypeWebWork control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTypeWebWork;
+        
+        /// <summary>
         /// ddCoordinators control.
         /// </summary>
         /// <remarks>
@@ -229,13 +238,13 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.TextBox txtAtoZRemovalDate;
         
         /// <summary>
-        /// reqAtoZRemovalDate control.
+        /// cmpAtoZDates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAtoZRemovalDate;
+        protected global::System.Web.UI.WebControls.CompareValidator cmpAtoZDates;
         
         /// <summary>
         /// txtAtoZHeading control.
