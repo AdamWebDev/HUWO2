@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server"><asp:Literal ID="ltPageTitle" runat="server"></asp:Literal></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server"></asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server">
-    <uc:NavButton ID="navCancel" runat="server" Icon="icon-arrow-left" AltText="Cancel Icon" Text="Cancel" NavURL="~/Default.aspx" />
+    <uc:NavButton ID="navCancel" runat="server" Icon="icon-remove" AltText="Cancel Icon" Text="Cancel" NavURL="~/Default.aspx" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">
     <asp:Literal ID="ltContentTitle" runat="server"></asp:Literal>
