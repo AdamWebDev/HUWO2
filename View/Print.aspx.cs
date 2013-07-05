@@ -55,6 +55,12 @@ namespace HNHUWO2.View
             lblNotes.Text = wo.Notes;
             lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
 
+            if (wo.webID.HasValue)
+            {
+                lnkRelatedWO.NavigateUrl = "~/View/Web.aspx?ID=" + wo.webID.ToString();
+                pnLinkedWebWO.Visible = true;
+            }
+
             if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
             {
                 CoordinatorRevisions.Visible = true;

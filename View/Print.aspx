@@ -9,7 +9,11 @@
 <asp:Content ID="Main" ContentPlaceHolderID="Main" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <uc:StatusMessages ID="statusMessages" runat="server" />
-    <uc:Notification ID="notMessage" runat="server" Visible="false" />
+        <asp:Panel ID="pnLinkedWebWO" runat="server" CssClass="notification attention png_bg" Visible="false">
+        <div>
+            This print work order has a related web work order. <asp:HyperLink ID="lnkRelatedWO" runat="server">View it now</asp:HyperLink>.
+        </div>
+    </asp:Panel>
     <uc:Notification ID="notQuote" runat="server" Type="Attention" Message="Please note that this a Quote for Commercial Print" Visible="false" />
     <ul class="view-wo">
         <li>

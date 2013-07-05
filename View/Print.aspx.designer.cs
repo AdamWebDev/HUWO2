@@ -58,13 +58,22 @@ namespace HNHUWO2.View {
         protected global::HNHUWO2.UserControls.StatusMessages statusMessages;
         
         /// <summary>
-        /// notMessage control.
+        /// pnLinkedWebWO control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HNHUWO2.Notification notMessage;
+        protected global::System.Web.UI.WebControls.Panel pnLinkedWebWO;
+        
+        /// <summary>
+        /// lnkRelatedWO control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkRelatedWO;
         
         /// <summary>
         /// notQuote control.
