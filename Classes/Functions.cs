@@ -68,7 +68,7 @@ namespace HNHUWO2.Classes
             }
         }
 
-        public static void ShowControls(Control o)
+        public static void ShowControls(Control o, bool ShowChildPlaceholders)
         {
             if (o is PlaceHolder)
             {
@@ -76,7 +76,7 @@ namespace HNHUWO2.Classes
             }
             foreach (Control c in o.Controls)
             {
-                if (c is PlaceHolder)
+                if (c is PlaceHolder && ShowChildPlaceholders)
                 {
                     PlaceHolder d = (PlaceHolder)c;
                     d.Visible = true;
@@ -97,6 +97,11 @@ namespace HNHUWO2.Classes
                     d.Enabled = true;
                 }
             }
+        }
+
+        public static void ShowControls(Control o)
+        {
+            ShowControls(o, false);
         }
 
         public static void DisableControls(Control parent)
