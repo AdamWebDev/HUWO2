@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Coordinators\AllPendingWorkOrders.aspx" />
     <Content Include="Coordinators\MyWorkOrders.aspx" />
     <Content Include="CreateWorkOrder.aspx" />
@@ -436,6 +437,7 @@
     <Content Include="Web.sitemap" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\VM1T.pubxml" />
+    <None Include="README" />
     <None Include="resources\css\font-awesome\font-awesome-ie7.scss" />
     <None Include="resources\css\font-awesome\_font-awesome.scss" />
     <None Include="resources\css\font-awesome\_bootstrap.scss" />
