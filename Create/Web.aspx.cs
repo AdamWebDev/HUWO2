@@ -58,6 +58,11 @@ namespace HNHUWO2.Create
             }
         }
 
+        /// <summary>
+        /// Shows the relevant information based on the Type of Work Order created
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ddTypeWebWork_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddTypeWebWork.SelectedValue.Equals("1")) // new content
@@ -116,6 +121,11 @@ namespace HNHUWO2.Create
             }
         }
 
+        /// <summary>
+        /// When asking which website this WO is related to and the user selects "Other", ask which website it's related to
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ddWebsite_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddWebsite.SelectedValue.Equals("7")) // other
@@ -124,6 +134,11 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phWebsiteOther);
         }
 
+        /// <summary>
+        /// Show the releveant fields based on where the user wants their information posted.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void chkLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool showNewContent = false;
@@ -159,6 +174,11 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phOtherLocation, false);
         }
 
+        /// <summary>
+        /// Does a basic domain name check when requesting a new website
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnCheckAvailable_OnClick(object sender, EventArgs e)
         {
             WebResponse response = null;
@@ -196,6 +216,12 @@ namespace HNHUWO2.Create
             }
         }
 
+
+        /// <summary>
+        /// Submitting the form!
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false; // prevent double submission
@@ -211,13 +237,13 @@ namespace HNHUWO2.Create
                 switch (Int32.Parse(ddTypeWebWork.SelectedValue))
                 {
                     case 1: // new content
-                        w.duedate = Function.FormatDate(txtAtoZPostingDate.Text); break;
+                        w.duedate = txtAtoZPostingDate.Text.ConvertToDate(); break;
                     case 2: // update content
-                        w.duedate = Function.FormatDate(txtDateToBeChanged.Text); break;
+                        w.duedate = txtDateToBeChanged.Text.ConvertToDate(); break;
                     case 4: // cd989 web ad
-                        w.duedate = Function.FormatDate(txtWebAdPostDate.Text); break;
+                        w.duedate = txtWebAdPostDate.Text.ConvertToDate(); break;
                     case 5: // facebook status
-                        w.duedate = Function.FormatDate(txtFacebookPostDate.Text); break;
+                        w.duedate = txtFacebookPostDate.Text.ConvertToDate(); break;
                     default:
                     case 3: // new website
                         w.duedate = DateTime.Today; break;
@@ -226,6 +252,7 @@ namespace HNHUWO2.Create
                 w.title = "Website Update";
                 w.status = 1;
                 db.Workorders.InsertOnSubmit(w);
+
                 WorkOrdersWeb wow = new WorkOrdersWeb();
                 wow.Workorder = w;
                 wow.TypeWebWork = ddTypeWebWork.SelectedIndex > 0 ? int.Parse(ddTypeWebWork.SelectedValue) : (int?)null;
@@ -233,42 +260,47 @@ namespace HNHUWO2.Create
                 wow.WebsiteOther = txtWebsiteOther.Text;
                 wow.Location = Function.GetChecklistItems(chkLocation);
                 wow.AtoZLocation = txtAtoZLocation.Text;
-                wow.AtoZPostingDate = Function.FormatDate(txtAtoZPostingDate.Text);
-                wow.AtoZRemovalDate = Function.FormatDate(txtAtoZRemovalDate.Text);
+                wow.AtoZPostingDate = txtAtoZPostingDate.Text.ConvertToDate();
+                wow.AtoZRemovalDate = txtAtoZRemovalDate.Text.ConvertToDate();
                 wow.AtoZHeading = txtAtoZHeading.Text;
                 wow.AtoZContent = txtAtoZContent.Text;
                 wow.CalEventName = txtCalEventName.Text;
                 wow.CalEventLocation = txtCalEventLocation.Text;
-                wow.CalEventStartDate = Function.FormatDate(txtCalStartDate.Text);
+                wow.CalEventStartDate = txtCalStartDate.Text.ConvertToDate();
                 wow.CalEventStartTime = txtCalStartTime.Text;
-                wow.CalEventEndDate = Function.FormatDate(txtCalEndDate.Text);
+                wow.CalEventEndDate = txtCalEndDate.Text.ConvertToDate();
                 wow.CalEventEndTime = txtCalEndTime.Text;
                 wow.ContactName = txtContactName.Text;
                 wow.ContactEmail = txtContactEmail.Text;
                 wow.EventDescription = txtEventDesc.Text;
-                wow.DateToBePosted = Function.FormatDate(txtDatePosted.Text);
+                wow.DateToBePosted = txtDatePosted.Text.ConvertToDate();
                 wow.TypeOfUpdate = ddTypeOfUpdate.SelectedIndex > 0 ? int.Parse(ddTypeOfUpdate.SelectedValue) : (int?)null;
-                wow.DateToBeChanged = Function.FormatDate(txtDateToBeChanged.Text);
+                wow.DateToBeChanged = txtDateToBeChanged.Text.ConvertToDate();
                 wow.UpdateLocation = txtURL.Text;
                 wow.UpdateDescription = txtUpdateDesc.Text;
                 wow.RequestedURL = txtRequestedURL.Text;
                 wow.RequestedDomain = ddDomain.SelectedValue;
-                wow.WebAdPostDate = Function.FormatDate(txtWebAdPostDate.Text);
-                wow.WebAdEndDate = Function.FormatDate(txtWebAdEndDate.Text);
+                wow.WebAdPostDate = txtWebAdPostDate.Text.ConvertToDate();
+                wow.WebAdEndDate = txtWebAdEndDate.Text.ConvertToDate();
                 wow.WebAdURL = txtWebAdURL.Text;
                 wow.WebAdContent = txtWebAdContent.Text;
-                wow.FacebookPostDate = Function.FormatDate(txtFacebookPostDate.Text);
+                wow.FacebookPostDate = txtFacebookPostDate.Text.ConvertToDate();
                 wow.FacebookContent = txtFacebookContent.Text;
                 wow.Notes = txtNotes.Text;
 
                 int pID;
                 if (int.TryParse(Request.QueryString["AddTo"], out pID))
+                {
                     wow.pID = pID;
+                }
                 else
                     wow.pID = null;
                 db.WorkOrdersWebs.InsertOnSubmit(wow);
                 db.SubmitChanges();
                 ID = w.ID;
+                WorkOrdersPrint p = db.WorkOrdersPrints.Single(u => u.wID == pID);
+                p.webID = wow.ID;
+                db.SubmitChanges();
 
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
             }
