@@ -216,15 +216,6 @@ namespace HNHUWO2.Classes
             return value;
         }
 
-        public static DateTime? FormatDate(String strDate)
-        {
-            DateTime dateValue;
-            if (DateTime.TryParseExact(strDate, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateValue))
-                return dateValue;
-            else
-                return null;
-        }
-
         public static String BoolToYesNo(bool? b)
         {
             switch (b) {

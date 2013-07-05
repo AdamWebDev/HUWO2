@@ -19,13 +19,14 @@ namespace HNHUWO2.Classes
             public int Count { get; set; }
         }
 
+        public class PrintReport
+        {
+            public string PrintType { get; set; }
+            public int Count { get; set; }
+        }
+
         private static DateTime _minDate = new DateTime(2012, 12, 21);
         private static DateTime _maxDate = new DateTime(2050, 12, 21);
-
-        public static List<CoordinatorReport> ByCoordinator()
-        {
-            return ByCoordinator(_minDate, _maxDate);
-        }
 
         public static List<CoordinatorReport> ByCoordinator(DateTime? startDate, DateTime? endDate)
         {
@@ -66,10 +67,7 @@ namespace HNHUWO2.Classes
             return q.ToList();
         }
 
-        public static List<ProjectReport> ByProjectType()
-        {
-            return ByProjectType(_minDate, _maxDate);
-        }
+        
 
         public static List<ProjectReport> ByProjectType(DateTime? startDate, DateTime? endDate)
         {
@@ -109,6 +107,42 @@ namespace HNHUWO2.Classes
             return q.ToList();
         }
 
-        
+        public static List<PrintReport> ByPrintType(DateTime? startDate, DateTime? endDate)
+        {
+            if (startDate.HasValue && endDate.HasValue)
+            {
+                DateTime start = (DateTime)startDate;
+                DateTime end = (DateTime)endDate;
+                return ByPrintType(start, end);
+            }
+            else if (startDate.HasValue)
+            {
+                DateTime start = (DateTime)startDate;
+                return ByPrintType(start, _maxDate);
+            }
+            else if (endDate.HasValue)
+            {
+                DateTime end = (DateTime)endDate;
+                return ByPrintType(_minDate, endDate);
+            }
+            else
+            {
+                return ByPrintType(_minDate, _maxDate);
+            }
+        }
+
+        public static List<PrintReport> ByPrintType(DateTime startDate, DateTime endDate)
+        {
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            var q = from w in db.WorkOrdersPrints
+                    where w.Workorder.submitted_date.Date >= startDate.Date && w.Workorder.submitted_date <= endDate.Date && w.Workorder.status < 7 && w.Workorder.WOType1.type.Equals("Print")
+                    group w by w.lookupPrintTypeOfProject.Value into g
+                    select new PrintReport
+                    {
+                        PrintType = g.Key,
+                        Count = g.Count()
+                    };
+            return q.ToList();
+        }
     }
 }

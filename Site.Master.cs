@@ -20,6 +20,11 @@ namespace HNHUWO2
 
             if (Session["role"] == null)
                 Session["role"] = Users.GetUserRole(username);
+
+            coordMenu.Visible = Users.IsUserCoordinator();
+            var isDesigner = Users.IsUserDesigner();
+            reportsMenu.Visible = isDesigner;
+            designersMenu.Visible = isDesigner;
         }
     }
 }

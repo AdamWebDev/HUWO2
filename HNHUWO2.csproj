@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Coordinators\AllPendingWorkOrders.aspx" />
     <Content Include="Coordinators\MyWorkOrders.aspx" />
     <Content Include="CreateWorkOrder.aspx" />
@@ -98,7 +99,6 @@
     <Content Include="Create\Video.aspx" />
     <Content Include="Create\Web.aspx" />
     <Content Include="Designers\OpenWorkOrders.aspx" />
-    <Content Include="FileUpload.aspx" />
     <Content Include="Global.asax" />
     <Content Include="MyWorkOrders.aspx" />
     <Content Include="Reports\ByCoordinator.aspx" />
@@ -195,6 +195,7 @@
     </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -272,13 +273,6 @@
     </Compile>
     <Compile Include="Designers\OpenWorkOrders.aspx.designer.cs">
       <DependentUpon>OpenWorkOrders.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FileUpload.aspx.cs">
-      <DependentUpon>FileUpload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FileUpload.aspx.designer.cs">
-      <DependentUpon>FileUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -443,6 +437,7 @@
     <Content Include="Web.sitemap" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\VM1T.pubxml" />
+    <None Include="README" />
     <None Include="resources\css\font-awesome\font-awesome-ie7.scss" />
     <None Include="resources\css\font-awesome\_font-awesome.scss" />
     <None Include="resources\css\font-awesome\_bootstrap.scss" />

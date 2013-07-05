@@ -34,7 +34,7 @@
 						            <li><asp:HyperLink ID="lnkMyWorkOrders" runat="server" NavigateUrl="~/MyWorkOrders.aspx">My Work Orders</asp:HyperLink></li> <!-- Add class "current" to sub menu items also -->
 					            </ul>
 				            </li>
-                            <li> 
+                            <li ID="coordMenu" runat="server"> 
 					            <a href="#" class="nav-top-item"> <!-- Add the class "current" to current menu item -->
 					            Coordinators
 					            </a>
@@ -43,7 +43,13 @@
                                     <li><asp:HyperLink ID="lnkAllPending" runat="server" NavigateUrl="~/Coordinators/AllPendingWorkOrders.aspx">All Pending Work Orders</asp:HyperLink></li>
 					            </ul>
 				            </li>
-                            <li>
+                            <li id="designersMenu" runat="server">
+                                <a href="#" class="nav-top-item">Designers</a>
+                                <ul>
+                                    <li><asp:HyperLink ID="lnkDesigners1" runat="server" NavigateUrl="~/Designers/OpenWorkOrders.aspx">Open Work Orders</asp:HyperLink></li>
+                                </ul>
+                            </li>
+                            <li ID="reportsMenu" runat="server">
                                 <asp:HyperLink ID="lnkReports" runat="server" CssClass="nav-top-item">Reports</asp:HyperLink>
                                 <ul>
                                     <li><asp:HyperLink ID="lnkReport1" runat="server" NavigateUrl="~/Reports/ByCoordinator.aspx">By Coordinator</asp:HyperLink></li>

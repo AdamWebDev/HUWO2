@@ -9,6 +9,6 @@
         <telerik:radasyncupload ID="uploadFiles" runat="server" 
             MultipleFileSelection="Automatic" 
             Localization-Select="Add Files..." 
-            onfileuploaded="uploadFiles_FileUploaded" TargetFolder="~/uploads"></telerik:radasyncupload>
+            onfileuploaded="uploadFiles_FileUploaded" TargetFolder="~/uploads/"></telerik:radasyncupload>
     </ContentTemplate>
 </asp:UpdatePanel>

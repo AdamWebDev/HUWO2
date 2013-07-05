@@ -186,8 +186,24 @@ namespace HNHUWO2.Classes
             return q.ToList();
         }
 
+        public static void UploadFiles(int ID, UploadedFileCollection files)
+        {
+            UploadFiles(ID, files, false);
+        }
 
-        public static void AddFile(int wID, string filename, bool IsRevision)
+        public static void UploadFiles(int ID, UploadedFileCollection files, bool isRevision)
+        {
+            var destination = HttpContext.Current.Server.MapPath("~/uploads/" + ID + "/");
+            if (!System.IO.Directory.Exists(destination))
+                System.IO.Directory.CreateDirectory(destination);
+            foreach (UploadedFile file in files)
+            {
+                file.SaveAs(destination + file.FileName, true);
+                WO.AddFile(ID, file.FileName, isRevision);
+            }
+        }
+
+        private static void AddFile(int wID, string filename, bool IsRevision)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             File f = new File();

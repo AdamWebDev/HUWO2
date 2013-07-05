@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyWorkOrders.aspx.cs" Inherits="HNHUWO2.MyWorkOrders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">My Work Orders</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server"></asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server"></asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server">
+    <uc:NavButton ID="navCreateNew" runat="server" Icon="icon-plus" AltText="Add Icon" Text="Create New Work Order" NavURL="~/CreateWorkOrder.aspx" />
+</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">My Work Orders</asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Filters" runat="server">
     <label for="ddItemsPerPage">Show:</label>

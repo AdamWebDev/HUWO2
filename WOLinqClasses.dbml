@@ -255,37 +255,6 @@
       <Column Name="message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.WorkOrdersPrint" Member="WorkOrdersPrints">
-    <Type Name="WorkOrdersPrint">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="wID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProjectTypeOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TypeOfDisplay" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TypeOfDisplayOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PromoItem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="PrintingMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Budget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="PaperSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CustomPaperSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PaperType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NumberCopies" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ColourInfo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FullBleed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Credit" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CreditName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="pID" Type="WorkOrdersWeb" />
-      <Association Name="PrintColourInfo_WorkOrdersPrint" Member="PrintColourInfo" ThisKey="ColourInfo" OtherKey="ID" Type="PrintColourInfo" IsForeignKey="true" />
-      <Association Name="PrintCreditType_WorkOrdersPrint" Member="PrintCreditType" ThisKey="Credit" OtherKey="ID" Type="PrintCreditType" IsForeignKey="true" />
-      <Association Name="PrintMethod_WorkOrdersPrint" Member="PrintMethod" ThisKey="PrintingMethod" OtherKey="ID" Type="PrintMethod" IsForeignKey="true" />
-      <Association Name="PrintPaperSize_WorkOrdersPrint" Member="PrintPaperSize" ThisKey="PaperSize" OtherKey="ID" Type="PrintPaperSize" IsForeignKey="true" />
-      <Association Name="PrintPaperType_WorkOrdersPrint" Member="PrintPaperType" ThisKey="PaperType" OtherKey="ID" Type="PrintPaperType" IsForeignKey="true" />
-      <Association Name="PrintTypeOfDisplay_WorkOrdersPrint" Member="PrintTypeOfDisplay" ThisKey="TypeOfDisplay" OtherKey="ID" Type="PrintTypeOfDisplay" IsForeignKey="true" />
-      <Association Name="PrintTypeOfProject_WorkOrdersPrint" Member="PrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="PrintTypeOfProject" IsForeignKey="true" />
-      <Association Name="Workorder_WorkOrdersPrint" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.LogActivity" Member="LogActivities">
     <Type Name="LogActivity">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -341,8 +310,8 @@
       <Association Name="WebSites_WorkOrdersWeb" Member="WebSites" ThisKey="Website" OtherKey="ID" Type="WebSites" IsForeignKey="true" />
       <Association Name="WebType_WorkOrdersWeb" Member="WebType" ThisKey="TypeWebWork" OtherKey="ID" Type="WebType" IsForeignKey="true" />
       <Association Name="WebUpdateType_WorkOrdersWeb" Member="WebUpdateType" ThisKey="TypeOfUpdate" OtherKey="ID" Type="WebUpdateType" IsForeignKey="true" />
-      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersPrint" ThisKey="pID" OtherKey="ID" Type="WorkOrdersPrint" IsForeignKey="true" />
       <Association Name="Workorder_WorkOrdersWeb" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersPrint" ThisKey="pID" OtherKey="ID" Type="WorkOrdersPrint" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Workorders" Member="Workorders">
@@ -359,9 +328,9 @@
       <Association Name="Workorder_WorkOrdersNews" Member="WorkOrdersNews" ThisKey="ID" OtherKey="wID" Type="WorkOrdersNews" />
       <Association Name="Workorder_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="wID" Type="WorkOrdersRadio" />
       <Association Name="Workorder_WorkOrdersVideo" Member="WorkOrdersVideos" ThisKey="ID" OtherKey="wID" Type="WorkOrdersVideo" />
-      <Association Name="Workorder_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="wID" Type="WorkOrdersPrint" />
       <Association Name="Workorder_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="wID" Type="WorkOrdersWeb" />
       <Association Name="Workorder_File" Member="Files" ThisKey="ID" OtherKey="wID" Type="File" />
+      <Association Name="Workorder_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="wID" Type="WorkOrdersPrint" />
       <Association Name="Status_Workorder" Member="Status1" ThisKey="status" OtherKey="ID" Type="Status" IsForeignKey="true" />
       <Association Name="WOType_Workorder" Member="WOType1" ThisKey="wotype" OtherKey="ID" Type="WOType" IsForeignKey="true" />
       <Association Name="User_Workorder" Member="User" ThisKey="coordinator" OtherKey="ID" Type="User" IsForeignKey="true" />
@@ -374,6 +343,47 @@
       <Column Name="Filename" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="Revision" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Workorder_File" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupPrintTypeOfProject" Member="lookupPrintTypeOfProjects">
+    <Type Name="lookupPrintTypeOfProject">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="lookupPrintTypeOfProject_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="ProjectType" Type="WorkOrdersPrint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersPrint" Member="WorkOrdersPrints">
+    <Type Name="WorkOrdersPrint">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProjectTypeOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TypeOfDisplay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeOfDisplayOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PromoItem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PrintingMethod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Budget" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PaperSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomPaperSize" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaperType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberCopies" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ColourInfo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FullBleed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreditName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="webID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="pID" Type="WorkOrdersWeb" />
+      <Association Name="PrintColourInfo_WorkOrdersPrint" Member="PrintColourInfo" ThisKey="ColourInfo" OtherKey="ID" Type="PrintColourInfo" IsForeignKey="true" />
+      <Association Name="PrintCreditType_WorkOrdersPrint" Member="PrintCreditType" ThisKey="Credit" OtherKey="ID" Type="PrintCreditType" IsForeignKey="true" />
+      <Association Name="PrintMethod_WorkOrdersPrint" Member="PrintMethod" ThisKey="PrintingMethod" OtherKey="ID" Type="PrintMethod" IsForeignKey="true" />
+      <Association Name="PrintPaperSize_WorkOrdersPrint" Member="PrintPaperSize" ThisKey="PaperSize" OtherKey="ID" Type="PrintPaperSize" IsForeignKey="true" />
+      <Association Name="PrintPaperType_WorkOrdersPrint" Member="PrintPaperType" ThisKey="PaperType" OtherKey="ID" Type="PrintPaperType" IsForeignKey="true" />
+      <Association Name="PrintTypeOfDisplay_WorkOrdersPrint" Member="PrintTypeOfDisplay" ThisKey="TypeOfDisplay" OtherKey="ID" Type="PrintTypeOfDisplay" IsForeignKey="true" />
+      <Association Name="PrintTypeOfProject_WorkOrdersPrint" Member="PrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="PrintTypeOfProject" IsForeignKey="true" />
+      <Association Name="lookupPrintTypeOfProject_WorkOrdersPrint" Member="lookupPrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="lookupPrintTypeOfProject" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersPrint" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

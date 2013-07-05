@@ -122,8 +122,8 @@ namespace HNHUWO2.Create
                 r.AiringMonth = ddAiringMonth.SelectedIndex > 0 ? int.Parse(ddAiringMonth.SelectedValue) : (int?)null;
                 r.RadioStation = ddRadioStation.SelectedIndex > 0 ? int.Parse(ddRadioStation.SelectedValue) : (int?)null;
                 r.LengthOfAd = ddLengthOfAd.SelectedIndex > 0 ? int.Parse(ddLengthOfAd.SelectedValue) : (int?)null;
-                r.StartAiringDate = Function.FormatDate(txtStartAiringDate.Text);
-                r.EndAiringDate = Function.FormatDate(txtEndAiringDate.Text);
+                r.StartAiringDate = txtStartAiringDate.Text.ConvertToDate();
+                r.EndAiringDate = txtEndAiringDate.Text.ConvertToDate();
                 r.Budget = txtBudget.Text;
                 r.GLCode = txtGLCode.Text;
                 r.RecordingOptions = ddRecordingOptions.SelectedIndex > 0 ? int.Parse(ddRecordingOptions.SelectedValue) : (int?)null;

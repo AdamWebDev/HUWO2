@@ -8,7 +8,12 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <uc:StatusMessages ID="statusMessages" runat="server" />
-    
+    <asp:Panel ID="pnNotification" runat="server" CssClass="notification attention png_bg" Visible="false">
+        <div>
+            This web work order has a related print work order. <asp:HyperLink ID="lnkRelatedWO" runat="server">View it now</asp:HyperLink>.
+        </div>
+    </asp:Panel>
+
     <ul class="view-wo">
         <li>
             <label>Type of Web Work</label>

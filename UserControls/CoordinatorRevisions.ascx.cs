@@ -31,14 +31,8 @@ namespace HNHUWO2.UserControls
             if (uploadFiles.UploadedFiles.Count > 0)
             {
                 int ID = int.Parse(Request.QueryString["ID"]);
-                var destination = HttpContext.Current.Server.MapPath("~/uploads/" + ID.ToString()  + "/");
-                if (!System.IO.Directory.Exists(destination))
-                  System.IO.Directory.CreateDirectory(destination);
-                foreach (UploadedFile file in Files)
-                {
-                    file.SaveAs(destination + file.FileName);
-                    Classes.WO.AddFile(ID, file.FileName, true);
-                }
+                Classes.WO.UploadFiles(ID, uploadFiles.UploadedFiles,true);
+
             }
         }
     }

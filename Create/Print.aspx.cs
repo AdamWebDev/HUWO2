@@ -16,41 +16,49 @@ namespace HNHUWO2.Create
             if (!Page.IsPostBack)
             {
                 // populate Drop Down boxes for the page
+                Function.AddInitialItem(ddCoordinators);
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
                 ddCoordinators.DataBind();
-                                
+
+                Function.AddInitialItem(ddTypeProject);
                 ddTypeProject.DataSource = PrintWO.GetTypeOfProjects();
                 ddTypeProject.DataTextField = "Value";
                 ddTypeProject.DataValueField = "ID";
                 ddTypeProject.DataBind();
 
+                Function.AddInitialItem(ddTypeOfDisplay);
                 ddTypeOfDisplay.DataSource = PrintWO.GetTypeOfDisplays();
                 ddTypeOfDisplay.DataTextField = "Value";
                 ddTypeOfDisplay.DataValueField = "ID";
                 ddTypeOfDisplay.DataBind();
 
+                Function.AddInitialItem(ddPrintingMethod);
                 ddPrintingMethod.DataSource = PrintWO.GetPrintMethods();
                 ddPrintingMethod.DataTextField = "Value";
                 ddPrintingMethod.DataValueField = "ID";
                 ddPrintingMethod.DataBind();
 
+                Function.AddInitialItem(ddPaperSize);
                 ddPaperSize.DataSource = PrintWO.GetPaperSizes();
                 ddPaperSize.DataTextField = "Value";
                 ddPaperSize.DataValueField = "ID";
                 ddPaperSize.DataBind();
 
+                Function.AddInitialItem(ddPaperType);
                 ddPaperType.DataSource = PrintWO.GetPaperTypes();
                 ddPaperType.DataTextField = "Value";
                 ddPaperType.DataValueField = "ID";
                 ddPaperType.DataBind();
 
+                Function.AddInitialItem(ddColourInfo);
                 ddColourInfo.DataSource = PrintWO.GetColourInfo();
                 ddColourInfo.DataTextField = "Value";
                 ddColourInfo.DataValueField = "ID";
                 ddColourInfo.DataBind();
 
+                Function.AddInitialItem(ddCredits);
                 ddCredits.DataSource = PrintWO.GetCreditType();
                 ddCredits.DataTextField = "Value";
                 ddCredits.DataValueField = "ID";
@@ -72,7 +80,7 @@ namespace HNHUWO2.Create
                 {
                     ltPageTitle.Text = ltContentTitle.Text = "Create a Print Work Order";
                 }
-            }
+            } 
         }
 
         protected void ddTypeProject_SelectedIndexChanged(object sender, EventArgs e)
@@ -219,7 +227,7 @@ namespace HNHUWO2.Create
                     w.wotype = 5;
                 else
                     w.wotype = 1;
-                w.duedate = Function.FormatDate(txtDueDate.Text);
+                w.duedate = txtDueDate.Text.ConvertToDate();
                 w.coordinator = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtPubTitle.Text;
                 w.status = 1;
@@ -245,14 +253,18 @@ namespace HNHUWO2.Create
                 p.Notes = txtNotes.Text;
                 db.WorkOrdersPrints.InsertOnSubmit(p);
                 db.SubmitChanges();
-                ID = p.ID;
-            }
+                ID = (int)p.wID;
+
                 WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created");
+
+                WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
+
                 if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
                     Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
                 else // if not, success!!
                     Response.Redirect("~/MyWorkOrders.aspx?success=true");
+            }
         }
     }
 }

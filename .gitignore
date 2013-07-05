@@ -1,10 +1,12 @@
-bin/
-App_Data/
-obj/
-uploads/
-Properties/
+bin
+App_Data
+obj
+uploads
+Properties
 Web.Debug.config
 Web.Release.config
 *.bin
 *.dll
 *.pdb
+bin/HNHUWO2.dll
+bin/HNHUWO2.pdb
