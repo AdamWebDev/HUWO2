@@ -73,13 +73,22 @@ $(document).ready(function () {
 			}
 		);
 
-	$('.datepicker').datepicker({
+    $('.datepicker').datepicker({
         dateFormat: "yy-mm-dd"
     });
 
     $(".timepicker").timepicker({
         stepMinute: 15,
         timeFormat: "hh:mm TT"
+    });
+
+    $(document).tooltip({
+        items: ".tooltip-url",
+        content: "A URL is the address a web page, for example http://www.google.com",
+        position: {
+            my: "left+20",
+            at: "center"
+        }
     });
 
     var path = window.location['pathname'];
