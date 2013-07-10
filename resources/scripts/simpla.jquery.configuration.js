@@ -96,8 +96,12 @@ $(document).ready(function () {
 
     // hides any rows that don't have a value in them.
     $('ul.view-wo li').each(function () {
-        if ($(this).children('span').html().trim() == '') {
+        var text = $(this).children('span').html();
+        if (text.trim() == '') {
             $(this).hide();
+        }
+        else {
+            $(this).children('span').html(replaceURLWithHTMLLinks(text));
         }
     });
 });
@@ -119,4 +123,9 @@ function pageLoad(sender, args) {
         });
         $(".timepicker").timepicker({ stepMinute: 15, timeFormat: "hh:mm TT" });
     }
+}
+
+function replaceURLWithHTMLLinks(text) {
+    var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text.replace(exp, "$1 (<a href='$1' target='_blank'>Link</a>)");
 }
