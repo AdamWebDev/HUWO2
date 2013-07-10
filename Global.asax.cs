@@ -83,7 +83,7 @@ namespace HNHUWO2
         public static DateTime? ConvertToDate(this String value)
         {
             DateTime dateValue;
-            if (DateTime.TryParseExact(value, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out dateValue))
+            if (DateTime.TryParseExact(value, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out dateValue))
                 return dateValue;
             else
                 return null;

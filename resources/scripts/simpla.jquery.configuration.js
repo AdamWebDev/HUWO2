@@ -73,7 +73,9 @@ $(document).ready(function () {
 			}
 		);
 
-    $('.datepicker').datepicker();
+	$('.datepicker').datepicker({
+        dateFormat: "yy-mm-dd"
+    });
 
     $(".timepicker").timepicker({
         stepMinute: 15,
@@ -103,7 +105,9 @@ function checkDate(sender, args) {
 
 function pageLoad(sender, args) {
     if (args.get_isPartialLoad()) {
-        $(".datepicker").datepicker();
+        $(".datepicker").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
         $(".timepicker").timepicker({ stepMinute: 15, timeFormat: "hh:mm TT" });
     }
 }
