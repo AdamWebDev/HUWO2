@@ -103,6 +103,12 @@
     <Content Include="MyWorkOrders.aspx" />
     <Content Include="Reports\ByCoordinator.aspx" />
     <Content Include="Reports\ByProjectType.aspx" />
+    <Content Include="resources\css\font-awesome\font-awesome-ie7.css">
+      <DependentUpon>font-awesome-ie7.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\css\font-awesome\font-awesome-ie7.min.css">
+      <DependentUpon>font-awesome-ie7.scss</DependentUpon>
+    </Content>
     <Content Include="resources\css\jquery-ui.css">
       <DependentUpon>_jqueryui.scss</DependentUpon>
     </Content>
@@ -438,19 +444,84 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\VM1T.pubxml" />
     <None Include="README.md" />
-    <None Include="resources\css\font-awesome\font-awesome-ie7.scss" />
-    <None Include="resources\css\font-awesome\_font-awesome.scss" />
-    <None Include="resources\css\font-awesome\_bootstrap.scss" />
-    <None Include="resources\css\font-awesome\_core.scss" />
-    <None Include="resources\css\font-awesome\_extras.scss" />
-    <None Include="resources\css\font-awesome\_icons.scss" />
-    <None Include="resources\css\font-awesome\_mixins.scss" />
-    <None Include="resources\css\font-awesome\_path.scss" />
-    <None Include="resources\css\font-awesome\_variables.scss" />
-    <None Include="resources\css\_blue.scss" />
-    <None Include="resources\css\_jqueryui.scss" />
-    <None Include="resources\css\_reset.scss" />
-    <None Include="resources\css\style.scss" />
+    <None Include="resources\css\font-awesome\font-awesome-ie7.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_font-awesome.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_bootstrap.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_core.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_extras.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_icons.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_mixins.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_path.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\font-awesome\_variables.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\_blue.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\_jqueryui.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\_reset.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\style.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>True</DebugInfo>
+    </None>
     <None Include="resources\font\fontawesome-webfont.eot" />
     <None Include="resources\font\fontawesome-webfont.ttf" />
     <None Include="resources\font\fontawesome-webfont.woff" />
