@@ -54,9 +54,12 @@
                 <asp:CustomValidator ID="reqchkLocation" runat="server" ErrorMessage="Location is Required" ClientValidationFunction="ValidateCheckBoxList"  CssClass="input-notification error png_bg" Enabled="false" />
 
                 <asp:PlaceHolder ID="phOtherLocation" runat="server" Visible="false">
+                    <fieldset>
+                    <legend>Where is this content supposed to go?</legend>
                     <label>Specify Location (URL)</label>
                     <asp:TextBox ID="txtAtoZLocation" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqAtoZLocation" runat="server" ControlToValidate="txtAtoZLocation" ErrorMessage="Location (URL) is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                    </fieldset>
                 </asp:PlaceHolder>
 
                 <asp:PlaceHolder ID="phAtoZ" runat="server" Visible="false">
