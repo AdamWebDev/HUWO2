@@ -51,7 +51,7 @@ namespace HNHUWO2.Create
                 // if user is being redirected from a successful print work order, let them know!
                 if (Request.QueryString["AddTo"] != null)
                 {
-                    notMain.Message = "Your print work order has been created! Now, just let us know some details about adding this to the website. Note - if you uploaded related already to the print work order, you don't have to upload them again here.";
+                    notMain.Message = "Your print work order has been created! Now, just let us know some details about adding this to the website. Note - if you uploaded some related files already to the print work order, you don't have to upload them again here.";
                     notMain.Type = Notification.Types.Success;
                     notMain.Visible = true;
 
