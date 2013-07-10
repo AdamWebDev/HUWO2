@@ -131,19 +131,6 @@ namespace HNHUWO2.Create
         }
 
         /// <summary>
-        /// When asking which website this WO is related to and the user selects "Other", ask which website it's related to
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void ddWebsite_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddWebsite.SelectedValue.Equals("7")) // other
-                Function.ShowControls(phWebsiteOther);
-            else
-                Function.ClearControls(phWebsiteOther);
-        }
-
-        /// <summary>
         /// Show the releveant fields based on where the user wants their information posted.
         /// </summary>
         /// <param name="sender"></param>
@@ -266,7 +253,6 @@ namespace HNHUWO2.Create
                 wow.Workorder = w;
                 wow.TypeWebWork = ddTypeWebWork.SelectedIndex > 0 ? int.Parse(ddTypeWebWork.SelectedValue) : (int?)null;
                 wow.Website = ddWebsite.SelectedIndex > 0 ? int.Parse(ddWebsite.SelectedValue) : (int?)null;
-                wow.WebsiteOther = txtWebsiteOther.Text;
                 wow.Location = Function.GetChecklistItems(chkLocation);
                 wow.AtoZLocation = txtAtoZLocation.Text;
                 wow.AtoZPostingDate = txtAtoZPostingDate.Text.ConvertToDate();
@@ -319,7 +305,6 @@ namespace HNHUWO2.Create
             
             Function.LogAction(ID, "Work order created.");
             Response.Redirect("~/MyWorkOrders.aspx?success=true");
-            
         }
     }
 }

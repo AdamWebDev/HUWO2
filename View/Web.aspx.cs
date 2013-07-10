@@ -28,7 +28,6 @@ namespace HNHUWO2.View
                 lblTypeWebWork.Text = wo.WebType.Value;
                 lblCoordinator.Text = wo.Workorder.User.FullName;
                 lblWebsite.Text = wo.Website.HasValue ? wo.WebSites.Value : String.Empty;
-                lblWebsiteOther.Text = wo.WebsiteOther;
                 lblLocation.Text = WebWO.DisplayLocations(wo.Location);
                 lblAtoZLocation.Text = wo.AtoZLocation;
                 lblAtoZPostingDate.Text = wo.AtoZPostingDate.DisplayDate();

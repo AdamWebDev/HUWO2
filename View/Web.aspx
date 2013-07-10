@@ -28,10 +28,6 @@
             <asp:Label ID="lblWebsite" runat="server"></asp:Label>
         </li>
         <li>
-            <label>Other</label>
-            <asp:Label ID="lblWebsiteOther" runat="server"></asp:Label>
-        </li>
-        <li>
             <label>Location</label>
             <asp:Label ID="lblLocation" runat="server"></asp:Label>
         </li>

@@ -121,33 +121,6 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqWebsite;
         
         /// <summary>
-        /// phWebsiteOther control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phWebsiteOther;
-        
-        /// <summary>
-        /// txtWebsiteOther control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWebsiteOther;
-        
-        /// <summary>
-        /// reqWebsiteOther control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqWebsiteOther;
-        
-        /// <summary>
         /// phNewContent control.
         /// </summary>
         /// <remarks>

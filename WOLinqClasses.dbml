@@ -270,50 +270,6 @@
       <Column Name="DaysNotice" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.WorkOrdersWeb" Member="WorkOrdersWebs">
-    <Type Name="WorkOrdersWeb">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="pID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TypeWebWork" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Website" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="WebsiteOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Location" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="AtoZLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="AtoZPostingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="AtoZRemovalDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="AtoZHeading" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="AtoZContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="CalEventName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CalEventLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CalEventStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CalEventStartTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="CalEventEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CalEventEndTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="ContactName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ContactEmail" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="EventDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="DateToBePosted" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="TypeOfUpdate" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateToBeChanged" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="UpdateLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="UpdateDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="RequestedURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RequestedDomain" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Column Name="WebAdPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="WebAdEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="WebAdURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="WebAdContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="FacebookPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="FacebookContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="WebSites_WorkOrdersWeb" Member="WebSites" ThisKey="Website" OtherKey="ID" Type="WebSites" IsForeignKey="true" />
-      <Association Name="WebType_WorkOrdersWeb" Member="WebType" ThisKey="TypeWebWork" OtherKey="ID" Type="WebType" IsForeignKey="true" />
-      <Association Name="WebUpdateType_WorkOrdersWeb" Member="WebUpdateType" ThisKey="TypeOfUpdate" OtherKey="ID" Type="WebUpdateType" IsForeignKey="true" />
-      <Association Name="Workorder_WorkOrdersWeb" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
-      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersPrint" ThisKey="pID" OtherKey="ID" Type="WorkOrdersPrint" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Workorders" Member="Workorders">
     <Type Name="Workorder">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -328,9 +284,9 @@
       <Association Name="Workorder_WorkOrdersNews" Member="WorkOrdersNews" ThisKey="ID" OtherKey="wID" Type="WorkOrdersNews" />
       <Association Name="Workorder_WorkOrdersRadio" Member="WorkOrdersRadios" ThisKey="ID" OtherKey="wID" Type="WorkOrdersRadio" />
       <Association Name="Workorder_WorkOrdersVideo" Member="WorkOrdersVideos" ThisKey="ID" OtherKey="wID" Type="WorkOrdersVideo" />
-      <Association Name="Workorder_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="wID" Type="WorkOrdersWeb" />
       <Association Name="Workorder_File" Member="Files" ThisKey="ID" OtherKey="wID" Type="File" />
       <Association Name="Workorder_WorkOrdersPrint" Member="WorkOrdersPrints" ThisKey="ID" OtherKey="wID" Type="WorkOrdersPrint" />
+      <Association Name="Workorder_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="wID" Type="WorkOrdersWeb" />
       <Association Name="Status_Workorder" Member="Status1" ThisKey="status" OtherKey="ID" Type="Status" IsForeignKey="true" />
       <Association Name="WOType_Workorder" Member="WOType1" ThisKey="wotype" OtherKey="ID" Type="WOType" IsForeignKey="true" />
       <Association Name="User_Workorder" Member="User" ThisKey="coordinator" OtherKey="ID" Type="User" IsForeignKey="true" />
@@ -374,7 +330,6 @@
       <Column Name="CreditName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="webID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="WorkOrdersPrint_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="pID" Type="WorkOrdersWeb" />
       <Association Name="PrintColourInfo_WorkOrdersPrint" Member="PrintColourInfo" ThisKey="ColourInfo" OtherKey="ID" Type="PrintColourInfo" IsForeignKey="true" />
       <Association Name="PrintCreditType_WorkOrdersPrint" Member="PrintCreditType" ThisKey="Credit" OtherKey="ID" Type="PrintCreditType" IsForeignKey="true" />
       <Association Name="PrintMethod_WorkOrdersPrint" Member="PrintMethod" ThisKey="PrintingMethod" OtherKey="ID" Type="PrintMethod" IsForeignKey="true" />
@@ -384,6 +339,48 @@
       <Association Name="PrintTypeOfProject_WorkOrdersPrint" Member="PrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="PrintTypeOfProject" IsForeignKey="true" />
       <Association Name="lookupPrintTypeOfProject_WorkOrdersPrint" Member="lookupPrintTypeOfProject" ThisKey="ProjectType" OtherKey="ID" Type="lookupPrintTypeOfProject" IsForeignKey="true" />
       <Association Name="Workorder_WorkOrdersPrint" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkOrdersWeb" Member="WorkOrdersWebs">
+    <Type Name="WorkOrdersWeb">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="wID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TypeWebWork" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Website" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AtoZLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AtoZPostingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AtoZRemovalDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AtoZHeading" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AtoZContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CalEventName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CalEventLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CalEventStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CalEventStartTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CalEventEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CalEventEndTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContactEmail" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EventDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateToBePosted" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TypeOfUpdate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateToBeChanged" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UpdateLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UpdateDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RequestedURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RequestedDomain" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="WebAdPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WebAdEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WebAdURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WebAdContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FacebookPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FacebookContent" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="WebSites_WorkOrdersWeb" Member="WebSites" ThisKey="Website" OtherKey="ID" Type="WebSites" IsForeignKey="true" />
+      <Association Name="WebType_WorkOrdersWeb" Member="WebType" ThisKey="TypeWebWork" OtherKey="ID" Type="WebType" IsForeignKey="true" />
+      <Association Name="WebUpdateType_WorkOrdersWeb" Member="WebUpdateType" ThisKey="TypeOfUpdate" OtherKey="ID" Type="WebUpdateType" IsForeignKey="true" />
+      <Association Name="Workorder_WorkOrdersWeb" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

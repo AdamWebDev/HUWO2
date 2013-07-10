@@ -38,14 +38,8 @@
             
             <asp:PlaceHolder ID="phWebsite" runat="server" Visible="false">
                 <label>Website</label>
-                <asp:DropDownList ID="ddWebsite" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true" OnSelectedIndexChanged="ddWebsite_SelectedIndexChanged"></asp:DropDownList>
+                <asp:DropDownList ID="ddWebsite" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true"></asp:DropDownList>
                 <asp:RequiredFieldValidator ID="reqWebsite" runat="server" ControlToValidate="ddWebsite" ErrorMessage="Website is Required" CssClass="input-notification error png_bg" Enabled="false" />
-
-                <asp:PlaceHolder ID="phWebsiteOther" runat="server" Visible="false">
-                    <label>Please specify URL</label>
-                    <asp:TextBox ID="txtWebsiteOther" runat="server" CssClass="small-input text-input" MaxLength="255"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="reqWebsiteOther" runat="server" ControlToValidate="txtWebsiteOther" ErrorMessage="URL is Required" CssClass="input-notification error png_bg" Enabled="false" />
-                </asp:PlaceHolder>
             </asp:PlaceHolder>
 
             <asp:PlaceHolder ID="phNewContent" runat="server" Visible="false">
