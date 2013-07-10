@@ -195,7 +195,7 @@
             
 
             <label>Attach files:</label>
-            <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads"></telerik:radasyncupload>
+            <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic"></telerik:radasyncupload>
 
             <label>Additional Notes:</label>
             <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
