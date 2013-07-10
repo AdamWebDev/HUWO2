@@ -589,68 +589,69 @@ form fieldset {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003440}}
   form fieldset legend {
     font-weight: bold;
-    padding: 0 1em;
-    font-size: 1.2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003447}}
+    padding: 0 0.5em;
+    font-size: 1.2em;
+    margin-left: -1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003448}}
 form p small {
   color: #777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003450}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003451}}
 form input.text-input, form select, form textarea, form .wysiwyg {
   padding: 6px;
   background: white url("../images/bg-form-field.gif") top left repeat-x;
   border: 1px solid #d5d5d5;
   color: #333; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003457}}
 form .small-input {
   width: 25% !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003459}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003460}}
 form .medium-input {
   width: 50% !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003462}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003463}}
 form .large-input {
   width: 97.5% !important;
   font-size: 16px !important;
   padding: 8px !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003467}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003468}}
 form textarea {
   width: 97.5% !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003470}}
 form select {
   padding: 4px;
   background: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003476}}
 form input[type="checkbox"], form input[type="radio"] {
   padding: 0;
   background: none;
   border: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003480}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003481}}
 form input[type="text"].disabled {
   color: #000;
   background: #fff;
   border: none;
   border-bottom: thin solid #ddd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003487}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003488}}
 form input[type="checkbox"] + label {
   display: inline;
   margin-left: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003492}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003493}}
 form select.disabled {
   color: #000;
   background: #fff;
   border: none;
   border-bottom: thin solid #ddd; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003500}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003501}}
 .report-form {
   margin-bottom: 1em; }
 
 /*************** View Work Orders ***************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003509}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003510}}
 ul.view-wo > li {
   padding: 5px;
   font-size: 2em;
   background: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003513}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003514}}
   ul.view-wo > li > label {
     vertical-align: top;
     color: white;
@@ -661,7 +662,7 @@ ul.view-wo > li {
     display: inline-block;
     min-width: 25%;
     border: thin solid #2D89EF; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003524}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003525}}
   ul.view-wo > li > span {
     border-bottom: thin solid #2D89EF;
     border-left: thin solid #2D89EF;
@@ -670,22 +671,22 @@ ul.view-wo > li {
     width: 70%;
     display: inline-block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003535}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003536}}
 ul.activity-log li {
   font-size: 0.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003539}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003540}}
 #FileList {
   margin: 0 0 0 -9px;
   padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003540}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003541}}
 ul.filelist {
   padding: 2px 0 1px 10px;
   margin: 0; }
 
 /*************** Notifications ***************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003545}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003546}}
 .notification {
   position: relative;
   margin: 1em 0 15px 0;
@@ -695,37 +696,37 @@ ul.filelist {
   background-repeat: no-repeat !important;
   width: 52%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003554}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003555}}
 .attention {
   background: #fffbcc url("../images/icons/exclamation.png") 10px 11px no-repeat;
   border-color: #e6db55;
   color: #666452; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003559}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003560}}
 .information {
   background: #dbe3ff url("../images/icons/information.png");
   border-color: #a2b4ee;
   color: #585b66; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003564}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003565}}
 .success {
   background: #d5ffce url("../images/icons/tick_circle.png");
   border-color: #9adf8f;
   color: #556652; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003569}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003570}}
 .error {
   background: #ffcece url("../images/icons/cross_circle.png");
   border-color: #df8f8f;
   color: #665252; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003575}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003576}}
 .notification div {
   display: block;
   font-style: normal;
   padding: 10px 10px 10px 36px;
   line-height: 1.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003580}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003581}}
 .notification .close {
   color: #990000;
   font-size: 9px;
@@ -734,7 +735,7 @@ ul.filelist {
   top: 5px; }
 
 /* Notification for form inputs */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003589}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003590}}
 .input-notification {
   background-position: left 2px;
   background-repeat: no-repeat;
@@ -743,75 +744,75 @@ ul.filelist {
   margin: 0 0 0 5px; }
 
 /* Notification for login page */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003598}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003599}}
 #login-wrapper .notification {
   border: 0;
   background-color: #141414;
   color: #fff !important; }
 
 /********************************      Login Page      ********************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003605}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003606}}
 body#login {
   color: #fff;
   background: #222222 url("../images/bg-login.gif"); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003609}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003610}}
 #login-wrapper {
   background: url("../images/bg-login-top.png") top left repeat-x; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003611}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003612}}
   #login-wrapper #login-top {
     width: 100%;
     padding: 140px 0 50px 0;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003615}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003616}}
   #login-wrapper #login-content {
     text-align: left;
     width: 300px;
     margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003619}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003620}}
     #login-wrapper #login-content label {
       color: #fff;
       float: left;
       width: 70px;
       padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003624}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003625}}
     #login-wrapper #login-content input {
       width: 200px;
       float: right;
       margin: 0 0 20px 0;
       border: 0;
       background: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003630}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003631}}
     #login-wrapper #login-content p {
       padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003632}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003633}}
       #login-wrapper #login-content p#remember-password {
         float: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003634}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003635}}
         #login-wrapper #login-content p#remember-password input {
           float: none;
           width: auto;
           border: 0;
           background: none;
           margin: 0 10px 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003640}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003641}}
       #login-wrapper #login-content p .button {
         width: auto;
         margin-top: 20px; }
 
 /********************************      jQuery plugins styles      ********************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003646}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003647}}
 .placeholder {
   color: #aaa; }
 
 /************** Additional styles *****************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003651}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003652}}
 .ruInputs li {
   list-style: none;
   background: none !important;
   padding: 0 !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003656}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003657}}
 .error-summary {
   position: relative;
   margin: 1em 0 15px 0;
@@ -828,15 +829,15 @@ body#login {
   padding: 10px 10px 10px 36px;
   line-height: 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003672}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003673}}
 .hidden {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003675}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003676}}
 .inline {
   display: inline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003678}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003679}}
 .ajax__fileupload {
   width: 50%; }
 
