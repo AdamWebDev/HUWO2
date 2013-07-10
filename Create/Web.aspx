@@ -50,7 +50,7 @@
                 <asp:PlaceHolder ID="phOtherLocation" runat="server" Visible="false">
                     <fieldset>
                     <legend>Where is this content supposed to go?</legend>
-                    <label>Specify Location (URL)</label>
+                    <label>Specify Location (URL) <i class="icon-question-sign tooltip-url"></i></label>
                     <asp:TextBox ID="txtAtoZLocation" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqAtoZLocation" runat="server" ControlToValidate="txtAtoZLocation" ErrorMessage="Location (URL) is Required" CssClass="input-notification error png_bg" Enabled="false" />
                     </fieldset>
@@ -134,7 +134,7 @@
             <asp:TextBox ID="txtDateToBeChanged" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqDateToBeChanged" runat="server" ControlToValidate="txtDateToBeChanged" ErrorMessage="Date to be Changed is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
-            <label>Location (URL)</label>
+            <label>Location (URL) <i class="icon-question-sign tooltip-url"></i></label>
             <asp:TextBox ID="txtURL" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqURL" runat="server" ControlToValidate="txtURL" ErrorMessage="URL is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
@@ -144,7 +144,7 @@
         </asp:PlaceHolder>
 
         <asp:PlaceHolder ID="phNewWebsite" runat="server" Visible="false">
-            <label>URL requesting</label>
+            <label>URL requesting <i class="icon-question-sign tooltip-url"></i></label>
             http://www.<asp:TextBox ID="txtRequestedURL" runat="server"  CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
             <asp:DropDownList ID="ddDomain" runat="server">
                 <asp:ListItem Value="" Text="--Select--" />
@@ -165,7 +165,7 @@
             <asp:TextBox ID="txtWebAdEndDate" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqWebAdEndDate" runat="server" ControlToValidate="txtWebAdEndDate" ErrorMessage="Removal Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
 
-            <label>URL To Link To</label>
+            <label>URL To Link To <i class="icon-question-sign tooltip-url"></i></label>
             <asp:TextBox ID="txtWebAdURL" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqWebAdURL" runat="server" ControlToValidate="txtWebAdURL" ErrorMessage="URL is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
