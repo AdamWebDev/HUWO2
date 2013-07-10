@@ -16,21 +16,21 @@ namespace HNHUWO2.Create
             if (!Page.IsPostBack)
             {
                 // populate Coordinators Drop Down
-                Function.AddInitialItem(ddCoordinators);
+                ddCoordinators.AddInitialItem();
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
                 ddCoordinators.DataBind();
 
                 // populate Ad Type
-                Function.AddInitialItem(ddAdType);
+                ddAdType.AddInitialItem();
                 ddAdType.DataSource = RadioWO.GetRadioAdTypes();
                 ddAdType.DataValueField = "ID";
                 ddAdType.DataTextField = "Value";
                 ddAdType.DataBind();
 
                 // populate month dropdown
-                Function.AddInitialItem(ddAiringMonth);
+                ddAiringMonth.AddInitialItem();
                 DateTimeFormatInfo info = DateTimeFormatInfo.GetInstance(null);
                 for (int i = 1; i < 13; i++)
                 {
@@ -39,21 +39,21 @@ namespace HNHUWO2.Create
                 }
 
                 // populate Radio Stations
-                Function.AddInitialItem(ddRadioStation);
+                ddRadioStation.AddInitialItem();
                 ddRadioStation.DataSource = RadioWO.GetRadioStations();
                 ddRadioStation.DataValueField = "ID";
                 ddRadioStation.DataTextField = "Value";
                 ddRadioStation.DataBind();
 
                 // populate Ad Length
-                Function.AddInitialItem(ddLengthOfAd);
+                ddLengthOfAd.AddInitialItem();
                 ddLengthOfAd.DataSource = RadioWO.GetRadioAdLengths();
                 ddLengthOfAd.DataValueField = "ID";
                 ddLengthOfAd.DataTextField = "Value";
                 ddLengthOfAd.DataBind();
 
                 // populate Recording Options
-                Function.AddInitialItem(ddRecordingOptions);
+                ddRecordingOptions.AddInitialItem();
                 ddRecordingOptions.DataSource = RadioWO.GetRecordingOptions();
                 ddRecordingOptions.DataValueField = "ID";
                 ddRecordingOptions.DataTextField = "Value";
@@ -66,20 +66,16 @@ namespace HNHUWO2.Create
             if (ddAdType.SelectedItem.Value.Equals("1")) // Monthly Sponsorship
             {
                 Function.ShowControls(phMonthly);
-                Function.ShowControls(phAdditionalInfo);
-                Function.ClearControls(phIndividual, false);
                 btnSubmit.Visible = true;
             }
             else if (ddAdType.SelectedItem.Value.Equals("2")) // Individual 
             {
-                Function.ShowControls(phAdditionalInfo);
                 Function.ShowControls(phIndividual);
                 Function.ClearControls(phMonthly, false);
                 btnSubmit.Visible = true;
             }
             else
             {
-                Function.ClearControls(phAdditionalInfo, false);
                 Function.ClearControls(phIndividual, false);
                 Function.ClearControls(phMonthly, false);
                 btnSubmit.Visible = false;
@@ -92,13 +88,13 @@ namespace HNHUWO2.Create
             DateTime duedate;
             if (ddAdType.SelectedValue.Equals("1"))
             {
-                String strDate = "01/" + ddAiringMonth.SelectedValue + "/" + DateTime.Now.Year;
-                duedate = DateTime.ParseExact(strDate, "dd/M/yyyy", CultureInfo.InvariantCulture);
+                String strDate =  DateTime.Now.Year + "/" + ddAiringMonth.SelectedValue + "/01";
+                duedate = (DateTime)strDate.ConvertToDate();
                 if (duedate < DateTime.Now)
                     duedate = duedate.AddYears(1);
             }
             else
-                duedate = DateTime.ParseExact(txtStartAiringDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                duedate = (DateTime)txtStartAiringDate.Text.ConvertToDate();
             
             btnSubmit.Enabled = false;
 
@@ -133,7 +129,7 @@ namespace HNHUWO2.Create
                 ID = w.ID;
             }
             Function.LogAction(ID, "Work order created");
-            Response.Redirect("~/MyWorkOrders.aspx?success=true");
+            Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID);
         }
     }
 }

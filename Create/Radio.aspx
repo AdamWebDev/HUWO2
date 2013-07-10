@@ -10,17 +10,18 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <asp:ValidationSummary ID="ValidationSummary" HeaderText="Your work order has not been saved. Please note the following fields that are missing information:" runat="server" CssClass="error-summary"  />
+    <uc:Notification ID="notMain" runat="server" Visible="false"/>
+            
+    <label>Ad Type</label>
+    <asp:DropDownList ID="ddAdType" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true" onselectedindexchanged="ddAdType_SelectedIndexChanged"></asp:DropDownList>
+    <asp:RequiredFieldValidator ID="reqAdType" runat="server" ControlToValidate="ddAdType" ErrorMessage="Ad Type is Required" CssClass="input-notification error png_bg" />
+    
+    <label>Program Coordinator</label>
+    <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
+    <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator is Required" CssClass="input-notification error png_bg" />
+
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <uc:Notification ID="notMain" runat="server" Visible="false"/>
-            
-            <label>Ad Type</label>
-            <asp:DropDownList ID="ddAdType" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true" onselectedindexchanged="ddAdType_SelectedIndexChanged"></asp:DropDownList>
-            <asp:RequiredFieldValidator ID="reqAdType" runat="server" ControlToValidate="ddAdType" ErrorMessage="Ad Type is Required" CssClass="input-notification error png_bg" />
-    
-            <label>Program Coordinator</label>
-            <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
-            <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator is Required" CssClass="input-notification error png_bg" />
 
             <asp:PlaceHolder ID="phMonthly" runat="server" Visible="false">
                 <label>Airing Month</label>
@@ -53,25 +54,26 @@
                 <label>G/L Code</label>
                 <asp:TextBox ID="txtGLCode" runat="server" CssClass="text-input small-input" MaxLength="25"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqGLCode" runat="server" ControlToValidate="txtGLCode" ErrorMessage="GL Code is Required" CssClass="input-notification error png_bg" Enabled="false" />
-            
             </asp:PlaceHolder>
-
-            <asp:PlaceHolder ID="phAdditionalInfo" runat="server" Visible="false">
-
-                <label>Recording Options</label>
-                <asp:DropDownList ID="ddRecordingOptions" runat="server" AppendDataBoundItems="true" CssClass="small-input"></asp:DropDownList>
-                <asp:RequiredFieldValidator ID="reqRecordingOptions" runat="server" ControlToValidate="ddRecordingOptions" ErrorMessage="Recording Options is Required" CssClass="input-notification error png_bg" Enabled="false"/>
-                
-                <label>Attach Files</label>
-                <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads"></telerik:radasyncupload>
-                
-                <label>Additional Notes</label>
-                <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
-
-            </asp:PlaceHolder>
-
-            <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button" Visible="false" onclick="btnSubmit_Click" /></p>
 
         </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="ddAdType" />
+        </Triggers>
     </asp:UpdatePanel>
+        
+
+
+    <label>Recording Options</label>
+    <asp:DropDownList ID="ddRecordingOptions" runat="server" AppendDataBoundItems="true" CssClass="small-input"></asp:DropDownList>
+    <asp:RequiredFieldValidator ID="reqRecordingOptions" runat="server" ControlToValidate="ddRecordingOptions" ErrorMessage="Recording Options is Required" CssClass="input-notification error png_bg" Enabled="false"/>
+                
+    <label>Attach Files</label>
+    <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads"></telerik:radasyncupload>
+                
+    <label>Additional Notes</label>
+    <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
+
+
+    <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button" Visible="false" onclick="btnSubmit_Click" /></p>
 </asp:Content>
