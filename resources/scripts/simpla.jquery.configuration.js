@@ -87,7 +87,7 @@ $(document).ready(function () {
 
     // hides any rows that don't have a value in them.
     $('ul.view-wo li').each(function () {
-        if ($(this).children('span').html() == '') {
+        if ($(this).children('span').html().trim() == '') {
             $(this).hide();
         }
     });

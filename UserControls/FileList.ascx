@@ -16,6 +16,5 @@
             
         </FooterTemplate>
     </asp:Repeater>
-    <asp:Literal ID="ltEmpty" runat="server" Text="No files attached." Visible="false"></asp:Literal>
 </span>
 
