@@ -54,6 +54,14 @@ namespace HNHUWO2.Create
                     notMain.Message = "Your print work order has been created! Now, just let us know some details about adding this to the website. Note - if you uploaded related already to the print work order, you don't have to upload them again here.";
                     notMain.Type = Notification.Types.Success;
                     notMain.Visible = true;
+
+                    // if the user is coming from a print work order, let's help them out and automatically pick the same
+                    // coordinator as the print work order.
+                    int wID;
+                    if (int.TryParse(Request.QueryString["AddTo"],out wID)) {
+                        Workorder w = WO.GetWorkOrder(wID);
+                        ddCoordinators.SelectedValue = w.coordinator.ToString();
+                    }
                 }
             }
         }
