@@ -7167,9 +7167,17 @@ namespace HNHUWO2
 		
 		private string _UpdateDescription;
 		
-		private string _RequestedURL;
+		private string _Goals;
 		
-		private string _RequestedDomain;
+		private string _Explanation;
+		
+		private string _Timeframe;
+		
+		private string _Budget;
+		
+		private string _Audience;
+		
+		private string _NumberOfPages;
 		
 		private System.Nullable<System.DateTime> _WebAdPostDate;
 		
@@ -7247,10 +7255,18 @@ namespace HNHUWO2
     partial void OnUpdateLocationChanged();
     partial void OnUpdateDescriptionChanging(string value);
     partial void OnUpdateDescriptionChanged();
-    partial void OnRequestedURLChanging(string value);
-    partial void OnRequestedURLChanged();
-    partial void OnRequestedDomainChanging(string value);
-    partial void OnRequestedDomainChanged();
+    partial void OnGoalsChanging(string value);
+    partial void OnGoalsChanged();
+    partial void OnExplanationChanging(string value);
+    partial void OnExplanationChanged();
+    partial void OnTimeframeChanging(string value);
+    partial void OnTimeframeChanged();
+    partial void OnBudgetChanging(string value);
+    partial void OnBudgetChanged();
+    partial void OnAudienceChanging(string value);
+    partial void OnAudienceChanged();
+    partial void OnNumberOfPagesChanging(string value);
+    partial void OnNumberOfPagesChanged();
     partial void OnWebAdPostDateChanging(System.Nullable<System.DateTime> value);
     partial void OnWebAdPostDateChanged();
     partial void OnWebAdEndDateChanging(System.Nullable<System.DateTime> value);
@@ -7792,42 +7808,122 @@ namespace HNHUWO2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestedURL", DbType="NVarChar(50)")]
-		public string RequestedURL
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Goals", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Goals
 		{
 			get
 			{
-				return this._RequestedURL;
+				return this._Goals;
 			}
 			set
 			{
-				if ((this._RequestedURL != value))
+				if ((this._Goals != value))
 				{
-					this.OnRequestedURLChanging(value);
+					this.OnGoalsChanging(value);
 					this.SendPropertyChanging();
-					this._RequestedURL = value;
-					this.SendPropertyChanged("RequestedURL");
-					this.OnRequestedURLChanged();
+					this._Goals = value;
+					this.SendPropertyChanged("Goals");
+					this.OnGoalsChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestedDomain", DbType="NVarChar(5)")]
-		public string RequestedDomain
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Explanation", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Explanation
 		{
 			get
 			{
-				return this._RequestedDomain;
+				return this._Explanation;
 			}
 			set
 			{
-				if ((this._RequestedDomain != value))
+				if ((this._Explanation != value))
 				{
-					this.OnRequestedDomainChanging(value);
+					this.OnExplanationChanging(value);
 					this.SendPropertyChanging();
-					this._RequestedDomain = value;
-					this.SendPropertyChanged("RequestedDomain");
-					this.OnRequestedDomainChanged();
+					this._Explanation = value;
+					this.SendPropertyChanged("Explanation");
+					this.OnExplanationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Timeframe", DbType="NVarChar(255)")]
+		public string Timeframe
+		{
+			get
+			{
+				return this._Timeframe;
+			}
+			set
+			{
+				if ((this._Timeframe != value))
+				{
+					this.OnTimeframeChanging(value);
+					this.SendPropertyChanging();
+					this._Timeframe = value;
+					this.SendPropertyChanged("Timeframe");
+					this.OnTimeframeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Budget", DbType="NVarChar(255)")]
+		public string Budget
+		{
+			get
+			{
+				return this._Budget;
+			}
+			set
+			{
+				if ((this._Budget != value))
+				{
+					this.OnBudgetChanging(value);
+					this.SendPropertyChanging();
+					this._Budget = value;
+					this.SendPropertyChanged("Budget");
+					this.OnBudgetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Audience", DbType="NVarChar(255)")]
+		public string Audience
+		{
+			get
+			{
+				return this._Audience;
+			}
+			set
+			{
+				if ((this._Audience != value))
+				{
+					this.OnAudienceChanging(value);
+					this.SendPropertyChanging();
+					this._Audience = value;
+					this.SendPropertyChanged("Audience");
+					this.OnAudienceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfPages", DbType="NVarChar(50)")]
+		public string NumberOfPages
+		{
+			get
+			{
+				return this._NumberOfPages;
+			}
+			set
+			{
+				if ((this._NumberOfPages != value))
+				{
+					this.OnNumberOfPagesChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfPages = value;
+					this.SendPropertyChanged("NumberOfPages");
+					this.OnNumberOfPagesChanged();
 				}
 			}
 		}

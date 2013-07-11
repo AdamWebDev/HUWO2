@@ -108,8 +108,28 @@
             <asp:Label ID="lblUpdateDescription" runat="server"></asp:Label>
         </li>
         <li>
-            <label>Requested URL</label>
-            <asp:Label ID="lblRequestedURL" runat="server"></asp:Label>
+            <label>Budget</label>
+            <asp:Label ID="lblBudget" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Time Frame</label>
+            <asp:Label ID="lblTimeFrame" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Goals</label>
+            <asp:Label ID="lblGoals" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Brief Explanation</label>
+            <asp:Label ID="lblExplanation" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Target Audience</label>
+            <asp:Label ID="lblAudience" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Number of Pages</label>
+            <asp:Label ID="lblNumberOfPages" runat="server"></asp:Label>
         </li>
         <li>
             <label>Post Date</label>

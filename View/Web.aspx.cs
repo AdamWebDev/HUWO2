@@ -48,7 +48,12 @@ namespace HNHUWO2.View
                 lblDateToBeChanged.Text = wo.DateToBeChanged.DisplayDate();
                 lblURL.Text = wo.UpdateLocation;
                 lblUpdateDescription.Text = wo.UpdateDescription;
-                lblRequestedURL.Text = wo.RequestedURL + wo.RequestedDomain;
+                lblBudget.Text = wo.Budget;
+                lblTimeFrame.Text = wo.Timeframe;
+                lblGoals.Text = wo.Goals;
+                lblExplanation.Text = wo.Explanation;
+                lblAudience.Text = wo.Audience;
+                lblNumberOfPages.Text = wo.NumberOfPages;
                 lblWebAdPostDate.Text = wo.WebAdPostDate.DisplayDate();
                 lblWebAdRemovalDate.Text = wo.WebAdEndDate.DisplayDate();
                 lblWebAdURL.Text = wo.WebAdURL;
@@ -61,20 +66,14 @@ namespace HNHUWO2.View
                 lnkRelatedWO.NavigateUrl = "~/View/Default.aspx?type=1&ID=" + wo.pID.ToString();
 
                 if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
-                {
                     CoordinatorRevisions.Visible = true;
-                }
                 else
-                {
                     CoordinatorRevisions.Visible = false;
-                }
 
                 attachedFiles.Refresh();
             }
-            else
-            {
-                Response.Redirect("~/Default.aspx");
-            }
+            else Response.Redirect("~/Default.aspx");
+
         }
     }
 }

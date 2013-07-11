@@ -535,40 +535,112 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.PlaceHolder phNewWebsite;
         
         /// <summary>
-        /// txtRequestedURL control.
+        /// lblBudget control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRequestedURL;
+        protected global::System.Web.UI.WebControls.Label lblBudget;
         
         /// <summary>
-        /// ddDomain control.
+        /// txtBudget control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddDomain;
+        protected global::System.Web.UI.WebControls.TextBox txtBudget;
         
         /// <summary>
-        /// btnCheckAvailable control.
+        /// lblTimeFrame control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheckAvailable;
+        protected global::System.Web.UI.WebControls.Label lblTimeFrame;
         
         /// <summary>
-        /// notURLAvailable control.
+        /// txtTimeFrame control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HNHUWO2.Notification notURLAvailable;
+        protected global::System.Web.UI.WebControls.TextBox txtTimeFrame;
+        
+        /// <summary>
+        /// lblGoals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGoals;
+        
+        /// <summary>
+        /// txtGoals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGoals;
+        
+        /// <summary>
+        /// lblExplanation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExplanation;
+        
+        /// <summary>
+        /// txtExplanation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtExplanation;
+        
+        /// <summary>
+        /// lblTargetAudience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTargetAudience;
+        
+        /// <summary>
+        /// txtAudience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAudience;
+        
+        /// <summary>
+        /// lblNumberOfPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumberOfPages;
+        
+        /// <summary>
+        /// txtNumberOfPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumberOfPages;
         
         /// <summary>
         /// phCD989WebAd control.

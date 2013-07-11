@@ -170,47 +170,7 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phOtherLocation, false);
         }
 
-        /// <summary>
-        /// Does a basic domain name check when requesting a new website
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void btnCheckAvailable_OnClick(object sender, EventArgs e)
-        {
-            WebResponse response = null;
-            String data = String.Empty;
-            String url = "http://www." + txtRequestedURL.Text + ddDomain.SelectedValue;
-
-            try
-            {
-                WebRequest request = WebRequest.Create(url);
-                response = request.GetResponse();
-
-                // domain exists, valid domain
-                notURLAvailable.Type = Notification.Types.Error;
-                notURLAvailable.Message = "Domain name is taken. Please try again.";
-                notURLAvailable.Visible = true;
-            }
-            catch (WebException ee)
-            {
-                // return false, most likely this domain doesn't exists
-                notURLAvailable.Type = Notification.Types.Success;
-                notURLAvailable.Message = "Domain name is available!";
-                notURLAvailable.Visible = true;
-                ee.ToString();
-            }
-            catch (Exception ee)
-            {
-                notURLAvailable.Type = Notification.Types.Error;
-                notURLAvailable.Message = "There was an error - not sure if this domain name exists.";
-                notURLAvailable.Visible = true;
-                ee.ToString();
-            }
-            finally
-            {
-                if (response != null) response.Close();
-            }
-        }
+        
 
 
         /// <summary>
@@ -273,8 +233,12 @@ namespace HNHUWO2.Create
                 wow.DateToBeChanged = txtDateToBeChanged.Text.ConvertToDate();
                 wow.UpdateLocation = txtURL.Text;
                 wow.UpdateDescription = txtUpdateDesc.Text;
-                wow.RequestedURL = txtRequestedURL.Text;
-                wow.RequestedDomain = ddDomain.SelectedValue;
+                wow.Budget = txtBudget.Text;
+                wow.Timeframe = txtTimeFrame.Text;
+                wow.Goals = txtGoals.Text;
+                wow.Explanation = txtExplanation.Text;
+                wow.Audience = txtAudience.Text;
+                wow.NumberOfPages = txtNumberOfPages.Text;
                 wow.WebAdPostDate = txtWebAdPostDate.Text.ConvertToDate();
                 wow.WebAdEndDate = txtWebAdEndDate.Text.ConvertToDate();
                 wow.WebAdURL = txtWebAdURL.Text;

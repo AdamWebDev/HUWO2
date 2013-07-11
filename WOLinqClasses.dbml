@@ -368,8 +368,12 @@
       <Column Name="DateToBeChanged" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="UpdateLocation" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="UpdateDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="RequestedURL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RequestedDomain" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Goals" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Explanation" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Timeframe" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Budget" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Audience" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NumberOfPages" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="WebAdPostDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="WebAdEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="WebAdURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />

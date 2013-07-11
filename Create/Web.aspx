@@ -144,16 +144,25 @@
         </asp:PlaceHolder>
 
         <asp:PlaceHolder ID="phNewWebsite" runat="server" Visible="false">
-            <label>URL requesting <i class="icon-question-sign tooltip-url"></i></label>
-            http://www.<asp:TextBox ID="txtRequestedURL" runat="server"  CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
-            <asp:DropDownList ID="ddDomain" runat="server">
-                <asp:ListItem Value="" Text="--Select--" />
-                <asp:ListItem Value=".com" Text=".com"/>
-                <asp:ListItem Value=".ca" Text=".ca" />
-            </asp:DropDownList>
-            <asp:Button ID="btnCheckAvailable" runat="server" Text="Check Availability" CssClass="button" OnClick="btnCheckAvailable_OnClick" CausesValidation="false" />
-            <uc:Notification ID="notURLAvailable" runat="server" />
-            <p>This action requires the FO-79 form - New Technology Request.</p>
+
+            <asp:Label ID="lblBudget" runat="server" AssociatedControlID="txtBudget" Text="What is your budget for this website?"></asp:Label>
+            <asp:TextBox ID="txtBudget" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+
+            <asp:Label ID="lblTimeFrame" runat="server" AssociatedControlID="txtTimeFrame" Text="What is your timeframe for this website?"></asp:Label>
+            <asp:TextBox ID="txtTimeFrame" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+
+            <asp:Label ID="lblGoals" runat="server" AssociatedControlID="txtGoals" Text="What are your goals for this website?"></asp:Label>
+            <asp:TextBox ID="txtGoals" runat="server" TextMode="MultiLine" CssClass="text-input" Rows="6"></asp:TextBox>
+
+            <asp:Label ID="lblExplanation" runat="server" AssociatedControlID="txtExplanation" Text="Please give a brief explanation of your website."></asp:Label>
+            <asp:TextBox ID="txtExplanation" runat="server" TextMode="MultiLine" CssClass="text-input" Rows="6"></asp:TextBox>
+
+            <asp:Label ID="lblTargetAudience" runat="server" AssociatedControlID="txtAudience" Text="Who is the target audience for this website?"></asp:Label>
+            <asp:TextBox ID="txtAudience" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+
+            <asp:Label ID="lblNumberOfPages" runat="server" AssociatedControlID="txtNumberOfPages" Text="Approximately how many pages do you see this site being?"></asp:Label>
+            <asp:TextBox ID="txtNumberOfPages" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+
         </asp:PlaceHolder>
 
         <asp:PlaceHolder ID="phCD989WebAd" runat="server" Visible="false">

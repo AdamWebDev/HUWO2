@@ -265,13 +265,58 @@ namespace HNHUWO2.View {
         protected global::System.Web.UI.WebControls.Label lblUpdateDescription;
         
         /// <summary>
-        /// lblRequestedURL control.
+        /// lblBudget control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRequestedURL;
+        protected global::System.Web.UI.WebControls.Label lblBudget;
+        
+        /// <summary>
+        /// lblTimeFrame control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTimeFrame;
+        
+        /// <summary>
+        /// lblGoals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGoals;
+        
+        /// <summary>
+        /// lblExplanation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExplanation;
+        
+        /// <summary>
+        /// lblAudience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAudience;
+        
+        /// <summary>
+        /// lblNumberOfPages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumberOfPages;
         
         /// <summary>
         /// lblWebAdPostDate control.
