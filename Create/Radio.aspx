@@ -75,5 +75,5 @@
     <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
 
 
-    <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button" Visible="false" onclick="btnSubmit_Click" /></p>
+    <p><asp:Button ID="btnSubmit" runat="server" Text="Submit Work Order" CssClass="button" onclick="btnSubmit_Click" /></p>
 </asp:Content>

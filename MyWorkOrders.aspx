@@ -21,7 +21,12 @@
     </asp:DropDownList>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
-    <uc:Notification ID="notSuccess" runat="server" Type="Success" Message="Your work order has been successfully submitted!" Visible="false" />
+    <asp:Panel ID="pnSuccess" runat="server" Visible="false" CssClass="notification success png_bg">
+        <div>
+            <asp:Literal ID="ltMessage" runat="server" Text="Your work order has been successfully submitted!"></asp:Literal> 
+            <asp:HyperLink ID="lnkWorkOrder" runat="server" Text="View your work order now!"></asp:HyperLink>
+        </div>
+    </asp:Panel>
     <asp:HiddenField ID="hdnCurrentPage" runat="server" Value="0" />
 
     

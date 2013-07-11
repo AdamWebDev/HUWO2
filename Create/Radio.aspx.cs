@@ -85,13 +85,13 @@ namespace HNHUWO2.Create
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // from the information provided, create us a due date to store
-            DateTime duedate;
+            DateTime? duedate;
             if (ddAdType.SelectedValue.Equals("1"))
             {
                 String strDate =  DateTime.Now.Year + "/" + ddAiringMonth.SelectedValue + "/01";
-                duedate = (DateTime)strDate.ConvertToDate();
-                if (duedate < DateTime.Now)
-                    duedate = duedate.AddYears(1);
+                duedate = strDate.ConvertToDate();
+                if (duedate.HasValue && duedate < DateTime.Now)
+                    duedate = duedate.Value.AddYears(1);
             }
             else
                 duedate = (DateTime)txtStartAiringDate.Text.ConvertToDate();
@@ -127,9 +127,10 @@ namespace HNHUWO2.Create
                 db.WorkOrdersRadios.InsertOnSubmit(r);
                 db.SubmitChanges();
                 ID = w.ID;
+                Function.LogAction(ID, "Work order created");
+                Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
-            Function.LogAction(ID, "Work order created");
-            Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID);
+            
         }
     }
 }

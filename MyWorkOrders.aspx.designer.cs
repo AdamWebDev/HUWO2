@@ -40,13 +40,31 @@ namespace HNHUWO2 {
         protected global::System.Web.UI.WebControls.DropDownList ddFilters;
         
         /// <summary>
-        /// notSuccess control.
+        /// pnSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::HNHUWO2.Notification notSuccess;
+        protected global::System.Web.UI.WebControls.Panel pnSuccess;
+        
+        /// <summary>
+        /// ltMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltMessage;
+        
+        /// <summary>
+        /// lnkWorkOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkWorkOrder;
         
         /// <summary>
         /// hdnCurrentPage control.

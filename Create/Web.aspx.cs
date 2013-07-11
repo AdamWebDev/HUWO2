@@ -265,10 +265,12 @@ namespace HNHUWO2.Create
                 }
 
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
+
+                Function.LogAction(ID, "Work order created.");
+                Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             
-            Function.LogAction(ID, "Work order created.");
-            Response.Redirect("~/MyWorkOrders.aspx?success=true");
+            
         }
     }
 }

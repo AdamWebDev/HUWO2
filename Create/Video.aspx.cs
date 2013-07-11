@@ -171,9 +171,10 @@ namespace HNHUWO2.Create
                 db.WorkOrdersVideos.InsertOnSubmit(v);
                 db.SubmitChanges();
                 ID = v.ID;
+                Function.LogAction(ID, "Work order created");
+                Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
-            Function.LogAction(ID, "Work order created");
-            Response.Redirect("~/MyWorkOrders.aspx?success=true");
+            
          }
     }
 }

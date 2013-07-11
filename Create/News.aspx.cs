@@ -63,9 +63,10 @@ namespace HNHUWO2.Create
                 db.WorkOrdersNews.InsertOnSubmit(n);
                 db.SubmitChanges();
                 ID = w.ID;
+                Function.LogAction(ID, "Work order created");
+                Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
-            Function.LogAction(ID, "Work order created");
-            Response.Redirect("~/MyWorkOrders.aspx?success=true");
+            
         }
     }
 }

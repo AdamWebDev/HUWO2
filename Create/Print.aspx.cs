@@ -263,7 +263,7 @@ namespace HNHUWO2.Create
                 if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
                     Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
                 else // if not, success!!
-                    Response.Redirect("~/MyWorkOrders.aspx?success=true");
+                    Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype.ToString());
             }
         }
     }
