@@ -16,14 +16,14 @@ namespace HNHUWO2.Create
             if (!Page.IsPostBack)
             {
                 // populate Coordinators Drop Down
-                Function.AddInitialItem(ddCoordinators);
+                ddCoordinators.AddInitialItem();
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
                 ddCoordinators.DataBind();
 
                 // populate Video Sources
-                Function.AddInitialItem(ddVideoSource);
+                ddVideoSource.AddInitialItem();
                 ddVideoSource.DataSource = VideoWO.GetVideoSources();
                 ddVideoSource.DataValueField = "ID";
                 ddVideoSource.DataTextField = "Value";
@@ -36,7 +36,7 @@ namespace HNHUWO2.Create
                 chkVideoDestination.DataBind();
 
                 // populate Narration
-                Function.AddInitialItem(ddNarrator);
+                ddNarrator.AddInitialItem();
                 ddNarrator.DataSource = VideoWO.GetNarration();
                 ddNarrator.DataValueField = "ID";
                 ddNarrator.DataTextField = "Value";
@@ -170,7 +170,7 @@ namespace HNHUWO2.Create
                 v.Notes = txtNotes.Text;
                 db.WorkOrdersVideos.InsertOnSubmit(v);
                 db.SubmitChanges();
-                ID = v.ID;
+                ID = w.ID;
                 Function.LogAction(ID, "Work order created");
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
