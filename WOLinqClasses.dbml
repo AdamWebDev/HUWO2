@@ -207,6 +207,7 @@
       <Column Name="GLCode" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
       <Column Name="RecordingOptions" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Notes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RadioStationOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="RadioAdType_WorkOrdersRadio" Member="RadioAdType" ThisKey="AdType" OtherKey="ID" Type="RadioAdType" IsForeignKey="true" />
       <Association Name="RadioLength_WorkOrdersRadio" Member="RadioLength" ThisKey="LengthOfAd" OtherKey="ID" Type="RadioLength" IsForeignKey="true" />
       <Association Name="RadioRecordingOption_WorkOrdersRadio" Member="RadioRecordingOption" ThisKey="RecordingOptions" OtherKey="ID" Type="RadioRecordingOption" IsForeignKey="true" />

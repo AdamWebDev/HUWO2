@@ -148,6 +148,33 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqRadioStation;
         
         /// <summary>
+        /// phRadioStationOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phRadioStationOther;
+        
+        /// <summary>
+        /// txtRadioStationOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRadioStationOther;
+        
+        /// <summary>
+        /// reqRadioStationOther control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqRadioStationOther;
+        
+        /// <summary>
         /// ddLengthOfAd control.
         /// </summary>
         /// <remarks>

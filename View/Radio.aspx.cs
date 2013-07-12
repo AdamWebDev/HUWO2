@@ -25,7 +25,7 @@ namespace HNHUWO2.View
             lblAdType.Text = wo.RadioAdType.Value;
             lblCoordinator.Text = wo.Workorder.User.FullName;
             lblAiringMonth.Text = wo.AiringMonth.HasValue ? System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((int)wo.AiringMonth) : String.Empty;
-            lblRadioStation.Text = wo.RadioStation.HasValue ? wo.RadioStations.Value : String.Empty;
+            if (wo.RadioStation.HasValue) lblRadioStation.Text = wo.RadioStationOther.Equals(String.Empty) ? wo.RadioStations.Value : wo.RadioStationOther;
             lblLengthOfAd.Text = wo.LengthOfAd.HasValue ? wo.RadioLength.Value : String.Empty;
             lblStartAiringDate.Text = wo.StartAiringDate.DisplayDate();
             lblEndAiringDate.Text = wo.EndAiringDate.DisplayDate();
@@ -35,15 +35,8 @@ namespace HNHUWO2.View
             lblNotes.Text = wo.Notes;
             lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
 
-            if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
-            {
-                CoordinatorRevisions.Visible = true;
-            }
-            else
-            {
-                CoordinatorRevisions.Visible = false;
-            }
-
+            CoordinatorRevisions.Visible = (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()));
+            
             attachedFiles.Refresh();
         }
     }

@@ -31,8 +31,14 @@
 
             <asp:PlaceHolder ID="phIndividual" runat="server" Visible="false">
                 <label>Desired Radio Station</label>
-                <asp:DropDownList ID="ddRadioStation" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
+                <asp:DropDownList ID="ddRadioStation" runat="server" AppendDataBoundItems="True" CssClass="small-input" AutoPostBack="true" OnSelectedIndexChanged="ddRadioStation_SelectedIndexChanged"></asp:DropDownList>
                 <asp:RequiredFieldValidator ID="reqRadioStation" runat="server" ControlToValidate="ddRadioStation" ErrorMessage="Desired Radio Station is Required" CssClass="input-notification error png_bg" Enabled="false"  />
+
+                <asp:PlaceHolder ID="phRadioStationOther" runat="server" Visible="false">
+                    <label>What Radio Station?</label>
+                    <asp:TextBox ID="txtRadioStationOther" runat="server" CssClass="text-input small-input" MaxLength="255" />
+                    <asp:RequiredFieldValidator ID="reqRadioStationOther" runat="server" ControlToValidate="txtRadioStationOther" ErrorMessage="Radio Station is Required" CssClass="input-notification error png_bg" Enabled="false"  />
+                </asp:PlaceHolder>
 
                 <label>Length of Ad</label>
                 <asp:DropDownList ID="ddLengthOfAd" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>

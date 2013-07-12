@@ -82,6 +82,12 @@ namespace HNHUWO2.Create
             }
         }
 
+        protected void ddRadioStation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddRadioStation.SelectedItem.Text.Equals("Other")) Function.ShowControls(phRadioStationOther);
+            else Function.ClearControls(phRadioStationOther, false);
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // from the information provided, create us a due date to store
@@ -117,6 +123,7 @@ namespace HNHUWO2.Create
                 r.AdType = int.Parse(ddAdType.SelectedValue);
                 r.AiringMonth = ddAiringMonth.SelectedIndex > 0 ? int.Parse(ddAiringMonth.SelectedValue) : (int?)null;
                 r.RadioStation = ddRadioStation.SelectedIndex > 0 ? int.Parse(ddRadioStation.SelectedValue) : (int?)null;
+                r.RadioStationOther = txtRadioStationOther.Text;
                 r.LengthOfAd = ddLengthOfAd.SelectedIndex > 0 ? int.Parse(ddLengthOfAd.SelectedValue) : (int?)null;
                 r.StartAiringDate = txtStartAiringDate.Text.ConvertToDate();
                 r.EndAiringDate = txtEndAiringDate.Text.ConvertToDate();

@@ -3825,6 +3825,8 @@ namespace HNHUWO2
 		
 		private string _Notes;
 		
+		private string _RadioStationOther;
+		
 		private EntityRef<RadioAdType> _RadioAdType;
 		
 		private EntityRef<RadioLength> _RadioLength;
@@ -3863,6 +3865,8 @@ namespace HNHUWO2
     partial void OnRecordingOptionsChanged();
     partial void OnNotesChanging(string value);
     partial void OnNotesChanged();
+    partial void OnRadioStationOtherChanging(string value);
+    partial void OnRadioStationOtherChanged();
     #endregion
 		
 		public WorkOrdersRadio()
@@ -4131,6 +4135,26 @@ namespace HNHUWO2
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RadioStationOther", DbType="NVarChar(255)")]
+		public string RadioStationOther
+		{
+			get
+			{
+				return this._RadioStationOther;
+			}
+			set
+			{
+				if ((this._RadioStationOther != value))
+				{
+					this.OnRadioStationOtherChanging(value);
+					this.SendPropertyChanging();
+					this._RadioStationOther = value;
+					this.SendPropertyChanged("RadioStationOther");
+					this.OnRadioStationOtherChanged();
 				}
 			}
 		}
