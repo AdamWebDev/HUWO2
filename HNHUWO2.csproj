@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Admin\Users.aspx" />
     <Content Include="Coordinators\AllPendingWorkOrders.aspx" />
     <Content Include="Coordinators\MyWorkOrders.aspx" />
     <Content Include="CreateWorkOrder.aspx" />
@@ -209,6 +210,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\NewsWO.cs" />
     <Compile Include="Classes\PrintWO.cs" />
     <Compile Include="Classes\RadioWO.cs" />
