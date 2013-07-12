@@ -46,12 +46,14 @@
 
                 <label>Start Airing Date</label>
                 <asp:TextBox ID="txtStartAiringDate" runat="server" CssClass="text-input small-input datepicker" />
-                <asp:RequiredFieldValidator ID="reqStartAiringDate" runat="server" ControlToValidate="txtStartAiringDate" ErrorMessage="Start Airing Date is Required" CssClass="input-notification error png_bg" Enabled="false"  />
+                <asp:RequiredFieldValidator ID="reqStartAiringDate" runat="server" ControlToValidate="txtStartAiringDate" ErrorMessage="Start Airing Date is Required" CssClass="input-notification error png_bg" Enabled="false" Display="Dynamic"  />
+                <asp:CompareValidator ID="cmpStartAiringDate" runat="server" ErrorMessage="Start Airing Date cannot be in the past." ControlToValidate="txtStartAiringDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
                 <label>End Airing Date</label>
                 <asp:TextBox ID="txtEndAiringDate" runat="server" CssClass="text-input small-input datepicker" />
                 <asp:RequiredFieldValidator ID="reqEndAiringDate" runat="server" ControlToValidate="txtEndAiringDate" ErrorMessage="End Airing Date is Required" CssClass="input-notification error png_bg" Enabled="false" Display="Dynamic"  />
                 <asp:CompareValidator ID="compEndAiringDate" runat="server" ControlToValidate="txtEndAiringDate" ControlToCompare="txtStartAiringDate" Operator="GreaterThanEqual" Type="Date" ErrorMessage="End Date must come after Starting Date" CssClass="input-notification error png_bg" Display="Dynamic"></asp:CompareValidator>
+
 
                 <label>Budget</label>
                 <asp:TextBox ID="txtBudget" runat="server" CssClass="text-input small-input" MaxLength="10"></asp:TextBox>

@@ -202,6 +202,15 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqAtoZPostingDate;
         
         /// <summary>
+        /// cmpAtoZPostingDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpAtoZPostingDate;
+        
+        /// <summary>
         /// txtAtoZRemovalDate control.
         /// </summary>
         /// <remarks>
@@ -319,6 +328,15 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCalStartDate;
         
         /// <summary>
+        /// cmpCalStartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpCalStartDate;
+        
+        /// <summary>
         /// txtCalStartTime control.
         /// </summary>
         /// <remarks>
@@ -353,6 +371,15 @@ namespace HNHUWO2.Create {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqCalEndDate;
+        
+        /// <summary>
+        /// cmpCalEndDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpCalEndDate;
         
         /// <summary>
         /// txtCalEndTime control.
@@ -445,6 +472,15 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqDatePosted;
         
         /// <summary>
+        /// cmpDatePosted control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpDatePosted;
+        
+        /// <summary>
         /// phUpdateContent control.
         /// </summary>
         /// <remarks>
@@ -488,6 +524,15 @@ namespace HNHUWO2.Create {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqDateToBeChanged;
+        
+        /// <summary>
+        /// cmpDateToBeChanged control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpDateToBeChanged;
         
         /// <summary>
         /// txtURL control.
@@ -670,6 +715,15 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqWebAdPostDate;
         
         /// <summary>
+        /// cmpWebAdPostDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpWebAdPostDate;
+        
+        /// <summary>
         /// txtWebAdEndDate control.
         /// </summary>
         /// <remarks>
@@ -686,6 +740,15 @@ namespace HNHUWO2.Create {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqWebAdEndDate;
+        
+        /// <summary>
+        /// cmpWebAdEndDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpWebAdEndDate;
         
         /// <summary>
         /// txtWebAdURL control.
@@ -749,6 +812,15 @@ namespace HNHUWO2.Create {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFacebookPostDate;
+        
+        /// <summary>
+        /// cmpFacebookPostDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cmpFacebookPostDate;
         
         /// <summary>
         /// txtFacebookContent control.

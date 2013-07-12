@@ -42,6 +42,8 @@ namespace HNHUWO2.Create
                 ddNarrator.DataTextField = "Value";
                 ddNarrator.DataBind();
 
+                cmpDueDate.ValueToCompare = DateTime.Today.ToShortDateString();
+
                 CheckDate();
             }
 
@@ -172,6 +174,7 @@ namespace HNHUWO2.Create
                 db.SubmitChanges();
                 ID = w.ID;
                 Function.LogAction(ID, "Work order created");
+                WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             

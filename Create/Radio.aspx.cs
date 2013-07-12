@@ -58,6 +58,8 @@ namespace HNHUWO2.Create
                 ddRecordingOptions.DataValueField = "ID";
                 ddRecordingOptions.DataTextField = "Value";
                 ddRecordingOptions.DataBind();
+
+                cmpStartAiringDate.ValueToCompare = DateTime.Today.ToShortDateString();
             }
         }
 
@@ -135,6 +137,7 @@ namespace HNHUWO2.Create
                 db.SubmitChanges();
                 ID = w.ID;
                 Function.LogAction(ID, "Work order created");
+                WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             

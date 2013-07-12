@@ -59,6 +59,7 @@
             <label>Due Date</label>
             <asp:TextBox ID="txtDueDate" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqDueDate" runat="server" ControlToValidate="txtDueDate" ErrorMessage="Due Date is Required" CssClass="input-notification error png_bg" />
+            <asp:CompareValidator ID="cmpDueDate" runat="server" ErrorMessage="Due Date cannot be in the past." ControlToValidate="txtDueDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
             <uc:Notification ID="notDueDate" runat="server" />
 
             <label>Background Music</label>
@@ -91,7 +92,7 @@
             <uc:Notification ID="notDisclaimer" runat="server" Visible="false" />
 
             <label>Attach files:</label>
-            <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads"></telerik:radasyncupload>
+            <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic"></telerik:radasyncupload>
 
             <label>Additional Notes:</label>
             <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>

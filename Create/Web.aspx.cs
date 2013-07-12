@@ -48,6 +48,8 @@ namespace HNHUWO2.Create
                 ddWebsite.DataTextField = "Value";
                 ddWebsite.DataBind();
 
+                cmpAtoZPostingDate.ValueToCompare = cmpCalStartDate.ValueToCompare = cmpDatePosted.ValueToCompare = cmpDateToBeChanged.ValueToCompare = cmpWebAdPostDate.ValueToCompare = cmpFacebookPostDate.ValueToCompare = DateTime.Today.ToShortDateString();
+
                 // if user is being redirected from a successful print work order, let them know!
                 if (Request.QueryString["AddTo"] != null)
                 {

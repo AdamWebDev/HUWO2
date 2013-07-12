@@ -29,6 +29,7 @@ namespace HNHUWO2.Create
                 ddDistributionOutlets.DataTextField = "Value";
                 ddDistributionOutlets.DataBind();
 
+                cmpDateToIssue.ValueToCompare = DateTime.Today.ToShortDateString();
             }
         }
 

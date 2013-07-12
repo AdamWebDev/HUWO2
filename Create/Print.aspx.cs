@@ -64,6 +64,8 @@ namespace HNHUWO2.Create
                 ddCredits.DataValueField = "ID";
                 ddCredits.DataBind();
 
+                cmpDueDate.ValueToCompare = DateTime.Today.ToShortDateString();
+
                 // end of populating dropdown boxes
 
                 // if requesting a quote (determinted by query string), set up form for commercial printing only

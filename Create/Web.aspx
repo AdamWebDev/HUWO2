@@ -62,6 +62,7 @@
                         <label>Posting Date</label>
                         <asp:TextBox ID="txtAtoZPostingDate" runat="server" CssClass="text-input small-input datepicker" />
                         <asp:RequiredFieldValidator ID="reqAtoZPostingDate" runat="server" ControlToValidate="txtAtoZPostingDate" ErrorMessage="Posting Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <asp:CompareValidator ID="cmpAtoZPostingDate" runat="server" ErrorMessage="Posting Date cannot be in the past." ControlToValidate="txtAtoZPostingDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
                         <label>Removal Date (if needed)</label>
                         <asp:TextBox ID="txtAtoZRemovalDate" runat="server" CssClass="text-input small-input datepicker" />
@@ -93,6 +94,7 @@
                         <label>Event Start Date</label>
                         <asp:TextBox ID="txtCalStartDate" runat="server" CssClass="text-input small-input datepicker" />
                         <asp:RequiredFieldValidator ID="reqCalStartDate" runat="server" ControlToValidate="txtCalStartDate" ErrorMessage="Event Start Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <asp:CompareValidator ID="cmpCalStartDate" runat="server" ErrorMessage="Event Start Date cannot be in the past." ControlToValidate="txtCalStartDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
                         <label>Event Start Time</label>
                         <asp:TextBox ID="txtCalStartTime" runat="server" CssClass="text-input small-input timepicker" />
@@ -101,6 +103,7 @@
                         <label>Event End Date</label>
                         <asp:TextBox ID="txtCalEndDate" runat="server" CssClass="text-input small-input datepicker" />
                         <asp:RequiredFieldValidator ID="reqCalEndDate" runat="server" ControlToValidate="txtCalEndDate" ErrorMessage="Event End Date is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <asp:CompareValidator ID="cmpCalEndDate" runat="server" ErrorMessage="Event End Date cannot be before the Start Date." ControlToValidate="txtCalEndDate" ControlToCompare="txtCalStartDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
                         <label>Event End Time</label>
                         <asp:TextBox ID="txtCalEndTime" runat="server" CssClass="text-input small-input timepicker" />
@@ -121,6 +124,7 @@
                         <label>Date to be Posted</label>
                         <asp:TextBox ID="txtDatePosted" runat="server" CssClass="text-input small-input datepicker" />
                         <asp:RequiredFieldValidator ID="reqDatePosted" runat="server" ControlToValidate="txtDatePosted" ErrorMessage="Date to be Posted is Required" CssClass="input-notification error png_bg" Enabled="false" />
+                        <asp:CompareValidator ID="cmpDatePosted" runat="server" ErrorMessage="Date to be Posted cannot be in the past." ControlToValidate="txtDatePosted" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
                     </fieldset>
                 </asp:PlaceHolder>
             </asp:PlaceHolder> <!-- End of NewContent -->
@@ -133,6 +137,7 @@
             <label>Date to be Changed</label>
             <asp:TextBox ID="txtDateToBeChanged" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqDateToBeChanged" runat="server" ControlToValidate="txtDateToBeChanged" ErrorMessage="Date to be Changed is Required" CssClass="input-notification error png_bg" Enabled="false" />
+            <asp:CompareValidator ID="cmpDateToBeChanged" runat="server" ErrorMessage="Date to be Changed cannot be in the past." ControlToValidate="txtDateToBeChanged" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>Location (URL) <i class="icon-question-sign tooltip-url"></i></label>
             <asp:TextBox ID="txtURL" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
@@ -169,10 +174,12 @@
             <label>Post Date</label>
             <asp:TextBox ID="txtWebAdPostDate" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqWebAdPostDate" runat="server" ControlToValidate="txtWebAdPostDate" ErrorMessage="Posting Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
+            <asp:CompareValidator ID="cmpWebAdPostDate" runat="server" ErrorMessage="Post Date cannot be in the past." ControlToValidate="txtWebAdPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>Removal Date</label>
             <asp:TextBox ID="txtWebAdEndDate" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqWebAdEndDate" runat="server" ControlToValidate="txtWebAdEndDate" ErrorMessage="Removal Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
+            <asp:CompareValidator ID="cmpWebAdEndDate" runat="server" ErrorMessage="Removal Date must be after Post Date." ControlToValidate="txtDateToBeChanged" ControlToCompare="txtWebAdPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>URL To Link To <i class="icon-question-sign tooltip-url"></i></label>
             <asp:TextBox ID="txtWebAdURL" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
@@ -187,6 +194,7 @@
             <label>Post Date</label>
             <asp:TextBox ID="txtFacebookPostDate" runat="server" CssClass="text-input small-input datepicker" />
             <asp:RequiredFieldValidator ID="reqFacebookPostDate" runat="server" ControlToValidate="txtFacebookPostDate" ErrorMessage="Post Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
+            <asp:CompareValidator ID="cmpFacebookPostDate" runat="server" ErrorMessage="Post Date cannot be in the past." ControlToValidate="txtFacebookPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>Content</label>
             <asp:TextBox ID="txtFacebookContent" runat="server" CssClass="text-input" TextMode="MultiLine" Rows="6"></asp:TextBox>

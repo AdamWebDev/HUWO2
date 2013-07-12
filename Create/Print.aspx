@@ -57,8 +57,9 @@
 
         <label>Due Date of Finished Project</label>
         <asp:TextBox ID="txtDueDate" runat="server" CssClass="text-input small-input datepicker" AutoPostBack="true" OnTextChanged="txtDueDate_TextChanged" />
-        <asp:RequiredFieldValidator ID="reqDueDate" runat="server" ControlToValidate="txtDueDate" ErrorMessage="Due Date is Required" CssClass="input-notification error png_bg"></asp:RequiredFieldValidator>
-    
+        <asp:RequiredFieldValidator ID="reqDueDate" runat="server" ControlToValidate="txtDueDate" ErrorMessage="Due Date is Required" CssClass="input-notification error png_bg" Display="Dynamic"></asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="cmpDueDate" runat="server" ErrorMessage="Due date cannot be in the past." ControlToValidate="txtDueDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
+
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>
                 <uc:Notification ID="notDueDate" runat="server" />

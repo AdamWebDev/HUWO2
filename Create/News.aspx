@@ -23,8 +23,8 @@
 
         <label>Date to Issue</label>
         <asp:TextBox ID="txtDateToIssue" runat="server" CssClass="text-input small-input datepicker" />
-        <asp:RequiredFieldValidator ID="reqDateToIssue" runat="server" ControlToValidate="txtDateToIssue" ErrorMessage="Date To Issue is Required" CssClass="input-notification error png_bg" />
-
+        <asp:RequiredFieldValidator ID="reqDateToIssue" runat="server" ControlToValidate="txtDateToIssue" ErrorMessage="Date To Issue is Required" CssClass="input-notification error png_bg" Display="Dynamic" />
+        <asp:CompareValidator ID="cmpDateToIssue" runat="server" ErrorMessage="Date to Issue cannot be in the past." ControlToValidate="txtDateToIssue" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
         
         
         <label>Distribution Outlets</label>
