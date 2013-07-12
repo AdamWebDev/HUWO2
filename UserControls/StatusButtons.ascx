@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="StatusButtons.ascx.cs" Inherits="HNHUWO2.UserControls.StatusButtons" %>
 <%@ Register Src="~/UserControls/NavButton.ascx" TagPrefix="uc" TagName="NavButtons" %>
 <uc:NavButtons ID="btnGoBack" runat="server" Text="Go Back" NavURL="javascript:history.go(-1);" Icon="icon-arrow-left"  />
-<uc:NavButtons ID="btnUnapprove" runat="server" Text="Unpprove" OnClick="btnUnapprove_OnClick" Visible="false" Icon="icon-thumbs-down" />
+<uc:NavButtons ID="btnUnapprove" runat="server" Text="Unapprove" OnClick="btnUnapprove_OnClick" Visible="false" Icon="icon-thumbs-down" />
 <uc:NavButtons ID="btnApprove" runat="server" Text="Approve" OnClick="btnApprove_OnClick" Visible="false" Icon="icon-thumbs-up" />
 <uc:NavButtons ID="btnApproveWithChanges" runat="server" Text="Approve With Changes" OnClick="btnApproveWithChanges_OnClick" Visible="false" Icon="icon-edit" />
 <uc:NavButtons ID="btnMarkInProgress" runat="server" Text="Mark in Progress" OnClick="btnMarkInProgress_OnClick" Visible="false" Icon="icon-cogs" />
