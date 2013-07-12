@@ -87,12 +87,13 @@ namespace HNHUWO2.Classes
 
         private static string QueryAD(string fieldname, string username)
         {
-            string ADServer = WebConfigurationManager.AppSettings["ADServer"];
-            string ADUser = WebConfigurationManager.AppSettings["ADUser"];
-            string ADPassword = WebConfigurationManager.AppSettings["ADPassword"];
+            // hanging on to this in case users need this - I don't
+            //string ADServer = WebConfigurationManager.AppSettings["ADServer"];
+            //string ADUser = WebConfigurationManager.AppSettings["ADUser"];
+            //string ADPassword = WebConfigurationManager.AppSettings["ADPassword"];
             DirectoryEntry entry = new DirectoryEntry();
             DirectorySearcher search = new DirectorySearcher(entry);
-            search.SearchRoot = new DirectoryEntry(ADServer, ADUser, ADPassword);
+            //search.SearchRoot = new DirectoryEntry(ADServer, ADUser, ADPassword);
             search.Filter = String.Format("(SAMAccountName={0})", username);
             search.PropertiesToLoad.Add(fieldname);
             SearchResult result = search.FindOne();
