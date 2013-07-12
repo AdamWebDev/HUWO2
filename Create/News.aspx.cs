@@ -16,14 +16,14 @@ namespace HNHUWO2.Create
             if (!Page.IsPostBack)
             {
                 // populate Coordinators Drop Down
-                ddCoordinators.Items.Insert(0, new ListItem("--Select--", String.Empty));
+                ddCoordinators.AddInitialItem();
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
                 ddCoordinators.DataBind();
 
                 // populate distro outlets
-                ddDistributionOutlets.Items.Insert(0, new ListItem("--Select--", String.Empty));
+                ddDistributionOutlets.AddInitialItem();
                 ddDistributionOutlets.DataSource = NewsWO.GetDistroOutlets();
                 ddDistributionOutlets.DataValueField = "ID";
                 ddDistributionOutlets.DataTextField = "Value";
@@ -64,6 +64,7 @@ namespace HNHUWO2.Create
                 db.SubmitChanges();
                 ID = w.ID;
                 Function.LogAction(ID, "Work order created");
+                WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             
