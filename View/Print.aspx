@@ -113,7 +113,7 @@
             <label>Activity Log</label>
             <uc:ActivityLog ID="activityLog" runat="server" />
         </li>
-        <uc:coordinatorrevisions ID="CoordinatorRevisions" runat="server" />
     </ul>
+    <uc:coordinatorrevisions ID="CoordinatorRevisions" runat="server" />
 
 </asp:Content>

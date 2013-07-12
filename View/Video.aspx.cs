@@ -25,7 +25,7 @@ namespace HNHUWO2.View
             lblTitleVideo.Text = wo.Workorder.title;
             lblCoordinator.Text = wo.Workorder.User.FullName;
             lblVideoSource.Text = wo.VideoSource.HasValue ? wo.VideoSources.Value : String.Empty;
-            lblVideoDestination.Text = wo.VideoDestination;
+            lblVideoDestination.Text = VideoWO.DisplayFormats(wo.VideoDestination);
             lblVideoDestinationOther.Text = wo.DestinationURL;
             lblNumberDVDs.Text = wo.NumberDVDs;
             lblVideoLength.Text = wo.VideoLength;
