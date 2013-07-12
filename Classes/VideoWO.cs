@@ -39,5 +39,22 @@ namespace HNHUWO2.Classes
             return (from d in db.lookupVideoDaysNotices
                         select d.DaysNotice).First();
         }
+
+        public static string DisplayFormats(string loc)
+        {
+            using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
+            {
+                string[] formats = loc.Split(new Char[] { ',' });
+                string output = String.Empty;
+                for (int i = 0; i < formats.Length - 1; i++)
+                {
+                    var q = (from w in db.VideoDestinations
+                             where w.ID == int.Parse(formats[i])
+                             select w.Value).FirstOrDefault();
+                    output += q.ToString() + "; ";
+                }
+                return output;
+            }
+        }
     }
 }
