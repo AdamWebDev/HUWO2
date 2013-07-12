@@ -20,7 +20,7 @@ namespace HNHUWO2.View
                 Response.Redirect("~/Default.aspx");
         }
 
-        protected void PopulatePage(int ID)
+        public void PopulatePage(int ID)
         {
             WorkOrdersWeb wo = WebWO.GetWebWorkOrder(ID);
             if (wo != null)

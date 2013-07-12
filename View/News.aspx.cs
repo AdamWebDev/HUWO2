@@ -19,7 +19,7 @@ namespace HNHUWO2.View
                 Response.Redirect("~/Default.aspx");
         }
 
-        protected void PopulatePage(int ID)
+        public void PopulatePage(int ID)
         {
             WorkOrdersNews wo = NewsWO.GetNewsWorkOrder(ID);
             lblCoordinator.Text = wo.Workorder.User.FullName;

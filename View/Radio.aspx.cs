@@ -19,7 +19,7 @@ namespace HNHUWO2.View
                 Response.Redirect("~/Default.aspx");
         }
 
-        protected void PopulatePage(int ID)
+        public void PopulatePage(int ID)
         {
             WorkOrdersRadio wo = RadioWO.GetRadioWorkOrder(ID);
             lblAdType.Text = wo.RadioAdType.Value;
