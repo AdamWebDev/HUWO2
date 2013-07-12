@@ -10,7 +10,6 @@ namespace HNHUWO2
 {
     public partial class MyWorkOrders : System.Web.UI.Page
     {
-        Function fn = new Function();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -57,7 +56,7 @@ namespace HNHUWO2
                 sorteddata = data.Skip(skipAmount).Take(itemsPerPage).ToList();
             
             // when to show/hide the next/previou buttons
-            lnkNextPage.Visible = (skipAmount + sorteddata.Count() < totalCount || sorteddata.Count() < itemsPerPage);
+            lnkNextPage.Visible = totalCount - skipAmount > itemsPerPage;
             lnkPrevPage.Visible = int.Parse(hdnCurrentPage.Value) > 0;
             
             // populate!

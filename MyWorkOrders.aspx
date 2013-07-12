@@ -60,6 +60,6 @@
     </asp:Repeater>
     <div class="pagination">
         <asp:LinkButton ID="lnkPrevPage" runat="server" CssClass="button" onclick="lnkPrevPage_Click" Visible="false">Previous Page</asp:LinkButton>
-    <asp:LinkButton ID="lnkNextPage" runat="server" CssClass="button" onclick="lnkNextPage_Click" Visible="false">Next Page</asp:LinkButton>
+        <asp:LinkButton ID="lnkNextPage" runat="server" CssClass="button" onclick="lnkNextPage_Click" Visible="false">Next Page</asp:LinkButton>
     </div>
 </asp:Content>
