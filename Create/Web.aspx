@@ -144,7 +144,7 @@
             <asp:RequiredFieldValidator ID="reqURL" runat="server" ControlToValidate="txtURL" ErrorMessage="URL is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
             <label>Description</label>
-            <asp:TextBox ID="txtUpdateDesc" runat="server" CssClass="text-input" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="txtUpdateDesc" runat="server" CssClass="text-input" TextMode="MultiLine" Rows="6"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqUpdateDesc" runat="server" ControlToValidate="txtUpdateDesc" ErrorMessage="Description is Required" CssClass="input-notification error png_bg" Enabled="false" />
         </asp:PlaceHolder>
 
