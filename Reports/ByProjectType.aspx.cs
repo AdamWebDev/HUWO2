@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HNHUWO2.Classes;
 
 namespace HNHUWO2.Reports
 {
@@ -11,14 +12,14 @@ namespace HNHUWO2.Reports
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Users.IsUserDesigner() && !Users.IsUserCoordinator()) Response.Redirect("~/Default.aspx");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            rptReport.DataSource = HNHUWO2.Classes.Reports.ByProjectType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
+            rptReport.DataSource = Classes.Reports.ByProjectType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
             rptReport.DataBind();
-            rptPrintReport.DataSource = HNHUWO2.Classes.Reports.ByPrintType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
+            rptPrintReport.DataSource = Classes.Reports.ByPrintType(txtStartDate.Text.ConvertToDate(), txtEndDate.Text.ConvertToDate());
             rptPrintReport.DataBind();
         }
 

@@ -12,14 +12,7 @@ namespace HNHUWO2.Reports
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Users.IsUserDesigner() || Users.IsUserCoordinator())
-            {
-
-            }
-            else
-            {
-                Response.Redirect("~/Default.aspx");
-            }
+            if (!Users.IsUserDesigner() && !Users.IsUserCoordinator()) Response.Redirect("~/Default.aspx");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
