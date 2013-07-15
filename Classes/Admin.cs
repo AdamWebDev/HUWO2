@@ -33,6 +33,12 @@ namespace HNHUWO2.Classes
             return q.ToList();
         }
 
+        public static User GetUser(int ID)
+        {
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            return db.Users.Single(u => u.ID == ID);
+        }
+
         public static bool? SetUserStatus(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
@@ -41,6 +47,12 @@ namespace HNHUWO2.Classes
             u.Active = !u.Active;
             db.SubmitChanges();
             return u.Active;
+        }
+
+        public static List<UserRole> GetRoles()
+        {
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            return db.UserRoles.ToList();
         }
 
     }
