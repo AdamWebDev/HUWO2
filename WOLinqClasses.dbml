@@ -243,8 +243,9 @@
       <Column Name="Role" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
       <Association Name="User_Workorder" Member="Workorders" ThisKey="ID" OtherKey="coordinator" Type="Workorder" />
+      <Association Name="UserRole_User" Member="UserRole" ThisKey="Role" OtherKey="ID" Type="UserRole" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.LogError" Member="LogErrors">
@@ -386,6 +387,13 @@
       <Association Name="WebType_WorkOrdersWeb" Member="WebType" ThisKey="TypeWebWork" OtherKey="ID" Type="WebType" IsForeignKey="true" />
       <Association Name="WebUpdateType_WorkOrdersWeb" Member="WebUpdateType" ThisKey="TypeOfUpdate" OtherKey="ID" Type="WebUpdateType" IsForeignKey="true" />
       <Association Name="Workorder_WorkOrdersWeb" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRoles" Member="UserRoles">
+    <Type Name="UserRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="UserRole_User" Member="Users" ThisKey="ID" OtherKey="Role" Type="User" />
     </Type>
   </Table>
 </Database>

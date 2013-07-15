@@ -132,6 +132,9 @@ namespace HNHUWO2
     partial void InsertWorkOrdersWeb(WorkOrdersWeb instance);
     partial void UpdateWorkOrdersWeb(WorkOrdersWeb instance);
     partial void DeleteWorkOrdersWeb(WorkOrdersWeb instance);
+    partial void InsertUserRole(UserRole instance);
+    partial void UpdateUserRole(UserRole instance);
+    partial void DeleteUserRole(UserRole instance);
     #endregion
 		
 		public WOLinqClassesDataContext() : 
@@ -441,6 +444,14 @@ namespace HNHUWO2
 			get
 			{
 				return this.GetTable<WorkOrdersWeb>();
+			}
+		}
+		
+		public System.Data.Linq.Table<UserRole> UserRoles
+		{
+			get
+			{
+				return this.GetTable<UserRole>();
 			}
 		}
 	}
@@ -4863,9 +4874,11 @@ namespace HNHUWO2
 		
 		private string _Email;
 		
-		private System.Nullable<bool> _Active;
+		private bool _Active;
 		
 		private EntitySet<Workorder> _Workorders;
+		
+		private EntityRef<UserRole> _UserRole;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4881,13 +4894,14 @@ namespace HNHUWO2
     partial void OnFullNameChanged();
     partial void OnEmailChanging(string value);
     partial void OnEmailChanged();
-    partial void OnActiveChanging(System.Nullable<bool> value);
+    partial void OnActiveChanging(bool value);
     partial void OnActiveChanged();
     #endregion
 		
 		public User()
 		{
 			this._Workorders = new EntitySet<Workorder>(new Action<Workorder>(this.attach_Workorders), new Action<Workorder>(this.detach_Workorders));
+			this._UserRole = default(EntityRef<UserRole>);
 			OnCreated();
 		}
 		
@@ -4942,6 +4956,10 @@ namespace HNHUWO2
 			{
 				if ((this._Role != value))
 				{
+					if (this._UserRole.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnRoleChanging(value);
 					this.SendPropertyChanging();
 					this._Role = value;
@@ -4992,7 +5010,7 @@ namespace HNHUWO2
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit")]
-		public System.Nullable<bool> Active
+		public bool Active
 		{
 			get
 			{
@@ -5021,6 +5039,40 @@ namespace HNHUWO2
 			set
 			{
 				this._Workorders.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserRole_User", Storage="_UserRole", ThisKey="Role", OtherKey="ID", IsForeignKey=true)]
+		public UserRole UserRole
+		{
+			get
+			{
+				return this._UserRole.Entity;
+			}
+			set
+			{
+				UserRole previousValue = this._UserRole.Entity;
+				if (((previousValue != value) 
+							|| (this._UserRole.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserRole.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._UserRole.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._Role = value.ID;
+					}
+					else
+					{
+						this._Role = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserRole");
+				}
 			}
 		}
 		
@@ -8246,6 +8298,120 @@ namespace HNHUWO2
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserRoles")]
+	public partial class UserRole : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Role;
+		
+		private EntitySet<User> _Users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnRoleChanging(string value);
+    partial void OnRoleChanged();
+    #endregion
+		
+		public UserRole()
+		{
+			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="NVarChar(25) NOT NULL", CanBeNull=false)]
+		public string Role
+		{
+			get
+			{
+				return this._Role;
+			}
+			set
+			{
+				if ((this._Role != value))
+				{
+					this.OnRoleChanging(value);
+					this.SendPropertyChanging();
+					this._Role = value;
+					this.SendPropertyChanged("Role");
+					this.OnRoleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserRole_User", Storage="_Users", ThisKey="ID", OtherKey="Role")]
+		public EntitySet<User> Users
+		{
+			get
+			{
+				return this._Users;
+			}
+			set
+			{
+				this._Users.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserRole = this;
+		}
+		
+		private void detach_Users(User entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserRole = null;
 		}
 	}
 }
