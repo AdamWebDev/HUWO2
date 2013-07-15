@@ -25,15 +25,9 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>
       <Objects>
-        <ObjectGroup Name="hnhuwo2ConnectionString-Deployment" Order="1">
-          <Destination Path="Data Source=vm1t%3bInitial Catalog=hnhuwo2%3bIntegrated Security=True" />
-          <Object Type="dbFullSql">
-            <PreSource Path="Data Source=.\SQLEXPRESS%3bInitial Catalog=hnhuwo2%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" />
-            <Source Path="obj\Debug\AutoScripts\hnhuwo2ConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
-          </Object>
-        </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
+    <PublishDatabases>true</PublishDatabases>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -475,7 +469,7 @@
     <Content Include="Site.Master" />
     <Content Include="Web.sitemap" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\VM1T.pubxml" />
+    <None Include="Properties\PublishProfiles\VM40.pubxml" />
     <None Include="README.md" />
     <None Include="resources\css\font-awesome\font-awesome-ie7.scss">
       <Compile>True</Compile>
