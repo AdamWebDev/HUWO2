@@ -294,7 +294,7 @@ namespace HNHUWO2.Classes
 
         private static void SendMail(MailMessage msg)
         {
-            SmtpClient smtp = new SmtpClient("localhost");
+            SmtpClient smtp = new SmtpClient();
             try
             {
                 smtp.Send(msg);
