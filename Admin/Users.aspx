@@ -34,7 +34,7 @@
                 <td><%# Eval("Email") %></td>
                 <td><%# Eval("Role") %></td>
                 <td><asp:Button ID="btnActive" runat="server" CssClass="button" OnClick="btnActive_Click" CommandArgument='<%# Eval("ID") %>' />
-                    <asp:HyperLink ID="lnkEditUser" runat="server" NavigateUrl='<%# String.Format("~/Admin/EditUser.asxp?ID={0}",Eval("ID")) %>' CssClass="button">Edit Details</asp:HyperLink>
+                    <asp:HyperLink ID="lnkEditUser" runat="server" NavigateUrl='<%# String.Format("~/Admin/EditUser.aspx?ID={0}",Eval("ID")) %>' CssClass="button">Edit Details</asp:HyperLink>
                 </td>
             </tr>
         </ItemTemplate>
