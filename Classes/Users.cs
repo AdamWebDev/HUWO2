@@ -32,7 +32,7 @@ namespace HNHUWO2.Classes
         public static bool IsUserCoordinator(String username)
         {
             int? role = GetUserRole(username);
-            if (role == 4 || role == 1)
+            if (role == 3 || role == 1)
                 return true;
             else
                 return false;
