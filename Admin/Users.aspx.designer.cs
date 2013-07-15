@@ -13,6 +13,15 @@ namespace HNHUWO2.Admin {
     public partial class Users {
         
         /// <summary>
+        /// addNewUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::HNHUWO2.NavButton addNewUser;
+        
+        /// <summary>
         /// rptUsers control.
         /// </summary>
         /// <remarks>
