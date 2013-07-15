@@ -25,6 +25,7 @@ namespace HNHUWO2
             var isDesigner = Users.IsUserDesigner();
             reportsMenu.Visible = isDesigner;
             designersMenu.Visible = isDesigner;
+            adminMenu.Visible = isDesigner;
         }
     }
 }
