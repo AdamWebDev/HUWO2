@@ -19,7 +19,7 @@ namespace HNHUWO2.Classes
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             var query = from u in db.Users
-                        where (u.Active == true) && (u.Role == 4)
+                        where (u.Active == true) && (u.Role == 3)
                         select u;
             return query.ToList();
         }
