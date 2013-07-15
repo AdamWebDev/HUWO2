@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Admin\AddUser.aspx" />
+    <Content Include="Admin\EditUser.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Coordinators\AllPendingWorkOrders.aspx" />
     <Content Include="Coordinators\MyWorkOrders.aspx" />
@@ -101,6 +103,7 @@
     <Content Include="Create\Web.aspx" />
     <Content Include="Designers\OpenWorkOrders.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Help\Default.aspx" />
     <Content Include="MyWorkOrders.aspx" />
     <Content Include="Reports\ByCoordinator.aspx" />
     <Content Include="Reports\ByProjectType.aspx" />
@@ -210,6 +213,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,6 +308,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyWorkOrders.aspx.cs">
       <DependentUpon>MyWorkOrders.aspx</DependentUpon>
