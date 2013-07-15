@@ -20,8 +20,8 @@ namespace HNHUWO2.Classes
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             var q = (from w in db.Users
                      where w.Username == username
-                     select w.Role).FirstOrDefault();
-            return q;
+                     select w).FirstOrDefault();
+            return q.Active ? q.Role : null;
         }
 
         public static bool IsUserCoordinator()
@@ -108,6 +108,16 @@ namespace HNHUWO2.Classes
         public static string GetFirstName(string username)
         {
             return QueryAD("givenName", username);
+        }
+
+        public static bool DoesUserExist(string username)
+        {
+            DirectoryEntry entry = new DirectoryEntry();
+            DirectorySearcher search = new DirectorySearcher(entry);
+            search.SearchRoot = entry;
+            search.Filter = String.Format("(SAMAccountName={0})", username);
+            SearchResultCollection results = search.FindAll();
+            return results.Count > 0;
         }
 
 
