@@ -49,6 +49,12 @@
                                     <li><asp:HyperLink ID="lnkDesigners1" runat="server" NavigateUrl="~/Designers/OpenWorkOrders.aspx">Open Work Orders</asp:HyperLink></li>
                                 </ul>
                             </li>
+                            <li id="adminMenu" runat="server">
+                                <a href="#" class="nav-top-item">Admin</a>
+                                <ul>
+                                    <li><asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="~/Admin/Users.aspx">Users</asp:HyperLink></li>
+                                </ul>
+                            </li>
                             <li ID="reportsMenu" runat="server">
                                 <asp:HyperLink ID="lnkReports" runat="server" CssClass="nav-top-item">Reports</asp:HyperLink>
                                 <ul>
@@ -57,7 +63,8 @@
                                 </ul>
 				            </li>
                             <li>
-                                <asp:HyperLink ID="lnkHelp" runat="server" CssClass="nav-top-item">Help</asp:HyperLink>
+                                <asp:HyperLink ID="lnkHelp" runat="server" CssClass="nav-top-item no-submenu" NavigateUrl="~/Help/Default.aspx">Help</asp:HyperLink>
+                                
                             </li>
 			            </ul> <!-- End #main-nav -->
 		            </div>
