@@ -91,6 +91,18 @@ $(document).ready(function () {
         }
     });
 
+    var tooltips = $('.tooltip');
+    tooltips.tooltip({
+        items: "[data-help]",
+        content: function() {
+                return tooltips.data("help");
+            },
+        position: {
+            my: "left+20",
+            at: "center"
+        }
+    });
+
     var path = window.location['pathname'];
     $('#main-nav a[href="' + path + '"]').addClass("current");
 
