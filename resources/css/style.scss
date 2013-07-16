@@ -11,12 +11,16 @@ html {
   height: 100%;
   overflow-y: scroll; }
 
+body {
+	background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
+}
+
 body, textarea, input {
   font-family: "Segoe UI Light","Segoe UI",Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
   -ms-font-feature-settings: 'kern' 1, 'dlig' 1, 'ss20' 1, 'lig' 1;
   color: #555;
-  background: #f0f0f0 url('../images/bg-body.gif') top left repeat-y;
+  
   font-size: 11pt; }
 
 form {
@@ -697,6 +701,15 @@ body#login {
 
 .ajax__fileupload {
   width: 50%; }
+
+.ruFakeInput {
+display:none;
+}
+
+.ruBrowse {
+@extend .button;
+height: auto !important;
+}
 
   @import "blue";
   @import "jqueryui";

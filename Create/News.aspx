@@ -49,7 +49,8 @@
         <asp:RequiredFieldValidator ID="reqContact" runat="server" ControlToValidate="txtContact" ErrorMessage="Health Unit Contact Required" CssClass="input-notification error png_bg" />
 
         <label>Attach files</label>
-        <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic"></telerik:radasyncupload>
+        <telerik:radasyncupload ID="AttachedFiles" runat="server" 
+        MultipleFileSelection="Automatic" Skin=""></telerik:radasyncupload>
 
         <label>Additional Notes</label>
         <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
