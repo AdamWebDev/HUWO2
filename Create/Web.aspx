@@ -166,7 +166,7 @@
             <asp:TextBox ID="txtAudience" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
 
             <asp:Label ID="lblNumberOfPages" runat="server" AssociatedControlID="txtNumberOfPages" Text="Approximately how many pages do you see this site being?"></asp:Label>
-            <asp:TextBox ID="txtNumberOfPages" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtNumberOfPages" runat="server" CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
 
         </asp:PlaceHolder>
 
