@@ -9,7 +9,7 @@
         <ContentTemplate>
             <telerik:radasyncupload ID="uploadFiles" runat="server" 
                 MultipleFileSelection="Automatic" 
-                Localization-Select="Add Files..." 
+                Localization-Select="Add Files to Attach" Skin=""
                 onfileuploaded="uploadFiles_FileUploaded"></telerik:radasyncupload>
         </ContentTemplate>
     </asp:UpdatePanel>
