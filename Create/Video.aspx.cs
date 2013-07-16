@@ -173,6 +173,7 @@ namespace HNHUWO2.Create
                 db.WorkOrdersVideos.InsertOnSubmit(v);
                 db.SubmitChanges();
                 ID = w.ID;
+                WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created");
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);

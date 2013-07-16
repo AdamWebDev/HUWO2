@@ -267,7 +267,7 @@ namespace HNHUWO2.Create
                 }
 
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
-
+                WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created.");
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
