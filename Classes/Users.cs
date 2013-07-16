@@ -21,7 +21,7 @@ namespace HNHUWO2.Classes
             var q = (from w in db.Users
                      where w.Username == username
                      select w).FirstOrDefault();
-            return q.Active ? q.Role : null;
+            return (q == null || !q.Active) ? null : q.Role;
         }
 
         public static bool IsUserCoordinator()
