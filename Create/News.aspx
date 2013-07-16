@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="HNHUWO2.Create.News" %>
+﻿<%@ Page Title="Create News Release Work Order" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="HNHUWO2.Create.News" %>
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">Create News Release Work Order</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server">

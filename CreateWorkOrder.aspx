@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateWorkOrder.aspx.cs" Inherits="HNHUWO2.CreateWorkOrder" %>
-<asp:Content ID="MainTitle" ContentPlaceHolderID="MainTitle" runat="server">
-    <asp:Literal ID="ltlTitle" runat="server"></asp:Literal>
-</asp:Content>
+<asp:Content ID="Title" ContentPlaceHolderID="PageTitle" runat="server">Create a Work Order</asp:Content>
+<asp:Content ID="MainTitle" ContentPlaceHolderID="MainTitle" runat="server">Choose a Work Order Type</asp:Content>
 <asp:Content ID="MenuButtons" ContentPlaceHolderID="MenuButtons" runat="server">
     <uc:NavButton ID="navCancel" runat="server" AltText="Cancel Icon" Text="Cancel" NavURL="~/Default.aspx" Icon="icon-arrow-left" />
 </asp:Content>

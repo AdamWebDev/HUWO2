@@ -13,7 +13,6 @@ namespace HNHUWO2
         {
             if (!IsPostBack)
             {
-                ltlTitle.Text = "Choose a Work Order Type";
                 ddWoTypes.Items.Insert(0, new ListItem("--Select--", String.Empty));
                 ddWoTypes.DataSource = HNHUWO2.Classes.WO.GetWorkOrderTypes();
                 ddWoTypes.DataTextField = "type";
