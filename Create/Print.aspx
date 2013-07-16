@@ -147,7 +147,7 @@
         <uc:TrueFalseDropDown ID="ddAddToWebsite" runat="server" />
         
         <label>Attach files</label>
-        <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" Localization-Select="Select Files to Attach" InputSize="30"></telerik:radasyncupload>
+        <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" Skin="" Localization-Select="Add a File to Attach" InputSize="30"></telerik:radasyncupload>
         
         <label>Additional Notes</label>
         <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>

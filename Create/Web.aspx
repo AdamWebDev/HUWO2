@@ -173,12 +173,12 @@
         <asp:PlaceHolder ID="phCD989WebAd" runat="server" Visible="false">
             <label>Post Date</label>
             <asp:TextBox ID="txtWebAdPostDate" runat="server" CssClass="text-input small-input datepicker" />
-            <asp:RequiredFieldValidator ID="reqWebAdPostDate" runat="server" ControlToValidate="txtWebAdPostDate" ErrorMessage="Posting Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
+            <asp:RequiredFieldValidator ID="reqWebAdPostDate" runat="server" ControlToValidate="txtWebAdPostDate" ErrorMessage="Posting Date is Required" CssClass="input-notification error png_bg" Enabled="false" Display="Dynamic" />    
             <asp:CompareValidator ID="cmpWebAdPostDate" runat="server" ErrorMessage="Post Date cannot be in the past." ControlToValidate="txtWebAdPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>Removal Date</label>
             <asp:TextBox ID="txtWebAdEndDate" runat="server" CssClass="text-input small-input datepicker" />
-            <asp:RequiredFieldValidator ID="reqWebAdEndDate" runat="server" ControlToValidate="txtWebAdEndDate" ErrorMessage="Removal Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
+            <asp:RequiredFieldValidator ID="reqWebAdEndDate" runat="server" ControlToValidate="txtWebAdEndDate" ErrorMessage="Removal Date is Required" CssClass="input-notification error png_bg" Enabled="false" Display="Dynamic" />    
             <asp:CompareValidator ID="cmpWebAdEndDate" runat="server" ErrorMessage="Removal Date must be after Post Date." ControlToValidate="txtDateToBeChanged" ControlToCompare="txtWebAdPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>URL To Link To <i class="icon-question-sign tooltip-url"></i></label>
@@ -193,7 +193,7 @@
         <asp:PlaceHolder ID="phFacebookStatus" runat="server" Visible="false">
             <label>Post Date</label>
             <asp:TextBox ID="txtFacebookPostDate" runat="server" CssClass="text-input small-input datepicker" />
-            <asp:RequiredFieldValidator ID="reqFacebookPostDate" runat="server" ControlToValidate="txtFacebookPostDate" ErrorMessage="Post Date is Required" CssClass="input-notification error png_bg" Enabled="false" />    
+            <asp:RequiredFieldValidator ID="reqFacebookPostDate" runat="server" ControlToValidate="txtFacebookPostDate" ErrorMessage="Post Date is Required" CssClass="input-notification error png_bg" Enabled="false" Display="Dynamic" />    
             <asp:CompareValidator ID="cmpFacebookPostDate" runat="server" ErrorMessage="Post Date cannot be in the past." ControlToValidate="txtFacebookPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>Content</label>
@@ -209,7 +209,7 @@
             
 
             <label>Attach files:</label>
-            <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic"></telerik:radasyncupload>
+            <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" Skin="" Localization-Select="Add a File to Attach" ></telerik:radasyncupload>
 
             <label>Additional Notes:</label>
             <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
