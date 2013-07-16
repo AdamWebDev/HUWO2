@@ -707,10 +707,16 @@ display:none;
 }
 
 .ruBrowse {
-@extend .button;
-height: auto !important;
+  @extend .button;
+  height: auto !important;
+  width: auto !important;
+}
+.ruButton.ruRemove {
+  @extend .button;
+  background-color: $red !important;
+  border: thin solid $red-dark !important;
 }
 
-  @import "blue";
-  @import "jqueryui";
-  @import "font-awesome/font-awesome";
+@import "blue";
+@import "jqueryui";
+@import "font-awesome/font-awesome";
