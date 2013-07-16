@@ -153,7 +153,7 @@ namespace HNHUWO2.Create
                         DateTime dueDate = Convert.ToDateTime(txtDueDate.Text);
                         if (dueDate.Date.CompareTo(minDate.Date) < 0)  // if the date selected doesn't meet the appropriate date guidelines...
                         {
-                            message = "Warning: Please be aware that the timeline you have provided does not comply with our Minimum Timelines guidelines. We require  " + daysNoticeNeeded.ToString() + " days of advanced notice. To follow our guidelines, the due date should be " + minDate.ToString("MMMM dd, yyyy") + ".  You will still be able to submit your work order, but be aware that the deadline may not be met.";
+                            message = "Warning: Please be aware that the timeline you have provided does not comply with our Minimum Lead-Time Requirements. We require  " + daysNoticeNeeded.ToString() + " days of advanced notice. To follow our guidelines, the due date should be " + minDate.ToString("MMMM dd, yyyy") + ".  You will still be able to submit your work order, but be aware that the deadline may not be met.";
                             notDueDate.Visible = true;
                         }
                         else

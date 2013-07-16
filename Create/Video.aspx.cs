@@ -125,7 +125,7 @@ namespace HNHUWO2.Create
                     if (dueDate.Date.CompareTo(minDate.Date) < 0)
                     {
                         notDueDate.Type = Notification.Types.Attention;
-                        notDueDate.Message = "Warning: Please be aware that the timeline you have provided does not comply with our Minimum Timelines guidelines. We require  " + daysNoticeNeeded.ToString() + " days of advanced notice. To follow our guidelines, the due date should be " + minDate.ToString("MMMM dd, yyyy") + ".  You will still be able to submit your work order, but be aware that the deadline may not be met.";
+                        notDueDate.Message = "Warning: Please be aware that the timeline you have provided does not comply with our Minimum Lead-Time Requirements. We require  " + daysNoticeNeeded.ToString() + " days of advanced notice. To follow our guidelines, the due date should be " + minDate.ToString("MMMM dd, yyyy") + ".  You will still be able to submit your work order, but be aware that the deadline may not be met.";
                         notDueDate.Visible = true;
                     }
                     else
@@ -134,7 +134,7 @@ namespace HNHUWO2.Create
                 else
                 {
                     notDueDate.Type = Notification.Types.Information;
-                    notDueDate.Message = "This project needs " + daysNoticeNeeded.ToString() + " days to work on. According to our Minimum Timelines Guidelines, your minimum due date should be " + minDate.ToString("MMMM dd, yyyy") + ". You can still submit this work order, but be aware that your deadline may not be met.";
+                    notDueDate.Message = "This project needs " + daysNoticeNeeded.ToString() + " days to work on. According to our Minimum Lead-Time Requirements, your minimum due date should be " + minDate.ToString("MMMM dd, yyyy") + ". You can still submit this work order, but be aware that your deadline may not be met.";
                     notDueDate.Visible = true;
                 }
             }
