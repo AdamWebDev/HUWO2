@@ -34,7 +34,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:PlaceHolder ID="phDistroOther" runat="server" Visible="false">
-                    <label>Please Specify</label>
+                    <label>Please Specify a Distribution Outlet</label>
                     <asp:TextBox ID="txtDistributionOutletsOther" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqDistributionOutletsOther" runat="server" ControlToValidate="txtDistributionOutletsOther" ErrorMessage="Distribution Details are Required" CssClass="input-notification error png_bg" />
                 </asp:PlaceHolder>
