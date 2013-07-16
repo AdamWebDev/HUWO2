@@ -77,7 +77,7 @@
     <asp:RequiredFieldValidator ID="reqRecordingOptions" runat="server" ControlToValidate="ddRecordingOptions" ErrorMessage="Recording Options is Required" CssClass="input-notification error png_bg" Enabled="false"/>
                 
     <label>Attach Files</label>
-    <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" TargetFolder="~/uploads"></telerik:radasyncupload>
+    <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic"></telerik:radasyncupload>
                 
     <label>Additional Notes</label>
     <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
