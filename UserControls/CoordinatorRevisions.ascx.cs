@@ -32,7 +32,7 @@ namespace HNHUWO2.UserControls
             {
                 int ID = int.Parse(Request.QueryString["ID"]);
                 Classes.WO.UploadFiles(ID, uploadFiles.UploadedFiles,true);
-
+                this.Page.GetType().InvokeMember("PopulatePage", System.Reflection.BindingFlags.InvokeMethod, null, this.Page, new object[] { ID });
             }
         }
     }

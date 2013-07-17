@@ -20,7 +20,12 @@ namespace HNHUWO2.View
                 else
                     Response.Redirect("~/Default.aspx");
             }
-            RefreshFiles(1);
+            RefreshFiles();
+        }
+
+        public void RefreshFiles()
+        {
+            attachedFiles.Refresh();
         }
 
         public void PopulatePage(int ID)
@@ -72,14 +77,13 @@ namespace HNHUWO2.View
                     CoordinatorRevisions.Visible = true;
                 else
                     CoordinatorRevisions.Visible = false;
+
+                RefreshFiles();
             }
             else Response.Redirect("~/Default.aspx");
 
         }
 
-        public void RefreshFiles(int ID)
-        {
-            attachedFiles.Refresh();
-        }
+        
     }
 }

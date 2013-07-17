@@ -49,7 +49,7 @@ namespace HNHUWO2.UserControls
                 notes = revisions.Notes;
             }
             WO.ApproveWithChanges(ID, notes);
-            UpdatePage();
+            //UpdatePage();
         }
 
         // mark the work order as "in progress"
