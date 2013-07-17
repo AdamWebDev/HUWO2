@@ -13,7 +13,7 @@ namespace HNHUWO2
         {
             if (!IsPostBack)
             {
-                ddWoTypes.Items.Insert(0, new ListItem("--Select--", String.Empty));
+                ddWoTypes.AddInitialItem();
                 ddWoTypes.DataSource = HNHUWO2.Classes.WO.GetWorkOrderTypes();
                 ddWoTypes.DataTextField = "type";
                 ddWoTypes.DataValueField = "ID";
@@ -50,7 +50,6 @@ namespace HNHUWO2
                     }
                 }
             }
-
         }
     }
 }

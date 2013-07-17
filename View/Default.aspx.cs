@@ -15,7 +15,7 @@ namespace HNHUWO2.View
             string msg = "";
             if (Request.QueryString["ID"] == null || Request.QueryString["type"] == null)
             {
-                url = "~/MyWorkOrders.aspx";
+                url = "~/Default.aspx";
             }
             else
             {

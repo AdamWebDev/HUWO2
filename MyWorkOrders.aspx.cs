@@ -18,8 +18,7 @@ namespace HNHUWO2
                 if (Request.QueryString["success"] != null && Request.QueryString["success"].Equals("true"))
                 {
                     pnSuccess.Visible = true;
-                    int ID;
-                    int type;
+                    int ID, type;
                     if (Request.QueryString["ID"] != null && int.TryParse(Request.QueryString["ID"], out ID) && Request.QueryString["type"] != null && int.TryParse(Request.QueryString["type"],out type))
                     {
                         lnkWorkOrder.NavigateUrl = "~/View/Default.aspx?ID=" + ID + "&type=" + type;
