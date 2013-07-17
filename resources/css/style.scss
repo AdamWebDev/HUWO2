@@ -84,11 +84,15 @@ h3 {
   letter-spacing: 0.01em; }
 
 h4 {
-	font-size: 14pt;
+	font-size: 18pt;
 	padding: 0 0 10px 0;
 	letter-spacing: 0.01em;
 }
-
+h5 {
+	font-size: 16pt;
+	margin-top: 0.5em;
+	letter-spacing: 0.01em;
+}
  h5, h6 {
   font-size: 11pt;
   padding: 0 0 5px 0; }
@@ -265,16 +269,23 @@ a.remove-link {
 /************ Lists ************/
 
 .content-box-content {
+h3 {
+	margin-bottom: 0.5em;
+}
   ul, ol {
     padding: 10px 0; }
   ul li {
-    background: url('../images/icons/bullet_black.png') center left no-repeat;
-    padding: 4px 0 4px 20px; }
+    background: url("../images/icons/bullet_black.png") top left no-repeat;
+padding: 0px 0 4px 2em;
+line-height: 1.3em;
+margin: 0 2em 0.5em 0.5em; }
   ol {
     padding: 0 0 0 24px;
     li {
       list-style: decimal;
-      padding: 4px 0; } } }
+      padding: 4px 0; } 
+	} 
+}
 
 /* Unordered List */
 
