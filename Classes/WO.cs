@@ -265,7 +265,7 @@ namespace HNHUWO2.Classes
             // create the email
             string subject = "Work Order Submitted - Requires Approval";
             string message = "Greetings!<br /><br />A workorder has been submitted to the HNHU Communications team that requires your approval. Please proceed to the following link to approve the work order.<br /><br />";
-            string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?ID=" + ID;
+            string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?type=" + wo.wotype + "&ID=" + ID;
             message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
             MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
@@ -284,7 +284,7 @@ namespace HNHUWO2.Classes
             // create the email
             string subject = "Work Order Approved";
             string message = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + Users.GetUsername() +". Please proceed to the following link to approve the work order.<br /><br />";
-            string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?ID=" + ID;
+            string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?type=" + wo.wotype + "&ID=" + ID;
             message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
             MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
