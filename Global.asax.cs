@@ -88,6 +88,11 @@ namespace HNHUWO2
             else
                 return null;
         }
+
+        public static String IncludeLineBreaks(this String value)
+        {
+            return (value == null) ? String.Empty : value.Replace("\n", "<br />");
+        }
     }
 
     public static class DropDownListExtensions
