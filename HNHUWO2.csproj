@@ -122,7 +122,6 @@
     <Content Include="resources\images\ui-icons_d4d4d4_0.png" />
     <Content Include="resources\images\ui-icons_ffffff_0.png" />
     <Content Include="resources\scripts\jquery-ui.min.js" />
-    <Content Include="Success.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="resources\css\blue.css">
       <DependentUpon>_blue.scss</DependentUpon>
@@ -331,13 +330,6 @@
     </Compile>
     <Compile Include="Reports\ByProjectType.aspx.designer.cs">
       <DependentUpon>ByProjectType.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Success.aspx.cs">
-      <DependentUpon>Success.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Success.aspx.designer.cs">
-      <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
