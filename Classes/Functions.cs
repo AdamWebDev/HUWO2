@@ -156,11 +156,6 @@ namespace HNHUWO2.Classes
             }
         }
 
-        public void ScrollToTop(Page Page)
-        {
-            ScriptManager.RegisterStartupScript(Page, this.GetType(), "ScrollPage", "ResetScrollPosition();", true);
-        }
-
         public static string GetUserName()
         {
             String username = HttpContext.Current.User.Identity.Name.ToString();
@@ -219,36 +214,6 @@ namespace HNHUWO2.Classes
                 }
             }
             return value;
-        }
-
-        public static String BoolToYesNo(bool? b)
-        {
-            switch (b) {
-                case true: return "Yes"; 
-                case false: return "No";
-                default: return String.Empty;
-            }
-        }
-
-        public static String DisplayDate(DateTime? dt)
-        {
-            if (dt == null)
-                return String.Empty;
-            else
-                return dt.Value.ToString("dddd, dd MMMM, yyyy");
-        }
-
-        public static String DisplayDateToEdit(DateTime? dt)
-        {
-            if (dt == null)
-                return String.Empty;
-            else
-                return dt.Value.ToString("MM/dd/yyyy");
-        }
-
-        public static void AddInitialItem(DropDownList dd)
-        {
-            dd.Items.Insert(0, new ListItem("--Select--",String.Empty));
         }
 
     }
