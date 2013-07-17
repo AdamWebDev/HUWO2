@@ -49,10 +49,7 @@ namespace HNHUWO2.Classes
         public static WorkOrdersWeb GetWebWorkOrder(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = (from w in db.WorkOrdersWebs
-                     where w.wID == ID
-                     select w).FirstOrDefault();
-            return q;
+            return db.WorkOrdersWebs.Single(w => w.wID == ID);
         }
 
     }

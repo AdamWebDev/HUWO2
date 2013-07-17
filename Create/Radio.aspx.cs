@@ -93,6 +93,9 @@ namespace HNHUWO2.Create
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // from the information provided, create us a due date to store
+
+            btnSubmit.Enabled = false; // prevent double submission
+
             DateTime? duedate;
             if (ddAdType.SelectedValue.Equals("1"))
             {
@@ -104,10 +107,7 @@ namespace HNHUWO2.Create
             else
                 duedate = (DateTime)txtStartAiringDate.Text.ConvertToDate();
             
-            btnSubmit.Enabled = false;
-
             // submit!
-            int ID;
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 Workorder w = new Workorder();
@@ -135,10 +135,10 @@ namespace HNHUWO2.Create
                 r.Notes = txtNotes.Text;
                 db.WorkOrdersRadios.InsertOnSubmit(r);
                 db.SubmitChanges();
-                ID = w.ID;
-                WO.SendNewWONotification(ID);
-                Function.LogAction(ID, "Work order created");
+                int ID = w.ID;
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
+                Function.LogAction(ID, "Work order created");
+                WO.SendNewWONotification(ID);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             

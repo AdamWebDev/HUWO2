@@ -19,7 +19,7 @@ namespace HNHUWO2.Create
 
             if (!Page.IsPostBack)
             {
-                Function.AddInitialItem(ddCoordinators);
+                ddCoordinators.AddInitialItem();
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
@@ -30,19 +30,19 @@ namespace HNHUWO2.Create
                 chkLocation.DataValueField = "ID";
                 chkLocation.DataBind();
 
-                Function.AddInitialItem(ddTypeWebWork);
+                ddTypeWebWork.AddInitialItem();
                 ddTypeWebWork.DataSource = WebWO.GetTypes();
                 ddTypeWebWork.DataValueField = "ID";
                 ddTypeWebWork.DataTextField = "Value";
                 ddTypeWebWork.DataBind();
 
-                Function.AddInitialItem(ddTypeOfUpdate);
+                ddTypeOfUpdate.AddInitialItem();
                 ddTypeOfUpdate.DataSource = WebWO.GetUpdateTypes();
                 ddTypeOfUpdate.DataValueField = "ID";
                 ddTypeOfUpdate.DataTextField = "Value";
                 ddTypeOfUpdate.DataBind();
 
-                Function.AddInitialItem(ddWebsite);
+                ddWebsite.AddInitialItem();
                 ddWebsite.DataSource = WebWO.GetWebSites();
                 ddWebsite.DataValueField = "ID";
                 ddWebsite.DataTextField = "Value";
@@ -173,8 +173,6 @@ namespace HNHUWO2.Create
         }
 
         
-
-
         /// <summary>
         /// Submitting the form!
         /// </summary>
@@ -183,7 +181,6 @@ namespace HNHUWO2.Create
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false; // prevent double submission
-            int ID = 0;
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 Workorder w = new Workorder();
@@ -258,21 +255,18 @@ namespace HNHUWO2.Create
                     wow.pID = null;
                 db.WorkOrdersWebs.InsertOnSubmit(wow);
                 db.SubmitChanges();
-                ID = w.ID;
+                int ID = w.ID;
                 if (pID != 0)
                 {
                     WorkOrdersPrint p = db.WorkOrdersPrints.Single(u => u.wID == pID);
                     p.webID = ID;
                     db.SubmitChanges();
                 }
-
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
-                WO.SendNewWONotification(ID);
                 Function.LogAction(ID, "Work order created.");
+                WO.SendNewWONotification(ID);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
-            
-            
         }
     }
 }

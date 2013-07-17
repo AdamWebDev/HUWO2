@@ -43,7 +43,7 @@ namespace HNHUWO2.Create
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            int ID = 0;
+            btnSubmit.Enabled = false; // prevent double submission
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 Workorder w = new Workorder();
@@ -63,10 +63,10 @@ namespace HNHUWO2.Create
                 n.AdditionalNotes = txtNotes.Text;
                 db.WorkOrdersNews.InsertOnSubmit(n);
                 db.SubmitChanges();
-                ID = w.ID;
-                WO.SendNewWONotification(ID);
-                Function.LogAction(ID, "Work order created");
+                int ID = w.ID;
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
+                Function.LogAction(ID, "Work order created");
+                WO.SendNewWONotification(ID);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             

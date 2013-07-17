@@ -240,7 +240,7 @@
     <Type Name="User">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Role" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Role" Type="System.Int32" DbType="Int" CanBeNull="false" />
       <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
@@ -314,7 +314,7 @@
   <Table Name="dbo.WorkOrdersPrint" Member="WorkOrdersPrints">
     <Type Name="WorkOrdersPrint">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="wID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="wID" Type="System.Int32" DbType="Int" CanBeNull="false" />
       <Column Name="ProjectType" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ProjectTypeOther" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="TypeOfDisplay" Type="System.Int32" DbType="Int" CanBeNull="true" />

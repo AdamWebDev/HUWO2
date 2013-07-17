@@ -12,20 +12,13 @@ namespace HNHUWO2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = Function.GetUserName();
-            if (Session["firstname"] == null)
-                Session["firstname"] = Users.GetFirstName(username);
-
-            ltWelcomeMessage.Text = "Welcome, " + Session["firstname"];
-
-            if (Session["role"] == null)
-                Session["role"] = Users.GetUserRole(username);
+            if (MySession.Current.Role == null) MySession.Current.Role = Users.GetUserRole();
+            if (MySession.Current.FirstName == null) MySession.Current.FirstName = Users.GetFirstName();
+            
+            ltWelcomeMessage.Text = "Welcome, " + MySession.Current.FirstName;
 
             coordMenu.Visible = Users.IsUserCoordinator();
-            var isDesigner = Users.IsUserDesigner();
-            reportsMenu.Visible = isDesigner;
-            designersMenu.Visible = isDesigner;
-            adminMenu.Visible = isDesigner;
+            reportsMenu.Visible = designersMenu.Visible = adminMenu.Visible = Users.IsUserDesigner();
         }
     }
 }

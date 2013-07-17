@@ -18,10 +18,7 @@ namespace HNHUWO2.Classes
         public static List<User> GetCoordinators()
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var query = from u in db.Users
-                        where (u.Active == true) && (u.Role == 3)
-                        select u;
-            return query.ToList();
+            return db.Users.Where(u => u.Active == true && u.Role == 3).ToList();
         }
 
         public class WorkOrderWithDetails
@@ -65,57 +62,38 @@ namespace HNHUWO2.Classes
         {
             var q = GetWorkOrders();
             // get wo's related to the logged in user
-            var z = from w in q
-                    where w.submitted_by == username
-                    select w;
-            return z.ToList();
-            
+            return q.Where(w => w.submitted_by == username).ToList();
         }
 
         public static List<WorkOrderWithDetails> GetOpenWorkOrders()
         {
             var q = GetWorkOrders();
-            var z = from w in q
-                    where w.status > 1 && w.status < 6
-                    select w;
-            return z.ToList();
+            return q.Where(w => w.status > 1 && w.status < 6).ToList();
         }
 
         public static List<WorkOrderWithDetails> GetUnapprovedWorkOrders()
         {
             var q = GetWorkOrders();
-            var z = from w in q
-                    where w.status < 2
-                    select w;
-            return z.ToList();
+            return q.Where(w => w.status < 2).ToList();
         }
 
         public static List<WorkOrderWithDetails> GetCompletedWorkOrders()
         {
             var q = GetWorkOrders();
-            var z = from w in q
-                    where w.status == 6
-                    select w;
-            return z.ToList();
+            return q.Where(w => w.status == 6).ToList();
         }
 
         public static List<WorkOrderWithDetails> GetDeletedWorkOrders()
         {
             var q = GetWorkOrders();
-            var z = from w in q
-                    where w.status == 7
-                    select w;
-            return z.ToList();
+            return q.Where(w => w.status == 7).ToList();
         }
         
 
         public static Workorder GetWorkOrder(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = (from w in db.Workorders
-                     where w.ID == ID
-                     select w).FirstOrDefault();
-            return q;
+            return db.Workorders.SingleOrDefault(w => w.ID == ID);
         }
 
         public static List<WorkOrderWithDetails> GetMyStaffWorkOrders()
@@ -152,38 +130,26 @@ namespace HNHUWO2.Classes
         {
             int? ID = HNHUWO2.Classes.Users.GetUserID(username);
             var wo = GetWorkOrders();
-            var q = from w in wo
-                    where w.coordinator == ID
-                    select w;
-            return q.ToList();
+            return wo.Where(w => w.coordinator == ID).ToList();
         }
 
 
         public static List<WorkOrderWithDetails> GetMyStaffWorkOrders(String username, int status)
         {
             var q = GetMyStaffWorkOrders(username);
-            var z = from wo in q
-                    where wo.status == status
-                    select wo;
-            return z.ToList();
+            return q.Where(w => w.status == status).ToList();
         }
 
         public static List<WorkOrderWithDetails> GetMyStaffWorkOrders(String username, int statusStart, int statusEnd)
         {
             var q = GetMyStaffWorkOrders(username);
-            var z = from wo in q
-                    where wo.status >= statusStart && wo.status <= statusEnd
-                    select wo;
-            return z.ToList();
+            return q.Where(w => w.status >= statusStart && w.status <= statusEnd).ToList();
         }
 
         public static List<LogActivity> GetLog(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = from l in db.LogActivities
-                    where l.wID == ID
-                    select l;
-            return q.ToList();
+            return db.LogActivities.Where(l => l.wID == ID).ToList();
         }
 
         public static void UploadFiles(int ID, UploadedFileCollection files)
@@ -247,10 +213,7 @@ namespace HNHUWO2.Classes
         public static List<File> GetFiles(int wID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = from f in db.Files
-                    where f.wID == wID
-                    select f;
-            return q.ToList();
+            return db.Files.Where(f => f.wID == wID).ToList();
         }
 
         public static void SendNewWONotification(int ID) 

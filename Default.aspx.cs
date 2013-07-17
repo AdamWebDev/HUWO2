@@ -12,11 +12,9 @@ namespace HNHUWO2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            string user = Function.GetUserName();
-            if(Users.IsUserDesigner(user))
+            if(Users.IsUserDesigner())
                 Response.Redirect("~/Designers/OpenWorkOrders.aspx");
-            else if (Users.IsUserCoordinator(user))
+            else if (Users.IsUserCoordinator())
                 Response.Redirect("~/Coordinators/MyWorkOrders.aspx");
             else
                 Response.Redirect("~/MyWorkOrders.aspx");

@@ -13,11 +13,14 @@ namespace HNHUWO2.View
         protected void Page_Load(object sender, EventArgs e)
         {
             int ID;
-
-            if (Int32.TryParse(Request.QueryString["ID"], out ID))
-                PopulatePage(ID);
-            else
-                Response.Redirect("~/Default.aspx");
+            if (!Page.IsPostBack)
+            {
+                if (Int32.TryParse(Request.QueryString["ID"], out ID))
+                    PopulatePage(ID);
+                else
+                    Response.Redirect("~/Default.aspx");
+            }
+            RefreshFiles(1);
         }
 
         public void PopulatePage(int ID)
@@ -69,11 +72,14 @@ namespace HNHUWO2.View
                     CoordinatorRevisions.Visible = true;
                 else
                     CoordinatorRevisions.Visible = false;
-
-                attachedFiles.Refresh();
             }
             else Response.Redirect("~/Default.aspx");
 
+        }
+
+        public void RefreshFiles(int ID)
+        {
+            attachedFiles.Refresh();
         }
     }
 }

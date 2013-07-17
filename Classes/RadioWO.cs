@@ -33,10 +33,7 @@ namespace HNHUWO2.Classes
         public static WorkOrdersRadio GetRadioWorkOrder(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = (from r in db.WorkOrdersRadios
-                     where r.wID == ID
-                     select r).FirstOrDefault();
-            return q;
+            return db.WorkOrdersRadios.Single(w => w.wID == ID);
         }
     }
 }

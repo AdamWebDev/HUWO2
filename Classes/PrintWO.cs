@@ -61,21 +61,13 @@ namespace HNHUWO2.Classes
         public static WorkOrdersPrint GetPrintWorkOrder(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            
-            var q = (from w in db.WorkOrdersPrints
-                     where w.wID == ID
-                     select w).FirstOrDefault();
-            return q;
-            
+            return db.WorkOrdersPrints.Single(w => w.wID == ID);
         }
 
         public static PrintDaysNotice GetDaysNoticeAndMessage(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = (from w in db.PrintDaysNotices
-                     where w.pID == ID
-                     select w).FirstOrDefault();
-            return q;
+            return db.PrintDaysNotices.Single(d => d.pID == ID);
         }
 
         public static bool HasWebWorkOrder(int ID)

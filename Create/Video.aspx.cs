@@ -143,7 +143,6 @@ namespace HNHUWO2.Create
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false;
-            int ID = 0;
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 Workorder w = new Workorder();
@@ -172,13 +171,12 @@ namespace HNHUWO2.Create
                 v.Notes = txtNotes.Text;
                 db.WorkOrdersVideos.InsertOnSubmit(v);
                 db.SubmitChanges();
-                ID = w.ID;
-                WO.SendNewWONotification(ID);
-                Function.LogAction(ID, "Work order created");
+                int ID = w.ID;
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
+                Function.LogAction(ID, "Work order created");
+                WO.SendNewWONotification(ID);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
-            
          }
     }
 }

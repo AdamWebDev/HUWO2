@@ -16,49 +16,49 @@ namespace HNHUWO2.Create
             if (!Page.IsPostBack)
             {
                 // populate Drop Down boxes for the page
-                Function.AddInitialItem(ddCoordinators);
+                ddCoordinators.AddInitialItem();
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
                 ddCoordinators.DataTextField = "FullName";
                 ddCoordinators.DataBind();
 
-                Function.AddInitialItem(ddTypeProject);
+                ddTypeProject.AddInitialItem();
                 ddTypeProject.DataSource = PrintWO.GetTypeOfProjects();
                 ddTypeProject.DataTextField = "Value";
                 ddTypeProject.DataValueField = "ID";
                 ddTypeProject.DataBind();
 
-                Function.AddInitialItem(ddTypeOfDisplay);
+                ddTypeOfDisplay.AddInitialItem();
                 ddTypeOfDisplay.DataSource = PrintWO.GetTypeOfDisplays();
                 ddTypeOfDisplay.DataTextField = "Value";
                 ddTypeOfDisplay.DataValueField = "ID";
                 ddTypeOfDisplay.DataBind();
 
-                Function.AddInitialItem(ddPrintingMethod);
+                ddPrintingMethod.AddInitialItem();
                 ddPrintingMethod.DataSource = PrintWO.GetPrintMethods();
                 ddPrintingMethod.DataTextField = "Value";
                 ddPrintingMethod.DataValueField = "ID";
                 ddPrintingMethod.DataBind();
 
-                Function.AddInitialItem(ddPaperSize);
+                ddPaperSize.AddInitialItem();
                 ddPaperSize.DataSource = PrintWO.GetPaperSizes();
                 ddPaperSize.DataTextField = "Value";
                 ddPaperSize.DataValueField = "ID";
                 ddPaperSize.DataBind();
 
-                Function.AddInitialItem(ddPaperType);
+                ddPaperType.AddInitialItem();
                 ddPaperType.DataSource = PrintWO.GetPaperTypes();
                 ddPaperType.DataTextField = "Value";
                 ddPaperType.DataValueField = "ID";
                 ddPaperType.DataBind();
 
-                Function.AddInitialItem(ddColourInfo);
+                ddColourInfo.AddInitialItem();
                 ddColourInfo.DataSource = PrintWO.GetColourInfo();
                 ddColourInfo.DataTextField = "Value";
                 ddColourInfo.DataValueField = "ID";
                 ddColourInfo.DataBind();
 
-                Function.AddInitialItem(ddCredits);
+                ddCredits.AddInitialItem();
                 ddCredits.DataSource = PrintWO.GetCreditType();
                 ddCredits.DataTextField = "Value";
                 ddCredits.DataValueField = "ID";
@@ -219,7 +219,6 @@ namespace HNHUWO2.Create
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false; // prevent double submission
-            int ID = 0;
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 Workorder w = new Workorder();
@@ -255,13 +254,10 @@ namespace HNHUWO2.Create
                 p.Notes = txtNotes.Text;
                 db.WorkOrdersPrints.InsertOnSubmit(p);
                 db.SubmitChanges();
-                ID = (int)p.wID;
-
-                WO.SendNewWONotification(ID);
-                Function.LogAction(ID, "Work order created");
-
+                int ID = p.wID;
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
-
+                Function.LogAction(ID, "Work order created");
+                WO.SendNewWONotification(ID);
                 if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
                     Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
                 else // if not, success!!

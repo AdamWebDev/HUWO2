@@ -25,7 +25,7 @@ namespace HNHUWO2.View
             lblCoordinator.Text = wo.Workorder.User.FullName;
             lblTitleTopic.Text = wo.Workorder.title;
             lblDateToIssue.Text = wo.Workorder.duedate.DisplayDate();
-            lblDistributionOutlets.Text = wo.DistributionDetails.Equals(String.Empty) ? wo.NewsDistroOutlet.Value : wo.DistributionDetails;
+            lblDistributionOutlets.Text = wo.DistributionDetails == null ? wo.NewsDistroOutlet.Value : wo.DistributionDetails;
             lblContact.Text = wo.Contact;
             lblNotes.Text = wo.AdditionalNotes;
 

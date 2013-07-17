@@ -12,53 +12,33 @@ namespace HNHUWO2.Classes
 
         public static int? GetUserRole()
         {
-            return GetUserRole(_GetUserName());
+            return MySession.Current.Role == null ? GetUserRole(_GetUserName()) : MySession.Current.Role;
         }
 
         public static int? GetUserRole(String username) 
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             var q = (from w in db.Users
-                     where w.Username == username
-                     select w).FirstOrDefault();
-            return (q == null || !q.Active) ? null : q.Role;
+                        where w.Username == username
+                        select w).FirstOrDefault();
+            return (q == null || !q.Active) ? 0 : q.Role;
+            
         }
 
         public static bool IsUserCoordinator()
         {
-            return IsUserCoordinator(_GetUserName());
-        }
-
-        public static bool IsUserCoordinator(String username)
-        {
-            int? role = GetUserRole(username);
-            if (role == 3 || role == 1)
-                return true;
-            else
-                return false;
+            return (MySession.Current.Role == 3 || MySession.Current.Role == 1);
         }
 
         public static bool IsUserDesigner()
         {
-            return IsUserDesigner(_GetUserName());
-        }
 
-        public static bool IsUserDesigner(String username)
-        {
-            int? role = GetUserRole(username);
-            if (role == 2 || role == 1)
-                return true;
-            else
-                return false;
+            return (MySession.Current.Role == 2 || MySession.Current.Role == 1);
         }
 
         public static bool IsUserAdmin()
         {
-            int? role = GetUserRole(_GetUserName());
-            if (role == 1)
-                return true;
-            else
-                return false;
+            return MySession.Current.Role == 1;
         }
 
         public static int? GetUserID(String username)
@@ -105,6 +85,11 @@ namespace HNHUWO2.Classes
             return QueryAD("mail", username);
         }
 
+        public static string GetFirstName()
+        {
+            return GetFirstName(_GetUserName());
+        }
+
         public static string GetFirstName(string username)
         {
             return QueryAD("givenName", username);
@@ -119,7 +104,5 @@ namespace HNHUWO2.Classes
             SearchResultCollection results = search.FindAll();
             return results.Count > 0;
         }
-
-
     }
 }

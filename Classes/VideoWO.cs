@@ -27,10 +27,7 @@ namespace HNHUWO2.Classes
         public static WorkOrdersVideo GetVideoWorkOrder(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = (from v in db.WorkOrdersVideos
-                     where v.wID == ID
-                     select v).FirstOrDefault();
-            return q;
+            return db.WorkOrdersVideos.Single(w => w.wID == ID);
         }
 
         public static int? GetDaysNotice()

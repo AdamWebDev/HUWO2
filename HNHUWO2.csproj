@@ -229,6 +229,7 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\MySession.cs" />
     <Compile Include="Classes\NewsWO.cs" />
     <Compile Include="Classes\PrintWO.cs" />
     <Compile Include="Classes\RadioWO.cs" />

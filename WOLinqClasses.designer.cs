@@ -4868,7 +4868,7 @@ namespace HNHUWO2
 		
 		private string _Username;
 		
-		private System.Nullable<int> _Role;
+		private int _Role;
 		
 		private string _FullName;
 		
@@ -4888,7 +4888,7 @@ namespace HNHUWO2
     partial void OnIDChanged();
     partial void OnUsernameChanging(string value);
     partial void OnUsernameChanged();
-    partial void OnRoleChanging(System.Nullable<int> value);
+    partial void OnRoleChanging(int value);
     partial void OnRoleChanged();
     partial void OnFullNameChanging(string value);
     partial void OnFullNameChanged();
@@ -4946,7 +4946,7 @@ namespace HNHUWO2
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="Int")]
-		public System.Nullable<int> Role
+		public int Role
 		{
 			get
 			{
@@ -5069,7 +5069,7 @@ namespace HNHUWO2
 					}
 					else
 					{
-						this._Role = default(Nullable<int>);
+						this._Role = default(int);
 					}
 					this.SendPropertyChanged("UserRole");
 				}
@@ -6336,7 +6336,7 @@ namespace HNHUWO2
 		
 		private int _ID;
 		
-		private System.Nullable<int> _wID;
+		private int _wID;
 		
 		private System.Nullable<int> _ProjectType;
 		
@@ -6396,7 +6396,7 @@ namespace HNHUWO2
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnwIDChanging(System.Nullable<int> value);
+    partial void OnwIDChanging(int value);
     partial void OnwIDChanged();
     partial void OnProjectTypeChanging(System.Nullable<int> value);
     partial void OnProjectTypeChanged();
@@ -6469,7 +6469,7 @@ namespace HNHUWO2
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_wID", DbType="Int")]
-		public System.Nullable<int> wID
+		public int wID
 		{
 			get
 			{
@@ -7159,7 +7159,7 @@ namespace HNHUWO2
 					}
 					else
 					{
-						this._wID = default(Nullable<int>);
+						this._wID = default(int);
 					}
 					this.SendPropertyChanged("Workorder");
 				}

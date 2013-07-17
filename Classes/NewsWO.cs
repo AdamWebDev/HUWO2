@@ -16,11 +16,7 @@ namespace HNHUWO2.Classes
         public static WorkOrdersNews GetNewsWorkOrder(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            var q = (from n in db.WorkOrdersNews
-                     where n.wID == ID
-                     select n).FirstOrDefault();
-            return q;
+            return db.WorkOrdersNews.Single(u => u.wID == ID);
         }
-
     }
 }
