@@ -53,7 +53,7 @@ namespace HNHUWO2.View
                 RefreshFiles();
 
             }
-            else Response.Redirect();
+            else Response.Redirect("~/Default.aspx");
         }
     }
 }
