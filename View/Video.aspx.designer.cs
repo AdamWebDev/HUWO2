@@ -49,13 +49,13 @@ namespace HNHUWO2.View {
         protected global::System.Web.UI.WebControls.Label lblTitleVideo;
         
         /// <summary>
-        /// lblCoordinator control.
+        /// lblProgramManager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCoordinator;
+        protected global::System.Web.UI.WebControls.Label lblProgramManager;
         
         /// <summary>
         /// lblVideoSource control.

@@ -35,11 +35,11 @@ namespace HNHUWO2.UserControls
             UpdatePage();
         }
 
-        // approve (with changes) - gets some input from the program coordinator
+        // approve (with changes) - gets some input from the program ProgramManager
         protected void btnApproveWithChanges_OnClick(object sender, EventArgs e)
         {
             
-            // when approving with changes, we have to grab the text from the "Coordinator Notes" from the page (which is not in the user control)
+            // when approving with changes, we have to grab the text from the "Manager Notes" from the page (which is not in the user control)
             // if txtCoordinatorNotes isn't found, the "No notes added." message gets displayed by default
             int ID = int.Parse(Request.QueryString["ID"]);
             String notes = "No notes added.";

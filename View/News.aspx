@@ -10,8 +10,8 @@
     <uc:StatusMessages ID="statusMessages" runat="server" />
     <ul class="view-wo">
         <li>
-            <label>Coordinator</label>
-            <asp:Label ID="lblCoordinator" runat="server"></asp:Label>
+            <label>Program Manager</label>
+            <asp:Label ID="lblProgramManager" runat="server"></asp:Label>
         </li>
         <li>
             <label>Title/Topic</label>
@@ -42,7 +42,7 @@
             <uc:FileList ID="attachedFiles" runat="server" />
         </li>
         <li>
-            <label>Coordinator Notes</label>
+            <label>Program Manager Notes</label>
             <asp:Label ID="lblCoordinatorNotes" runat="server" ></asp:Label>
         </li>
         <li>

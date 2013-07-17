@@ -150,7 +150,7 @@ namespace HNHUWO2.Create
                 w.submitted_by = Function.GetUserName();
                 w.wotype = 6;
                 w.duedate = txtDueDate.Text.ConvertToDate();
-                w.coordinator = int.Parse(ddCoordinators.SelectedValue);
+                w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtTitleVideo.Text;
                 w.status = 1;
                 db.Workorders.InsertOnSubmit(w);

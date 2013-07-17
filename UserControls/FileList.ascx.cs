@@ -43,7 +43,7 @@ namespace HNHUWO2.UserControls
         {
             
             int ID = int.Parse(Request.QueryString["ID"]);
-            bool showDeleteButton = HNHUWO2.Classes.Users.IsUserCoordinator() && !WO.IsApproved(ID); // only show button if WO is not approved and user is a coordinator
+            bool showDeleteButton = HNHUWO2.Classes.Users.IsUserCoordinator() && !WO.IsApproved(ID); // only show button if WO is not approved and user is a ProgramManager
             RepeaterItem item = e.Item;
 
             if ((item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem))

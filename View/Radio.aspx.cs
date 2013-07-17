@@ -34,7 +34,7 @@ namespace HNHUWO2.View
             if (wo != null)
             {
                 lblAdType.Text = wo.RadioAdType.Value;
-                lblCoordinator.Text = wo.Workorder.User.FullName;
+                lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblAiringMonth.Text = wo.AiringMonth.HasValue ? System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((int)wo.AiringMonth) : String.Empty;
                 if (wo.RadioStation.HasValue) lblRadioStation.Text = wo.RadioStationOther.Equals(String.Empty) ? wo.RadioStations.Value : wo.RadioStationOther;
                 lblLengthOfAd.Text = wo.LengthOfAd.HasValue ? wo.RadioLength.Value : String.Empty;

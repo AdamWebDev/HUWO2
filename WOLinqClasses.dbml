@@ -244,7 +244,7 @@
       <Column Name="FullName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
-      <Association Name="User_Workorder" Member="Workorders" ThisKey="ID" OtherKey="coordinator" Type="Workorder" />
+      <Association Name="User_Workorder" Member="Workorders" ThisKey="ID" OtherKey="ProgramManager" Type="Workorder" />
       <Association Name="UserRole_User" Member="UserRole" ThisKey="Role" OtherKey="ID" Type="UserRole" IsForeignKey="true" />
     </Type>
   </Table>
@@ -279,7 +279,7 @@
       <Column Name="submitted_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="wotype" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="coordinator" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProgramManager" Storage="_coordinator" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="duedate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="coordinatorNotes" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
@@ -291,7 +291,7 @@
       <Association Name="Workorder_WorkOrdersWeb" Member="WorkOrdersWebs" ThisKey="ID" OtherKey="wID" Type="WorkOrdersWeb" />
       <Association Name="Status_Workorder" Member="Status1" ThisKey="status" OtherKey="ID" Type="Status" IsForeignKey="true" />
       <Association Name="WOType_Workorder" Member="WOType1" ThisKey="wotype" OtherKey="ID" Type="WOType" IsForeignKey="true" />
-      <Association Name="User_Workorder" Member="User" ThisKey="coordinator" OtherKey="ID" Type="User" IsForeignKey="true" />
+      <Association Name="User_Workorder" Member="User" ThisKey="ProgramManager" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Files" Member="Files">

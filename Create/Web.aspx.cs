@@ -58,11 +58,11 @@ namespace HNHUWO2.Create
                     notMain.Visible = true;
 
                     // if the user is coming from a print work order, let's help them out and automatically pick the same
-                    // coordinator as the print work order.
+                    // ProgramManager as the print work order.
                     int wID;
                     if (int.TryParse(Request.QueryString["AddTo"],out wID)) {
                         Workorder w = WO.GetWorkOrder(wID);
-                        ddCoordinators.SelectedValue = w.coordinator.ToString();
+                        ddCoordinators.SelectedValue = w.ProgramManager.ToString();
                     }
                 }
             }
@@ -203,7 +203,7 @@ namespace HNHUWO2.Create
                     case 3: // new website
                         w.duedate = DateTime.Today; break;
                 }
-                w.coordinator = int.Parse(ddCoordinators.SelectedValue);
+                w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = "Website Update";
                 w.status = 1;
                 db.Workorders.InsertOnSubmit(w);

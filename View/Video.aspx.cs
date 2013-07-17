@@ -34,7 +34,7 @@ namespace HNHUWO2.View
             if (wo != null)
             {
                 lblTitleVideo.Text = wo.Workorder.title;
-                lblCoordinator.Text = wo.Workorder.User.FullName;
+                lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblVideoSource.Text = wo.VideoSource.HasValue ? wo.VideoSources.Value : String.Empty;
                 lblVideoDestination.Text = VideoWO.DisplayFormats(wo.VideoDestination);
                 lblVideoDestinationOther.Text = wo.DestinationURL;

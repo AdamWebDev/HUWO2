@@ -13,9 +13,9 @@
     
         <uc:Notification ID="notMain" runat="server" Visible="false"/>
         
-        <label>Program Coordinator</label>
+        <label>Program Manager</label>
         <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input" />
-        <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator Required" CssClass="input-notification error png_bg" />
+        <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager Required" CssClass="input-notification error png_bg" />
 
         <label>Title/Topic</label>
         <asp:TextBox ID="txtTitleTopic" runat="server" CssClass="text-input small-input"></asp:TextBox>

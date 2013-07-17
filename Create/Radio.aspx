@@ -16,9 +16,9 @@
     <asp:DropDownList ID="ddAdType" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true" onselectedindexchanged="ddAdType_SelectedIndexChanged"></asp:DropDownList>
     <asp:RequiredFieldValidator ID="reqAdType" runat="server" ControlToValidate="ddAdType" ErrorMessage="Ad Type is Required" CssClass="input-notification error png_bg" />
     
-    <label>Program Coordinator</label>
+    <label>Program Manager</label>
     <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
-    <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator is Required" CssClass="input-notification error png_bg" />
+    <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager is Required" CssClass="input-notification error png_bg" />
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>

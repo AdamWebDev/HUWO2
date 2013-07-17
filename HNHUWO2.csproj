@@ -87,8 +87,8 @@
     <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\EditUser.aspx" />
     <Content Include="Admin\Users.aspx" />
-    <Content Include="Coordinators\AllPendingWorkOrders.aspx" />
-    <Content Include="Coordinators\MyWorkOrders.aspx" />
+    <Content Include="Managers\AllPendingWorkOrders.aspx" />
+    <Content Include="Managers\MyWorkOrders.aspx" />
     <Content Include="CreateWorkOrder.aspx" />
     <Content Include="Create\News.aspx" />
     <Content Include="Create\Print.aspx" />
@@ -99,7 +99,7 @@
     <Content Include="Global.asax" />
     <Content Include="Help\Default.aspx" />
     <Content Include="MyWorkOrders.aspx" />
-    <Content Include="Reports\ByCoordinator.aspx" />
+    <Content Include="Reports\ByManager.aspx" />
     <Content Include="Reports\ByProjectType.aspx" />
     <Content Include="resources\css\font-awesome\font-awesome-ie7.css">
       <DependentUpon>font-awesome-ie7.scss</DependentUpon>
@@ -236,18 +236,18 @@
     <Compile Include="Classes\Users.cs" />
     <Compile Include="Classes\VideoWO.cs" />
     <Compile Include="Classes\WebWO.cs" />
-    <Compile Include="Coordinators\AllPendingWorkOrders.aspx.cs">
+    <Compile Include="Managers\AllPendingWorkOrders.aspx.cs">
       <DependentUpon>AllPendingWorkOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Coordinators\AllPendingWorkOrders.aspx.designer.cs">
+    <Compile Include="Managers\AllPendingWorkOrders.aspx.designer.cs">
       <DependentUpon>AllPendingWorkOrders.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Coordinators\MyWorkOrders.aspx.cs">
+    <Compile Include="Managers\MyWorkOrders.aspx.cs">
       <DependentUpon>MyWorkOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Coordinators\MyWorkOrders.aspx.designer.cs">
+    <Compile Include="Managers\MyWorkOrders.aspx.designer.cs">
       <DependentUpon>MyWorkOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateWorkOrder.aspx.cs">
@@ -317,12 +317,12 @@
     <Compile Include="MyWorkOrders.aspx.designer.cs">
       <DependentUpon>MyWorkOrders.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ByCoordinator.aspx.cs">
-      <DependentUpon>ByCoordinator.aspx</DependentUpon>
+    <Compile Include="Reports\ByManager.aspx.cs">
+      <DependentUpon>ByManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reports\ByCoordinator.aspx.designer.cs">
-      <DependentUpon>ByCoordinator.aspx</DependentUpon>
+    <Compile Include="Reports\ByManager.aspx.designer.cs">
+      <DependentUpon>ByManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\ByProjectType.aspx.cs">
       <DependentUpon>ByProjectType.aspx</DependentUpon>

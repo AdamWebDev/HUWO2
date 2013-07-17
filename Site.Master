@@ -58,7 +58,7 @@
                             <li ID="reportsMenu" runat="server">
                                 <asp:HyperLink ID="lnkReports" runat="server" CssClass="nav-top-item">Reports</asp:HyperLink>
                                 <ul>
-                                    <li><asp:HyperLink ID="lnkReport1" runat="server" NavigateUrl="~/Reports/ByCoordinator.aspx">By Coordinator</asp:HyperLink></li>
+                                    <li><asp:HyperLink ID="lnkReport1" runat="server" NavigateUrl="~/Reports/ByCoordinator.aspx">By Program Manager</asp:HyperLink></li>
                                     <li><asp:HyperLink ID="lnkReport2" runat="server" NavigateUrl="~/Reports/ByProjectType.aspx">By Project Type</asp:HyperLink></li>
                                 </ul>
 				            </li>

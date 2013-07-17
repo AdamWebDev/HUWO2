@@ -29,9 +29,9 @@
             <asp:DropDownList ID="ddTypeWebWork" runat="server" CssClass="small-input" AppendDataBoundItems="true" AutoPostBack="True" onselectedindexchanged="ddTypeWebWork_SelectedIndexChanged"></asp:DropDownList>
             <asp:RequiredFieldValidator ID="reqTypeWebWork" runat="server" ControlToValidate="ddTypeWebWork" ErrorMessage="Type of Web Work is Required" CssClass="input-notification error png_bg" />
 
-            <label>Program Coordinator</label>
+            <label>Program Manager</label>
             <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
-            <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator is Required" CssClass="input-notification error png_bg" />
+            <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager is Required" CssClass="input-notification error png_bg" />
 
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>

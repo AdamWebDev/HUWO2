@@ -5029,7 +5029,7 @@ namespace HNHUWO2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Workorder", Storage="_Workorders", ThisKey="ID", OtherKey="coordinator")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Workorder", Storage="_Workorders", ThisKey="ID", OtherKey="ProgramManager")]
 		public EntitySet<Workorder> Workorders
 		{
 			get
@@ -5526,8 +5526,8 @@ namespace HNHUWO2
     partial void OnwotypeChanged();
     partial void OntitleChanging(string value);
     partial void OntitleChanged();
-    partial void OncoordinatorChanging(System.Nullable<int> value);
-    partial void OncoordinatorChanged();
+    partial void OnProgramManagerChanging(System.Nullable<int> value);
+    partial void OnProgramManagerChanged();
     partial void OnduedateChanging(System.Nullable<System.DateTime> value);
     partial void OnduedateChanged();
     partial void OnstatusChanging(int value);
@@ -5655,7 +5655,7 @@ namespace HNHUWO2
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coordinator", DbType="Int")]
-		public System.Nullable<int> coordinator
+		public System.Nullable<int> ProgramManager
 		{
 			get
 			{
@@ -5669,11 +5669,11 @@ namespace HNHUWO2
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OncoordinatorChanging(value);
+					this.OnProgramManagerChanging(value);
 					this.SendPropertyChanging();
 					this._coordinator = value;
-					this.SendPropertyChanged("coordinator");
-					this.OncoordinatorChanged();
+					this.SendPropertyChanged("ProgramManager");
+					this.OnProgramManagerChanged();
 				}
 			}
 		}
@@ -5888,7 +5888,7 @@ namespace HNHUWO2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Workorder", Storage="_User", ThisKey="coordinator", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Workorder", Storage="_User", ThisKey="ProgramManager", OtherKey="ID", IsForeignKey=true)]
 		public User User
 		{
 			get

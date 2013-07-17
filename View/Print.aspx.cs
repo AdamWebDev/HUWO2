@@ -43,7 +43,7 @@ namespace HNHUWO2.View
                 lblStatus.Text = wo.Workorder.Status1.status;
                 lblPubTitle.Text = wo.Workorder.title;
                 lblDueDate.Text = wo.Workorder.duedate.DisplayDate();
-                lblCoordinator.Text = wo.Workorder.User.FullName;
+                lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblTypeOfProject.Text = wo.ProjectType.HasValue ? wo.PrintTypeOfProject.Value : String.Empty;
                 lblProjectOther.Text = wo.ProjectTypeOther;
                 lblTypeOfDisplay.Text = wo.TypeOfDisplay.HasValue ? wo.PrintTypeOfDisplay.Value : String.Empty;

@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ByCoordinator.aspx.cs" Inherits="HNHUWO2.Reports.ByCoordinator" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ByManager.aspx.cs" Inherits="HNHUWO2.Reports.ByCoordinator" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">Reports</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server"></asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server"></asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">Reports - By Coordinator</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">Reports - By Manager</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Filters" runat="server"></asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Main" runat="server">
 
@@ -21,7 +21,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Coordinator</th>
+                        <th>Manager</th>
                         <th>Number of Work Orders</th>
                     </tr>
                 </thead>

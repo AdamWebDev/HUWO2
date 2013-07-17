@@ -28,9 +28,9 @@
             <asp:TextBox ID="txtTitleVideo" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqTitleVideo" runat="server" ControlToValidate="txtTitleVideo" ErrorMessage="Tile of Video is Required" CssClass="input-notification error png_bg" />
 
-            <label>Program Coordinator</label>
+            <label>Program Manager</label>
             <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
-            <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Coordinator is Required" CssClass="input-notification error png_bg" />
+            <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager is Required" CssClass="input-notification error png_bg" />
 
             <label>Source of Video</label>
             <asp:DropDownList ID="ddVideoSource" runat="server" AppendDataBoundItems="true"></asp:DropDownList>

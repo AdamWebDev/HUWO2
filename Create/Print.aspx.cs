@@ -229,7 +229,7 @@ namespace HNHUWO2.Create
                 else
                     w.wotype = 1;
                 w.duedate = txtDueDate.Text.ConvertToDate();
-                w.coordinator = int.Parse(ddCoordinators.SelectedValue);
+                w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtPubTitle.Text;
                 w.status = 1;
                 db.Workorders.InsertOnSubmit(w);

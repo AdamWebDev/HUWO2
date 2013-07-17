@@ -34,7 +34,7 @@ namespace HNHUWO2.View
             WorkOrdersNews wo = NewsWO.GetNewsWorkOrder(ID);
             if (wo != null)
             {
-                lblCoordinator.Text = wo.Workorder.User.FullName;
+                lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblTitleTopic.Text = wo.Workorder.title;
                 lblDateToIssue.Text = wo.Workorder.duedate.DisplayDate();
                 lblDistributionOutlets.Text = wo.DistributionDetails == null ? wo.NewsDistroOutlet.Value : wo.DistributionDetails;

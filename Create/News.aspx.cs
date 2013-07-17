@@ -51,7 +51,7 @@ namespace HNHUWO2.Create
                 w.submitted_by = Function.GetUserName();
                 w.wotype = 4;
                 w.duedate = txtDateToIssue.Text.ConvertToDate();
-                w.coordinator = int.Parse(ddCoordinators.SelectedValue);
+                w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtTitleTopic.Text;
                 w.status = 1;
                 db.Workorders.InsertOnSubmit(w);

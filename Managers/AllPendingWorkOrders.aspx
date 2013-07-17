@@ -20,7 +20,7 @@
                         <th>Submitted By</th>
                         <th>Date Submitted</th>
                         <th>Work Order Type</th>
-                        <th>Coordinator</th>
+                        <th>Program Manager</th>
                         <th>Actions</th>
                     </tr>
                 </thead>

@@ -26,7 +26,7 @@ namespace HNHUWO2.Classes
             public int ID { get; set; }
             public string submitted_by { get; set; }
             public DateTime submitted_date { get; set; }
-            public int? coordinator { get; set; }
+            public int? ProgramManager { get; set; }
             public string coordinatorName { get; set; }
             public DateTime? duedate { get; set; }
             public int wotype { get; set; }
@@ -46,7 +46,7 @@ namespace HNHUWO2.Classes
                         ID = w.ID,
                         submitted_by = w.submitted_by,
                         submitted_date = w.submitted_date,
-                        coordinator = w.coordinator,
+                        ProgramManager = w.ProgramManager,
                         coordinatorName = w.User.FullName,
                         duedate = w.duedate,
                         wotype = w.wotype,
@@ -130,7 +130,7 @@ namespace HNHUWO2.Classes
         {
             int? ID = HNHUWO2.Classes.Users.GetUserID(username);
             var wo = GetWorkOrders();
-            return wo.Where(w => w.coordinator == ID).ToList();
+            return wo.Where(w => w.ProgramManager == ID).ToList();
         }
 
 
@@ -222,7 +222,7 @@ namespace HNHUWO2.Classes
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             Workorder wo = db.Workorders.Single(w => w.ID == ID);
 
-            // get coordinator's email address
+            // get ProgramManager's email address
             string email = wo.User.Email;
 
             // create the email

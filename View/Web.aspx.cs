@@ -34,7 +34,7 @@ namespace HNHUWO2.View
             if (wo != null)
             {
                 lblTypeWebWork.Text = wo.WebType.Value;
-                lblCoordinator.Text = wo.Workorder.User.FullName;
+                lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblWebsite.Text = wo.Website.HasValue ? wo.WebSites.Value : String.Empty;
                 lblLocation.Text = WebWO.DisplayLocations(wo.Location);
                 lblAtoZLocation.Text = wo.AtoZLocation;
