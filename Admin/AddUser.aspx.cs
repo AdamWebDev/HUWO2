@@ -46,7 +46,7 @@ namespace HNHUWO2.Admin
                         db.SubmitChanges();
                         SendWelcomeEmail(u.Email);
                         notSuccess.Visible = true;
-
+                        txtFullName.Text = txtEmail.Text = txtUsername.Text = String.Empty;
                     }
                 }
             }
@@ -63,7 +63,7 @@ namespace HNHUWO2.Admin
         protected void SendWelcomeEmail(string emailAddress)
         {
             String subject = "You now have access to the Health Unit Work Order System!";
-            String message =    "Greetings!<br /><br />";
+            String message = "Greetings!<br /><br />";
             message += "You now have additional priveleges on the Health Unit Work Order System! Woohoo!<br /><br />";
             message += "To access the Work Order System, just visit the follow link:<br /><br />";
             message += "<a href=\"http://huwo.hnhu.org\">http://huwo.hnhu.org</a>";
