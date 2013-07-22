@@ -148,6 +148,7 @@
         
         <label>Attach files</label>
         <telerik:radasyncupload ID="AttachedFiles" runat="server" MultipleFileSelection="Automatic" Skin="" Localization-Select="Add a File to Attach" InputSize="30"></telerik:radasyncupload>
+        <div class="sub-text">Please note that multiple files can be uploaded.</div>
         
         <label>Additional Notes</label>
         <asp:TextBox ID="txtNotes" runat="server" CssClass="text-input textarea" Rows="5" TextMode="MultiLine"></asp:TextBox>
