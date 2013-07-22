@@ -6,6 +6,9 @@ $blue: #2D89EF;
 $red: #E11;
 $red-dark: #b91d47;
 
+$pink:#9F00A7;
+$pink-dark: #7E3878;
+
 html {
   font-size: 100%;
   height: 100%;
@@ -562,6 +565,11 @@ ul.view-wo {
 			display: inline-block;
 		}
 	}
+}
+
+label.pm-notes {
+	background: $pink-dark !important;
+	border: $pink !important;
 }
 
 ul.activity-log li {

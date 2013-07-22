@@ -62,7 +62,7 @@
             <uc:FileList ID="attachedFiles" runat="server" />
         </li>
         <li>
-            <label>Program Manager Notes</label>
+            <label class="pm-notes">Program Manager Notes</label>
             <asp:Label ID="lblCoordinatorNotes" runat="server" ></asp:Label>
         </li>
         <li>
