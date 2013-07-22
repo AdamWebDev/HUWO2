@@ -10,6 +10,14 @@
     <uc:StatusMessages ID="statusMessages" runat="server" />
     <ul class="view-wo">
         <li>
+            <label>Work Order #</label>
+            <asp:Label ID="lblID" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Status</label>
+            <asp:Label ID="lblStatus" runat="server"></asp:Label>
+        </li>
+        <li>
             <label>Program Manager</label>
             <asp:Label ID="lblProgramManager" runat="server"></asp:Label>
         </li>

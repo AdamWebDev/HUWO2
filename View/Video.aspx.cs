@@ -33,6 +33,8 @@ namespace HNHUWO2.View
             WorkOrdersVideo wo = VideoWO.GetVideoWorkOrder(ID);
             if (wo != null)
             {
+                lblID.Text = wo.wID.ToString();
+                lblStatus.Text = wo.Workorder.Status1.status;
                 lblTitleVideo.Text = wo.Workorder.title;
                 lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblVideoSource.Text = wo.VideoSource.HasValue ? wo.VideoSources.Value : String.Empty;

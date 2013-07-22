@@ -34,6 +34,8 @@ namespace HNHUWO2.View
             WorkOrdersNews wo = NewsWO.GetNewsWorkOrder(ID);
             if (wo != null)
             {
+                lblID.Text = wo.wID.ToString();
+                lblStatus.Text = wo.Workorder.Status1.status;
                 lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblTitleTopic.Text = wo.Workorder.title;
                 lblDateToIssue.Text = wo.Workorder.duedate.DisplayDate();

@@ -16,6 +16,14 @@
 
     <ul class="view-wo">
         <li>
+            <label>Work Order #</label>
+            <asp:Label ID="lblID" runat="server"></asp:Label>
+        </li>
+        <li>
+            <label>Status</label>
+            <asp:Label ID="lblStatus" runat="server"></asp:Label>
+        </li>
+        <li>
             <label>Type of Web Work</label>
             <asp:Label ID="lblTypeWebWork" runat="server"></asp:Label>
         </li>

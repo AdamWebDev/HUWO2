@@ -17,6 +17,10 @@
     <uc:Notification ID="notQuote" runat="server" Type="Attention" Message="Please note that this a Quote for Commercial Print" Visible="false" />
     <ul class="view-wo">
         <li>
+            <label>Work Order #</label>
+            <asp:Label ID="lblID" runat="server"></asp:Label>
+        </li>
+        <li>
             <label>Status</label>
             <asp:Label ID="lblStatus" runat="server"></asp:Label>
         </li>

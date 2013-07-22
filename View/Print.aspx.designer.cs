@@ -85,6 +85,15 @@ namespace HNHUWO2.View {
         protected global::HNHUWO2.Notification notQuote;
         
         /// <summary>
+        /// lblID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblID;
+        
+        /// <summary>
         /// lblStatus control.
         /// </summary>
         /// <remarks>

@@ -33,6 +33,8 @@ namespace HNHUWO2.View
             WorkOrdersWeb wo = WebWO.GetWebWorkOrder(ID);
             if (wo != null)
             {
+                lblID.Text = wo.wID.ToString();
+                lblStatus.Text = wo.Workorder.Status1.status;
                 lblTypeWebWork.Text = wo.WebType.Value;
                 lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblWebsite.Text = wo.Website.HasValue ? wo.WebSites.Value : String.Empty;

@@ -33,6 +33,8 @@ namespace HNHUWO2.View
             WorkOrdersRadio wo = RadioWO.GetRadioWorkOrder(ID);
             if (wo != null)
             {
+                lblID.Text = wo.wID.ToString();
+                lblStatus.Text = wo.Workorder.Status1.status;
                 lblAdType.Text = wo.RadioAdType.Value;
                 lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblAiringMonth.Text = wo.AiringMonth.HasValue ? System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((int)wo.AiringMonth) : String.Empty;

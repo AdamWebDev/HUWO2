@@ -40,6 +40,7 @@ namespace HNHUWO2.View
                     notQuote.Visible = true;
                     ltContentTitle.Text = ltPageTitle.Text = "View Quote for Commercial Print";
                 }
+                lblID.Text = wo.wID.ToString();
                 lblStatus.Text = wo.Workorder.Status1.status;
                 lblPubTitle.Text = wo.Workorder.title;
                 lblDueDate.Text = wo.Workorder.duedate.DisplayDate();
