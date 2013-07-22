@@ -265,24 +265,6 @@ namespace HNHUWO2.Create {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqBudget;
         
         /// <summary>
-        /// txtGLCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGLCode;
-        
-        /// <summary>
-        /// reqGLCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqGLCode;
-        
-        /// <summary>
         /// ddRecordingOptions control.
         /// </summary>
         /// <remarks>

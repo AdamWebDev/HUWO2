@@ -3830,8 +3830,6 @@ namespace HNHUWO2
 		
 		private string _Budget;
 		
-		private string _GLCode;
-		
 		private System.Nullable<int> _RecordingOptions;
 		
 		private string _Notes;
@@ -3870,8 +3868,6 @@ namespace HNHUWO2
     partial void OnEndAiringDateChanged();
     partial void OnBudgetChanging(string value);
     partial void OnBudgetChanged();
-    partial void OnGLCodeChanging(string value);
-    partial void OnGLCodeChanged();
     partial void OnRecordingOptionsChanging(System.Nullable<int> value);
     partial void OnRecordingOptionsChanged();
     partial void OnNotesChanging(string value);
@@ -4082,26 +4078,6 @@ namespace HNHUWO2
 					this._Budget = value;
 					this.SendPropertyChanged("Budget");
 					this.OnBudgetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GLCode", DbType="NVarChar(25)")]
-		public string GLCode
-		{
-			get
-			{
-				return this._GLCode;
-			}
-			set
-			{
-				if ((this._GLCode != value))
-				{
-					this.OnGLCodeChanging(value);
-					this.SendPropertyChanging();
-					this._GLCode = value;
-					this.SendPropertyChanged("GLCode");
-					this.OnGLCodeChanged();
 				}
 			}
 		}

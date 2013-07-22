@@ -130,7 +130,6 @@ namespace HNHUWO2.Create
                 r.StartAiringDate = txtStartAiringDate.Text.ConvertToDate();
                 r.EndAiringDate = txtEndAiringDate.Text.ConvertToDate();
                 r.Budget = txtBudget.Text;
-                r.GLCode = txtGLCode.Text;
                 r.RecordingOptions = ddRecordingOptions.SelectedIndex > 0 ? int.Parse(ddRecordingOptions.SelectedValue) : (int?)null;
                 r.Notes = txtNotes.Text;
                 db.WorkOrdersRadios.InsertOnSubmit(r);

@@ -42,10 +42,6 @@
             <asp:Label ID="lblBudget" runat="server"></asp:Label>
         </li>
         <li>
-            <label>G/L Code</label>
-            <asp:Label ID="lblGLCode" runat="server"></asp:Label>
-        </li>
-        <li>
             <label>Recording Options</label>
             <asp:Label ID="lblRecordingOptions" runat="server"></asp:Label>
         </li>

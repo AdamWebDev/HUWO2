@@ -58,10 +58,6 @@
                 <label>Budget</label>
                 <asp:TextBox ID="txtBudget" runat="server" CssClass="text-input small-input" MaxLength="10"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqBudget" runat="server" ControlToValidate="txtBudget" ErrorMessage="Budget is Required" CssClass="input-notification error png_bg" Enabled="false" />
-
-                <label>G/L Code</label>
-                <asp:TextBox ID="txtGLCode" runat="server" CssClass="text-input small-input" MaxLength="25"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqGLCode" runat="server" ControlToValidate="txtGLCode" ErrorMessage="GL Code is Required" CssClass="input-notification error png_bg" Enabled="false" />
             </asp:PlaceHolder>
 
         </ContentTemplate>

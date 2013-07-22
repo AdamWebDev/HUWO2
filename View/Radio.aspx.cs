@@ -41,7 +41,6 @@ namespace HNHUWO2.View
                 lblStartAiringDate.Text = wo.StartAiringDate.DisplayDate();
                 lblEndAiringDate.Text = wo.EndAiringDate.DisplayDate();
                 lblBudget.Text = wo.Budget;
-                lblGLCode.Text = wo.GLCode;
                 lblRecordingOptions.Text = wo.RecordingOptions.HasValue ? wo.RadioRecordingOption.Value : String.Empty;
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
