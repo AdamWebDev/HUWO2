@@ -145,6 +145,7 @@ namespace HNHUWO2.Create
             btnSubmit.Enabled = false;
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
+                bool IsDesigner = Users.IsUserDesigner();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
                 w.submitted_by = Function.GetUserName();
@@ -152,7 +153,7 @@ namespace HNHUWO2.Create
                 w.duedate = txtDueDate.Text.ConvertToDate();
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtTitleVideo.Text;
-                w.status = 1;
+                w.status = IsDesigner ? 4 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersVideo v = new WorkOrdersVideo();
@@ -174,7 +175,7 @@ namespace HNHUWO2.Create
                 int ID = w.ID;
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
                 Function.LogAction(ID, "Work order created");
-                WO.SendNewWONotification(ID);
+                if (!IsDesigner) WO.SendNewWONotification(ID);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
          }

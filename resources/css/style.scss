@@ -569,7 +569,15 @@ ul.activity-log li {
 }
 
 #FileList { margin: 0 0 0 -9px; padding: 0; }
-ul.filelist { padding: 2px 0 1px 10px; margin: 0; }
+ul.filelist { 
+	padding: 2px 0 1px 10px; 
+	margin: 0; 
+	li {
+		background-position:left center;
+		padding-left: 1em;
+		margin-bottom: 0;
+	}
+}
 
 
 /*************** Notifications ***************/
