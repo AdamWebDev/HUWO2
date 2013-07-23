@@ -22,15 +22,6 @@ namespace HNHUWO2 {
         protected global::HNHUWO2.NavButton navCreateNew;
         
         /// <summary>
-        /// ddItemsPerPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddItemsPerPage;
-        
-        /// <summary>
         /// ddFilters control.
         /// </summary>
         /// <remarks>
@@ -83,23 +74,5 @@ namespace HNHUWO2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptWorkOrders;
-        
-        /// <summary>
-        /// lnkPrevPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkPrevPage;
-        
-        /// <summary>
-        /// lnkNextPage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkNextPage;
     }
 }

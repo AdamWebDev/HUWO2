@@ -16,13 +16,14 @@
         <asp:ListItem Value="inprogress" Text="In Progress"></asp:ListItem>
         <asp:ListItem Value="completed" Text="Completed"></asp:ListItem>
         <asp:ListItem Value="deleted" Text="Deleted"></asp:ListItem>
+        <asp:ListItem Value="all" Text="All"></asp:ListItem>
     </asp:DropDownList>
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
     <asp:Repeater ID="rptWorkOrders" runat="server">
         <HeaderTemplate>
-            <table>
+            <table class="sortable">
                 <thead>
                     <tr>
                         <th>#</th>

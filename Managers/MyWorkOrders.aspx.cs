@@ -31,25 +31,28 @@ namespace HNHUWO2.Coordinators
 
         protected void ddFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddFilters.SelectedValue.Equals("unapproved"))
+            switch (ddFilters.SelectedValue)
             {
-                rptWorkOrders.DataSource = WO.GetMyStaffUnapprovedWorkOrders();
-                rptWorkOrders.DataBind();
-            }
-            else if (ddFilters.SelectedValue.Equals("inprogress"))
-            {
-                rptWorkOrders.DataSource = WO.GetMyStaffInProgressWorkOrders();
-                rptWorkOrders.DataBind();
-            }
-            else if (ddFilters.SelectedValue.Equals("completed"))
-            {
-                rptWorkOrders.DataSource = WO.GetMyStaffCompletedWorkOrders();
-                rptWorkOrders.DataBind();
-            }
-            else if (ddFilters.SelectedValue.Equals("deleted"))
-            {
-                rptWorkOrders.DataSource = WO.GetMyStaffDeletedWorkOrders();
-                rptWorkOrders.DataBind();
+                case "unapproved":
+                    rptWorkOrders.DataSource = WO.GetMyStaffUnapprovedWorkOrders();
+                    rptWorkOrders.DataBind();
+                    break;
+                case "inprogress":
+                    rptWorkOrders.DataSource = WO.GetMyStaffInProgressWorkOrders();
+                    rptWorkOrders.DataBind();
+                    break;
+                case "completed":
+                    rptWorkOrders.DataSource = WO.GetMyStaffCompletedWorkOrders();
+                    rptWorkOrders.DataBind();
+                    break;
+                case "deleted":
+                    rptWorkOrders.DataSource = WO.GetMyStaffDeletedWorkOrders();
+                    rptWorkOrders.DataBind();
+                    break;
+                case "all":
+                    rptWorkOrders.DataSource = WO.GetMyStaffWorkOrders();
+                    rptWorkOrders.DataBind();
+                    break;
             }
         }
 

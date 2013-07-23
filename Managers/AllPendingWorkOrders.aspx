@@ -13,7 +13,7 @@
 <asp:Content ID="Content6" ContentPlaceHolderID="Main" runat="server">
 <asp:Repeater ID="rptWorkOrders" runat="server">
         <HeaderTemplate>
-            <table>
+            <table class="sortable">
                 <thead>
                     <tr>
                         <th>#</th>
