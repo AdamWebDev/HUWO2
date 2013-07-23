@@ -37,7 +37,7 @@
 				            </li>
                             <li ID="coordMenu" runat="server"> 
 					            <a href="#" class="nav-top-item"> <!-- Add the class "current" to current menu item -->
-					            Coordinators
+					            Managers
 					            </a>
 					            <ul>
 						            <li><asp:HyperLink ID="lnkMyStaffWO" runat="server" NavigateUrl="~/Managers/MyWorkOrders.aspx">My Staffs Work Orders</asp:HyperLink></li>
