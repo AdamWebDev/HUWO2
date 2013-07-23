@@ -11,12 +11,13 @@
         <asp:ListItem Value="unapproved" Text="Waiting for Approval"></asp:ListItem>
         <asp:ListItem Value="completed" Text="Completed"></asp:ListItem>
         <asp:ListItem Value="deleted" Text="Deleted"></asp:ListItem>
+        <asp:ListItem Value="all" Text="All"></asp:ListItem>
     </asp:DropDownList>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="Main" runat="server">
     <asp:Repeater ID="rptWorkOrders" runat="server">
         <HeaderTemplate>
-            <table>
+            <table class="sortable">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -43,6 +44,17 @@
         </ItemTemplate>
         <FooterTemplate>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th><input type="text" name="ID" value="Search ID" class="search_init" /></th>
+                        <th><input type="text" name="submitted_by" value="Search User" class="search_init" /></th>
+                        <th><input type="text" name="date_submitted" value="Search Date" class="search_init" /></th>
+                        <th><input type="text" name="due_date" value="Search Date" class="search_init" /></th>
+                        <th><input type="text" name="type" value="Search Type" class="search_init" /></th>
+                        <th><input type="text" name="status" value="Search Status" class="search_init" /></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
             </table>
         </FooterTemplate>
     </asp:Repeater>

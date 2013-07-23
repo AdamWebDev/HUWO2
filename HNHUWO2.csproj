@@ -110,10 +110,23 @@
     <Content Include="resources\css\jquery-ui.css">
       <DependentUpon>_jqueryui.scss</DependentUpon>
     </Content>
+    <None Include="resources\css\_jquery.dataTables.scss" />
     <Content Include="resources\css\style.min.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
     <Content Include="resources\font\fontawesome-webfont.svg" />
+    <Content Include="resources\images\dataTables\back_disabled.png" />
+    <Content Include="resources\images\dataTables\back_enabled.png" />
+    <Content Include="resources\images\dataTables\back_enabled_hover.png" />
+    <Content Include="resources\images\dataTables\favicon.ico" />
+    <Content Include="resources\images\dataTables\forward_disabled.png" />
+    <Content Include="resources\images\dataTables\forward_enabled.png" />
+    <Content Include="resources\images\dataTables\forward_enabled_hover.png" />
+    <Content Include="resources\images\dataTables\sort_asc.png" />
+    <Content Include="resources\images\dataTables\sort_asc_disabled.png" />
+    <Content Include="resources\images\dataTables\sort_both.png" />
+    <Content Include="resources\images\dataTables\sort_desc.png" />
+    <Content Include="resources\images\dataTables\sort_desc_disabled.png" />
     <Content Include="resources\images\icons\add.png" />
     <Content Include="resources\images\icons\delete.png" />
     <Content Include="resources\images\ui-icons_3399ff_0.png" />
@@ -176,6 +189,7 @@
     <Content Include="resources\images\tl.png" />
     <Content Include="resources\images\tr.png" />
     <Content Include="resources\scripts\DD_belatedPNG_0.0.7a.js" />
+    <Content Include="resources\scripts\jquery.dataTables.min.js" />
     <Content Include="resources\scripts\jquery.min.js" />
     <Content Include="resources\scripts\simpla.jquery.configuration.js" />
     <Content Include="UserControls\ActivityLog.ascx" />

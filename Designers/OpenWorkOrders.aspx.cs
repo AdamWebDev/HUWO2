@@ -47,6 +47,11 @@ namespace HNHUWO2.Designers
                 rptWorkOrders.DataSource = WO.GetDeletedWorkOrders();
                 rptWorkOrders.DataBind();
             }
+            else if (ddFilters.SelectedValue.Equals("all"))
+            {
+                rptWorkOrders.DataSource = WO.GetWorkOrders();
+                rptWorkOrders.DataBind();
+            }
         }
 
         public string GetUserName(string username)
