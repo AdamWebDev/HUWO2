@@ -57,10 +57,18 @@
             <asp:RequiredFieldValidator ID="reqVideoLength" runat="server" ControlToValidate="txtVideoLength" ErrorMessage="Length of Video is Required" CssClass="input-notification error png_bg" />
 
             <label>Due Date</label>
-            <asp:TextBox ID="txtDueDate" runat="server" CssClass="text-input small-input datepicker" />
+            <asp:TextBox ID="txtDueDate" runat="server" CssClass="text-input small-input datepicker" ontextchanged="txtDueDate_TextChanged" AutoPostBack="true" />
             <asp:RequiredFieldValidator ID="reqDueDate" runat="server" ControlToValidate="txtDueDate" ErrorMessage="Due Date is Required" CssClass="input-notification error png_bg" Display="Dynamic" />
             <asp:CompareValidator ID="cmpDueDate" runat="server" ErrorMessage="Due Date cannot be in the past." ControlToValidate="txtDueDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
-            <uc:Notification ID="notDueDate" runat="server" />
+            
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <uc:Notification ID="notDueDate" runat="server" />
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="txtDueDate" />
+                </Triggers>
+            </asp:UpdatePanel>
 
             <label>Background Music</label>
             <uc:TrueFalseDropDown ID="ddBackgroundMusic" runat="server" OnSelectedIndexChanged="ddBackgroundMusic_SelectedIndexChanged" AutoPostBack="true" />

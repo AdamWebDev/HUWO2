@@ -105,10 +105,6 @@ namespace HNHUWO2.Create
                 notDisclaimer.Visible = false;
         }
 
-        protected void dddDueDate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CheckDate();
-        }
 
         protected void CheckDate()
         {
@@ -179,5 +175,10 @@ namespace HNHUWO2.Create
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
          }
+
+        protected void txtDueDate_TextChanged(object sender, EventArgs e)
+        {
+            CheckDate();
+        }
     }
 }
