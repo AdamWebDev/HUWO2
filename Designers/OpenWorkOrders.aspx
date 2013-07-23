@@ -39,7 +39,7 @@
                 <td><asp:Literal ID="ltDueDate" runat="server" Text='<%# Eval("duedate", "{0:MMMM d, yyyy }") %>'/></td>
                 <td><asp:Literal ID="ltWorkOrderType" runat="server" Text='<%# String.Format("{0} - {1}", Eval("wotypeText"), Eval("title")) %>' /></td>
                 <td><asp:Literal ID="ltStatus" runat="server" Text='<%# Eval("statusText") %>'/></td>
-                <td><asp:HyperLink ID="lnkView" runat="server" NavigateUrl='<%# String.Format("~/View/Default.aspx?type={0}&ID={1}",Eval("wotype"),Eval("ID")) %>'>View Work Order</asp:HyperLink></td>
+                <td><asp:HyperLink ID="lnkView" runat="server" CssClass="button" NavigateUrl='<%# String.Format("~/View/Default.aspx?type={0}&ID={1}",Eval("wotype"),Eval("ID")) %>'>View Work Order</asp:HyperLink></td>
             </tr>
         </ItemTemplate>
         <FooterTemplate>

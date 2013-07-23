@@ -44,8 +44,8 @@
                 <td><asp:Literal ID="ltWorkOrderType" runat="server" Text='<%# Eval("wotypeText") %>' /></td>
                 <td><asp:Literal ID="ltStatus" runat="server" Text='<%# Eval("statusText") %>'/></td>
                 <td>
-                    <asp:HyperLink ID="lnkApprove" runat="server" NavigateUrl='<%# String.Format("~/View/Default.aspx?type={0}&ID={1}",Eval("wotype"),Eval("ID")) %>' Visible='<%# IsUnapproved(Eval("status")) %>' >Approve Work Order</asp:HyperLink>
-                    <asp:HyperLink ID="lnkView" runat="server" NavigateUrl='<%# String.Format("~/View/Default.aspx?type={0}&ID={1}",Eval("wotype"),Eval("ID")) %>' Visible='<%# !IsUnapproved(Eval("status")) %>' >View Work Order</asp:HyperLink>
+                    <asp:HyperLink ID="lnkApprove" runat="server" CssClass="button" NavigateUrl='<%# String.Format("~/View/Default.aspx?type={0}&ID={1}",Eval("wotype"),Eval("ID")) %>' Visible='<%# IsUnapproved(Eval("status")) %>' >Approve Work Order</asp:HyperLink>
+                    <asp:HyperLink ID="lnkView" runat="server" CssClass="button" NavigateUrl='<%# String.Format("~/View/Default.aspx?type={0}&ID={1}",Eval("wotype"),Eval("ID")) %>' Visible='<%# !IsUnapproved(Eval("status")) %>' >View Work Order</asp:HyperLink>
                 </td>
             </tr>
         </ItemTemplate>
