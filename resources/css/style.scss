@@ -4,6 +4,8 @@
 @import "jquery.dataTables";
 
 $blue: #2D89EF;
+$blue-dark: #2b5797;
+
 $red: #E11;
 $red-dark: #b91d47;
 
@@ -214,7 +216,12 @@ a.remove-link {
           color: #fff;
           cursor: pointer;
           display: block;
-          text-decoration: none; }
+          text-decoration: none;
+		  &:focus {
+			background: $blue-dark !important;
+				
+		  }
+		   }
         &.current {
           background-image: url('../images/bg-menu-item-current.gif') !important;
           color: #333;
@@ -234,11 +241,11 @@ a.remove-link {
           display: block;
           color: #aaa;
           line-height: 1.2em;
-          &:hover {
+          &:hover, &:focus {
             color: #fff; }
           &.current {
             color: #fff;
-            &:hover {
+            &:hover, &:focus {
               color: #fff; }
             background: transparent url('../images/menu-current-arrow.gif') right center no-repeat !important; } } } } } }
 
@@ -361,12 +368,6 @@ thead th {
   border-bottom: 1px solid #ddd; }
 tbody {
   border-bottom: 1px solid #ddd;
-  tr {
-     background: #fff;
-      &.alt-row {
-        background: #f3f3f3; 
-	  } 
-   }
 }
 tfoot {
   border-top: thin solid #BBB;
@@ -381,23 +382,16 @@ tfoot {
   padding: 0 !important;
   line-height: normal !important; }
 
-/*************** Pagination ***************/
+.dataTables_wrapper {
+	padding-bottom: 3em;
+}
+.dataTables_info, .dataTables_paginate {
+	margin-top: 1em;
+}
 
-#main-content .pagination {
-  text-align: right;
-  padding: 20px 0 5px 0; }
-
-.pagination a {
-  margin: 0 5px 0 0;
-  padding: 3px 6px;
-  &.number {
-    border: 1px solid #ddd; }
-  &.current {
-    background: #469400 url('../images/bg-button-green.gif') top left repeat-x !important;
-    border-color: #459300 !important;
-    color: #fff !important;
-    &:hover {
-      text-decoration: underline; } } }
+.dataTables_paginate a {
+	@extend .button;
+}
 
 /************ Shortcut Buttons ************/
 
@@ -422,7 +416,7 @@ tfoot {
 		display: none;
 	}  
 	   }
-  &:hover {
+  &:hover, &:focus {
     background: #fff;
 	i {
 	display: none;
@@ -533,6 +527,19 @@ form {
 
 .report-form {
 	margin-bottom:1em;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, select:focus, .uneditable-input:focus {
+border-color: rgba(82, 168, 236, 0.8);
+outline: 0;
+outline: thin dotted \9;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.button:focus, .btn:focus {
+	background-color: $blue-dark !important;
 }
 
 /*************** View Work Orders ***************/
