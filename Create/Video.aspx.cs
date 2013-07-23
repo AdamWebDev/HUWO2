@@ -162,7 +162,7 @@ namespace HNHUWO2.Create
                 v.BackgroundMusic = ddBackgroundMusic.Value;
                 v.SongChoices = txtSongChoices.Text;
                 v.NarrationReqd = ddNarrationRequired.Value;
-                v.Narrator = ddNarrator.SelectedIndex;
+                v.Narrator = ddNarrator.SelectedIndex > 0 ? ddNarrator.SelectedIndex : (int?)null;
                 v.VideoDescription = txtVideoDescription.Text;
                 v.CreditsRequired = ddCreditsRequired.Value;
                 v.Notes = txtNotes.Text;

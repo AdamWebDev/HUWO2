@@ -233,6 +233,7 @@
       <Association Name="VideoNarration_WorkOrdersVideo" Member="VideoNarration" ThisKey="Narrator" OtherKey="ID" Type="VideoNarration" IsForeignKey="true" />
       <Association Name="VideoSources_WorkOrdersVideo" Member="VideoSources" Storage="_VideoSource1" ThisKey="VideoSource" OtherKey="ID" Type="VideoSources" IsForeignKey="true" />
       <Association Name="Workorder_WorkOrdersVideo" Member="Workorder" ThisKey="wID" OtherKey="ID" Type="Workorder" IsForeignKey="true" />
+      <Association Name="lookupVideoNarration_WorkOrdersVideo" Member="lookupVideoNarration" ThisKey="Narrator" OtherKey="ID" Type="lookupVideoNarration" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Users" Member="Users">
@@ -393,6 +394,14 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Role" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
       <Association Name="UserRole_User" Member="Users" ThisKey="ID" OtherKey="Role" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lookupVideoNarration" Member="lookupVideoNarrations">
+    <Type Name="lookupVideoNarration">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="lookupVideoNarration_WorkOrdersVideo" Member="WorkOrdersVideos" ThisKey="ID" OtherKey="Narrator" Type="WorkOrdersVideo" />
     </Type>
   </Table>
 </Database>

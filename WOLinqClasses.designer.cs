@@ -135,6 +135,9 @@ namespace HNHUWO2
     partial void InsertUserRole(UserRole instance);
     partial void UpdateUserRole(UserRole instance);
     partial void DeleteUserRole(UserRole instance);
+    partial void InsertlookupVideoNarration(lookupVideoNarration instance);
+    partial void UpdatelookupVideoNarration(lookupVideoNarration instance);
+    partial void DeletelookupVideoNarration(lookupVideoNarration instance);
     #endregion
 		
 		public WOLinqClassesDataContext() : 
@@ -452,6 +455,14 @@ namespace HNHUWO2
 			get
 			{
 				return this.GetTable<UserRole>();
+			}
+		}
+		
+		public System.Data.Linq.Table<lookupVideoNarration> lookupVideoNarrations
+		{
+			get
+			{
+				return this.GetTable<lookupVideoNarration>();
 			}
 		}
 	}
@@ -4377,6 +4388,8 @@ namespace HNHUWO2
 		
 		private EntityRef<Workorder> _Workorder;
 		
+		private EntityRef<lookupVideoNarration> _lookupVideoNarration;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4416,6 +4429,7 @@ namespace HNHUWO2
 			this._VideoNarration = default(EntityRef<VideoNarration>);
 			this._VideoSource1 = default(EntityRef<VideoSources>);
 			this._Workorder = default(EntityRef<Workorder>);
+			this._lookupVideoNarration = default(EntityRef<lookupVideoNarration>);
 			OnCreated();
 		}
 		
@@ -4638,7 +4652,7 @@ namespace HNHUWO2
 			{
 				if ((this._Narrator != value))
 				{
-					if (this._VideoNarration.HasLoadedOrAssignedValue)
+					if ((this._VideoNarration.HasLoadedOrAssignedValue || this._lookupVideoNarration.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -4809,6 +4823,40 @@ namespace HNHUWO2
 						this._wID = default(int);
 					}
 					this.SendPropertyChanged("Workorder");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="lookupVideoNarration_WorkOrdersVideo", Storage="_lookupVideoNarration", ThisKey="Narrator", OtherKey="ID", IsForeignKey=true)]
+		public lookupVideoNarration lookupVideoNarration
+		{
+			get
+			{
+				return this._lookupVideoNarration.Entity;
+			}
+			set
+			{
+				lookupVideoNarration previousValue = this._lookupVideoNarration.Entity;
+				if (((previousValue != value) 
+							|| (this._lookupVideoNarration.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._lookupVideoNarration.Entity = null;
+						previousValue.WorkOrdersVideos.Remove(this);
+					}
+					this._lookupVideoNarration.Entity = value;
+					if ((value != null))
+					{
+						value.WorkOrdersVideos.Add(this);
+						this._Narrator = value.ID;
+					}
+					else
+					{
+						this._Narrator = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("lookupVideoNarration");
 				}
 			}
 		}
@@ -8388,6 +8436,144 @@ namespace HNHUWO2
 		{
 			this.SendPropertyChanging();
 			entity.UserRole = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.lookupVideoNarration")]
+	public partial class lookupVideoNarration : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Value;
+		
+		private bool _Active;
+		
+		private EntitySet<WorkOrdersVideo> _WorkOrdersVideos;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnValueChanging(string value);
+    partial void OnValueChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
+    #endregion
+		
+		public lookupVideoNarration()
+		{
+			this._WorkOrdersVideos = new EntitySet<WorkOrdersVideo>(new Action<WorkOrdersVideo>(this.attach_WorkOrdersVideos), new Action<WorkOrdersVideo>(this.detach_WorkOrdersVideos));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="lookupVideoNarration_WorkOrdersVideo", Storage="_WorkOrdersVideos", ThisKey="ID", OtherKey="Narrator")]
+		public EntitySet<WorkOrdersVideo> WorkOrdersVideos
+		{
+			get
+			{
+				return this._WorkOrdersVideos;
+			}
+			set
+			{
+				this._WorkOrdersVideos.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_WorkOrdersVideos(WorkOrdersVideo entity)
+		{
+			this.SendPropertyChanging();
+			entity.lookupVideoNarration = this;
+		}
+		
+		private void detach_WorkOrdersVideos(WorkOrdersVideo entity)
+		{
+			this.SendPropertyChanging();
+			entity.lookupVideoNarration = null;
 		}
 	}
 }
