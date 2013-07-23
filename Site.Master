@@ -19,7 +19,7 @@
             <div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
 		        <div id="sidebar">
                     <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
-			            <h1 id="sidebar-title"><a href="#">Health Unit Work Orders</a></h1>
+			            <h1 id="sidebar-title">Health Unit Work Orders</h1>
 			            <!-- Logo (221px wide) -->
 			            <a href="~/Default.aspx" runat="server"><img id="logo" src="/resources/images/logo.png" alt="Health Unit Work Orders" /></a>
 			            <ul id="main-nav">  <!-- Accordion Menu -->
@@ -57,7 +57,7 @@
                                 </ul>
                             </li>
                             <li ID="reportsMenu" runat="server">
-                                <asp:HyperLink ID="lnkReports" runat="server" CssClass="nav-top-item">Reports</asp:HyperLink>
+                                <asp:HyperLink ID="lnkReports" NavigateUrl="#" runat="server" CssClass="nav-top-item">Reports</asp:HyperLink>
                                 <ul>
                                     <li><asp:HyperLink ID="lnkReport1" runat="server" NavigateUrl="~/Reports/ByManager.aspx">By Program Manager</asp:HyperLink></li>
                                     <li><asp:HyperLink ID="lnkReport2" runat="server" NavigateUrl="~/Reports/ByProjectType.aspx">By Project Type</asp:HyperLink></li>
