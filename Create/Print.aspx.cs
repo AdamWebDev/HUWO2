@@ -221,7 +221,7 @@ namespace HNHUWO2.Create
             btnSubmit.Enabled = false; // prevent double submission
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
-                bool IsDesigner = Users.IsUserDesigner();
+                bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
                 w.submitted_by = Function.GetUserName();
@@ -232,7 +232,7 @@ namespace HNHUWO2.Create
                 w.duedate = txtDueDate.Text.ConvertToDate();
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtPubTitle.Text;
-                w.status = IsDesigner ? 4 : 1;
+                w.status = NeedsApproval ? 4 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersPrint p = new WorkOrdersPrint();
@@ -258,7 +258,7 @@ namespace HNHUWO2.Create
                 int ID = p.wID;
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
                 Function.LogAction(ID, "Work order created");
-                if (!IsDesigner) WO.SendNewWONotification(ID);
+                if (!NeedsApproval) WO.SendNewWONotification(ID);
                 if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
                     Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
                 else // if not, success!!

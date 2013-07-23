@@ -183,7 +183,7 @@ namespace HNHUWO2.Create
             btnSubmit.Enabled = false; // prevent double submission
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
-                bool IsDesigner = Users.IsUserDesigner();
+                bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
                 w.submitted_by = Function.GetUserName();
@@ -206,7 +206,7 @@ namespace HNHUWO2.Create
                 }
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = "Website Update";
-                w.status = IsDesigner ? 4 : 1;
+                w.status = NeedsApproval ? 4 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersWeb wow = new WorkOrdersWeb();
@@ -265,7 +265,7 @@ namespace HNHUWO2.Create
                 }
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
                 Function.LogAction(ID, "Work order created.");
-                if (!IsDesigner) WO.SendNewWONotification(ID);
+                if (!NeedsApproval) WO.SendNewWONotification(ID);
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
         }
