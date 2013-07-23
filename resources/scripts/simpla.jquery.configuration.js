@@ -32,24 +32,7 @@ $(document).ready(function () {
 			}
 		);
 
-    //Minimize Content Box
 
-    // Content box tabs:
-
-    $('.content-box .content-box-content div.tab-content').hide(); // Hide the content divs
-    $('ul.content-box-tabs li a.default-tab').addClass('current'); // Add the class "current" to the default tab
-    $('.content-box-content div.default-tab').show(); // Show the div with class "default-tab"
-
-    $('.content-box ul.content-box-tabs li a').click( // When a tab is clicked...
-			function () {
-			    $(this).parent().siblings().find("a").removeClass('current'); // Remove "current" class from all tabs
-			    $(this).addClass('current'); // Add class "current" to clicked tab
-			    var currentTab = $(this).attr('href'); // Set variable "currentTab" to the value of href of clicked tab
-			    $(currentTab).siblings().hide(); // Hide all content divs
-			    $(currentTab).show(); // Show the content div with the id equal to the id of clicked tab
-			    return false;
-			}
-		);
 
     //Close button:
 
@@ -62,17 +45,7 @@ $(document).ready(function () {
 			}
 		);
 
-    // Alternating table rows:
-
-    $('tbody tr:even').addClass("alt-row"); // Add class "alt-row" to even table rows
-
-    // Check all checkboxes when the one in a table head is checked:
-
-    $('.check-all').click(
-			function () {
-			    $(this).parent().parent().parent().parent().find("input[type='checkbox']").attr('checked', $(this).is(':checked'));
-			}
-		);
+  
 
     $('.datepicker').datepicker({
         dateFormat: "yy-mm-dd"
@@ -107,7 +80,8 @@ $(document).ready(function () {
     var oTable = $('table.sortable').dataTable({
         "iDisplayLength": 50,
         "oLanguage": {
-            "sSearch": "Search all columns:"
+            "sSearch": "Search all columns:",
+            "sZeroRecords": "No work orders here!"
         }
     });
 
