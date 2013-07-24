@@ -27,7 +27,7 @@
     
     <asp:Repeater ID="rptWorkOrders" runat="server">
         <HeaderTemplate>
-            <table class="sortable">
+            <table>
                 <thead>
                     <tr>
                         <th>Work Order #</th>
