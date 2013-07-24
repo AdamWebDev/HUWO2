@@ -11,6 +11,7 @@
 		<script src="/resources/scripts/jquery.min.js"></script>
         <script src="/resources/scripts/jquery-ui.min.js"></script>
         <script src="/resources/scripts/jquery.dataTables.min.js"></script>
+        <script src="/resources/scripts/jquery.magnific.js"></script>
 		<script src="/resources/scripts/simpla.jquery.configuration.js"></script>
         <asp:ContentPlaceHolder ID="Scripts" runat="server"></asp:ContentPlaceHolder>
 	</head>

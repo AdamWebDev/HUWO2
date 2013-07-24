@@ -757,6 +757,31 @@ display:none;
   border: thin solid $red-dark !important;
 }
 
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width:auto;
+  max-width: 80%;
+  margin: 20px auto;
+  h2 {
+	font-size: 3em;
+	margin-bottom: 0.5em;
+  }
+  label {
+	font-size: 2em;
+	display: block;
+	margin-bottom: 0.5em;
+  }
+  textarea {
+	@extend .text-input;
+	width: 80%;
+	border-color: #ADADAD;
+	margin-bottom: 1em;
+  }
+}
+
 @import "blue";
 @import "jqueryui";
 @import "font-awesome/font-awesome";
+@import "magnific";

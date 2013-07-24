@@ -114,6 +114,12 @@
     <Content Include="resources\css\style.min.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
+    <Content Include="resources\css\_magnific.css">
+      <DependentUpon>_magnific.scss</DependentUpon>
+    </Content>
+    <Content Include="resources\css\_magnific.min.css">
+      <DependentUpon>_magnific.scss</DependentUpon>
+    </Content>
     <Content Include="resources\font\fontawesome-webfont.svg" />
     <Content Include="resources\images\dataTables\back_disabled.png" />
     <Content Include="resources\images\dataTables\back_enabled.png" />
@@ -188,8 +194,8 @@
     <Content Include="resources\images\shortcut-button-bg.gif" />
     <Content Include="resources\images\tl.png" />
     <Content Include="resources\images\tr.png" />
-    <Content Include="resources\scripts\DD_belatedPNG_0.0.7a.js" />
     <Content Include="resources\scripts\jquery.dataTables.min.js" />
+    <Content Include="resources\scripts\jquery.magnific.js" />
     <Content Include="resources\scripts\jquery.min.js" />
     <Content Include="resources\scripts\simpla.jquery.configuration.js" />
     <Content Include="UserControls\ActivityLog.ascx" />
@@ -543,6 +549,12 @@
       <Minify>True</Minify>
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>True</DebugInfo>
+    </None>
+    <None Include="resources\css\_magnific.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>False</DebugInfo>
     </None>
     <None Include="resources\css\_reset.scss">
       <Compile>False</Compile>
