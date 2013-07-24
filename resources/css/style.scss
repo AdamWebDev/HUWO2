@@ -428,11 +428,15 @@ tfoot {
   span:hover {
     color: #57a000; } }
 
-ul.shortcut-buttons-set li {
-  float: left;
-  margin: 0 15px 0 0;
-  padding: 0 !important;
-  background: 0; }
+ul.shortcut-buttons-set {
+	margin: 0; 
+	li {
+		float: left;
+		margin: 0 15px 0 0;
+		padding: 0 !important;
+		background: 0; 
+	}
+  }
 
 /*************** Forms ***************/
 
