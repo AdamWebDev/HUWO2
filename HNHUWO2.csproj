@@ -485,7 +485,7 @@
     <None Include="Properties\PublishProfiles\VM40.pubxml" />
     <None Include="README.md" />
     <None Include="resources\css\font-awesome\font-awesome-ie7.scss">
-      <Compile>True</Compile>
+      <Compile>False</Compile>
       <Minify>True</Minify>
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>True</DebugInfo>
@@ -551,7 +551,7 @@
       <DebugInfo>True</DebugInfo>
     </None>
     <None Include="resources\css\_magnific.scss">
-      <Compile>True</Compile>
+      <Compile>False</Compile>
       <Minify>True</Minify>
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>False</DebugInfo>
