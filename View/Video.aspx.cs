@@ -47,7 +47,7 @@ namespace HNHUWO2.View
                 lblCreditsRequired.Text = wo.CreditsRequired.ToYesNoString();
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
-                statusMessages.DisplayMessage(wo.Workorder.status);
+                if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
                 attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");

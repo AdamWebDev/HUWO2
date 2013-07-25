@@ -63,7 +63,7 @@ namespace HNHUWO2.View
                     lnkRelatedWO.NavigateUrl = "~/View/Web.aspx?ID=" + wo.webID.ToString();
                     pnLinkedWebWO.Visible = true;
                 }
-                statusMessages.DisplayMessage(wo.Workorder.status);
+                if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
                 attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");

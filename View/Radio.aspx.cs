@@ -40,7 +40,7 @@ namespace HNHUWO2.View
                 lblRecordingOptions.Text = wo.RecordingOptions.HasValue ? wo.RadioRecordingOption.Value : String.Empty;
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
-                statusMessages.DisplayMessage(wo.Workorder.status);
+                if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
                 attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");

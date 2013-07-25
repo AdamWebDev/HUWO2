@@ -38,7 +38,7 @@ namespace HNHUWO2.View
                 lblContact.Text = wo.Contact;
                 lblNotes.Text = wo.AdditionalNotes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
-                statusMessages.DisplayMessage(wo.Workorder.status);
+                if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
                 attachedFiles.UpdateFileList(wo.wID);
 
             }
