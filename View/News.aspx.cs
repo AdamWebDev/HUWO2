@@ -14,20 +14,15 @@ namespace HNHUWO2.View
         {
             if (!Page.IsPostBack) {
                 int ID;
-                if (Int32.TryParse(Request.QueryString["ID"], out ID)) 
+                if (Int32.TryParse(Request.QueryString["ID"], out ID))
+                {
                     PopulatePage(ID);
+                    attachedFiles.UpdateFileList(ID);
+                }
                 else
                     Response.Redirect("~/Default.aspx");
             }
-            RefreshFiles();
-
         }
-
-        public void RefreshFiles()
-        {
-            attachedFiles.Refresh();
-        }
-
 
         public void PopulatePage(int ID)
         {
@@ -42,17 +37,9 @@ namespace HNHUWO2.View
                 lblDistributionOutlets.Text = wo.DistributionDetails == null ? wo.NewsDistroOutlet.Value : wo.DistributionDetails;
                 lblContact.Text = wo.Contact;
                 lblNotes.Text = wo.AdditionalNotes;
-
-                if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
-                {
-                    CoordinatorRevisions.Visible = true;
-                }
-                else
-                {
-                    CoordinatorRevisions.Visible = false;
-                }
-
-                RefreshFiles();
+                lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+                statusMessages.DisplayMessage(wo.Workorder.status);
+                attachedFiles.UpdateFileList(wo.wID);
 
             }
             else Response.Redirect("~/Default.aspx");

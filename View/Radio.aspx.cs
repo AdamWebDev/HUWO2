@@ -20,12 +20,6 @@ namespace HNHUWO2.View
                 else
                     Response.Redirect("~/Default.aspx");
             }
-            RefreshFiles();
-        }
-
-        public void RefreshFiles()
-        {
-            attachedFiles.Refresh();
         }
 
         public void PopulatePage(int ID)
@@ -38,7 +32,7 @@ namespace HNHUWO2.View
                 lblAdType.Text = wo.RadioAdType.Value;
                 lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblAiringMonth.Text = wo.AiringMonth.HasValue ? System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((int)wo.AiringMonth) : String.Empty;
-                if (wo.RadioStation.HasValue) lblRadioStation.Text = wo.RadioStationOther.Equals(String.Empty) ? wo.RadioStations.Value : wo.RadioStationOther;
+                if (wo.RadioStation.HasValue) lblRadioStation.Text = String.IsNullOrEmpty(wo.RadioStationOther) ? wo.RadioStations.Value : wo.RadioStationOther;
                 lblLengthOfAd.Text = wo.LengthOfAd.HasValue ? wo.RadioLength.Value : String.Empty;
                 lblStartAiringDate.Text = wo.StartAiringDate.DisplayDate();
                 lblEndAiringDate.Text = wo.EndAiringDate.DisplayDate();
@@ -46,10 +40,8 @@ namespace HNHUWO2.View
                 lblRecordingOptions.Text = wo.RecordingOptions.HasValue ? wo.RadioRecordingOption.Value : String.Empty;
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
-
-                CoordinatorRevisions.Visible = (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()));
-
-                RefreshFiles();
+                statusMessages.DisplayMessage(wo.Workorder.status);
+                attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");
         }

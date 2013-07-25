@@ -20,12 +20,7 @@ namespace HNHUWO2.View
                 else
                     Response.Redirect("~/Default.aspx");
             }
-            RefreshFiles();
-        }
-
-        public void RefreshFiles()
-        {
-            attachedFiles.Refresh();
+            
         }
 
         public void PopulatePage(int ID)
@@ -74,13 +69,8 @@ namespace HNHUWO2.View
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
                 pnNotification.Visible = wo.pID.HasValue;
                 lnkRelatedWO.NavigateUrl = "~/View/Default.aspx?type=1&ID=" + wo.pID.ToString();
-
-                if (wo.Workorder.status == 1 && (Users.IsUserCoordinator() || Users.IsUserAdmin()))
-                    CoordinatorRevisions.Visible = true;
-                else
-                    CoordinatorRevisions.Visible = false;
-
-                RefreshFiles();
+                statusMessages.DisplayMessage(wo.Workorder.status);
+                attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");
 

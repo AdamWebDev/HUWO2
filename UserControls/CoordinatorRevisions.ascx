@@ -8,11 +8,9 @@
     <label>Revised Files</label>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <telerik:radasyncupload ID="uploadFiles" runat="server" 
-                MultipleFileSelection="Automatic" 
-                Localization-Select="Add Files to Attach" Skin=""
-                onfileuploaded="uploadFiles_FileUploaded"></telerik:radasyncupload>
+            <telerik:radasyncupload ID="uploadFiles" runat="server" MultipleFileSelection="Automatic" Localization-Select="Add Files to Attach" Skin="" onfileuploaded="uploadFiles_FileUploaded"></telerik:radasyncupload>
         </ContentTemplate>
     </asp:UpdatePanel>
-    
+    <asp:Button ID="btnSaveWithChanges" runat="server" Text="Approve with Changes" CssClass="button" OnClick="btnSaveWithChanges_Click" /> 
+    <input type="button" value="Cancel" class="button" onclick="closeModal();" />
 </div>

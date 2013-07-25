@@ -33,9 +33,8 @@ $(document).ready(function () {
 		);
 
 
-			$('.open-popup-link').magnificPopup({
-            type: 'inline'
-        
+	$('#popup').magnificPopup({
+        type: 'inline'
     });
 
     $('.datepicker').datepicker({
@@ -137,4 +136,9 @@ function pageLoad(sender, args) {
 function replaceURLWithHTMLLinks(sometext) {
     var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
     return sometext.replace(exp, "$1 (<a href='$1' target='_blank'>Link</a>)");
+}
+
+function closeModal() {
+    var magnificPopup = $.magnificPopup.instance;
+    magnificPopup.close();
 }

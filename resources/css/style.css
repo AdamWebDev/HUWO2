@@ -337,7 +337,7 @@ body, textarea, input {
   font-size: 11pt; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\0000333}}
-form input.text-input, form select, form textarea, form .wysiwyg {
+form input.text-input, form .white-popup textarea, .white-popup form textarea, form select, form textarea, form .wysiwyg {
   font-size: 11pt; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\0000337}}
@@ -872,7 +872,7 @@ form fieldset {
 form p small {
   color: #777; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003482}}
-form input.text-input, form select, form textarea, form .wysiwyg {
+form input.text-input, form .white-popup textarea, .white-popup form textarea, form select, form textarea, form .wysiwyg {
   padding: 6px;
   background: white url("../images/bg-form-field.gif") top left repeat-x;
   border: 1px solid #d5d5d5;

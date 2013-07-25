@@ -12,18 +12,22 @@ namespace HNHUWO2.UserControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Refresh();
+            UpdateFileList();
             if (rptFiles.Items.Count == 0)
             {
                 rptFiles.Visible = false;
             }
         }
 
-        public void Refresh()
+        public void UpdateFileList()
+        {
+            UpdateFileList(int.Parse(Request.QueryString["ID"]));
+        }
+
+        public void UpdateFileList(int ID)
         {
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
-                int ID = int.Parse(Request.QueryString["ID"]);
                 rptFiles.DataSource = db.Files.Where(f => f.wID == ID).ToList();
                 rptFiles.DataBind();
             }
@@ -35,7 +39,7 @@ namespace HNHUWO2.UserControls
             {
                 int ID = int.Parse(e.CommandArgument.ToString());
                 WO.DeleteFile(ID);
-                Refresh();
+                UpdateFileList();
             }
         }
 

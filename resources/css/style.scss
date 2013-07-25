@@ -774,7 +774,7 @@ display:none;
 	margin-bottom: 0.5em;
   }
   textarea {
-	@extend .text-input;
+	@extend input.text-input;
 	width: 80%;
 	border-color: #ADADAD;
 	margin-bottom: 1em;

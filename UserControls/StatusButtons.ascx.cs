@@ -35,23 +35,6 @@ namespace HNHUWO2.UserControls
             UpdatePage();
         }
 
-        // approve (with changes) - gets some input from the program ProgramManager
-        protected void btnApproveWithChanges_OnClick(object sender, EventArgs e)
-        {
-            
-            // when approving with changes, we have to grab the text from the "Manager Notes" from the page (which is not in the user control)
-            // if txtCoordinatorNotes isn't found, the "No notes added." message gets displayed by default
-            int ID = int.Parse(Request.QueryString["ID"]);
-            String notes = "No notes added.";
-            CoordinatorRevisions revisions = this.Parent.Parent.FindControl("Main").FindControl("CoordinatorRevisions") as CoordinatorRevisions;
-            if (revisions != null)
-            {
-                notes = revisions.Notes;
-            }
-            WO.ApproveWithChanges(ID, notes);
-            //UpdatePage();
-        }
-
         // mark the work order as "in progress"
         protected void btnMarkInProgress_OnClick(object sender, EventArgs e)
         {
@@ -92,13 +75,13 @@ namespace HNHUWO2.UserControls
                 if (Users.IsUserCoordinator())
                 {
                     btnApprove.Visible = true;
-                    btnApproveWithChanges.Visible = true;
+                    //btnApproveWithChanges.Visible = true;
                 }
             }
             else // if approved...
             {
                 btnApprove.Visible = false;
-                btnApproveWithChanges.Visible = false;
+                //btnApproveWithChanges.Visible = false;
 
                 if (Users.IsUserDesigner()) // if the user is one of the designers, show the controls
                 {
@@ -108,7 +91,7 @@ namespace HNHUWO2.UserControls
                     btnDelete.Visible = true;
                     if(Users.IsUserAdmin()) {
                         btnApprove.Visible = true;
-                        btnApproveWithChanges.Visible = true;
+                        //btnApproveWithChanges.Visible = true;
                         btnUnapprove.Visible = true;
                     }
                 }
