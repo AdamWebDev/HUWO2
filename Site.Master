@@ -41,7 +41,7 @@
 					            Managers
 					            </a>
 					            <ul>
-						            <li><asp:HyperLink ID="lnkMyStaffWO" runat="server" NavigateUrl="~/Managers/MyWorkOrders.aspx">My Staffs Work Orders</asp:HyperLink></li>
+						            <li><asp:HyperLink ID="lnkMyStaffWO" runat="server" NavigateUrl="~/Managers/MyWorkOrders.aspx">My Staff's Work Orders</asp:HyperLink></li>
                                     <li><asp:HyperLink ID="lnkAllPending" runat="server" NavigateUrl="~/Managers/AllPendingWorkOrders.aspx">All Pending Work Orders</asp:HyperLink></li>
 					            </ul>
 				            </li>
