@@ -34,21 +34,28 @@ namespace HNHUWO2
             {
                 case "open":
                     data = data.Where(w => w.status < 6);
+                    ltMessage.Text = "You currently don't have any open work orders.";
                     break;
                 case "unapproved":
                     data = data.Where(w => w.status == 1);
+                    ltMessage.Text = "You currently don't have any unapproved work orders.";
                     break;
                 case "completed":
                     data = data.Where(w => w.status == 6);
+                    ltMessage.Text = "You currently don't have any completed work orders.";
                     break;
                 case "deleted":
                     data = data.Where(w => w.status == 7);
+                    ltMessage.Text = "You currently don't have any deleted work orders.";
                     break;
             }
 
             // populate!
+            
             rptWorkOrders.DataSource = data;
             rptWorkOrders.DataBind();
+            ltMessage.Visible = rptWorkOrders.Items.Count == 0;
+            
         }
 
         protected void ddFilters_SelectedIndexChanged(object sender, EventArgs e)

@@ -53,4 +53,5 @@
             </table>
         </FooterTemplate>
     </asp:Repeater>
+    <asp:Label ID="lblEmpty" runat="server" Visible="false"></asp:Label>
 </asp:Content>
