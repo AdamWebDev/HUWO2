@@ -26,11 +26,9 @@ namespace HNHUWO2.UserControls
 
         public void UpdateFileList(int ID)
         {
-            using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
-            {
-                rptFiles.DataSource = db.Files.Where(f => f.wID == ID).ToList();
-                rptFiles.DataBind();
-            }
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            rptFiles.DataSource = db.Files.Where(f => f.wID == ID).ToList();
+            rptFiles.DataBind();
         }
 
         protected void lnkDelete_Command(object sender, CommandEventArgs e)
