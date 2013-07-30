@@ -75,13 +75,13 @@ namespace HNHUWO2.UserControls
                 if (Users.IsUserCoordinator())
                 {
                     btnApprove.Visible = true;
-                    //btnApproveWithChanges.Visible = true;
+                    phApproveWithChanges.Visible = true;
                 }
             }
             else // if approved...
             {
                 btnApprove.Visible = false;
-                //btnApproveWithChanges.Visible = false;
+                phApproveWithChanges.Visible = false;
 
                 if (Users.IsUserDesigner()) // if the user is one of the designers, show the controls
                 {
@@ -91,7 +91,7 @@ namespace HNHUWO2.UserControls
                     btnDelete.Visible = true;
                     if(Users.IsUserAdmin()) {
                         btnApprove.Visible = true;
-                        //btnApproveWithChanges.Visible = true;
+                        phApproveWithChanges.Visible = true;
                         btnUnapprove.Visible = true;
                     }
                 }

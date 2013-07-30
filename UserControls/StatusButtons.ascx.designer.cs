@@ -40,6 +40,15 @@ namespace HNHUWO2.UserControls {
         protected global::HNHUWO2.NavButton btnApprove;
         
         /// <summary>
+        /// phApproveWithChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phApproveWithChanges;
+        
+        /// <summary>
         /// ltText control.
         /// </summary>
         /// <remarks>
