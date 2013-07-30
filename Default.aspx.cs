@@ -15,7 +15,7 @@ namespace HNHUWO2
             if(Users.IsUserDesigner())
                 Response.Redirect("~/Designers/OpenWorkOrders.aspx");
             else if (Users.IsUserCoordinator())
-                Response.Redirect("~/Coordinators/MyWorkOrders.aspx");
+                Response.Redirect("~/Managers/MyWorkOrders.aspx");
             else
                 Response.Redirect("~/MyWorkOrders.aspx");
         }
