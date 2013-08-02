@@ -66,7 +66,7 @@ namespace HNHUWO2.Admin
             String message = "Greetings!<br /><br />";
             message += "You now have additional priveleges on the Health Unit Work Order System! Woohoo!<br /><br />";
             message += "To access the Work Order System, just visit the follow link:<br /><br />";
-            message += "<a href=\"http://huwo.hnhu.org\">http://huwo.hnhu.org</a>";
+            message += "<a href=\"http://huwo.norfolkcounty.on.ca\">http://huwo.norfolkcounty.on.ca</a>";
             message += "There's nothing special you need to do - you'll just notice that you have a few extra menu options to choose from!<br /><br />";
             message += "If you need any additional assistance, please contact the Communications Services Team!<br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
