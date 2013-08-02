@@ -246,13 +246,19 @@ namespace HNHUWO2.Classes
 
             // create the email
             string subject = "Work Order Approved";
-            string message = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + Users.GetUsername() +". Please proceed to the following link to approve the work order.<br /><br />";
+            string opening = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + Users.GetUsername() +". Please proceed to the following link to approve the work order.<br /><br />";
             string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?type=" + wo.wotype + "&ID=" + ID;
-            message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
+            string message = "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
-            MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
+            MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, opening + message);
             mail.IsBodyHtml = true;
             SendMail(mail);
+
+            opening = "Greetings!<br /><br />A workorder has been approved and is ready for you to do your magic! Follow this link to check out the details.<br /><br />";
+            mail = new MailMessage("no-reply@hnhu.org", email, subject, opening + message);
+            mail.IsBodyHtml = true;
+            SendMail(mail);
+
         }
 
         private static void SendMail(MailMessage msg)
