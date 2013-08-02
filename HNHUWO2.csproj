@@ -203,7 +203,6 @@
     <Content Include="UserControls\FileList.ascx" />
     <Content Include="UserControls\NavButton.ascx" />
     <Content Include="UserControls\Notification.ascx" />
-    <Content Include="UserControls\Pagination.ascx" />
     <Content Include="UserControls\StatusButtons.ascx" />
     <Content Include="UserControls\StatusMessages.ascx" />
     <Content Include="UserControls\TrueFalseDropDown.ascx" />
@@ -400,13 +399,6 @@
     </Compile>
     <Compile Include="UserControls\Notification.ascx.designer.cs">
       <DependentUpon>Notification.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\Pagination.ascx.cs">
-      <DependentUpon>Pagination.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserControls\Pagination.ascx.designer.cs">
-      <DependentUpon>Pagination.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\StatusButtons.ascx.cs">
       <DependentUpon>StatusButtons.ascx</DependentUpon>

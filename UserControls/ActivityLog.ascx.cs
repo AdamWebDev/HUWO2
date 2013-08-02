@@ -8,12 +8,17 @@ using HNHUWO2.Classes;
 
 namespace HNHUWO2.UserControls
 {
+    /// <summary>
+    /// Display the activities releated to a work order in a list format
+    /// </summary>
     public partial class ActivityLog : System.Web.UI.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             int ID = int.Parse(Request.QueryString["ID"]);
             string output = "<ul class=\"activity-log\">";
+            
+            // get the related activities
             List<LogActivity> logs = HNHUWO2.Classes.WO.GetLog(ID);
             foreach (LogActivity log in logs)
             {

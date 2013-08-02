@@ -67,9 +67,12 @@ namespace HNHUWO2.View
                 lblFacebookContent.Text = wo.FacebookContent;
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+                // if this has a related print work order, let's display it!
                 pnNotification.Visible = wo.pID.HasValue;
                 lnkRelatedWO.NavigateUrl = "~/View/Default.aspx?type=1&ID=" + wo.pID.ToString();
+                // if the status has changed, let's show a confirmation
                 if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
+                // show attached files
                 attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");

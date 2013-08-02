@@ -15,6 +15,7 @@ namespace HNHUWO2
             if (!Page.IsPostBack)
             {
                 RefreshPage();
+                // if success = true in the query string, the user just came from submitting a new work order. show a success message with a link to it
                 if (Request.QueryString["success"] != null && Request.QueryString["success"].Equals("true"))
                 {
                     pnSuccess.Visible = true;
@@ -27,6 +28,9 @@ namespace HNHUWO2
             }
         }
 
+        /// <summary>
+        /// Populate the page!
+        /// </summary>
         public void RefreshPage()
         {
             IEnumerable<WO.WorkOrderWithDetails> data = WO.GetMyWorkOrders(Function.GetUserName()); // get all of the users's work orders
@@ -51,13 +55,13 @@ namespace HNHUWO2
             }
 
             // populate!
-            
             rptWorkOrders.DataSource = data;
             rptWorkOrders.DataBind();
             ltMessage.Visible = rptWorkOrders.Items.Count == 0;
             
         }
 
+        // if the user changes the filter, populate the page!
         protected void ddFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshPage();

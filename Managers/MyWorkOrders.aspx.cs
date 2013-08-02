@@ -23,12 +23,19 @@ namespace HNHUWO2.Coordinators
                 Response.Redirect("~/Default.aspx");
         }
 
-        
+        /// <summary>
+        /// Check if a work order is not approved (used in display table)
+        /// </summary>
+        /// <param name="_status">Status</param>
+        /// <returns>True/False</returns>
         public bool IsUnapproved(object _status)
         {
             return (int)_status == 1 ? true : false;
         }
 
+        /// <summary>
+        /// Filter for showing work orders in various stages of completion
+        /// </summary>
         protected void ddFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (ddFilters.SelectedValue)
@@ -56,6 +63,11 @@ namespace HNHUWO2.Coordinators
             }
         }
 
+        /// <summary>
+        /// Shows display name instead of user name
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <returns>Display name</returns>
         public string GetUserName(string username)
         {
             return Users.GetUsername(username);

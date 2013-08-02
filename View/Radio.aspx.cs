@@ -22,6 +22,10 @@ namespace HNHUWO2.View
             }
         }
 
+        /// <summary>
+        /// Populates the page with work order details
+        /// </summary>
+        /// <param name="ID"></param>
         public void PopulatePage(int ID)
         {
             WorkOrdersRadio wo = RadioWO.GetRadioWorkOrder(ID);
@@ -40,7 +44,9 @@ namespace HNHUWO2.View
                 lblRecordingOptions.Text = wo.RecordingOptions.HasValue ? wo.RadioRecordingOption.Value : String.Empty;
                 lblNotes.Text = wo.Notes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+                // if the status changes, let's show a confirmation
                 if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
+                // display attached files
                 attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");

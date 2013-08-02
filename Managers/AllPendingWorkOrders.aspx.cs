@@ -22,6 +22,11 @@ namespace HNHUWO2.Coordinators
                 Response.Redirect("~/Default.aspx");
         }
 
+        /// <summary>
+        /// Shows display name instead of user name
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <returns>Display name</returns>
         public string GetUserName(string username)
         {
             return Users.GetUsername(username);

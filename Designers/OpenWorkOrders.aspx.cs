@@ -14,8 +14,10 @@ namespace HNHUWO2.Designers
         {
             if (!Page.IsPostBack)
             {
+                // ensure the user is a designer and should have access to this page
                 if (Users.IsUserDesigner())
                 {
+                    // populate the things!
                     rptWorkOrders.DataSource = WO.GetOpenWorkOrders();
                     rptWorkOrders.DataBind();
                     ltContentTitle.Text = ltPageTitle.Text = "Viewing Open Work Orders";
@@ -25,6 +27,7 @@ namespace HNHUWO2.Designers
             }
         }
 
+        // filter the work orders shown via a dropdown menu
         protected void ddFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddFilters.SelectedValue.Equals("open")) 
@@ -54,6 +57,11 @@ namespace HNHUWO2.Designers
             }
         }
 
+        /// <summary>
+        /// Show display names instead of usernames
+        /// </summary>
+        /// <param name="username">Username of staff member</param>
+        /// <returns>Display name</returns>
         public string GetUserName(string username)
         {
             return Users.GetUsername(username);

@@ -64,9 +64,8 @@ namespace HNHUWO2.Create
                 ddCredits.DataValueField = "ID";
                 ddCredits.DataBind();
 
+                // load the date comparison validator to make sure that dates are AFTER today
                 cmpDueDate.ValueToCompare = DateTime.Today.ToShortDateString();
-
-                // end of populating dropdown boxes
 
                 // if requesting a quote (determinted by query string), set up form for commercial printing only
                 if (Request.QueryString["quote"] != null && Request.QueryString["quote"].Equals("1"))
@@ -75,7 +74,8 @@ namespace HNHUWO2.Create
                     Function.ShowControls(phBudget);
                     notCommercialInfo.Visible = true;
                     Function.ShowControls(phCommercialPrint);
-                    ddPrintingMethod.Items.FindByText("Commercial").Selected = true; // restrict printing method to commercial print
+                    // restrict printing method to commercial print
+                    ddPrintingMethod.Items.FindByText("Commercial").Selected = true; 
                     ddPrintingMethod.Enabled = false;
                 }
                 else // not a quote
@@ -85,6 +85,9 @@ namespace HNHUWO2.Create
             } 
         }
 
+        /// <summary>
+        /// Conditional fields based on the project type
+        /// </summary>
         protected void ddTypeProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             // show additional options depending on the type of project selected
@@ -116,21 +119,26 @@ namespace HNHUWO2.Create
             checkDate(); // check the date to choose the appropriate due date notification
         }
 
+        /// <summary>
+        /// Conditional fields based on type of display
+        /// </summary>
         protected void ddTypeOfDisplay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // show additional options for the type of display selected
             if (ddTypeOfDisplay.SelectedValue.Equals("5")) // other
                 Function.ShowControls(phDisplayOther);
             else
                 Function.ClearControls(phDisplayOther, false);
         }
 
+        // when new due dates are selected...
         protected void txtDueDate_TextChanged(object sender, EventArgs e)
         {
-            checkDate(); // check the date to choose the appropriate due date notification
+            checkDate(); // ...check the date to choose the appropriate due date notification
         }
 
-
+        /// <summary>
+        /// Checks the due date date and compares it to the minimum guidelines
+        /// </summary>
         protected void checkDate()
         {
             // checks db to see if the selected project needs a specific length of time. 
@@ -176,6 +184,10 @@ namespace HNHUWO2.Create
                 notDueDate.Visible = false; // if the type of project is not selected
        }
 
+        
+        /// <summary>
+        /// Conditional fields based on Printing Method
+        /// </summary>
         protected void ddPrintingMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             // if commercial printing, show relevant options and reset the colour info dropdown to include "one colour"
@@ -200,6 +212,9 @@ namespace HNHUWO2.Create
             }
         }
 
+        /// <summary>
+        /// Conditional fields based on Paper Size
+        /// </summary>
         protected void ddPaperSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddPaperSize.SelectedItem.Text.Equals("Other"))
@@ -208,6 +223,9 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phCustomPaperSize,false);
         }
 
+        /// <summary>
+        /// Conditional fields based on Credits
+        /// </summary>
         protected void ddCredits_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!ddCredits.SelectedItem.Text.ToString().Equals("None") && !ddCredits.SelectedValue.ToString().Equals(String.Empty))
@@ -216,11 +234,15 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phCredits, false);
         }
 
+        /// <summary>
+        /// Submit the form!
+        /// </summary>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false; // prevent double submission
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
+                // if the user doesn't need approval, skip the approval process
                 bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
@@ -256,10 +278,15 @@ namespace HNHUWO2.Create
                 db.WorkOrdersPrints.InsertOnSubmit(p);
                 db.SubmitChanges();
                 int ID = p.wID;
+                // upload attached files
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
-                Function.LogAction(ID, "Work order created");
+                // log the activity
+                WO.LogAction(ID, "Work order created");
+                // send notification (if necessary)
                 if (!NeedsApproval) WO.SendNewWONotification(ID);
-                if (ddAddToWebsite.Value == true) // if the user added the option to add to the website, transfer user to the page
+
+                // if the user added the option to add to the website, transfer user to web work order page
+                if (ddAddToWebsite.Value == true) 
                     Response.Redirect("~/Create/Web.aspx?AddTo=" + ID);
                 else // if not, success!!
                     Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype.ToString());

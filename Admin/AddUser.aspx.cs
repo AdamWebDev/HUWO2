@@ -14,11 +14,11 @@ namespace HNHUWO2.Admin
         {
             if (!Page.IsPostBack)
             {
+                // populate role dropdown
                 ddRole.DataSource = HNHUWO2.Classes.Admin.GetRoles();
                 ddRole.DataTextField = "Role";
                 ddRole.DataValueField = "ID";
                 ddRole.DataBind();
-
             }
         }
 
@@ -35,7 +35,8 @@ namespace HNHUWO2.Admin
                         notSuccess.Type = Notification.Types.Error;
                         notSuccess.Message = "It looks like this user already exists in the system...";
                         notSuccess.Visible = true;
-                    } 
+                    }
+                    // let's create the user!
                     else {
                         User u = new User();
                         u.Username = txtUsername.Text;
@@ -46,10 +47,12 @@ namespace HNHUWO2.Admin
                         db.SubmitChanges();
                         SendWelcomeEmail(u.Email);
                         notSuccess.Visible = true;
+                        // clear the fields for next use
                         txtFullName.Text = txtEmail.Text = txtUsername.Text = String.Empty;
                     }
                 }
             }
+            // username doesn't exist
             else
             {
                 notSuccess.Type = Notification.Types.Error;
@@ -59,7 +62,10 @@ namespace HNHUWO2.Admin
         }
 
         
-
+        /// <summary>
+        /// Sends a welcome email to a new user
+        /// </summary>
+        /// <param name="emailAddress">Email address of the new user</param>
         protected void SendWelcomeEmail(string emailAddress)
         {
             String subject = "You now have access to the Health Unit Work Order System!";

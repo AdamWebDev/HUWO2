@@ -13,6 +13,7 @@ namespace HNHUWO2
         {
             if (!IsPostBack)
             {
+                // populate the dropdown
                 ddWoTypes.AddInitialItem();
                 ddWoTypes.DataSource = HNHUWO2.Classes.WO.GetWorkOrderTypes();
                 ddWoTypes.DataTextField = "type";
@@ -20,6 +21,7 @@ namespace HNHUWO2
                 ddWoTypes.DataBind();
             }
             else {
+                // redirect the user based on the work order type they have selected
                 if (ddWoTypes.SelectedIndex > 0)
                 {
                     switch (int.Parse(ddWoTypes.SelectedValue))

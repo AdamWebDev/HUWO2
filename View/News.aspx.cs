@@ -14,6 +14,7 @@ namespace HNHUWO2.View
         {
             if (!Page.IsPostBack) {
                 int ID;
+                // populate the page!
                 if (Int32.TryParse(Request.QueryString["ID"], out ID))
                 {
                     PopulatePage(ID);
@@ -24,6 +25,10 @@ namespace HNHUWO2.View
             }
         }
 
+        /// <summary>
+        /// Populate the page with the appropriate information
+        /// </summary>
+        /// <param name="ID">Work order ID</param>
         public void PopulatePage(int ID)
         {
             WorkOrdersNews wo = NewsWO.GetNewsWorkOrder(ID);
@@ -34,11 +39,13 @@ namespace HNHUWO2.View
                 lblProgramManager.Text = wo.Workorder.User.FullName;
                 lblTitleTopic.Text = wo.Workorder.title;
                 lblDateToIssue.Text = wo.Workorder.duedate.DisplayDate();
-                lblDistributionOutlets.Text = wo.DistributionDetails == null ? wo.NewsDistroOutlet.Value : wo.DistributionDetails;
+                lblDistributionOutlets.Text = wo.DistributionDetails.Equals(String.Empty) ? wo.NewsDistroOutlet.Value : wo.DistributionDetails;
                 lblContact.Text = wo.Contact;
                 lblNotes.Text = wo.AdditionalNotes;
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
+                // if the page is posted, the status was changed - so let's confirm!
                 if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
+                // show attached files
                 attachedFiles.UpdateFileList(wo.wID);
 
             }

@@ -29,10 +29,14 @@ namespace HNHUWO2.Create
                 ddDistributionOutlets.DataTextField = "Value";
                 ddDistributionOutlets.DataBind();
 
+                // load the date comparison validator to make sure that dates are AFTER today
                 cmpDateToIssue.ValueToCompare = DateTime.Today.ToShortDateString();
             }
         }
 
+        /// <summary>
+        /// Conditional fields based on distro outlets
+        /// </summary>
         protected void ddDistributionOutlets_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddDistributionOutlets.SelectedItem.Text.Equals("Other"))
@@ -41,11 +45,16 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phDistroOther, false);
         }
 
+
+        /// <summary>
+        /// Submit the form!
+        /// </summary>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false; // prevent double submission
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
+                // if the user is a designer or coordinator, they don't need to go through the approval process
                 bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
@@ -65,9 +74,14 @@ namespace HNHUWO2.Create
                 db.WorkOrdersNews.InsertOnSubmit(n);
                 db.SubmitChanges();
                 int ID = w.ID;
+                
+                // look after the files
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
-                Function.LogAction(ID, "Work order created");
+                // log the work order
+                WO.LogAction(ID, "Work order created");
+                // send notification if needed
                 if (!NeedsApproval) WO.SendNewWONotification(ID);
+                // move on!
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             

@@ -7,6 +7,10 @@ namespace HNHUWO2.Classes
 {
     public class MySession
     {
+        /// <summary>
+        /// Session handling - makes things a bit easier to call sessions from througout the application,
+        /// including from other classes
+        /// </summary>
         public static MySession Current
         {
             get

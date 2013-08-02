@@ -31,12 +31,19 @@ namespace HNHUWO2
         
         public event EventHandler Click;
 
+        /// <summary>
+        /// Allows click events to happen
+        /// </summary>
+        /// <param name="e"></param>
         protected virtual void OnClick(EventArgs e)
         {
             if (Click != null)
                 Click(this, e);
         }
 
+        /// <summary>
+        /// This allows the postbacks from user controls within user controls... inception?
+        /// </summary>
         protected void Page_Load(object sender, EventArgs e)
         {
             string arg = "@@@@" + lnkLink.ClientID;

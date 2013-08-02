@@ -13,12 +13,10 @@ namespace HNHUWO2.Create
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /****************************************
-                   Populating dropdown boxes
-            ****************************************/
-
+            
             if (!Page.IsPostBack)
             {
+                // Populating dropdown boxes
                 ddCoordinators.AddInitialItem();
                 ddCoordinators.DataSource = WO.GetCoordinators();
                 ddCoordinators.DataValueField = "ID";
@@ -48,6 +46,7 @@ namespace HNHUWO2.Create
                 ddWebsite.DataTextField = "Value";
                 ddWebsite.DataBind();
 
+                // load the date comparison validator to make sure that dates are AFTER today
                 cmpAtoZPostingDate.ValueToCompare = cmpCalStartDate.ValueToCompare = cmpDatePosted.ValueToCompare = cmpDateToBeChanged.ValueToCompare = cmpWebAdPostDate.ValueToCompare = cmpFacebookPostDate.ValueToCompare = DateTime.Today.ToShortDateString();
 
                 // if user is being redirected from a successful print work order, let them know!
@@ -135,8 +134,6 @@ namespace HNHUWO2.Create
         /// <summary>
         /// Show the releveant fields based on where the user wants their information posted.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void chkLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool showNewContent = false;
@@ -176,13 +173,12 @@ namespace HNHUWO2.Create
         /// <summary>
         /// Submitting the form!
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             btnSubmit.Enabled = false; // prevent double submission
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
+                // skip the approval process for designers and program managers
                 bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
@@ -247,6 +243,7 @@ namespace HNHUWO2.Create
                 wow.FacebookContent = txtFacebookContent.Text;
                 wow.Notes = txtNotes.Text;
 
+                // if this was added on to a Print work order, let's link this to it!
                 int pID = 0;
                 if (int.TryParse(Request.QueryString["AddTo"], out pID))
                 {
@@ -257,15 +254,21 @@ namespace HNHUWO2.Create
                 db.WorkOrdersWebs.InsertOnSubmit(wow);
                 db.SubmitChanges();
                 int ID = w.ID;
+
+                // if we're linking print and web work orders, let's add the link to the print work order too so we can go back and forth easily
                 if (pID != 0)
                 {
                     WorkOrdersPrint p = db.WorkOrdersPrints.Single(u => u.wID == pID);
                     p.webID = ID;
                     db.SubmitChanges();
                 }
+                // upload attached files
                 WO.UploadFiles(ID, AttachedFiles.UploadedFiles);
-                Function.LogAction(ID, "Work order created.");
+                // log actions
+                WO.LogAction(ID, "Work order created.");
+                // send notifications if necessary
                 if (!NeedsApproval) WO.SendNewWONotification(ID);
+                // redirect! hooray!
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
         }

@@ -12,6 +12,11 @@ namespace HNHUWO2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // set session variables for the user's name and role so we don't constantly have to look them up
+            if (MySession.Current.Role == null) MySession.Current.Role = Users.GetUserRole();
+            if (MySession.Current.FirstName == null) MySession.Current.FirstName = Users.GetFirstName();
+
+            // redirect the user based on their role
             if(Users.IsUserDesigner())
                 Response.Redirect("~/Designers/OpenWorkOrders.aspx");
             else if (Users.IsUserCoordinator())

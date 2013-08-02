@@ -58,12 +58,13 @@ namespace HNHUWO2.View
                 lblNotes.Text = wo.Notes.IncludeLineBreaks();
                 lblCoordinatorNotes.Text = wo.Workorder.coordinatorNotes;
 
-                if (wo.webID.HasValue)
-                {
-                    lnkRelatedWO.NavigateUrl = "~/View/Web.aspx?ID=" + wo.webID.ToString();
-                    pnLinkedWebWO.Visible = true;
-                }
+                // if this is connected to a web work order, give the user a link to switch to it
+                lnkRelatedWO.NavigateUrl = "~/View/Web.aspx?ID=" + wo.webID.ToString();
+                pnLinkedWebWO.Visible = wo.webID.HasValue;
+
+                // if the status has changed, let's show a confirmation
                 if (Page.IsPostBack) statusMessages.DisplayMessage(wo.Workorder.status);
+                // show attached files
                 attachedFiles.UpdateFileList(wo.wID);
             }
             else Response.Redirect("~/Default.aspx");

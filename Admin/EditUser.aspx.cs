@@ -15,6 +15,7 @@ namespace HNHUWO2.Admin
             if (!Page.IsPostBack)
             {
                 int ID;
+                // make sure the user ID is valid, then populate the form
                 if (int.TryParse(Request.QueryString["ID"], out ID))
                 {
                     User u = Classes.Admin.GetUser(ID);
@@ -29,6 +30,7 @@ namespace HNHUWO2.Admin
 
                     ddRole.SelectedValue = u.Role.ToString();
                 }
+                // if user ID is invalid, send them back to the users page
                 else
                 {
                     Response.Redirect("~/Admin/Users.aspx");
@@ -36,6 +38,11 @@ namespace HNHUWO2.Admin
             }
         }
 
+        /// <summary>
+        /// Saves changes to the user account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())

@@ -17,6 +17,10 @@ namespace HNHUWO2.Classes
             public bool Active { get; set; }
         }
 
+        /// <summary>
+        /// Get all of the users in the system. Users are only in the system if they have elevated priveleges (program managers, designers or admins)
+        /// </summary>
+        /// <returns>List of users with viewable details</returns>
         public static List<UserDetails> GetUsers()
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
@@ -33,12 +37,22 @@ namespace HNHUWO2.Classes
             return q.ToList();
         }
 
+        /// <summary>
+        /// Gets a specific user
+        /// </summary>
+        /// <param name="ID">ID of a user</param>
+        /// <returns>A single user</returns>
         public static User GetUser(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
             return db.Users.Single(u => u.ID == ID);
         }
 
+        /// <summary>
+        /// Toggles the status of a user (active to inactive and vice versa)
+        /// </summary>
+        /// <param name="ID">ID of a specific user</param>
+        /// <returns>Updated Status (boolean)</returns>
         public static bool? SetUserStatus(int ID)
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
@@ -49,6 +63,10 @@ namespace HNHUWO2.Classes
             return u.Active;
         }
 
+        /// <summary>
+        /// Gets all available roles
+        /// </summary>
+        /// <returns>List of roles</returns>
         public static List<UserRole> GetRoles()
         {
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();

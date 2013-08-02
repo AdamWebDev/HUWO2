@@ -59,10 +59,14 @@ namespace HNHUWO2.Create
                 ddRecordingOptions.DataTextField = "Value";
                 ddRecordingOptions.DataBind();
 
+                // load the date comparison validator to make sure that dates are AFTER today
                 cmpStartAiringDate.ValueToCompare = DateTime.Today.ToShortDateString();
             }
         }
 
+        /// <summary>
+        /// Conditional fields based on ad type
+        /// </summary>
         protected void ddAdType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddAdType.SelectedItem.Value.Equals("1")) // Monthly Sponsorship
@@ -84,18 +88,24 @@ namespace HNHUWO2.Create
             }
         }
 
+
+        /// <summary>
+        /// Conditional fields based on Radio Station
+        /// </summary>
         protected void ddRadioStation_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddRadioStation.SelectedItem.Text.Equals("Other")) Function.ShowControls(phRadioStationOther);
             else Function.ClearControls(phRadioStationOther, false);
         }
 
+        /// <summary>
+        /// Submit the form!
+        /// </summary>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // from the information provided, create us a due date to store
-
             btnSubmit.Enabled = false; // prevent double submission
 
+            // from the information provided, create us a due date to store
             DateTime? duedate;
             if (ddAdType.SelectedValue.Equals("1"))
             {
@@ -110,6 +120,7 @@ namespace HNHUWO2.Create
             // submit!
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
+                // skip the approval process for designers and coordinators
                 bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
@@ -136,9 +147,13 @@ namespace HNHUWO2.Create
                 db.WorkOrdersRadios.InsertOnSubmit(r);
                 db.SubmitChanges();
                 int ID = w.ID;
+                // upload attached files
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
-                Function.LogAction(ID, "Work order created");
+                // log the activity
+                WO.LogAction(ID, "Work order created");
+                // send notificaiton if needed
                 if (!NeedsApproval) WO.SendNewWONotification(ID);
+                // complete!
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
             

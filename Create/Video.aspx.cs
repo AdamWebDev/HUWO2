@@ -42,13 +42,18 @@ namespace HNHUWO2.Create
                 ddNarrator.DataTextField = "Value";
                 ddNarrator.DataBind();
 
+                // load the date comparison validator to make sure that dates are AFTER today
                 cmpDueDate.ValueToCompare = DateTime.Today.ToShortDateString();
 
+                
                 CheckDate();
             }
 
         }
 
+        /// <summary>
+        /// Show relevant fields based on Video Destination
+        /// </summary>
         protected void chkVideoDestination_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool showOtherWebsite = false;
@@ -71,6 +76,9 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phNumberDVDs, false);
         }
 
+        /// <summary>
+        /// Show related fields for Background music options
+        /// </summary>
         protected void ddBackgroundMusic_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddBackgroundMusic.Value == true)
@@ -79,6 +87,9 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phBackgroundMusic, false);
         }
 
+        /// <summary>
+        /// Show related fields for Narration options
+        /// </summary>
         protected void ddNarrationRequired_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddNarrationRequired.Value == true)
@@ -87,6 +98,9 @@ namespace HNHUWO2.Create
                 Function.ClearControls(phNarration, false);
         }
 
+        /// <summary>
+        /// Show related fields for Credit options
+        /// </summary>
         protected void ddCreditsRequired_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddCreditsRequired.Value == true)
@@ -105,7 +119,9 @@ namespace HNHUWO2.Create
                 notDisclaimer.Visible = false;
         }
 
-
+        /// <summary>
+        /// Checks dates to ensure they check out with minimum timeline guidelines
+        /// </summary>
         protected void CheckDate()
         {
             int? daysNoticeNeeded = VideoWO.GetDaysNotice();
@@ -136,11 +152,15 @@ namespace HNHUWO2.Create
             }
         }
 
+        /// <summary>
+        /// Submit the form
+        /// </summary>
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            btnSubmit.Enabled = false;
+            btnSubmit.Enabled = false; // prevent double entry
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
+                // skip approval process for designers and program managers (coordinators)
                 bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
@@ -169,13 +189,18 @@ namespace HNHUWO2.Create
                 db.WorkOrdersVideos.InsertOnSubmit(v);
                 db.SubmitChanges();
                 int ID = w.ID;
+                // upload the attached files
                 WO.UploadFiles(w.ID, AttachedFiles.UploadedFiles);
-                Function.LogAction(ID, "Work order created");
+                // log it
+                WO.LogAction(ID, "Work order created");
+                // send out the notifications if necessary
                 if (!NeedsApproval) WO.SendNewWONotification(ID);
+                // success!
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }
          }
 
+        // if the user changes the date, ensure to recheck the guidelines
         protected void txtDueDate_TextChanged(object sender, EventArgs e)
         {
             CheckDate();
