@@ -77,6 +77,11 @@ namespace HNHUWO2
             return value.ToString("dddd, MMMM dd, yyyy");
         }
 
+        public static string DisplayDateAndTime(this DateTime value)
+        {
+            return value.ToString("dddd, MMMM dd, yyyy @ h:m tt");
+        }
+
         /// <summary>
         /// Display dates in a consistant format
         /// </summary>

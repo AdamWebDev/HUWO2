@@ -22,7 +22,7 @@ namespace HNHUWO2.UserControls
             List<LogActivity> logs = HNHUWO2.Classes.WO.GetLog(ID);
             foreach (LogActivity log in logs)
             {
-                output+= "<li><span class=\"action\">" + log.action + "</span> by <span class=\"user\">" + Users.GetUsername(log.username) + "</span> on <span class=\"date\">" + log.DateTime.DisplayDate() + "</span></li>";
+                output+= "<li><span class=\"action\">" + log.action + "</span> by <span class=\"user\">" + Users.GetUsername(log.username) + "</span> on <span class=\"date\">" + log.DateTime.DisplayDateAndTime() + "</span></li>";
             }
             output += "</ul>";
             lblLog.Text = output;
