@@ -202,7 +202,7 @@ namespace HNHUWO2.Create
                 }
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = "Website Update";
-                w.status = NeedsApproval ? 4 : 1;
+                w.status = NeedsApproval ? 2 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersWeb wow = new WorkOrdersWeb();

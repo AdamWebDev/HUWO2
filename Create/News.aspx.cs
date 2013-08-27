@@ -63,7 +63,7 @@ namespace HNHUWO2.Create
                 w.duedate = txtDateToIssue.Text.ConvertToDate();
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtTitleTopic.Text;
-                w.status = NeedsApproval ? 4 : 1;
+                w.status = NeedsApproval ? 2 : 1;
                 db.Workorders.InsertOnSubmit(w);
                 WorkOrdersNews n = new WorkOrdersNews();
                 n.Workorder = w;

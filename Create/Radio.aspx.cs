@@ -129,7 +129,7 @@ namespace HNHUWO2.Create
                 w.duedate = duedate;
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = "Radio Ad";
-                w.status = NeedsApproval ? 4 : 1;
+                w.status = NeedsApproval ? 2 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersRadio r = new WorkOrdersRadio();

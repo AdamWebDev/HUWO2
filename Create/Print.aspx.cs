@@ -254,7 +254,7 @@ namespace HNHUWO2.Create
                 w.duedate = txtDueDate.Text.ConvertToDate();
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtPubTitle.Text;
-                w.status = NeedsApproval ? 4 : 1;
+                w.status = NeedsApproval ? 2 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersPrint p = new WorkOrdersPrint();

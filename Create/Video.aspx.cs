@@ -169,7 +169,7 @@ namespace HNHUWO2.Create
                 w.duedate = txtDueDate.Text.ConvertToDate();
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtTitleVideo.Text;
-                w.status = NeedsApproval ? 4 : 1;
+                w.status = NeedsApproval ? 2 : 1;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersVideo v = new WorkOrdersVideo();
