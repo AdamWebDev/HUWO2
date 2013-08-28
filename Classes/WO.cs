@@ -383,7 +383,12 @@ namespace HNHUWO2.Classes
             mail.IsBodyHtml = true;
             SendMail(mail);
 
-            opening = "Greetings!<br /><br />A workorder has been approved and is ready for you to do your magic! Follow this link to check out the details.<br /><br />";
+            opening = "Greetings!<br /><br />A workorder has been approved and is ready for you to do your magic!<br /><br />";
+            opening += "Some quick details:<br />";
+            opening += "Due date: " + wo.duedate.DisplayDate() + "<br />";
+            opening += "Type of Project: " + wo.WOType1.type + "<br /><br />";
+
+            opening+= "Follow this link to check out more details.<br /><br />";
             mail = new MailMessage("no-reply@hnhu.org", "communications@hnhu.org", subject, opening + message);
             mail.IsBodyHtml = true;
             SendMail(mail);
