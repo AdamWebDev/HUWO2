@@ -25,11 +25,11 @@
             <uc:Notification ID="notMain" runat="server" Visible="false"/>
 
             <label>Title of Video</label>
-            <asp:TextBox ID="txtTitleVideo" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtTitleVideo" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqTitleVideo" runat="server" ControlToValidate="txtTitleVideo" ErrorMessage="Tile of Video is Required" CssClass="input-notification error png_bg" />
 
             <label>Program Manager</label>
-            <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
+            <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="medium-input"></asp:DropDownList>
             <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager is Required" CssClass="input-notification error png_bg" />
 
             <label>Source of Video</label>
@@ -42,18 +42,18 @@
 
             <asp:PlaceHolder ID="phOtherWebsite" runat="server" Visible="false">
                 <label>Specify Other Website URL</label>
-                <asp:TextBox ID="txtDestinationURL" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                <asp:TextBox ID="txtDestinationURL" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqDestinationURL" runat="server" ControlToValidate="txtDestinationURL" Enabled="false" ErrorMessage="Destination URL is Required" CssClass="input-notification error png_bg" />
             </asp:PlaceHolder>
 
             <asp:PlaceHolder ID="phNumberDVDs" runat="server" Visible="false">
                 <label>Specify the Number of DVD Copies</label>
-                <asp:TextBox ID="txtNumberDVDs" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                <asp:TextBox ID="txtNumberDVDs" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqNumberDVDs" runat="server" ControlToValidate="txtNumberDVDs" Enabled="false" ErrorMessage="Number of DVDs is Required" CssClass="input-notification error png_bg" />
             </asp:PlaceHolder>
 
             <label>Approximate Length of Video</label>
-            <asp:TextBox ID="txtVideoLength" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtVideoLength" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqVideoLength" runat="server" ControlToValidate="txtVideoLength" ErrorMessage="Length of Video is Required" CssClass="input-notification error png_bg" />
 
             <label>Due Date</label>

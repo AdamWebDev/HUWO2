@@ -26,11 +26,11 @@
             <uc:Notification ID="notMain" runat="server" Visible="false"/>
     
             <label>Type of Web Work</label>
-            <asp:DropDownList ID="ddTypeWebWork" runat="server" CssClass="small-input" AppendDataBoundItems="true" AutoPostBack="True" onselectedindexchanged="ddTypeWebWork_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList ID="ddTypeWebWork" runat="server" CssClass="medium-input" AppendDataBoundItems="true" AutoPostBack="True" onselectedindexchanged="ddTypeWebWork_SelectedIndexChanged"></asp:DropDownList>
             <asp:RequiredFieldValidator ID="reqTypeWebWork" runat="server" ControlToValidate="ddTypeWebWork" ErrorMessage="Type of Web Work is Required" CssClass="input-notification error png_bg" />
 
             <label>Program Manager</label>
-            <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input"></asp:DropDownList>
+            <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="medium-input"></asp:DropDownList>
             <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager is Required" CssClass="input-notification error png_bg" />
 
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -38,7 +38,7 @@
             
             <asp:PlaceHolder ID="phWebsite" runat="server" Visible="false">
                 <label>Website</label>
-                <asp:DropDownList ID="ddWebsite" runat="server" AppendDataBoundItems="true" CssClass="small-input" AutoPostBack="true"></asp:DropDownList>
+                <asp:DropDownList ID="ddWebsite" runat="server" AppendDataBoundItems="true" CssClass="medium-input" AutoPostBack="true"></asp:DropDownList>
                 <asp:RequiredFieldValidator ID="reqWebsite" runat="server" ControlToValidate="ddWebsite" ErrorMessage="Website is Required" CssClass="input-notification error png_bg" Enabled="false" />
             </asp:PlaceHolder>
 
@@ -51,7 +51,7 @@
                     <fieldset>
                     <legend>Where is this content supposed to go?</legend>
                     <label>Specify Location (URL) <i class="icon-question-sign tooltip-url"></i></label>
-                    <asp:TextBox ID="txtAtoZLocation" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                    <asp:TextBox ID="txtAtoZLocation" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqAtoZLocation" runat="server" ControlToValidate="txtAtoZLocation" ErrorMessage="Location (URL) is Required" CssClass="input-notification error png_bg" Enabled="false" />
                     </fieldset>
                 </asp:PlaceHolder>
@@ -69,7 +69,7 @@
                         <asp:CompareValidator ID="cmpAtoZDates" runat="server" ErrorMessage="Removal date must be AFTER posting date" ControlToValidate="txtAtoZRemovalDate" ControlToCompare="txtAtoZPostingDate" CssClass="input-notification error png_bg" Enabled="False" Type="Date" Operator="GreaterThan"></asp:CompareValidator>
 
                         <label>Heading for New Page</label>
-                        <asp:TextBox ID="txtAtoZHeading" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:TextBox ID="txtAtoZHeading" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqAtoZHeading" runat="server" ControlToValidate="txtAtoZHeading" ErrorMessage="Heading for New Page is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Content</label>
@@ -84,11 +84,11 @@
                     
 
                         <label>Event Name</label>
-                        <asp:TextBox ID="txtCalEventName" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:TextBox ID="txtCalEventName" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqCalEventName" runat="server" ControlToValidate="txtCalEventName" ErrorMessage="Event Name is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Event Location</label>
-                        <asp:TextBox ID="txtCalEventLocation" runat="server" CssClass=  "text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:TextBox ID="txtCalEventLocation" runat="server" CssClass=  "text-input medium-input" MaxLength="255"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqCalEventLocation" runat="server" ControlToValidate="txtCalEventLocation" ErrorMessage="Event Location is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Event Start Date</label>
@@ -110,15 +110,15 @@
                         <asp:RequiredFieldValidator ID="reqCalEndTime" runat="server" ControlToValidate="txtCalEndTime" ErrorMessage="Event End Time is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Contact Name</label>
-                        <asp:TextBox ID="txtContactName" runat="server" CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="txtContactName" runat="server" CssClass="text-input medium-input" MaxLength="50"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqContactName" runat="server" ControlToValidate="txtContactName" ErrorMessage="Contact Name is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Contact Email</label>
-                        <asp:TextBox ID="txtContactEmail" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                        <asp:TextBox ID="txtContactEmail" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqContactEmail" runat="server" ControlToValidate="txtContactEmail" ErrorMessage="Contact Email is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Event Description</label>
-                        <asp:TextBox ID="txtEventDesc" runat="server" CssClass="text-input small-input" TextMode="MultiLine"></asp:TextBox>
+                        <asp:TextBox ID="txtEventDesc" runat="server" CssClass="text-input medium-input" TextMode="MultiLine"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqEventDesc" runat="server" ControlToValidate="txtEventDesc" ErrorMessage="Event Description is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
                         <label>Date to be Posted</label>
@@ -151,10 +151,10 @@
         <asp:PlaceHolder ID="phNewWebsite" runat="server" Visible="false">
 
             <asp:Label ID="lblBudget" runat="server" AssociatedControlID="txtBudget" Text="What is your budget for this website?"></asp:Label>
-            <asp:TextBox ID="txtBudget" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtBudget" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
 
             <asp:Label ID="lblTimeFrame" runat="server" AssociatedControlID="txtTimeFrame" Text="What is your timeframe for this website?"></asp:Label>
-            <asp:TextBox ID="txtTimeFrame" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtTimeFrame" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
 
             <asp:Label ID="lblGoals" runat="server" AssociatedControlID="txtGoals" Text="What are your goals for this website?"></asp:Label>
             <asp:TextBox ID="txtGoals" runat="server" TextMode="MultiLine" CssClass="text-input" Rows="6"></asp:TextBox>
@@ -163,10 +163,10 @@
             <asp:TextBox ID="txtExplanation" runat="server" TextMode="MultiLine" CssClass="text-input" Rows="6"></asp:TextBox>
 
             <asp:Label ID="lblTargetAudience" runat="server" AssociatedControlID="txtAudience" Text="Who is the target audience for this website?"></asp:Label>
-            <asp:TextBox ID="txtAudience" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtAudience" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
 
             <asp:Label ID="lblNumberOfPages" runat="server" AssociatedControlID="txtNumberOfPages" Text="Approximately how many pages do you see this site being?"></asp:Label>
-            <asp:TextBox ID="txtNumberOfPages" runat="server" CssClass="text-input small-input" MaxLength="50"></asp:TextBox>
+            <asp:TextBox ID="txtNumberOfPages" runat="server" CssClass="text-input medium-input" MaxLength="50"></asp:TextBox>
 
         </asp:PlaceHolder>
 
@@ -182,7 +182,7 @@
             <asp:CompareValidator ID="cmpWebAdEndDate" runat="server" ErrorMessage="Removal Date must be after Post Date." ControlToValidate="txtDateToBeChanged" ControlToCompare="txtWebAdPostDate" Operator="GreaterThanEqual" Type="Date" Display="Dynamic" CssClass="input-notification error png_bg"></asp:CompareValidator>
 
             <label>URL To Link To <i class="icon-question-sign tooltip-url"></i></label>
-            <asp:TextBox ID="txtWebAdURL" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+            <asp:TextBox ID="txtWebAdURL" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
             <asp:RequiredFieldValidator ID="reqWebAdURL" runat="server" ControlToValidate="txtWebAdURL" ErrorMessage="URL is Required" CssClass="input-notification error png_bg" Enabled="false" />
 
             <label>Content</label>

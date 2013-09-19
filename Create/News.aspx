@@ -14,11 +14,11 @@
         <uc:Notification ID="notMain" runat="server" Visible="false"/>
         
         <label>Program Manager</label>
-        <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="small-input" />
+        <asp:DropDownList ID="ddCoordinators" runat="server" AppendDataBoundItems="True" CssClass="medium-input" />
         <asp:RequiredFieldValidator ID="reqCoordinators" runat="server" ControlToValidate="ddCoordinators" ErrorMessage="Program Manager Required" CssClass="input-notification error png_bg" />
 
         <label>Title/Topic</label>
-        <asp:TextBox ID="txtTitleTopic" runat="server" CssClass="text-input small-input"></asp:TextBox>
+        <asp:TextBox ID="txtTitleTopic" runat="server" CssClass="text-input medium-input"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqTitleTopic" runat="server" ControlToValidate="txtTitleTopic" ErrorMessage="Title/Topic is Required" CssClass="input-notification error png_bg" />
 
         <label>Date to Issue</label>
@@ -28,14 +28,14 @@
         
         
         <label>Distribution Outlets</label>
-        <asp:DropDownList ID="ddDistributionOutlets" runat="server" CssClass="small-input" AppendDataBoundItems="true" AutoPostBack="true" onselectedindexchanged="ddDistributionOutlets_SelectedIndexChanged"></asp:DropDownList>
+        <asp:DropDownList ID="ddDistributionOutlets" runat="server" CssClass="medium-input" AppendDataBoundItems="true" AutoPostBack="true" onselectedindexchanged="ddDistributionOutlets_SelectedIndexChanged"></asp:DropDownList>
         <asp:RequiredFieldValidator ID="reqDistributionOutlets" runat="server" ControlToValidate="ddDistributionOutlets" ErrorMessage="Distribution Outlet is Required" CssClass="input-notification error png_bg"/>
 
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:PlaceHolder ID="phDistroOther" runat="server" Visible="false">
                     <label>Please Specify a Distribution Outlet</label>
-                    <asp:TextBox ID="txtDistributionOutletsOther" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+                    <asp:TextBox ID="txtDistributionOutletsOther" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="reqDistributionOutletsOther" runat="server" ControlToValidate="txtDistributionOutletsOther" ErrorMessage="Distribution Details are Required" CssClass="input-notification error png_bg" />
                 </asp:PlaceHolder>
             </ContentTemplate>
@@ -45,7 +45,7 @@
         </asp:UpdatePanel>
 
         <label>Health Unit Contact for News Release</label>
-        <asp:TextBox ID="txtContact" runat="server" CssClass="text-input small-input" MaxLength="255"></asp:TextBox>
+        <asp:TextBox ID="txtContact" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqContact" runat="server" ControlToValidate="txtContact" ErrorMessage="Health Unit Contact Required" CssClass="input-notification error png_bg" />
 
         <label>Attach files</label>

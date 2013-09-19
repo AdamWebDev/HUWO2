@@ -30,7 +30,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Work Order #</th>
+                        <th>#</th>
                         <th>Date Submitted</th>
                         <th>Work Order Type</th>
                         <th>Status</th>

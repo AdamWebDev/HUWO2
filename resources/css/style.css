@@ -960,7 +960,7 @@ ul.view-wo {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003574}}
   ul.view-wo > li {
     padding: 5px;
-    font-size: 2em;
+    font-size: 1.2em;
     background: none;
     margin-bottom: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003579}}
@@ -979,7 +979,7 @@ ul.view-wo {
       border-bottom: thin solid #2d89ef;
       border-left: thin solid #2d89ef;
       padding: 5px 5px 6px 10px;
-      margin-left: -9px;
+      margin-left: -6px;
       width: 70%;
       display: inline-block; }
 
@@ -988,27 +988,30 @@ label.pm-notes {
   background: #7e3878 !important;
   border: #9f00a7 !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003606}}
-ul.activity-log li {
-  font-size: 0.5em; }
-
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003608}}
+ul.activity-log {
+  margin-left: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003610}}
+  ul.activity-log li {
+    font-size: 0.8em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003615}}
 #FileList {
   margin: 0 0 0 -9px;
   padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003611}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003616}}
 ul.filelist {
   padding: 2px 0 1px 10px;
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003614}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003619}}
   ul.filelist li {
     background-position: left center;
     padding-left: 1em;
     margin-bottom: 0; }
 
 /*************** Notifications ***************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003624}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003629}}
 .notification {
   position: relative;
   margin: 1em 0 15px 0;
@@ -1018,37 +1021,37 @@ ul.filelist {
   background-repeat: no-repeat !important;
   width: 52%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003633}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003638}}
 .attention {
   background: #fffbcc url("../images/icons/exclamation.png") 10px 11px no-repeat;
   border-color: #e6db55;
   color: #666452; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003638}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003643}}
 .information {
   background: #dbe3ff url("../images/icons/information.png");
   border-color: #a2b4ee;
   color: #585b66; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003643}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003648}}
 .success {
   background: #d5ffce url("../images/icons/tick_circle.png");
   border-color: #9adf8f;
   color: #556652; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003648}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003653}}
 .error {
   background: #ffcece url("../images/icons/cross_circle.png");
   border-color: #df8f8f;
   color: #665252; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003654}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003659}}
 .notification div {
   display: block;
   font-style: normal;
   padding: 10px 10px 10px 36px;
   line-height: 1.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003659}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003664}}
 .notification .close {
   color: #990000;
   font-size: 9px;
@@ -1057,7 +1060,7 @@ ul.filelist {
   top: 5px; }
 
 /* Notification for form inputs */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003668}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003673}}
 .input-notification {
   background-position: left 2px;
   background-repeat: no-repeat;
@@ -1066,75 +1069,75 @@ ul.filelist {
   margin: 0 0 0 5px; }
 
 /* Notification for login page */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003677}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003682}}
 #login-wrapper .notification {
   border: 0;
   background-color: #141414;
   color: #fff !important; }
 
 /********************************      Login Page      ********************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003684}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003689}}
 body#login {
   color: #fff;
   background: #222222 url("../images/bg-login.gif"); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003688}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003693}}
 #login-wrapper {
   background: url("../images/bg-login-top.png") top left repeat-x; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003690}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003695}}
   #login-wrapper #login-top {
     width: 100%;
     padding: 140px 0 50px 0;
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003694}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003699}}
   #login-wrapper #login-content {
     text-align: left;
     width: 300px;
     margin: 0 auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003698}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003703}}
     #login-wrapper #login-content label {
       color: #fff;
       float: left;
       width: 70px;
       padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003703}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003708}}
     #login-wrapper #login-content input {
       width: 200px;
       float: right;
       margin: 0 0 20px 0;
       border: 0;
       background: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003709}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003714}}
     #login-wrapper #login-content p {
       padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003711}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003716}}
       #login-wrapper #login-content p#remember-password {
         float: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003713}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003718}}
         #login-wrapper #login-content p#remember-password input {
           float: none;
           width: auto;
           border: 0;
           background: none;
           margin: 0 10px 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003719}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003724}}
       #login-wrapper #login-content p .button, #login-wrapper #login-content p .dataTables_paginate a, .dataTables_paginate #login-wrapper #login-content p a, #login-wrapper #login-content p .RadUpload .ruButton.ruBrowse, .RadUpload #login-wrapper #login-content p .ruButton.ruBrowse, #login-wrapper #login-content p .RadUpload .ruButton.ruRemove, .RadUpload #login-wrapper #login-content p .ruButton.ruRemove {
         width: auto;
         margin-top: 20px; }
 
 /********************************      jQuery plugins styles      ********************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003725}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003730}}
 .placeholder {
   color: #aaa; }
 
 /************** Additional styles *****************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003730}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003735}}
 .ruInputs li {
   list-style: none;
   background: none !important;
   padding: 0 !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003735}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003740}}
 .error-summary {
   position: relative;
   margin: 1em 0 15px 0;
@@ -1151,45 +1154,45 @@ body#login {
   padding: 10px 10px 10px 36px;
   line-height: 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003751}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003756}}
 .tooltip-url {
   cursor: pointer; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003755}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003760}}
 .hidden {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003758}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003763}}
 .inline {
   display: inline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003761}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003766}}
 .ajax__fileupload {
   width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003764}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003769}}
 .ruFakeInput {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003768}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003773}}
 .RadUpload .ruButton.ruBrowse {
   height: auto !important;
   width: auto !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003772}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003777}}
   .RadUpload .ruButton.ruBrowse:hover {
     background-color: #2b5797; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003776}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003781}}
 .RadUpload .ruButton.ruRemove {
   height: auto;
   width: auto;
   background-color: #ee1111;
   border: thin solid #b91d47; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003782}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003787}}
   .RadUpload .ruButton.ruRemove:hover {
     background-color: #b91d47; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003787}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003792}}
 .white-popup {
   position: relative;
   background: #FFF;
@@ -1197,21 +1200,21 @@ body#login {
   width: auto;
   max-width: 80%;
   margin: 20px auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003794}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003799}}
   .white-popup h2 {
     font-size: 3em;
     margin-bottom: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003798}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003803}}
   .white-popup label {
     font-size: 2em;
     display: block;
     margin-bottom: 0.5em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003803}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003808}}
   .white-popup textarea {
     width: 80%;
     border-color: #ADADAD;
     margin-bottom: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003809}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/websites\/HNHUWO\%202\.0\/HNHUWO-2\.0\/resources\/css\/style\.scss}line{font-family:\00003814}}
   .white-popup .RadAsyncUpload {
     margin-bottom: 1em; }
 

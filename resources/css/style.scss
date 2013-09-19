@@ -573,7 +573,7 @@ ul.view-wo {
 	margin-left: 0;
 	> li {
 		padding: 5px;
-		font-size: 2em;
+		font-size: 1.2em;
 		background: none;
 		margin-bottom: 0;
 		> label {
@@ -591,7 +591,7 @@ ul.view-wo {
 			border-bottom: thin solid $blue;
 			border-left: thin solid $blue;
 			padding: 5px 5px 6px 10px;
-			margin-left: -9px;
+			margin-left: -6px;
 			width: 70%;
 			display: inline-block;
 		}
@@ -603,8 +603,13 @@ label.pm-notes {
 	border: $pink !important;
 }
 
-ul.activity-log li {
-	font-size: 0.5em;
+
+
+ul.activity-log {
+	margin-left: 0;
+	li {
+		font-size: 0.8em;
+	}
 }
 
 #FileList { margin: 0 0 0 -9px; padding: 0; }
