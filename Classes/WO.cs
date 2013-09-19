@@ -248,6 +248,16 @@ namespace HNHUWO2.Classes
             UploadFiles(ID, files, false);
         }
 
+        public static void UploadFile(int ID, UploadedFile file, bool isRevision)
+        {
+            var destination = HttpContext.Current.Server.MapPath("~/uploads/" + ID + "/");
+            if (!System.IO.Directory.Exists(destination))
+                System.IO.Directory.CreateDirectory(destination);
+            // let's file the files accordingly, then add an entry to the files table in the db
+            file.SaveAs(destination + file.FileName, true);
+            WO.AddFile(ID, file.FileName, isRevision);
+        }
+
         /// <summary>
         /// Uploads files
         /// </summary>

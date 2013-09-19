@@ -34,12 +34,9 @@ namespace HNHUWO2.UserControls
         /// Once the postback completes, then files are uploaded
         /// </summary>
         protected void uploadFiles_FileUploaded(object sender, FileUploadedEventArgs e)
-        {           
-            if (uploadFiles.UploadedFiles.Count > 0)
-            {
-                int ID = int.Parse(Request.QueryString["ID"]);
-                Classes.WO.UploadFiles(ID, uploadFiles.UploadedFiles,true);
-            }
+        {   
+            int ID = int.Parse(Request.QueryString["ID"]);
+            Classes.WO.UploadFile(ID, e.File, true);
         }
 
         /// <summary>
