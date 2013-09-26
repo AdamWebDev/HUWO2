@@ -179,7 +179,8 @@ namespace HNHUWO2.Create
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 // skip the approval process for designers and program managers
-                bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
+                bool IsUserDesigner = Users.IsUserDesigner();
+                bool NeedsApproval = !IsUserDesigner && !Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
                 w.submitted_by = Function.GetUserName();
@@ -202,7 +203,7 @@ namespace HNHUWO2.Create
                 }
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = "Website Update";
-                w.status = NeedsApproval ? 2 : 1;
+                w.status = NeedsApproval ? 1 : 2;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersWeb wow = new WorkOrdersWeb();
@@ -267,7 +268,7 @@ namespace HNHUWO2.Create
                 // log actions
                 WO.LogAction(ID, "Work order created.");
                 // send notifications if necessary
-                if (!NeedsApproval) WO.SendNewWONotification(ID);
+                WO.SendNewWONotification(ID, NeedsApproval, IsUserDesigner);
                 // redirect! hooray!
                 Response.Redirect("~/MyWorkOrders.aspx?success=true&ID=" + ID + "&type=" + w.wotype);
             }

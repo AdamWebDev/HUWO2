@@ -349,31 +349,40 @@ namespace HNHUWO2.Classes
         /// Sends email notificaitons when a new work order is created
         /// </summary>
         /// <param name="ID">Work order ID</param>
-        public static void SendNewWONotification(int ID) 
+        public static void SendNewWONotification(int ID, bool NeedsApproval, bool IsDesigner) 
         {
-            // get work order
-            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
-            Workorder wo = db.Workorders.Single(w => w.ID == ID);
+            // if the work order needs to be approved, let the program manager know. if it doesn't, let the designers know that it's ready for them to work on!
+            if (NeedsApproval)
+            {
+                // get work order
+                WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+                Workorder wo = db.Workorders.Single(w => w.ID == ID);
 
-            // get program manager's email address
-            string email = wo.User.Email;
+                // get program manager's email address
+                string email = wo.User.Email;
 
-            // create the email
-            string subject = "Work Order Submitted - Requires Approval";
-            string message = "Greetings!<br /><br />A workorder has been submitted to the HNHU Communications team that requires your approval. Please proceed to the following link to approve the work order.<br /><br />";
-            string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?type=" + wo.wotype + "&ID=" + ID;
-            message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
-            message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
-            MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
-            mail.IsBodyHtml = true;
-            SendMail(mail);
+                // create the email
+                string subject = "Work Order Submitted - Requires Approval";
+                string message = "Greetings!<br /><br />A workorder has been submitted to the HNHU Communications team that requires your approval. Please proceed to the following link to approve the work order.<br /><br />";
+                string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?type=" + wo.wotype + "&ID=" + ID;
+                message += "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
+                message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
+                MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, message);
+                mail.IsBodyHtml = true;
+                SendMail(mail);
+            }
+            else
+            {   
+                // we don't want to send a notification to the designers - they already know about it!
+                if (!IsDesigner) SendApprovedNotification(ID, NeedsApproval);
+            }
         }
 
         /// <summary>
         /// Send email notifications when a work order is approved
         /// </summary>
         /// <param name="ID">Work order ID</param>
-        private static void SendApprovedNotification(int ID)
+        private static void SendApprovedNotification(int ID, bool NeededApproval)
         {
             // get the work order in question
             WOLinqClassesDataContext db = new WOLinqClassesDataContext();
@@ -385,13 +394,15 @@ namespace HNHUWO2.Classes
             // create the emails
             // one to the creator, one to the designers
             string subject = "Work Order Approved";
-            string opening = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + Users.GetUsername() +". Please proceed to the following link to approve the work order.<br /><br />";
+            string opening = "Greetings!<br /><br />A workorder that you have submitted has been approved by " + Users.GetUsername() +".<br /><br />";
             string linkurl = HttpContext.Current.Request.Url.Host + "/View/Default.aspx?type=" + wo.wotype + "&ID=" + ID;
             string message = "<a href='" + linkurl + "'>" + linkurl + "</a><br /><br />";
             message += "Thank you,<br /><br />Your friendly neighbourhood Work Order System";
             MailMessage mail = new MailMessage("no-reply@hnhu.org", email, subject, opening + message);
             mail.IsBodyHtml = true;
-            SendMail(mail);
+            
+            // if the work order needed to be approved, let the work order creator know!
+            if (NeededApproval) SendMail(mail);
 
             opening = "Greetings!<br /><br />A workorder has been approved and is ready for you to do your magic!<br /><br />";
             opening += "Some quick details:<br />";
@@ -437,7 +448,7 @@ namespace HNHUWO2.Classes
         /// </summary>
         /// <param name="ID">Work order ID</param>
         public static void Approve(int ID) {
-            SendApprovedNotification(ID);
+            SendApprovedNotification(ID,true);
             UpdateStatus(ID, 2);
             
         }
@@ -449,6 +460,7 @@ namespace HNHUWO2.Classes
         /// <param name="notes">Additional notes</param>
         public static void ApproveWithChanges(int ID, string notes)
         {
+            SendApprovedNotification(ID, true);
             UpdateStatus(ID, 3, notes);
         }
 

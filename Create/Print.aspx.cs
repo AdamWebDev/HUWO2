@@ -243,7 +243,8 @@ namespace HNHUWO2.Create
             using (WOLinqClassesDataContext db = new WOLinqClassesDataContext())
             {
                 // if the user doesn't need approval, skip the approval process
-                bool NeedsApproval = Users.IsUserDesigner() || Users.IsUserCoordinator();
+                bool IsUserDesigner = Users.IsUserDesigner();
+                bool NeedsApproval = !IsUserDesigner && !Users.IsUserCoordinator();
                 Workorder w = new Workorder();
                 w.submitted_date = DateTime.Now;
                 w.submitted_by = Function.GetUserName();
@@ -254,7 +255,7 @@ namespace HNHUWO2.Create
                 w.duedate = txtDueDate.Text.ConvertToDate();
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
                 w.title = txtPubTitle.Text;
-                w.status = NeedsApproval ? 2 : 1;
+                w.status = NeedsApproval ? 1 : 2;
                 db.Workorders.InsertOnSubmit(w);
 
                 WorkOrdersPrint p = new WorkOrdersPrint();
@@ -283,7 +284,7 @@ namespace HNHUWO2.Create
                 // log the activity
                 WO.LogAction(ID, "Work order created");
                 // send notification (if necessary)
-                if (!NeedsApproval) WO.SendNewWONotification(ID);
+                WO.SendNewWONotification(ID, NeedsApproval, IsUserDesigner);
 
                 // if the user added the option to add to the website, transfer user to web work order page
                 if (ddAddToWebsite.Value == true) 
