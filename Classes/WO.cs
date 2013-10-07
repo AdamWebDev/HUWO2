@@ -523,7 +523,10 @@ namespace HNHUWO2.Classes
             {
                 Workorder wo = db.Workorders.Single(w => w.ID == ID);
                 wo.status = newStatus;
-                wo.coordinatorNotes = notes;
+                
+                // only modify the status if it's "approved with changes"
+                if (newStatus == 3)
+                    wo.coordinatorNotes = notes;
                 
                 // we want to add this to the activity log as well
                 LogActivity log = new LogActivity();
