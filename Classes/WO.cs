@@ -407,8 +407,16 @@ namespace HNHUWO2.Classes
             opening = "Greetings!<br /><br />A workorder has been approved and is ready for you to do your magic!<br /><br />";
             opening += "Some quick details:<br />";
             opening += "Due date: " + wo.duedate.DisplayDate() + "<br />";
-            opening += "Type of Project: " + wo.WOType1.type + "<br /><br />";
+            opening += "Type of Project: " + wo.WOType1.type;
 
+            // if it's a print work order, send them some additional details
+            if (wo.WOType1.type.Equals("Print"))
+            {
+                WorkOrdersPrint p = PrintWO.GetPrintWorkOrder(ID);
+                opening += " - " + p.PrintTypeOfProject.Value + " - " + wo.title;
+            }
+
+            opening += "<br /><br />";
             opening+= "Follow this link to check out more details.<br /><br />";
             mail = new MailMessage("no-reply@hnhu.org", "communications@hnhu.org", subject, opening + message);
             mail.IsBodyHtml = true;
