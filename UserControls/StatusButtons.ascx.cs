@@ -70,6 +70,7 @@ namespace HNHUWO2.UserControls
         // shows and hides the action buttons depending on the permissions of the logged in user and the status of the current work order
         public void ShowActionButtons(int status)
         {
+
             if (status == 1) // not approved
             {
                 if (Users.IsUserCoordinator())
@@ -88,7 +89,7 @@ namespace HNHUWO2.UserControls
                     btnMarkInProgress.Visible = true;
                     btnProofSent.Visible = true;
                     btnMarkComplete.Visible = true;
-                    btnDelete.Visible = true;
+                    
                     if(Users.IsUserAdmin()) {
                         btnApprove.Visible = true;
                         phApproveWithChanges.Visible = true;
@@ -102,6 +103,11 @@ namespace HNHUWO2.UserControls
                     btnMarkComplete.Visible = false;
                     btnDelete.Visible = false;
                 }
+            }
+            // always show the delete button for designers.
+            if (Users.IsUserDesigner())
+            {
+                btnDelete.Visible = true;
             }
         }
 
