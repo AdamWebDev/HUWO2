@@ -32,6 +32,7 @@ namespace HNHUWO2.View
             if (wo != null)
             {
                 lblID.Text = wo.wID.ToString();
+                lblSubmittedBy.Text = Users.GetUsername(wo.Workorder.submitted_by);
                 lblStatus.Text = wo.Workorder.Status1.status;
                 lblAdType.Text = wo.RadioAdType.Value;
                 lblProgramManager.Text = wo.Workorder.User.FullName;

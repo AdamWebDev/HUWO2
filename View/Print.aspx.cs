@@ -35,6 +35,7 @@ namespace HNHUWO2.View
                     ltContentTitle.Text = ltPageTitle.Text = "View Quote for Commercial Print";
                 }
                 lblID.Text = wo.wID.ToString();
+                lblSubmittedBy.Text = Users.GetUsername(wo.Workorder.submitted_by);
                 lblStatus.Text = wo.Workorder.Status1.status;
                 lblPubTitle.Text = wo.Workorder.title;
                 lblDueDate.Text = wo.Workorder.duedate.DisplayDate();

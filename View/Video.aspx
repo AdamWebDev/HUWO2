@@ -14,6 +14,10 @@
             <asp:Label ID="lblID" runat="server"></asp:Label>
         </li>
         <li>
+            <label>Submitted By</label>
+            <asp:Label ID="lblSubmittedBy" runat="server"></asp:Label>
+        </li>
+        <li>
             <label>Status</label>
             <asp:Label ID="lblStatus" runat="server"></asp:Label>
         </li>
