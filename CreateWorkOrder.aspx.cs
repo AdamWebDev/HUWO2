@@ -35,7 +35,7 @@ namespace HNHUWO2
                         case 3: // Radio Ad
                             Response.Redirect("~/Create/Radio.aspx");
                             break;
-                        case 4: // News Release
+                        case 4: // Media Release
                             Response.Redirect("~/Create/News.aspx");
                             break;
                         case 5: // Quote for Commercial Print
