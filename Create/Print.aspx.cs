@@ -90,12 +90,20 @@ namespace HNHUWO2.Create
         /// </summary>
         protected void ddTypeProject_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ddPrintingMethod.Enabled = true;
             // show additional options depending on the type of project selected
             if (ddTypeProject.SelectedValue.Equals("3"))  // display
             {
                 Function.ShowControls(phDisplay);
                 Function.ClearControls(phProjectOther, false);
                 Function.ClearControls(phPromoItem, false);
+            }
+            else if (ddTypeProject.SelectedValue.Equals("6")) // newspaper ad
+            {
+                ddPrintingMethod.SelectedValue = "2"; // Commercial
+                ShowCommericalInfo();
+                txtNumberCopies.Text = "1";
+                ddPrintingMethod.Enabled = false;
             }
             else if (ddTypeProject.SelectedValue.Equals("9")) // other
             {
@@ -111,7 +119,7 @@ namespace HNHUWO2.Create
             }
             else // hide additional options
             {
-                Function.ClearControls(phPromoItem,false);
+                Function.ClearControls(phPromoItem, false);
                 Function.ClearControls(phProjectOther, false);
                 Function.ClearControls(phDisplay, false);
             }
@@ -193,23 +201,33 @@ namespace HNHUWO2.Create
             // if commercial printing, show relevant options and reset the colour info dropdown to include "one colour"
             if (ddPrintingMethod.SelectedItem.Text.ToString().Equals("Commercial"))
             {
-                Function.ShowControls(phBudget);
-                notCommercialInfo.Visible = true;
-                Function.ShowControls(phCommercialPrint);
-                ddColourInfo.Items.Clear();
-                ddColourInfo.DataSource = PrintWO.GetColourInfo();
-                ddColourInfo.DataTextField = "Value";
-                ddColourInfo.DataValueField = "ID";
-                ddColourInfo.DataBind();
+                ShowCommericalInfo();
             }
-            // if user doesn't select commercial, remove "one color" from options and hide commercial settings
             else
             {
-                Function.ClearControls(phBudget, false);
-                notCommercialInfo.Visible = false;
-                Function.ClearControls(phCommercialPrint,false);
-                ddColourInfo.Items.RemoveAt(3);
+                HideCommercialInfo();
             }
+        }
+
+        private void ShowCommericalInfo()
+        {
+            Function.ShowControls(phBudget);
+            notCommercialInfo.Visible = true;
+            Function.ShowControls(phCommercialPrint);
+            ddColourInfo.Items.Clear();
+            ddColourInfo.DataSource = PrintWO.GetColourInfo();
+            ddColourInfo.DataTextField = "Value";
+            ddColourInfo.DataValueField = "ID";
+            ddColourInfo.DataBind();
+        }
+
+        private void HideCommercialInfo()
+        {
+            // if user doesn't select commercial, remove "one color" from options and hide commercial settings
+            Function.ClearControls(phBudget, false);
+            notCommercialInfo.Visible = false;
+            Function.ClearControls(phCommercialPrint, false);
+            ddColourInfo.Items.RemoveAt(3);
         }
 
         /// <summary>

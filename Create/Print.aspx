@@ -69,10 +69,16 @@
             </Triggers>
         </asp:UpdatePanel>
         
-        
-        <label>Printing Method</label>
-        <asp:DropDownList ID="ddPrintingMethod" runat="server" AppendDataBoundItems="true" onselectedindexchanged="ddPrintingMethod_SelectedIndexChanged" AutoPostBack="true" CssClass="medium-input"></asp:DropDownList>
-        <asp:RequiredFieldValidator ID="reqPrintingMethod" runat="server" ControlToValidate="ddPrintingMethod" ErrorMessage="Printing Method is Required" CssClass="input-notification error png_bg" ></asp:RequiredFieldValidator>
+    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+        <ContentTemplate>
+            <label>Printing Method</label>
+            <asp:DropDownList ID="ddPrintingMethod" runat="server" AppendDataBoundItems="true" onselectedindexchanged="ddPrintingMethod_SelectedIndexChanged" AutoPostBack="true" CssClass="medium-input"></asp:DropDownList>
+            <asp:RequiredFieldValidator ID="reqPrintingMethod" runat="server" ControlToValidate="ddPrintingMethod" ErrorMessage="Printing Method is Required" CssClass="input-notification error png_bg" ></asp:RequiredFieldValidator>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="ddTypeProject" />
+        </Triggers>
+    </asp:UpdatePanel>
 
         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
         <ContentTemplate>
