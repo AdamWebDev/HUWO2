@@ -14,11 +14,22 @@ namespace HNHUWO2.Admin
         {
             if (!Page.IsPostBack)
             {
-                // populate role dropdown
-                ddRole.DataSource = HNHUWO2.Classes.Admin.GetRoles();
-                ddRole.DataTextField = "Role";
-                ddRole.DataValueField = "ID";
-                ddRole.DataBind();
+                // populate the table if the user has appropriate permissions
+                if (Classes.Users.IsUserDesigner())
+                {
+                    // populate role dropdown
+                    ddRole.DataSource = HNHUWO2.Classes.Admin.GetRoles();
+                    ddRole.DataTextField = "Role";
+                    ddRole.DataValueField = "ID";
+                    ddRole.DataBind();
+                }
+                // if the user doesn't have permission, kick them out!
+                else
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
+
+                
             }
         }
 

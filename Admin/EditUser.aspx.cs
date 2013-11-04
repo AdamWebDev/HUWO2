@@ -14,26 +14,34 @@ namespace HNHUWO2.Admin
         {
             if (!Page.IsPostBack)
             {
-                int ID;
-                // make sure the user ID is valid, then populate the form
-                if (int.TryParse(Request.QueryString["ID"], out ID))
+
+                if (Classes.Users.IsUserDesigner())
                 {
-                    User u = Classes.Admin.GetUser(ID);
-                    txtUsername.Text = u.Username;
-                    txtFullName.Text = u.FullName;
-                    txtEmail.Text = u.Email;
+                    int ID;
+                    // make sure the user ID is valid, then populate the form
+                    if (int.TryParse(Request.QueryString["ID"], out ID))
+                    {
+                        User u = Classes.Admin.GetUser(ID);
+                        txtUsername.Text = u.Username;
+                        txtFullName.Text = u.FullName;
+                        txtEmail.Text = u.Email;
 
-                    ddRole.DataSource = Classes.Admin.GetRoles();
-                    ddRole.DataTextField = "Role";
-                    ddRole.DataValueField = "ID";
-                    ddRole.DataBind();
+                        ddRole.DataSource = Classes.Admin.GetRoles();
+                        ddRole.DataTextField = "Role";
+                        ddRole.DataValueField = "ID";
+                        ddRole.DataBind();
 
-                    ddRole.SelectedValue = u.Role.ToString();
+                        ddRole.SelectedValue = u.Role.ToString();
+                    }
+                    // if user ID is invalid, send them back to the users page
+                    else
+                    {
+                        Response.Redirect("~/Admin/Users.aspx");
+                    }
                 }
-                // if user ID is invalid, send them back to the users page
                 else
                 {
-                    Response.Redirect("~/Admin/Users.aspx");
+                    Response.Redirect("~/Default.aspx");
                 }
             }
         }
