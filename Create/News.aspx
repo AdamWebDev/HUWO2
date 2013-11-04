@@ -1,12 +1,12 @@
-﻿<%@ Page Title="Create News Release Work Order" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="HNHUWO2.Create.News" %>
+﻿<%@ Page Title="Create Media Release Work Order" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="HNHUWO2.Create.News" %>
 <%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">Create News Release Work Order</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">Create Media Release Work Order</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server">
     <uc:NavButton ID="navCancel" runat="server" Icon="icon-remove" AltText="Cancel Icon" Text="Cancel" NavURL="~/Default.aspx" />
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">Create a News Release Work Order</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">Create a Media Release Work Order</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <asp:ValidationSummary ID="ValidationSummary" HeaderText="Your work order has not been saved. Please note the following fields that are missing information:" runat="server" CssClass="error-summary"  />
@@ -44,7 +44,7 @@
             </Triggers>
         </asp:UpdatePanel>
 
-        <label>Health Unit Contact for News Release</label>
+        <label>Health Unit Contact for Media Release</label>
         <asp:TextBox ID="txtContact" runat="server" CssClass="text-input medium-input" MaxLength="255"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqContact" runat="server" ControlToValidate="txtContact" ErrorMessage="Health Unit Contact Required" CssClass="input-notification error png_bg" />
 

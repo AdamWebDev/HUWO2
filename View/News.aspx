@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="HNHUWO2.View.News" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">View News Release Work Order</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="PageTitle" runat="server">View Media Release Work Order</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Scripts" runat="server"></asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MenuButtons" runat="server">
     <uc:statusbuttons ID="statusButtons" runat="server" />
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">View News Release Work Order</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MainTitle" runat="server">View Media Release Work Order</asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="Main" runat="server">
 <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <uc:StatusMessages ID="statusMessages" runat="server" />
