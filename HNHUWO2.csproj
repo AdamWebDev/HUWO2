@@ -86,6 +86,7 @@
     <Content Include=".gitignore" />
     <Content Include="Admin\AddUser.aspx" />
     <Content Include="Admin\EditUser.aspx" />
+    <Content Include="Admin\NameChange.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Managers\AllPendingWorkOrders.aspx" />
     <Content Include="Managers\MyWorkOrders.aspx" />
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="Admin\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NameChange.aspx.cs">
+      <DependentUpon>NameChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NameChange.aspx.designer.cs">
+      <DependentUpon>NameChange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
@@ -590,7 +598,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50741</DevelopmentServerPort>
+          <DevelopmentServerPort>59180</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -585,5 +585,40 @@ namespace HNHUWO2.Classes
             }
             else return false;
         }
+
+        /// <summary>
+        /// Finds the number of work orders associated with a user
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public static int WorkOrderCount(string username)
+        {
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            return db.Workorders.Where(u => u.submitted_by == username).Count();
+        }
+
+        public static int ActivityCount(string username)
+        {
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            return db.LogActivities.Where(u => u.username == username).Count();
+        }
+
+        public static void ChangeUserName(string oldusername, string newusername, int workorders, int activities)
+        {
+            WOLinqClassesDataContext db = new WOLinqClassesDataContext();
+            if (workorders > 0)
+            {
+                
+                var wo = db.Workorders.Where(u => u.submitted_by == oldusername).ToList();
+                wo.ForEach(w => w.submitted_by = newusername);
+                db.SubmitChanges();
+            }
+            if (activities > 0)
+            {
+                var act = db.LogActivities.Where(u => u.username == oldusername).ToList();
+                act.ForEach(a => a.username = newusername);
+                db.SubmitChanges();
+            }
+        }
     }
 }

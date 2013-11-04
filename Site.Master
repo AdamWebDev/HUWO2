@@ -55,6 +55,7 @@
                                 <a href="#" class="nav-top-item">Admin</a>
                                 <ul>
                                     <li><asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="~/Admin/Users.aspx">Users</asp:HyperLink></li>
+                                    <li><asp:HyperLink ID="lnkUserChange" runat="server" NavigateUrl="~/Admin/NameChange.aspx">User Name Change</asp:HyperLink></li>
                                 </ul>
                             </li>
                             <li ID="reportsMenu" runat="server">
