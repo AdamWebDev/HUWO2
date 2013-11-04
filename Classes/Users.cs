@@ -123,7 +123,11 @@ namespace HNHUWO2.Classes
             search.Filter = String.Format("(SAMAccountName={0})", username);
             search.PropertiesToLoad.Add(fieldname);
             SearchResult result = search.FindOne();
-            return (string)result.Properties[fieldname][0];
+            if (result == null)
+                return username;
+            else
+                return (string)result.Properties[fieldname][0];
+            
         }
 
         /// <summary>
@@ -169,5 +173,7 @@ namespace HNHUWO2.Classes
             SearchResultCollection results = search.FindAll();
             return results.Count > 0;
         }
+
+        
     }
 }
