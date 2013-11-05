@@ -202,7 +202,7 @@ namespace HNHUWO2.Create
                         w.duedate = DateTime.Today; break;
                 }
                 w.ProgramManager = int.Parse(ddCoordinators.SelectedValue);
-                w.title = "Website Update";
+                w.title = ddTypeWebWork.SelectedIndex > 0 ? ddTypeWebWork.SelectedItem.Text : "Unspecified";
                 w.status = NeedsApproval ? 1 : 2;
                 db.Workorders.InsertOnSubmit(w);
 
