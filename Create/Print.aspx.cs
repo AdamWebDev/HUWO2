@@ -150,7 +150,7 @@ namespace HNHUWO2.Create
         protected void checkDate()
         {
             // checks db to see if the selected project needs a specific length of time. 
-            if (ddTypeProject.SelectedIndex > 0 && !ddTypeProject.SelectedItem.Text.Equals("Other"))
+            if (ddTypeProject.SelectedIndex > 0)
             {
                 DateTime today = new DateTime();
                 today = System.DateTime.Now;
