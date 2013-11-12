@@ -77,8 +77,8 @@ namespace HNHUWO2.Create
             if (ddTypeWebWork.SelectedValue.Equals("1")) // new content
             {
                 Function.ShowControls(phNewContent,false);
+                Function.ShowControls(phWebsite);
                 Function.ClearControls(phOtherLocation, false);
-                Function.ClearControls(phWebsite, false);
                 Function.ClearControls(phUpdateContent, false);
                 Function.ClearControls(phNewWebsite, false);
                 Function.ClearControls(phCD989WebAd, false);
